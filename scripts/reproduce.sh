@@ -24,4 +24,5 @@ for policy in E1 P0 C0; do
     python scripts/run_when_idle.py profile -- --policy "$policy" --rate-multiplier 0.3 --output "artifacts/profile_${policy}_low"
     python scripts/run_when_idle.py profile -- --policy "$policy" --rate-multiplier 1.1 --output "artifacts/profile_${policy}"
 done
+python scripts/run_when_idle.py collect-nsight
 python -m cvpr_project analyze

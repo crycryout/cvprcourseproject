@@ -15,12 +15,13 @@ from cvpr_project.runs import other_gpu_pids, resource_totals, stamp
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("stage", choices=["calibrate", "evaluate-quality", "run-matrix", "validate-slots", "profile"])
+    parser.add_argument("stage", choices=["calibrate", "evaluate-quality", "run-matrix", "validate-slots", "profile", "collect-nsight"])
     parser.add_argument("--idle-seconds", type=int, default=60)
     parser.add_argument("extra", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     extra = args.extra[1:] if args.extra[:1] == ["--"] else args.extra
-    command = ([sys.executable, "-u", "scripts/validate_slots.py"] if args.stage == "validate-slots"
+    command = ([sys.executable, "-u", "scripts/collect_nsight.py"] if args.stage == "collect-nsight" else
+               [sys.executable, "-u", "scripts/validate_slots.py"] if args.stage == "validate-slots"
                else [sys.executable, "-u", "-m", "cvpr_project", args.stage]) + extra
     Path("artifacts").mkdir(exist_ok=True)
     attempt = 0

@@ -218,6 +218,9 @@ def analyze(runs, output, frozen_path):
                               for row in pd.read_csv(micro_path).to_dict("records"))
     pd.DataFrame(microbench).to_csv(output / "forward_microbench.csv", index=False)
     write_json(output / "profile_overlap.json", {"protocol_version": 2, "profiles": profiles})
+    nsight = Path("artifacts/nsight_v2/summary.json")
+    if nsight.exists():
+        write_json(output / "nsight_v2.json", sanitize_public(read_json(nsight)))
     for name in ["precision_v2.json", "stress_v2.json", "graph_pool_v2.json", "environment_v2.json",
                  "environment_timing_v2.json", "compile_v2.json", "cpu_workers_v2.json", "input_contract_v2.json",
                  "service_table_v2.json", "capacity_v2.json", "preflight_delivery_v2.json"]:
