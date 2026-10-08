@@ -2,8 +2,6 @@
 from pathlib import Path
 import csv
 import json
-import shutil
-import statistics
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -11,6 +9,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from .runs import read_json, write_json, sha256, sanitize_public, resource_totals
 from .matrix import load_frozen
+from .intervals import overlapping_duration
 
 
 def ablation_figures(frame, output):
@@ -84,16 +83,9 @@ def timeline_figure(trace_path, output):
     streams = sorted({str(e.get("args", {}).get("stream", e.get("tid", "unknown"))) for e in events})
     kernels = [e for e in events if e.get("cat") == "kernel"]
     copies = [e for e in events if e.get("cat") == "gpu_memcpy"]
-    copy_us, overlap_us = 0.0, 0.0
-    for c in copies:
-        c0, c1 = c["ts"], c["ts"] + c["dur"]
-        intervals = sorted((max(c0, k["ts"]), min(c1, k["ts"] + k["dur"])) for k in kernels
-                           if k["ts"] < c1 and k["ts"] + k["dur"] > c0)
-        copy_us += c["dur"]
-        edge = c0
-        for a, b in intervals:
-            overlap_us += max(0, b - max(a, edge))
-            edge = max(edge, b)
+    copy_us = sum(c["dur"] for c in copies)
+    overlap_us = overlapping_duration([(k["ts"], k["ts"] + k["dur"]) for k in kernels],
+                                      [(c["ts"], c["ts"] + c["dur"]) for c in copies])
     first = min(e["ts"] for e in events)
     # Show 100 ms from the beginning of measured GPU activity.
     window_ms = 100

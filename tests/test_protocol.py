@@ -2,6 +2,7 @@ import pytest
 from cvpr_project.trace import make_trace, trace_hash
 from cvpr_project.scheduler import Ready, Scheduler, remaining_service_ns
 from cvpr_project.metrics import summarize
+from cvpr_project.intervals import overlapping_duration
 
 
 def req(rid, deadline, ready=0):
@@ -61,3 +62,12 @@ def test_all_offered_requests_are_slo_denominator():
     assert m["offered"] == 5 and m["slo_success"] == .2
     assert m["goodput_rps"] == 1 / 60 and m["completion_ratio"] == .4
     assert m["cohort_throughput_rps_including_drain"] == 2 / 90
+
+
+def test_profile_overlap_uses_union_and_separate_copy_durations():
+    # Concurrent/nested kernels must not make a copy's overlap exceed its length.
+    kernels = [(8, 10), (1, 5), (2, 4), (4, 7)]
+    copies = [(0, 3), (6, 9), (10, 12)]
+    assert overlapping_duration(kernels, copies) == 4
+    assert overlapping_duration([], copies) == 0
+    assert overlapping_duration(kernels, [(3, 4), (3, 4)]) == 2
