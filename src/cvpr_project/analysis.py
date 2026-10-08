@@ -14,6 +14,7 @@ from .intervals import overlapping_duration
 
 def ablation_figures(frame, output):
     """Plot execution controls and EDF/service-feasibility controls separately."""
+    colors = {policy: plt.get_cmap("tab10")(i) for i, policy in enumerate(sorted(frame.policy.unique()))}
     fig, axes = plt.subplots(2, 3, figsize=(13, 6.4))
     for column, kind in enumerate(["periodic", "poisson", "burst"]):
         subset = frame[(frame.arrival_type == kind) & frame.policy.isin(["E0", "E1", "G0", "P0"])]
@@ -21,14 +22,15 @@ def ablation_figures(frame, output):
             ax = axes[row, column]
             for policy, group in subset.groupby("policy"):
                 stats = group.groupby("rate_multiplier")[metric].agg(["mean", "min", "max"])
-                ax.plot(stats.index, stats["mean"], "o-", label=policy)
-                ax.fill_between(stats.index, stats["min"], stats["max"], alpha=.12)
+                ax.plot(stats.index, stats["mean"], "o-", label=policy, color=colors[policy])
+                ax.fill_between(stats.index, stats["min"], stats["max"], alpha=.12, color=colors[policy])
             ax.grid(alpha=.2)
             if row == 0:
                 ax.set_title(kind)
+                ax.set_yscale("log")
             else:
                 ax.set_xlabel("Offered rate / common F0 capacity")
-    axes[0, 0].set_ylabel("Completed p95 latency (ms)")
+    axes[0, 0].set_ylabel("Completed p95 latency (ms, log scale)")
     axes[1, 0].set_ylabel("On-time results per second")
     fig.legend(*axes[0, 0].get_legend_handles_labels(), loc="upper center", ncol=4)
     fig.tight_layout(rect=[0, 0, 1, .94])
@@ -155,6 +157,7 @@ def analyze(runs, output, frozen_path):
     if not records:
         raise ValueError("No completed real runs; refuse to manufacture figures")
     frame = pd.DataFrame(records)
+    colors = {policy: plt.get_cmap("tab10")(i) for i, policy in enumerate(sorted(frame.policy.unique()))}
     frame.to_csv(output / "summary.csv", index=False)
     pd.DataFrame(batch_rows).to_csv(output / "batch_distribution.csv", index=False)
     ablation_figures(frame, figures)
@@ -170,15 +173,17 @@ def analyze(runs, output, frozen_path):
             subset = frame[frame.arrival_type == kind]
             for policy, group in subset.groupby("policy"):
                 ag = group.groupby("rate_multiplier")[metric].agg(["mean", "min", "max"])
-                ax.plot(ag.index, ag["mean"], marker="o", label=policy)
-                ax.fill_between(ag.index, ag["min"], ag["max"], alpha=.12)
+                ax.plot(ag.index, ag["mean"], marker="o", label=policy, color=colors[policy])
+                ax.fill_between(ag.index, ag["min"], ag["max"], alpha=.12, color=colors[policy])
+            if metric.startswith("latency_"):
+                ax.set_yscale("log")
             ax.set_title(f"Synthetic {kind} arrivals")
             ax.set_xlabel("Offered rate / common F0 capacity")
             ax.grid(alpha=.2)
-        axes[0].set_ylabel(ylabel)
+        axes[0].set_ylabel(ylabel + (", log scale" if metric.startswith("latency_") else ""))
         handles, labels = axes[-1].get_legend_handles_labels()
-        fig.legend(handles, labels, loc="upper center", ncol=8)
-        fig.tight_layout(rect=[0, 0, 1, .9])
+        fig.legend(handles, labels, loc="upper center", ncol=5)
+        fig.tight_layout(rect=[0, 0, 1, .84])
         fig.savefig(figures / f"{name}.png", dpi=160)
         plt.close(fig)
     # Paired seed differences; do not treat individual requests as independent runs.

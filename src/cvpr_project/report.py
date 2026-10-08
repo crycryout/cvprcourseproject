@@ -149,7 +149,7 @@ Across paired F0/D0 settings, mean D0 goodput minus F0 is {mean_diff:+.3f} reque
 
 ![EDF and feasibility controls; bars are seed means and whiskers are seed ranges.](../results/figures/deadline_ablation.png)
 
-The p99, SLO-success, completion-ratio curves and execution ablation are exported alongside these figures. Raw request stage records stay local with hashes in small public manifests. Formal timing excludes profiler overhead. A detector can retain offline AP while missing online deadlines; these are different constraints and both are reported."""))
+The latency axes use a logarithmic scale so overload tails and shorter latencies remain visible together. Method colors are consistent across arrival types. The p99, SLO-success, completion-ratio curves and execution ablation are exported alongside these figures. Raw request stage records stay local with hashes in small public manifests. Formal timing excludes profiler overhead. A detector can retain offline AP while missing online deadlines; these are different constraints and both are reported."""))
     profile_rows = table(["Profile", "Memcpy events", "Copy time overlapping kernels", "Overlap observed"],
                          [[p["profile"], p.get("memcpy_events", 0),
                            f"{100*p.get('fraction_copy_time_overlapping_kernel',0):.2f}%", p.get("overlap_verified", False)] for p in overlap])
