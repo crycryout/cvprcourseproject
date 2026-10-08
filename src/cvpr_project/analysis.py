@@ -126,7 +126,7 @@ def analyze(runs, output, frozen_path):
     evidence = output / "evidence"
     evidence.mkdir(exist_ok=True)
     frozen = load_frozen(frozen_path)
-    records, failures = [], []
+    records, failures, batch_rows = [], [], []
     seen = set()
     for path in sorted(root.glob("*/manifest.json")):
         manifest = read_json(path)
@@ -147,7 +147,15 @@ def analyze(runs, output, frozen_path):
                "arrival_type": manifest["arrival_type"], "rate_multiplier": manifest["rate_multiplier"],
                "trace_seed": manifest["trace_seed"], "offered_rate_rps": manifest["offered_rate_rps"],
                "backend": manifest["backend"], "precision": manifest["precision"],
-               **{k: v for k, v in metrics.items() if k not in {"memory"}}}
+               **{k: v for k, v in metrics.items() if k not in
+                  {"memory", "gpu_activity_samples", "completed_measurement_batch_distribution"}}}
+        row.update(gpu_peak_allocated_gib=metrics["memory"]["gpu_peak_allocated_bytes"] / 2**30,
+                   gpu_reserved_gib=metrics["memory"]["gpu_reserved_bytes"] / 2**30,
+                   pinned_host_mib=metrics["memory"]["pinned_host_bytes"] / 2**20)
+        batch_rows.extend({"run_id": manifest["run_id"], "policy": manifest["policy"],
+                           "arrival_type": manifest["arrival_type"], "rate_multiplier": manifest["rate_multiplier"],
+                           "trace_seed": manifest["trace_seed"], "bucket_occupancy": bucket, "completed_batches": count}
+                          for bucket, count in metrics["completed_measurement_batch_distribution"].items())
         records.append(row)
         # Small manifests retain hashes and public provenance; full request logs stay local.
         public_manifest = {k: v for k, v in manifest.items() if k not in {"cumulative_resources", "failure_message"}}
@@ -156,6 +164,7 @@ def analyze(runs, output, frozen_path):
         raise ValueError("No completed real runs; refuse to manufacture figures")
     frame = pd.DataFrame(records)
     frame.to_csv(output / "summary.csv", index=False)
+    pd.DataFrame(batch_rows).to_csv(output / "batch_distribution.csv", index=False)
     ablation_figures(frame, figures)
     detection_figure(output, figures)
     metrics_to_plot = [("latency_p95_ms", "Completed-request p95 latency (ms)", "latency_p95"),

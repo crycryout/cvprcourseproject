@@ -103,6 +103,7 @@ def stress_outputs(eager, graph, corpus, requests=1000, atol=1e-5, rtol=1e-4, bo
                 torch.testing.assert_close(gs.host_logits[:n], held_logits, atol=0, rtol=0)
                 torch.testing.assert_close(gs.host_boxes[:n], held_boxes, atol=0, rtol=0)
                 torch.testing.assert_close(second.host_logits[:n], held_logits.flip(0), atol=atol, rtol=rtol)
+                torch.testing.assert_close(second.host_boxes[:n], held_boxes.flip(0), atol=boxes_atol, rtol=rtol)
                 graph.consume(second, corpus)
             max_logits_error = max(max_logits_error, float((held_logits.float() - es.host_logits[:n].float()).abs().max()))
             max_boxes_error = max(max_boxes_error, float((held_boxes.float() - es.host_boxes[:n].float()).abs().max()))
@@ -125,6 +126,7 @@ def stress_outputs(eager, graph, corpus, requests=1000, atol=1e-5, rtol=1e-4, bo
             "max_abs_logits_error": max_logits_error, "max_abs_boxes_error": max_boxes_error,
             "every_bucket": list(graph.buckets), "partial_batches": True,
             "delayed_cpu_consumption": True, "separate_slot_reverse_order": True,
+            "separate_slot_reverse_boxes_verified": True,
             "allocated_memory_before": memory_before, "allocated_memory_after": torch.cuda.memory_allocated(),
             "memory_samples": memory_samples, "allocated_growth_after_initial_100_requests_bytes": growth,
             "memory_stable_after_warmup": growth <= 1024 * 1024}

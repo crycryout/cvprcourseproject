@@ -11,6 +11,7 @@ python -m cvpr_project verify-model
 python -m cvpr_project pilot
 python -m cvpr_project compile-baseline
 python scripts/run_when_idle.py calibrate
+python scripts/validate_slots.py
 python -m cvpr_project freeze
 python scripts/make_matrix.py --output artifacts/serving_matrix_v2.json
 python scripts/run_when_idle.py evaluate-quality

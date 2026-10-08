@@ -29,6 +29,10 @@ def write_report(results="results", destination="docs/REPORT.md"):
     comparisons = pd.read_csv(root / "paired_comparisons.csv")
     fpaired = comparisons[comparisons.baseline == "F0"]
     mean_diff = fpaired.goodput_difference_rps.mean()
+    cpaired = comparisons[comparisons.baseline == "C0"]
+    compile_difference = (f"Mean paired D0 minus C0 goodput is {cpaired.goodput_difference_rps.mean():+.3f} requests/s. "
+                          "This valid optimized backend remains in the comparison regardless of which method wins."
+                          if len(cpaired) else "No valid measured C0 backend is available.")
     ap_ref = quality[(quality.backend == "eager") & (quality.bucket == 1)].iloc[0].AP
     max_ap_drift = quality.AP_change_pp.abs().max()
     metered = delivery["resource_totals"]["metered_gpu_hours"]
@@ -41,6 +45,10 @@ def write_report(results="results", destination="docs/REPORT.md"):
                   [[p["policy"], *[f"{p['stage_median_ms'][k]:.3f}" for k in
                     ["preprocess_ms", "pack_ms", "h2d_ms", "forward_ms", "d2h_ms", "postprocess_ms"]],
                     f"{p['e2e_p95_ms']:.3f}"] for p in pilots])
+    cpu_table = table(["Policy", "Mean CPU cores", "Max allocated GiB", "Mean dummy fraction"],
+                     [[p, f"{g.main_process_cpu_core_equivalents.mean():.2f}",
+                       f"{g.gpu_peak_allocated_gib.max():.2f}", f"{g.dummy_lane_fraction.mean():.3f}"]
+                      for p, g in runs.groupby("policy")])
     service = table(["Bucket", "Dispatch-to-CPU-result p95 (ms)"],
                     [[b, f"{int(ns)/1e6:.3f}"] for b, ns in cal["service_ns"].items()])
     high = runs[(runs.rate_multiplier == 1.1) & (runs.arrival_type != "periodic") &
@@ -117,6 +125,8 @@ Across paired F0/D0 settings, mean D0 goodput minus F0 is {mean_diff:+.3f} reque
 
 {compile_text}
 
+{compile_difference}
+
 ![Completed-request p95 latency](../results/figures/latency_p95.png)
 
 ![SLO goodput](../results/figures/goodput.png)
@@ -139,7 +149,9 @@ The p99, SLO-success, completion-ratio curves and execution ablation are exporte
 
 ![Separate P0 correlated CUDA timeline; blue denotes kernels and orange denotes memory copies.](../results/figures/profile_P0_timeline.png)
 
-Graph initialization includes warmup, every slot's capture, and private pools. Graph and pinned-memory metadata are saved in `graph_pool_v2.json`; per-run memory includes all resident executor pools because the matrix reuses one process across randomized policies. These numbers must not be interpreted as an isolated E0-versus-F0 memory comparison. The separate E0/E1 pilots, pool metadata, and trace evidence explain runtime costs without assigning every latency difference to PCIe.
+Graph initialization includes warmup, every slot's capture, and private pools. Graph and pinned-memory metadata are saved in `graph_pool_v2.json`; per-run memory includes all resident executor pools because the matrix reuses one process across randomized policies. These numbers must not be interpreted as an isolated E0-versus-F0 memory comparison. Main-process CPU cores are CPU seconds divided by wall seconds over warmup, measurement, drain and request export; the separate load generator is excluded. Completed-batch occupancies are in `batch_distribution.csv`.
+
+{cpu_table}
 
 The execution ledger records {metered:.3f} metered GPU reservation hours, including failed work and compilation/capture inside instrumented leases. An additional {reserve:.3f}-hour conservative reserve covers initial unmetered smoke calls; it is a budget bound, not a fabricated measurement. Dataset archives, model weights, and full traces remain outside public Git. Project storage is checked against 30 GB, and automated GPU cost is capped at 30 hours.
 

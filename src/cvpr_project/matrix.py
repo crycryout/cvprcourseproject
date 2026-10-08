@@ -168,13 +168,30 @@ def run_matrix(matrix_path, frozen_path, weights, data_root, device, output="art
         write_json(target / "manifest.json", manifest)
         write_json(target / "frozen_config.json", frozen)
         start = time.monotonic()
+        cpu_start = time.process_time()
         print(f"matrix {index+1}/{len(ordered)} {case['case_id']}", flush=True)
         try:
-            metrics, _ = run_serving(executor, corpus, trace, policy, settings,
+            metrics, request_rows = run_serving(executor, corpus, trace, policy, settings,
                                     {int(k): v for k, v in calibration["service_ns"].items()}, calibration["s_base_s"],
                                     warmup_s=work["warmup_seconds"], measurement_s=work["measurement_seconds"],
                                     drain_s=work["drain_cap_seconds"], workers=calibration["cpu_workers"], output=target,
                                     progress=lambda done, total: print(f"  completed {done}/{total}", flush=True))
+            cpu_seconds = time.process_time() - cpu_start
+            cpu_wall_seconds = time.monotonic() - start
+            batches = {}
+            for row in request_rows:
+                if row["measurement"] and row["status"] == "completed":
+                    batches[(row["bucket"], row["slot_id"], row["dispatch_ns"])] = row["valid_count"]
+            distribution = {}
+            for (bucket, _, _), occupancy in batches.items():
+                key = f"b{bucket}_n{occupancy}"
+                distribution[key] = distribution.get(key, 0) + 1
+            metrics.update(main_process_cpu_seconds=cpu_seconds,
+                           main_process_cpu_core_equivalents=cpu_seconds / cpu_wall_seconds,
+                           cpu_measurement_scope="main_process_warmup_measurement_drain_and_request_export_excludes_loadgen",
+                           completed_measurement_batch_distribution=distribution,
+                           completed_measurement_batches=len(batches))
+            write_json(target / "metrics.json", metrics)
             if metrics["loadgen_limited"]:
                 manifest.update(status="failed", failure="load_generator_lag_exceeds_protocol_gate")
             else:
