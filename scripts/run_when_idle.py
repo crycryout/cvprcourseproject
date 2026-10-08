@@ -6,6 +6,7 @@ errors rather than being hidden in an endless retry loop.
 """
 import argparse
 import subprocess
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -14,9 +15,13 @@ from cvpr_project.runs import other_gpu_pids, resource_totals, stamp
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("stage", choices=["calibrate", "evaluate-quality", "run-matrix"])
+    parser.add_argument("stage", choices=["calibrate", "evaluate-quality", "run-matrix", "validate-slots", "profile"])
     parser.add_argument("--idle-seconds", type=int, default=60)
+    parser.add_argument("extra", nargs=argparse.REMAINDER)
     args = parser.parse_args()
+    extra = args.extra[1:] if args.extra[:1] == ["--"] else args.extra
+    command = ([sys.executable, "-u", "scripts/validate_slots.py"] if args.stage == "validate-slots"
+               else [sys.executable, "-u", "-m", "cvpr_project", args.stage]) + extra
     Path("artifacts").mkdir(exist_ok=True)
     attempt = 0
     while True:
@@ -35,8 +40,7 @@ def main():
         path = Path("artifacts") / f"{args.stage}_guarded_attempt_{attempt}_{time.time_ns()}.log"
         print(f"{stamp()} starting {args.stage}; log={path}", flush=True)
         with path.open("w") as f:
-            result = subprocess.run([sys.executable, "-u", "-m", "cvpr_project", args.stage],
-                                    stdout=f, stderr=subprocess.STDOUT)
+            result = subprocess.run(command, stdout=f, stderr=subprocess.STDOUT)
         if result.returncode == 0:
             print(f"{stamp()} {args.stage} completed", flush=True)
             return
@@ -45,6 +49,12 @@ def main():
                                                    "Formal timing blocked by"]):
             print(log[-6000:], flush=True)
             sys.exit(result.returncode)
+        if args.stage == "profile" and "--output" in extra:
+            profile = Path(extra[extra.index("--output") + 1])
+            if profile.exists():
+                archive = Path("artifacts/profile_attempts") / f"{profile.name}_{time.time_ns()}"
+                archive.parent.mkdir(parents=True, exist_ok=True)
+                shutil.move(profile, archive)
         print(f"{stamp()} interference attempt preserved; waiting to resume", flush=True)
 
 

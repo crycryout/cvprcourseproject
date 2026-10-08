@@ -23,6 +23,7 @@ def main():
     assert len(rows) == expected == delivery["completed_cases"]
     assert len({r["case_id"] for r in rows}) == len(rows)
     counts = Counter(r["policy"] for r in rows)
+    hardware = read_json(root / "environment_timing_v2.json")["cuda_device"]
     assert counts["A0"] == 12
     for policy in ["E0", "E1", "G0", "P0", "R0", "F0", "D0"]:
         assert counts[policy] == 36, (policy, counts[policy])
@@ -35,6 +36,7 @@ def main():
         assert manifest["case_id"] == row["case_id"]
         assert manifest["status"] in {"completed", "completed_with_failures"}
         assert manifest["precision"] == frozen["calibration"]["precision"]
+        assert manifest["cuda_device_info"] == hardware
         assert not metric["loadgen_limited"] and not metric["shared_gpu_jobs_observed"]
         assert all(s["other_gpu_process_count"] == 0 for s in metric["gpu_activity_samples"])
         assert metric["offered"] == sum(metric[k] for k in ["completed", "rejected", "failed", "unfinished"])
@@ -62,6 +64,11 @@ def main():
     assert delivery["resource_totals"]["gpu_hours"] < 30
     assert delivery["resource_totals"]["project_storage_gb"] < 30
     assert (root / "report.pdf").read_bytes().startswith(b"%PDF-")
+    for policy in ["E1", "P0"] + (["C0"] if counts["C0"] else []):
+        for suffix, rate in [("_low", .3), ("", 1.1)]:
+            profile = read_json(root / f"profile_{policy}{suffix}.json")
+            assert profile["frozen_config_sha256"] == identity and profile["rate_multiplier"] == rate
+            assert profile["hardware"] == hardware and profile["profiler_not_formal_timing"]
     assert all((root / "figures" / f"{name}.png").exists() for name in
                ["latency_p95", "latency_p99", "goodput", "deadline_ablation", "execution_ablation", "detection_examples"])
     print(f"Verified {len(rows)} serving cases, {len(quality)} complete 4000-image quality evaluations, shared traces, accounting, and frozen runtime.")

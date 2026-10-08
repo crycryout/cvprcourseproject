@@ -12,7 +12,9 @@
 | M4 实验 | 未开始 | 无AP/serving实测 |
 | M5 报告 | 实现证据生成器，完整报告待实测 | 英文Markdown/PDF、曲线、消融与时间线生成代码已实现 |
 
-当前任务：`calibrate`，由`run_when_idle.py`在空闲窗口自动恢复。最近预算约1.11 GPU-hour，其中0.25为未计量smoke的保守预留；准确实时值以`artifacts/cost_ledger.jsonl`和active lease为准。短暂其他GPU活动会中止当前配置并保留失败，不结束其他任务。项目存储约10.5 GB。
+当前任务：`calibrate`，由`run_when_idle.py`在空闲窗口自动恢复。2026-10-08 19:36 UTC 已完成113/252组当前runtime校准（初始R0/F0各48组，90秒F0容量已固定，最终rate复核R0完成17组）。累计预算2.366 GPU-hour，其中0.25为未计量smoke的保守预留；准确实时值以`scripts/progress.py`、`artifacts/cost_ledger.jsonl`和active lease为准。其他GPU活动会中止当前配置并保留失败，不结束其他任务。项目存储10.60 GB。8项CPU协议测试通过。
+
+后续自动流程：完成校准→空闲时重验两个独立slot→freeze→12个完整4000图像质量评估→300个正式serving配置。正式测量之后独立采集E1/P0/C0的0.3/1.1共同负载profile、Nsight时间线/目标kernel证据，再从真实结果生成报告并推送。尚无held-out结果，不能声明M4/M5完成。
 
 ## 历史执行记录（以顶部当前状态为准）
 

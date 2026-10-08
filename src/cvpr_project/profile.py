@@ -120,13 +120,16 @@ def compile_attempt(weights, data_root, device):
     return record
 
 
-def profile_run(weights, data_root, device, policy="P0", output="artifacts/profile_v2"):
+def profile_run(weights, data_root, device, policy="P0", output="artifacts/profile_v2", rate_multiplier=1.1):
     assert_no_other_gpu_jobs()
+    from .matrix import load_frozen
+    frozen = load_frozen("artifacts/frozen_v2.json")
+    cal = frozen["calibration"]
     root = Path(output)
     root.mkdir(parents=True, exist_ok=True)
-    precision = read_json("artifacts/precision_v2.json")["precision"]
-    s_base_s = read_json("artifacts/pilot_E1_v2.json")["e2e_p95_ms"] / 1000
-    service_ns = {int(k): v for k, v in read_json("artifacts/service_table_v2.json")["service_ns"].items()}
+    precision = cal["precision"]
+    s_base_s = cal["s_base_s"]
+    service_ns = {int(k): v for k, v in cal["service_ns"].items()}
     detector = Detector(weights, precision, device)
     corpus = Corpus(data_root, subset="calibration")
     backend = "eager" if policy in {"E0", "E1"} else "compile" if policy == "C0" else "graph"
@@ -163,9 +166,11 @@ def profile_run(weights, data_root, device, policy="P0", output="artifacts/profi
         writer = csv.DictWriter(f, fieldnames=list(micro[0]))
         writer.writeheader()
         writer.writerows(micro)
-    settings = {"max_batch": 8 if policy in {"F0", "D0"} else 1, "wait_ms": 1}
-    workers = read_json("artifacts/cpu_workers_v2.json")["selected_workers"]
-    trace = make_trace("poisson", 100, 42, corpus.ids, s_base_s, 1, 3)
+    assert_no_other_gpu_jobs()
+    settings = cal["policies"][policy]
+    workers = cal["cpu_workers"]
+    offered_rate = rate_multiplier * cal["lambda_ref_rps"]
+    trace = make_trace("poisson", offered_rate, 42, corpus.ids, s_base_s, 1, 3)
     # Profiler overhead is intentionally excluded from performance comparisons.
     with torch.profiler.profile(activities=[torch.profiler.ProfilerActivity.CPU, torch.profiler.ProfilerActivity.CUDA],
                                 record_shapes=False, profile_memory=False, with_stack=False) as prof:
@@ -179,6 +184,9 @@ def profile_run(weights, data_root, device, policy="P0", output="artifacts/profi
                      "self_device_time_us": event.self_device_time_total})
     rows.sort(key=lambda x: x["self_device_time_us"], reverse=True)
     result = {"protocol_version": 2, "policy": policy, "precision": precision, "hardware": detector.hardware,
+              "frozen_config_sha256": frozen["frozen_config_sha256"], "source": provenance(),
+              "rate_multiplier": rate_multiplier, "offered_rate_rps": offered_rate,
+              "settings": settings, "input_subset": "calibration",
               "profiler_not_formal_timing": True, "top_operators": rows[:40],
               "trace": "timeline.json", "forward_microbench": micro, "metrics_with_profiler_overhead": metrics}
     write_json(root / "summary.json", result)

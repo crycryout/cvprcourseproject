@@ -30,6 +30,7 @@ def main():
         if name == "profile":
             p.add_argument("--policy", choices=["E0", "E1", "G0", "P0", "F0", "D0", "C0"], default="P0")
             p.add_argument("--output", default="artifacts/profile_v2")
+            p.add_argument("--rate-multiplier", type=float, choices=[.3, 1.1], default=1.1)
         if name == "compile-baseline":
             p.add_argument("--compile-backend", default="inductor", choices=["inductor"])
     args = parser.parse_args()
@@ -70,7 +71,7 @@ def main():
             result = run_matrix(args.matrix, args.frozen, args.weights, args.data_root, args.device, args.output, args.limit)
         elif args.command == "profile":
             from .profile import profile_run
-            result = profile_run(args.weights, args.data_root, args.device, args.policy, args.output)
+            result = profile_run(args.weights, args.data_root, args.device, args.policy, args.output, args.rate_multiplier)
         elif args.command == "compile-baseline":
             from .profile import bounded_compile_attempt
             result = bounded_compile_attempt(args.weights, args.data_root, args.device)

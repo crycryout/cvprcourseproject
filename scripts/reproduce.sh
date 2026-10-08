@@ -11,12 +11,16 @@ python -m cvpr_project verify-model
 python -m cvpr_project pilot
 python -m cvpr_project compile-baseline
 python scripts/run_when_idle.py calibrate
-python scripts/validate_slots.py
+python scripts/run_when_idle.py validate-slots
 python -m cvpr_project freeze
 python scripts/make_matrix.py --output artifacts/serving_matrix_v2.json
 python scripts/run_when_idle.py evaluate-quality
 python scripts/run_when_idle.py run-matrix
-python -m cvpr_project profile --policy E1 --output artifacts/profile_E1
-python -m cvpr_project profile --policy P0 --output artifacts/profile_P0
-python -m cvpr_project profile --policy C0 --output artifacts/profile_C0
+for policy in E1 P0 C0; do
+    if [[ "$policy" == C0 ]] && ! python -c 'import json; assert json.load(open("artifacts/compile_v2.json"))["status"] == "passed"'; then
+        continue
+    fi
+    python scripts/run_when_idle.py profile -- --policy "$policy" --rate-multiplier 0.3 --output "artifacts/profile_${policy}_low"
+    python scripts/run_when_idle.py profile -- --policy "$policy" --rate-multiplier 1.1 --output "artifacts/profile_${policy}"
+done
 python -m cvpr_project analyze

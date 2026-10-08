@@ -147,6 +147,8 @@ The p99, SLO-success, completion-ratio curves and execution ablation are exporte
 
 {profile_rows}
 
+Separate E1, P0 and valid C0 profiles replay calibration images at 0.3 and 1.1 times the frozen common capacity, using each policy's frozen settings. Their profiled metrics include instrumentation overhead and never replace formal timing. Profiles ending in `_low` denote 0.3 load; the others denote 1.1 load. GPU-resident forward microbenchmarks use 50 timed samples after 10 warmups per bucket and exclude JPEG processing, transfer, queueing, and CPU postprocessing; the measured values are exported in `forward_microbench.csv`.
+
 ![Separate P0 correlated CUDA timeline; blue denotes kernels and orange denotes memory copies.](../results/figures/profile_P0_timeline.png)
 
 Graph initialization includes warmup, every slot's capture, and private pools. Graph and pinned-memory metadata are saved in `graph_pool_v2.json`; per-run memory includes all resident executor pools because the matrix reuses one process across randomized policies. These numbers must not be interpreted as an isolated E0-versus-F0 memory comparison. Main-process CPU cores are CPU seconds divided by wall seconds over warmup, measurement, drain and request export; the separate load generator is excluded. Completed-batch occupancies are in `batch_distribution.csv`.

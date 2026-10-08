@@ -204,10 +204,18 @@ def analyze(runs, output, frozen_path):
     profiles = []
     microbench = []
     for trace_path in Path("artifacts").glob("profile*/timeline.json"):
+        summary_path = trace_path.parent / "summary.json"
+        if not summary_path.exists():
+            continue
+        summary = read_json(summary_path)
+        if summary.get("frozen_config_sha256") != frozen["frozen_config_sha256"]:
+            continue
+        write_json(output / f"{trace_path.parent.name}.json", sanitize_public(summary))
         profiles.append({"profile": trace_path.parent.name, **timeline_figure(trace_path, figures / f"{trace_path.parent.name}_timeline.png")})
         micro_path = trace_path.parent / "forward_microbench.csv"
         if micro_path.exists():
-            microbench.extend(pd.read_csv(micro_path).to_dict("records"))
+            microbench.extend({"profile": trace_path.parent.name, **row}
+                              for row in pd.read_csv(micro_path).to_dict("records"))
     pd.DataFrame(microbench).to_csv(output / "forward_microbench.csv", index=False)
     write_json(output / "profile_overlap.json", {"protocol_version": 2, "profiles": profiles})
     for name in ["precision_v2.json", "stress_v2.json", "graph_pool_v2.json", "environment_v2.json",
