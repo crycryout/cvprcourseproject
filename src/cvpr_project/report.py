@@ -24,6 +24,12 @@ def write_report(results="results", destination="docs/REPORT.md"):
     overlap = read_json(root / "profile_overlap.json")["profiles"]
     hardware_path = root / "environment_timing_v2.json"
     hardware = read_json(hardware_path if hardware_path.exists() else root / "environment_v2.json")["cuda_device"]
+    environment = read_json(root / "preflight_delivery_v2.json")
+    host = environment["host"]
+    host_text = (f"The host has {'; '.join(host['cpu_models'])}, {host['physical_cores']} physical cores, "
+                 f"{host['logical_processors']} logical processors and {host['ram_total_bytes']/1e9:.2f} GB RAM. "
+                 f"The NVIDIA driver is {', '.join(environment['gpu_driver_versions'])}. "
+                 "This environment probe records specifications, not a benchmark.")
     grouped = runs.groupby(["policy", "arrival_type", "rate_multiplier"])[
         ["goodput_rps", "slo_success", "latency_p95_ms", "latency_p99_ms", "completion_ratio"]].mean()
     comparisons = pd.read_csv(root / "paired_comparisons.csv")
@@ -107,6 +113,8 @@ AP values above are percentages, with COCO IoU 0.50:0.95 for AP. Visualization u
 
 ![Actual DETR detections on COCO images; sources and licenses are recorded in detections/attribution.json.](../results/figures/detection_examples.png)"""))
     sections.append(("Experimental method and calibration", f"""The timing device is {hardware['name']} with {hardware['multiprocessors']} multiprocessors and {hardware['total_memory_bytes']/1e9:.2f} GB visible device memory. The isolated environment uses PyTorch {hardware['torch']}, CUDA build {hardware['cuda_build']}, and pinned Transformers 4.46.3. Initial compatibility smoke used the other card's MIG 2g.20gb partition; it is excluded from full-device timing claims. Formal timing checks other GPU activity instead of terminating unrelated work or changing clocks, drivers, or MIG configuration.
+
+{host_text}
 
 The main input scope is RAM-cached compressed image bytes to CPU detection dictionaries. Every request decodes and transforms again; model outputs and preprocessed inputs are not cached for serving. Workers are chosen using calibration images and then fixed at {cal['cpu_workers']}. The SLO reference is E1 serial E2E p95, S_base={cal['s_base_s']*1000:.3f} ms. Deadline classes are {2*cal['s_base_s']*1000:.3f}, {4*cal['s_base_s']*1000:.3f}, and {8*cal['s_base_s']*1000:.3f} ms with proportions 50/30/20 percent, independent of image content.
 

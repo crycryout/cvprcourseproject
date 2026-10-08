@@ -220,7 +220,7 @@ def analyze(runs, output, frozen_path):
     write_json(output / "profile_overlap.json", {"protocol_version": 2, "profiles": profiles})
     for name in ["precision_v2.json", "stress_v2.json", "graph_pool_v2.json", "environment_v2.json",
                  "environment_timing_v2.json", "compile_v2.json", "cpu_workers_v2.json", "input_contract_v2.json",
-                 "service_table_v2.json", "capacity_v2.json"]:
+                 "service_table_v2.json", "capacity_v2.json", "preflight_delivery_v2.json"]:
         p = Path("artifacts") / name
         if p.exists():
             write_json(output / name, sanitize_public(read_json(p)))

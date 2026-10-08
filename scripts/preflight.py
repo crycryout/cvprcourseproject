@@ -4,6 +4,7 @@ import argparse
 import datetime as dt
 import importlib.metadata
 import json
+import os
 import platform
 import shutil
 import subprocess
@@ -36,6 +37,22 @@ def collect(cuda_smoke=False, device=0):
         "architecture": platform.machine(), "packages": packages,
         "working_disk_free_gb": round(shutil.disk_usage(Path.cwd()).free / 1e9, 2),
     }
+    cpuinfo = Path("/proc/cpuinfo").read_text() if Path("/proc/cpuinfo").exists() else ""
+    cpus = [dict(line.split(":", 1) for line in block.splitlines() if ":" in line)
+            for block in cpuinfo.split("\n\n") if block.strip()]
+    cpus = [{k.strip(): v.strip() for k, v in cpu.items()} for cpu in cpus]
+    memory = Path("/proc/meminfo").read_text() if Path("/proc/meminfo").exists() else ""
+    total_kib = next((int(line.split()[1]) for line in memory.splitlines() if line.startswith("MemTotal:")), None)
+    report["host"] = {
+        "cpu_models": sorted({cpu["model name"] for cpu in cpus if "model name" in cpu}),
+        "logical_processors": os.cpu_count(),
+        "physical_cores": len({(cpu["physical id"], cpu["core id"]) for cpu in cpus
+                               if "physical id" in cpu and "core id" in cpu}) or None,
+        "sockets": len({cpu["physical id"] for cpu in cpus if "physical id" in cpu}) or None,
+        "probe_process_affinity_count": len(os.sched_getaffinity(0)) if hasattr(os, "sched_getaffinity") else None,
+        "ram_total_bytes": total_kib * 1024 if total_kib else None,
+        "kernel_release": platform.release(),
+    }
     if shutil.which("nvidia-smi"):
         report["gpus"] = command([
             "nvidia-smi", "--query-gpu=index,name,memory.total,memory.used,utilization.gpu,driver_version",
@@ -43,6 +60,8 @@ def collect(cuda_smoke=False, device=0):
         ])
     else:
         report["gpus"] = {"available": False, "reason": "nvidia-smi not found"}
+    report["gpu_driver_versions"] = sorted({row.rsplit(",", 1)[-1].strip()
+                                            for row in report["gpus"].get("stdout", "").splitlines()})
     probe = r'''
 import json
 try:

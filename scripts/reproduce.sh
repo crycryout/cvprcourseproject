@@ -5,6 +5,7 @@ export CUDA_VISIBLE_DEVICES="${CVPR_GPU:-0}"
 export OMP_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 export TORCHINDUCTOR_COMPILE_THREADS=4
+python scripts/preflight.py --output artifacts/preflight_delivery_v2.json
 python -m cvpr_project prepare-data
 python -m cvpr_project prepare-model
 python -m cvpr_project verify-model
