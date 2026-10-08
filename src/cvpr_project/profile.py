@@ -58,6 +58,7 @@ def compile_attempt(weights, data_root, device):
     write_json("artifacts/compile_v2.json", record)
     try:
         detector = Detector(weights, precision, device)
+        record["hardware"] = detector.hardware
         corpus = Corpus(data_root, subset="calibration")
         compiled = Executor(detector, backend="compile")
         eager = Executor(detector)
@@ -131,6 +132,8 @@ def profile_run(weights, data_root, device, policy="P0", output="artifacts/profi
     s_base_s = cal["s_base_s"]
     service_ns = {int(k): v for k, v in cal["service_ns"].items()}
     detector = Detector(weights, precision, device)
+    from .hardware import require_device_scope
+    require_device_scope(detector.hardware, cal["cuda_device_info"])
     corpus = Corpus(data_root, subset="calibration")
     backend = "eager" if policy in {"E0", "E1"} else "compile" if policy == "C0" else "graph"
     executor = Executor(detector, backend=backend, pinned=policy != "E0")

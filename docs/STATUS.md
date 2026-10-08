@@ -1,22 +1,37 @@
 # 状态 v2
 
-更新日期：2026-10-09（澳门）。当前执行DETR目标检测serving；主轨已在held-out之前统一为FP32。旧AP-ToMe仅保留Git历史。
+更新日期：2026-10-09（澳门）。实现已完成；当前实验因完整H800不可用而阻塞，尚未完成正式结果或报告。
 
-| 阶段 | 状态 | 证据 |
+| 阶段 | 当前状态 | 真实证据与剩余工作 |
 |---|---|---|
-| v2研究设计/交接 | 已编写并通过本地配置/工具检查 | 当前docs/config/skill |
-| M0 模型/数据/质量 | 已完成 | 官方COCO与固定模型revision；输入/类别/坐标验证；FP32 4桶calibration AP变化≤0.000003 pp |
-| M1 baseline/profile | FP32 pilot已完成；profile待采集 | E0/E1各1000真实请求；E1 E2E p95=32.824750 ms |
-| M2 graph/pipeline | 输出/生命周期验收通过；overlap待profile | 1000真实请求stress；所有bucket/部分batch/延迟CPU消费 |
-| M3 调度/冻结 | 正在重新校准，未冻结 | 修正决策时钟刷新和严格drain截断；R0/F0/C0/D0搜索待新版本完成 |
-| M4 实验 | 未开始 | 无AP/serving实测 |
-| M5 报告 | 实现证据生成器，完整报告待实测 | 英文Markdown/PDF、曲线、消融与时间线生成代码已实现 |
+| M0 模型/数据/质量 | 数据、固定权重和旧质量检查已保存；新scope待验 | 官方5000图像、1000/4000固定split、不可变模型revision与SHA；新设备身份检查需在完整卡恢复后通过 |
+| M1 baseline | 历史pilot保留，新引用待重测 | 15:48 UTC CUDA smoke确认为完整H800；后续校准实际设备与该引用不一致，重新建立pilot/worker/service |
+| M2 graph/pipeline | 实现及历史验证保留，新scope待重验 | 两slot固定地址、显式事件和1000请求检查；新硬件防护在加载权重前拒绝MIG |
+| M3 调度/冻结 | 旧113组MIG成功校准已剔除，当前0/252 | 硬件身份进入候选hash；冻结前逐项核对实际CUDA设备与pilot，未冻结 |
+| M4 实验 | 未开始 | 尚未进行held-out推理，无正式serving结论 |
+| M5 报告 | 生成器完成，待真实结果 | 曲线、消融、质量表、profile与英文Markdown/PDF代码齐备；暂无报告PDF |
 
-当前任务：`calibrate`，由`run_when_idle.py`在空闲窗口自动恢复。2026-10-08 19:36 UTC 已完成113/252组当前runtime校准（初始R0/F0各48组，90秒F0容量已固定，最终rate复核R0完成17组）。累计预算2.366 GPU-hour，其中0.25为未计量smoke的保守预留；准确实时值以`scripts/progress.py`、`artifacts/cost_ledger.jsonl`和active lease为准。其他GPU活动会中止当前配置并保留失败，不结束其他任务。项目存储10.60 GB。8项CPU协议测试通过。
+## 当前硬件阻塞与恢复
 
-后续自动流程：完成校准→空闲时重验两个独立slot→freeze→12个完整4000图像质量评估→300个正式serving配置。正式测量之后独立采集E1/P0/C0的0.3/1.1共同负载profile、Nsight时间线/目标kernel证据，再从真实结果生成报告并推送。尚无held-out结果，不能声明M4/M5完成。
+GPU0：MIG mode=Enabled，但没有GPU/compute instance、没有计算进程。绑定其物理UUID时CUDA返回`No CUDA GPUs are available`。数字`CUDA_VISIBLE_DEVICES=0`实际枚举GPU1上的`H800 MIG 2g.20gb`（30 SM、21,072,183,296 bytes），不是nvidia-smi物理GPU0。校准manifest证明此前113个当前时钟版本成功配置均在MIG上运行，因此不进入完整卡比较。旧Full smoke与部分baseline可以保留为历史，不能与这些MIG校准组合成正式结论。
 
-## 历史执行记录（以顶部当前状态为准）
+已把179个旧校准attempt及752个关联文件按SHA-256保存在本地`artifacts/hardware_scope_attempts`，事件记录为`artifacts/hardware_scope_incident_v2.json`。原始成本照计，当前2.367/30 GPU-hour，其中0.25为未计量smoke保守预留；存储10.60/30 GB。未修改MIG、驱动或其他用户任务。
+
+当前账号无免密码sudo。需要管理员在确认GPU0仍无实例、无计算进程后执行：
+
+```bash
+sudo nvidia-smi -i 0 -mig 0
+```
+
+依据：[NVIDIA MIG说明](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/latest/getting-started-with-mig.html)指出没有GPU/compute instance时不能运行CUDA。只针对GPU0；GPU1已有任务不在修改范围内。
+
+恢复入口：激活项目环境后运行`CVPR_GPU=0 bash scripts/resume_experiments.sh`。入口绑定物理UUID，等待MIG Disabled及整机连续60秒无其他GPU进程；依次重验模型、pilot、编译与校准，冻结后进行12×4000图像质量评估及300个正式配置（若compile无效为8×4000与264配置）。不会自动修改GPU设置。已有freeze不会重新调参。
+
+10项CPU协议/硬件边界测试通过。GPU数值/性能的重新验证尚未执行，不能把CPU测试当作GPU结果。
+
+## 历史执行记录（已归档，不是当前验收）
+
+以下为硬件身份修复前的记录，部分阶段使用完整卡、部分校准使用MIG；不得将其合并为当前正式结果。
 
 ## 服务器执行进展（2026-10-08）
 

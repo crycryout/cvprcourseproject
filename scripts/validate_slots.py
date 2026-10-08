@@ -7,14 +7,18 @@ from cvpr_project.executor import Executor
 from cvpr_project.model import Detector
 from cvpr_project.quality import stress_outputs
 from cvpr_project.runs import assert_no_other_gpu_jobs, gpu_lease, provenance, read_json, stamp, write_json
+from cvpr_project.hardware import require_device_scope
 
 
 def main():
     cal = read_json("artifacts/calibration_v2.json")
-    assert cal["status"] == "calibrated" and len(cal["evidence"]) == 252
+    compiled_record = read_json("artifacts/compile_v2.json")
+    expected = 252 if compiled_record["status"] == "passed" else 204
+    assert cal["status"] == "calibrated" and len(cal["evidence"]) == expected
     with gpu_lease("post-calibration-slot-validation"):
         assert_no_other_gpu_jobs()
         detector = Detector(precision=cal["precision"])
+        require_device_scope(detector.hardware, cal["cuda_device_info"])
         corpus = Corpus(subset="calibration")
         eager = Executor(detector)
         graph = Executor(detector, backend="graph")
@@ -25,7 +29,6 @@ def main():
         if not archived.exists():
             shutil.copy2(initial, archived)
         write_json(initial, result)
-        compiled_record = read_json("artifacts/compile_v2.json")
         if compiled_record["status"] == "passed":
             compiled = Executor(detector, backend="compile")
             result = stress_outputs(eager, compiled, corpus, requests=1000,

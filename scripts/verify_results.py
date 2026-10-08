@@ -57,7 +57,7 @@ def main():
         assert q["precision"] == frozen["calibration"]["precision"]
         assert q["quality_gate_passed"] == "True" and abs(float(q["AP_change_pp"])) <= .1
         assert len(q["predictions_sha256"]) == 64
-    for name in ["buffer_pool.py", "data.py", "executor.py", "graph_pool.py", "metrics.py", "model.py",
+    for name in ["buffer_pool.py", "data.py", "executor.py", "graph_pool.py", "metrics.py", "model.py", "hardware.py",
                  "scheduler.py", "serve.py", "trace.py", "quality.py", "matrix.py"]:
         path = Path("src/cvpr_project") / name
         assert sha256(path) == frozen["source"]["source_files_sha256"][str(path)], path

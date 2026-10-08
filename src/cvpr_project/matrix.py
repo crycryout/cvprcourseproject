@@ -13,6 +13,7 @@ from .runs import (read_json, write_json, run_id, provenance, sha256, object_has
                    assert_no_other_gpu_jobs, gpu_snapshot, resource_totals)
 from .serve import run_serving
 from .trace import make_trace, trace_hash
+from .hardware import require_device_scope
 
 
 def load_frozen(path):
@@ -29,7 +30,7 @@ def verify_evaluation_inputs(frozen, weights, data_root):
     assert_no_other_gpu_jobs()
     source = frozen["source"]["source_files_sha256"]
     for name in ["buffer_pool.py", "data.py", "executor.py", "graph_pool.py", "metrics.py",
-                 "model.py", "scheduler.py", "serve.py", "trace.py", "quality.py", "matrix.py"]:
+                 "model.py", "hardware.py", "scheduler.py", "serve.py", "trace.py", "quality.py", "matrix.py"]:
         path = Path("src/cvpr_project") / name
         if sha256(path) != source[str(path)]:
             raise ValueError(f"Frozen evaluation code changed: {path}")
@@ -54,6 +55,7 @@ def evaluate_quality(frozen_path, weights, data_root, device):
     frozen = load_frozen(frozen_path)
     verify_evaluation_inputs(frozen, weights, data_root)
     detector = Detector(weights, frozen["calibration"]["precision"], device)
+    require_device_scope(detector.hardware, frozen["calibration"]["cuda_device_info"])
     corpus = Corpus(data_root, subset="held_out")
     output = Path("artifacts/quality_held_out")
     summaries = []
@@ -99,6 +101,7 @@ def run_matrix(matrix_path, frozen_path, weights, data_root, device, output="art
         raise ValueError("Verified held-out quality is required before formal serving matrix")
     corpus = Corpus(data_root, subset="held_out")
     detector = Detector(weights, calibration["precision"], device)
+    require_device_scope(detector.hardware, calibration["cuda_device_info"])
     graph = Executor(detector, buckets=calibration["common_buckets"], backend="graph")
     eager = Executor(detector, buckets=calibration["common_buckets"])
     pageable = Executor(detector, buckets=(1,), slots_per_bucket=1, pinned=False)

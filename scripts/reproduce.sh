@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
-export CUDA_VISIBLE_DEVICES="${CVPR_GPU:-0}"
+export CUDA_VISIBLE_DEVICES="$(nvidia-smi --id="${CVPR_GPU:-0}" --query-gpu=uuid --format=csv,noheader)"
 export OMP_NUM_THREADS=1
 export MKL_NUM_THREADS=1
 export TORCHINDUCTOR_COMPILE_THREADS=4

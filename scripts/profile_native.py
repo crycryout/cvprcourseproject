@@ -7,6 +7,7 @@ from cvpr_project.data import Corpus
 from cvpr_project.executor import Executor
 from cvpr_project.model import Detector
 from cvpr_project.matrix import load_frozen
+from cvpr_project.hardware import require_device_scope
 from cvpr_project.runs import assert_no_other_gpu_jobs, gpu_lease, provenance, read_json, write_json
 from cvpr_project.scheduler import Ready
 from cvpr_project.serve import run_serving
@@ -26,6 +27,7 @@ def main():
         frozen = load_frozen("artifacts/frozen_v2.json")
         cal = frozen["calibration"]
         detector = Detector(precision=cal["precision"])
+        require_device_scope(detector.hardware, cal["cuda_device_info"])
         corpus = Corpus(subset="calibration")
         executor = Executor(detector, backend=args.backend)
         batch = [Ready(i, image_id, 0, 0, 0, detector.preprocess(corpus.image(image_id)))

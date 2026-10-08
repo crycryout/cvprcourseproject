@@ -242,6 +242,9 @@ def analyze(runs, output, frozen_path):
         p = Path("artifacts") / name
         if p.exists():
             write_json(output / name, sanitize_public(read_json(p)))
+    hardware_incident = Path("artifacts/hardware_scope_incident_v2.json")
+    if hardware_incident.exists():
+        write_json(output / hardware_incident.name, sanitize_public(read_json(hardware_incident)))
     attempts = []
     for p in sorted(Path("artifacts/compile_attempts").glob("*.json")):
         record = sanitize_public(read_json(p))

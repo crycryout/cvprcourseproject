@@ -38,6 +38,16 @@ def write_report(results="results", destination="docs/REPORT.md"):
                  f"{host['logical_processors']} logical processors and {host['ram_total_bytes']/1e9:.2f} GB RAM. "
                  f"The NVIDIA driver is {', '.join(environment['gpu_driver_versions'])}. "
                  "This environment probe records specifications, not a benchmark.")
+    incident_path = root / "hardware_scope_incident_v2.json"
+    incident_text = ""
+    if incident_path.exists():
+        incident = read_json(incident_path)
+        incident_text = (f"An earlier calibration epoch resolved numeric CUDA device zero to an H800 MIG 2g.20gb "
+                         f"partition rather than the full-device baseline. Its {incident['current_clock_runtime_completed_mig_calibration_cases']} "
+                         "completed configurations were excluded from this full-device comparison. The original files, "
+                         "hashes, failed attempt and charged costs were preserved. No held-out inference had begun. "
+                         "The corrected runtime rejects MIG, binds a physical GPU UUID and requires the same actual CUDA "
+                         "device/software identity in pilot, calibration, freeze and evaluation.")
     grouped = runs.groupby(["policy", "arrival_type", "rate_multiplier"])[
         ["goodput_rps", "slo_success", "latency_p95_ms", "latency_p99_ms", "completion_ratio"]].mean()
     comparisons = pd.read_csv(root / "paired_comparisons.csv")
@@ -123,6 +133,8 @@ AP values above are percentages, with COCO IoU 0.50:0.95 for AP. Visualization u
     sections.append(("Experimental method and calibration", f"""The timing device is {hardware['name']} with {hardware['multiprocessors']} multiprocessors and {hardware['total_memory_bytes']/1e9:.2f} GB visible device memory. The isolated environment uses PyTorch {hardware['torch']}, CUDA build {hardware['cuda_build']}, and pinned Transformers 4.46.3. Initial compatibility smoke used the other card's MIG 2g.20gb partition; it is excluded from full-device timing claims. Formal timing checks other GPU activity instead of terminating unrelated work or changing clocks, drivers, or MIG configuration.
 
 {host_text}
+
+{incident_text}
 
 The main input scope is RAM-cached compressed image bytes to CPU detection dictionaries. Every request decodes and transforms again; model outputs and preprocessed inputs are not cached for serving. The worker-pool limit is chosen using calibration images and then fixed at {cal['cpu_workers']}. Serial E0/E1/G0 controls permit only one request at a time, including CPU preprocessing; concurrent policies can use the full worker pool. Thus G0/P0 compares the combined CPU-GPU pipeline, not GPU-copy overlap alone. The SLO reference is E1 serial E2E p95, S_base={cal['s_base_s']*1000:.3f} ms. Deadline classes are {2*cal['s_base_s']*1000:.3f}, {4*cal['s_base_s']*1000:.3f}, and {8*cal['s_base_s']*1000:.3f} ms with proportions 50/30/20 percent, independent of image content.
 

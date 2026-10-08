@@ -1,5 +1,6 @@
 """Pinned pretrained model and common pixel-mask/coordinate contract."""
 from pathlib import Path
+import hashlib
 import json
 import urllib.request
 import numpy as np
@@ -7,6 +8,7 @@ import torch
 from transformers import DetrForObjectDetection, DetrImageProcessor
 from .data import download
 from .runs import read_json, sha256, write_json
+from .hardware import require_device_scope
 
 MODEL_ID = "facebook/detr-resnet-50"
 PINNED_REVISION = "70120ba84d68ca1211e007c4fb61d0cd5424be54"
@@ -41,6 +43,14 @@ class Detector:
         self.precision = precision
         self.dtype = torch.bfloat16 if precision == "bf16" else torch.float32
         self.device = torch.device(device)
+        properties = torch.cuda.get_device_properties(self.device)
+        self.hardware = {"name": properties.name, "total_memory_bytes": properties.total_memory,
+                         "multiprocessors": properties.multi_processor_count,
+                         "compute_capability": [properties.major, properties.minor],
+                         "torch": torch.__version__, "cuda_build": torch.version.cuda,
+                         "cudnn_version": torch.backends.cudnn.version(),
+                         "device_uuid_sha256": hashlib.sha256(str(properties.uuid).encode()).hexdigest()}
+        require_device_scope(self.hardware)
         torch.backends.cuda.matmul.allow_tf32 = False
         torch.backends.cudnn.allow_tf32 = False
         torch.backends.cudnn.benchmark = False
@@ -53,12 +63,6 @@ class Detector:
         self.model.requires_grad_(False)
         self.model.to(device=self.device, dtype=self.dtype)
         self.id2label = {int(k): v for k, v in self.model.config.id2label.items()}
-        properties = torch.cuda.get_device_properties(self.device)
-        self.hardware = {"name": properties.name, "total_memory_bytes": properties.total_memory,
-                         "multiprocessors": properties.multi_processor_count,
-                         "compute_capability": [properties.major, properties.minor],
-                         "torch": torch.__version__, "cuda_build": torch.version.cuda,
-                         "cudnn_version": torch.backends.cudnn.version()}
 
     def preprocess(self, image):
         # Uses version-pinned official API; padding is not real image content.

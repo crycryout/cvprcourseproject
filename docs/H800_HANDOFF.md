@@ -36,8 +36,10 @@ codex
 
 中断恢复：先检查active process、run manifest和freeze版本，续跑第一个未完成gate；不重复启动、不覆盖结果、不重新用held-out调参。
 
-`cvpr_project`全部CLI已实现，6项CPU协议测试通过；完整实测进度以STATUS为准。创建Python 3.10独立环境，安装`configs/requirements.lock.txt`后`pip install --no-deps -e .`。完整执行使用`CVPR_GPU=0 bash scripts/reproduce.sh`，已完成的同hash配置自动恢复。正式运行使用完整H800，不使用MIG smoke替代性能测量。
+`cvpr_project`全部CLI已实现，10项CPU协议/硬件边界测试通过；完整实测进度以STATUS为准。创建Python 3.10独立环境，安装`configs/requirements.lock.txt`后`pip install --no-deps -e .`。完整执行使用`CVPR_GPU=0 bash scripts/reproduce.sh`，已完成的同hash配置自动恢复。正式运行使用完整H800，不使用MIG smoke替代性能测量。
 
-`scripts/run_when_idle.py`等候连续60秒无其他GPU任务后启动calibrate/evaluate-quality/run-matrix，只重试明确的GPU干扰失败；其他错误保持退出状态供检查。矩阵每个配置还会每5秒检查GPU任务。不得结束其他人的任务。
+`scripts/run_when_idle.py`先解析物理GPU UUID并检查MIG Disabled，再等候连续60秒无其他GPU任务后启动各GPU阶段，只重试明确的GPU干扰失败；其他错误保持退出状态供检查。矩阵每个配置还会每5秒检查GPU任务。不得结束其他人的任务。
 
 在已有实验目录中恢复时不要重跑verify-model/pilot覆盖校准引用；检查active lease和freeze后，从未完成命令恢复。修改被冻结的runtime、数据或权重会被拒绝。完整重新复现应从新checkout与独立artifacts开始。
+
+硬件事件：数字CUDA序号与nvidia-smi物理序号不能在MIG环境中混用。runtime必须使用实际CUDA device name、SM数、可见内存、UUID hash和软件版本核对；pilot/calibration/freeze/quality/main一致才接受。当前GPU0开启MIG但无实例，管理员恢复后使用`CVPR_GPU=0 bash scripts/resume_experiments.sh`，该入口保留freeze并从未完成阶段续跑。详见STATUS。

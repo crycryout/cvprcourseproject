@@ -117,10 +117,12 @@ def correctness_and_pilot(weights, data_root, device, workers=4):
                "images_per_candidate": 100, "trials": worker_trials, "selected_workers": selected_workers})
     e0 = Executor(detector, buckets=(1,), slots_per_bucket=1, pinned=False)
     result0 = pilot(e0, corpus, requests=1000, time_cap_s=300)
+    result0.update(hardware=detector.hardware, precision=precision, source=provenance())
     write_json("artifacts/pilot_E0_v2.json", result0)
     del e0
     e1 = Executor(detector, buckets=(1,), slots_per_bucket=1)
     result1 = pilot(e1, corpus, requests=1000, time_cap_s=300)
+    result1.update(hardware=detector.hardware, precision=precision, source=provenance())
     write_json("artifacts/pilot_E1_v2.json", result1)
     del e1
     graph = Executor(detector, backend="graph")
@@ -151,6 +153,8 @@ def calibrate(weights, data_root, device, workers=4, resume=True):
             "e1_capacity_rps": read_json("artifacts/pilot_E1_v2.json")["serial_rps"],
             "service_ns": read_json("artifacts/service_table_v2.json")["service_ns"]}
     detector = Detector(weights, base["precision"], device)
+    from .hardware import require_device_scope
+    require_device_scope(detector.hardware, read_json("artifacts/pilot_E1_v2.json")["hardware"])
     corpus = Corpus(data_root, subset="calibration")
     graph = Executor(detector, backend="graph")
     eager = Executor(detector, backend="eager")
@@ -172,15 +176,16 @@ def calibrate(weights, data_root, device, workers=4, resume=True):
             from .trace import trace_hash
             identity = object_hash({"policy": policy, "settings": settings, "rate_rps": rate,
                                    "trace_sha256": trace_hash(trace), "precision": base["precision"],
-                                   "workers": workers, "service_ns": service,
+                                   "workers": workers, "service_ns": service, "hardware": detector.hardware,
                                    "runtime_sha256": {name: sha256(Path("src/cvpr_project") / name) for name in
-                                       ["executor.py", "buffer_pool.py", "graph_pool.py", "serve.py", "scheduler.py", "model.py"]}})
+                                       ["executor.py", "buffer_pool.py", "graph_pool.py", "serve.py", "scheduler.py", "model.py", "hardware.py"]}})
             case_root = Path("artifacts/calibration_runs") / case
             previous = []
             if resume:
                 for p in sorted(case_root.glob("*/manifest.json")):
                     old = read_json(p)
                     if old["status"] == "completed" and old["calibration_config_sha256"] == identity:
+                        require_device_scope(old["cuda_device_info"], detector.hardware)
                         previous.append(p.parent)
             if len(previous) > 1:
                 raise ValueError(f"Duplicate completed calibration candidate {case}")
@@ -227,9 +232,10 @@ def calibrate(weights, data_root, device, workers=4, resume=True):
             scored.append((*_score(result), -candidate["max_batch"], -candidate["wait_ms"], candidate))
         selected[policy] = max(scored, key=lambda x: x[:-1])[-1]
     capacity_identity = object_hash({"initial_F0": selected["F0"], "base": base, "workers": workers,
+        "hardware": detector.hardware,
         "initial_evidence": [e["run_id"] for e in evidence if e["policy"] == "F0"],
         "runtime": {name: sha256(Path("src/cvpr_project") / name) for name in
-                    ["executor.py", "buffer_pool.py", "graph_pool.py", "serve.py", "scheduler.py", "model.py"]}})
+                    ["executor.py", "buffer_pool.py", "graph_pool.py", "serve.py", "scheduler.py", "model.py", "hardware.py"]}})
     capacity_path = Path("artifacts/capacity_v2.json")
     if capacity_path.exists():
         cap = read_json(capacity_path)
@@ -262,6 +268,7 @@ def calibrate(weights, data_root, device, workers=4, resume=True):
     for policy in ["E0", "E1", "G0", "P0"]:
         selected[policy] = {"max_batch": 1, "wait_ms": 0}
     result = {"protocol_version": 2, "status": "calibrated", **base,
+              "cuda_device_info": detector.hardware,
               "lambda_ref_rps": cap["lambda_ref_rps"], "rate_multipliers": [.3, .6, .9, 1.1],
               "rates_rps": rates, "policies": selected, "common_buckets": list(graph.buckets),
               "cpu_workers": workers, "calibration_trace_type": "poisson", "calibration_trace_seed": calibration_seed,
@@ -278,6 +285,11 @@ def freeze(config_path="configs/project.json"):
     if config["protocol_version"] != 2:
         raise ValueError("Only protocol v2 is supported")
     calibration = read_json("artifacts/calibration_v2.json")
+    from collections import Counter
+    from .hardware import require_device_scope
+    if calibration.get("status") != "calibrated":
+        raise ValueError("Only completed calibration can be frozen")
+    require_device_scope(calibration["cuda_device_info"], read_json("artifacts/pilot_E1_v2.json")["hardware"])
     model = read_json("artifacts/model_v2.json")
     data = read_json("artifacts/data_v2.json")
     result = {"protocol_version": 2, "status": "frozen", "config": config, "config_sha256": sha256(config_path),
@@ -288,6 +300,18 @@ def freeze(config_path="configs/project.json"):
     result["compile"] = sanitize_public(read_json(compile_path)) if compile_path.exists() else {"status": "not_attempted"}
     if result["compile"].get("status") == "passed" and result["compile"].get("precision") != calibration["precision"]:
         raise ValueError("Compile compatibility evidence belongs to another precision")
+    counts = Counter(e["policy"] for e in calibration["evidence"])
+    expected = {"R0": 96, "F0": 96, "D0": 12}
+    if result["compile"].get("status") == "passed":
+        expected["C0"] = 48
+        require_device_scope(result["compile"]["hardware"], calibration["cuda_device_info"])
+    if counts != Counter(expected) or len({e["case"] for e in calibration["evidence"]}) != sum(expected.values()):
+        raise ValueError("Calibration search evidence is incomplete or duplicated")
+    for e in calibration["evidence"]:
+        manifest = read_json(Path("artifacts/calibration_runs") / e["case"] / e["run_id"] / "manifest.json")
+        if manifest["status"] != "completed":
+            raise ValueError("Failed calibration cannot enter a freeze")
+        require_device_scope(manifest["cuda_device_info"], calibration["cuda_device_info"])
     result["frozen_config_sha256"] = object_hash(result)
     path = Path("artifacts/frozen_v2.json")
     if path.exists() and read_json(path)["frozen_config_sha256"] != result["frozen_config_sha256"]:

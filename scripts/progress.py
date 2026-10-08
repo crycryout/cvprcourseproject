@@ -6,7 +6,7 @@ from cvpr_project.runs import read_json, resource_totals, sha256
 
 
 def main():
-    names = ["executor.py", "buffer_pool.py", "graph_pool.py", "serve.py", "scheduler.py", "model.py"]
+    names = ["executor.py", "buffer_pool.py", "graph_pool.py", "serve.py", "scheduler.py", "model.py", "hardware.py"]
     hashes = {f"src/cvpr_project/{n}": sha256(Path("src/cvpr_project") / n) for n in names}
     completed_calibration = []
     for path in Path("artifacts/calibration_runs").glob("*/*/manifest.json"):

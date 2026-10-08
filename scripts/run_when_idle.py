@@ -5,6 +5,7 @@ Retry only explicit GPU-interference failures. Other failures remain actionable
 errors rather than being hidden in an endless retry loop.
 """
 import argparse
+import os
 import subprocess
 import shutil
 import sys
@@ -15,11 +16,21 @@ from cvpr_project.runs import other_gpu_pids, resource_totals, stamp
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("stage", choices=["calibrate", "evaluate-quality", "run-matrix", "validate-slots", "profile", "collect-nsight"])
+    parser.add_argument("stage", choices=["verify-model", "pilot", "compile-baseline", "calibrate", "evaluate-quality", "run-matrix", "validate-slots", "profile", "collect-nsight"])
     parser.add_argument("--idle-seconds", type=int, default=60)
     parser.add_argument("extra", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     extra = args.extra[1:] if args.extra[:1] == ["--"] else args.extra
+    selected = os.environ.get("CUDA_VISIBLE_DEVICES", os.environ.get("CVPR_GPU", "0"))
+    if "," in selected or selected.startswith("MIG-"):
+        raise ValueError("This protocol requires exactly one full physical H800")
+    selected = subprocess.check_output(["nvidia-smi", "--id", selected, "--query-gpu=uuid",
+                                        "--format=csv,noheader"], text=True).strip()
+    os.environ["CUDA_VISIBLE_DEVICES"] = selected
+    def full_mode_available():
+        mode = subprocess.check_output(["nvidia-smi", "--id", selected, "--query-gpu=mig.mode.current",
+                                        "--format=csv,noheader"], text=True).strip()
+        return mode == "Disabled"
     command = ([sys.executable, "-u", "scripts/collect_nsight.py"] if args.stage == "collect-nsight" else
                [sys.executable, "-u", "scripts/validate_slots.py"] if args.stage == "validate-slots"
                else [sys.executable, "-u", "-m", "cvpr_project", args.stage]) + extra
@@ -27,9 +38,9 @@ def main():
     attempt = 0
     while True:
         idle_since = None
-        print(f"{stamp()} waiting for an idle GPU before {args.stage}", flush=True)
+        print(f"{stamp()} waiting for a full H800 and an idle host before {args.stage}", flush=True)
         while idle_since is None or time.monotonic() - idle_since < args.idle_seconds:
-            if other_gpu_pids():
+            if not full_mode_available() or other_gpu_pids():
                 idle_since = None
             elif idle_since is None:
                 idle_since = time.monotonic()

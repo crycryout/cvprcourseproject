@@ -6,7 +6,7 @@ English title: **Deadline-Aware Object Detection Serving on NVIDIA H800 with CUD
 
 以预训练DETR为视觉工作负载，研究提交、传输、同步和排队开销。重点是MLSys / AI Infra运行时设计，不训练新视觉模型，不研究token pruning/merging。真实图像输入、检测框输出和COCO检测精度评测保留，满足课程的视觉任务边界。
 
-> v2推理、开放环调度、校准/冻结、质量评估、矩阵恢复、profiling及报告代码已实现。FP32模型与Graph正确性、真实E0/E1 pilot和编译基线已通过；完整实验正在执行，见[当前状态](docs/STATUS.md)。旧AP-ToMe保留在Git历史提交 `a9491421aa1d607b34fe10894ea8b021544f8144`。
+> v2运行时、校准/冻结、矩阵恢复、profiling和报告生成器已实现，10项CPU测试通过。当前发现校准误选MIG分区，旧记录已保留并剔除；完整GPU0处于MIG开启但无实例状态，等待管理员恢复。正式实验与报告尚未完成，见[当前状态](docs/STATUS.md)。旧AP-ToMe只保留Git历史。
 
 ## 为什么贴近你的背景
 
@@ -42,6 +42,8 @@ python3 scripts/preflight.py --output artifacts/preflight_v2.json
 python3 scripts/make_matrix.py --output artifacts/serving_matrix_v2.json
 ```
 
-完整复现：确认一张完整H800空闲后运行`CVPR_GPU=0 bash scripts/reproduce.sh`。需要官方COCO下载及固定DETR权重，环境锁为实测Python 3.10/PyTorch 2.14.0/CUDA 13.0；数据、权重、原始请求日志和完整profile仅保留本地，不上传Git。CPU协议检查不需要GPU。
+完整复现（新checkout/artifacts）：确认一张完整H800可用且整机空闲后运行`CVPR_GPU=0 bash scripts/reproduce.sh`。需要官方COCO下载及固定DETR权重，环境锁为实测Python 3.10/PyTorch 2.14.0/CUDA 13.0；数据、权重、原始请求日志和完整profile仅保留本地，不上传Git。CPU协议检查不需要GPU。
 
 已完成的配置按manifest和hash恢复；GPU干扰会保存失败并等待空闲后重试。已有freeze与新配置冲突时拒绝覆盖，重做实验使用新checkout/evidence目录。完整矩阵包括252主实验、12 EDF控制及36有效编译基线，计时窗口每个60秒；预算上限30 GPU-hours/30 GB。详细操作见[H800交接](docs/H800_HANDOFF.md)，CUDA生命周期见[CUDA_RUNTIME](docs/CUDA_RUNTIME.md)。
+
+当前实验恢复：激活环境后执行`CVPR_GPU=0 bash scripts/resume_experiments.sh`。程序先将nvidia-smi物理序号解析为GPU UUID；runtime以真实CUDA属性和UUID hash核对设备，拒绝把MIG分区冒充完整卡。GPU0当前需管理员关闭空配置MIG模式，见[恢复命令](docs/STATUS.md)。
