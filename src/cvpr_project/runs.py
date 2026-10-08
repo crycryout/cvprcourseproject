@@ -105,8 +105,9 @@ def other_gpu_pids():
                 detail.update({key: next((line.split(":", 1)[1].strip() for line in status.splitlines()
                                          if line.startswith(key + ":")), None) for key in ["Name", "Tgid", "PPid"]})
                 detail["cwd"] = str(Path(f"/proc/{pid}/cwd").resolve())
-            except OSError:
-                detail["process_no_longer_present"] = True
+            except OSError as exc:
+                detail["process_metadata_inaccessible"] = True
+                detail["metadata_error_type"] = type(exc).__name__
             processes.append(detail)
         try:
             write_json(ARTIFACTS / "gpu_interference_checks" / f"probe-{time.time_ns()}.json",
