@@ -75,7 +75,8 @@ def main():
             output = execute(f"nsys-{name}", [nsys, "stats", "--report", name, "--format", "csv",
                                                "--output", "-", str(report)])
             parsed = list(csv.reader(io.StringIO(output)))
-            header_index = next((i for i, row in enumerate(parsed) if "Name" in row), None)
+            header_index = next((i for i, row in enumerate(parsed)
+                                 if any(key in row for key in ["Name", "Operation", "Range"])), None)
             if header_index is None:
                 raise ValueError(f"No CSV table in actual Nsight report {name}")
             header = parsed[header_index]
