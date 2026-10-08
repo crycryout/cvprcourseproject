@@ -66,6 +66,16 @@ def detection_figure(root, output):
     examples = read_json(attribution_path)["examples"]
     if not examples:
         return
+    credits = ["# Detection examples and source credits", "",
+               "Real COCO calibration images with pretrained eager FP32 DETR boxes at score >= 0.7. "
+               "Offline AP retains threshold zero. Photographs and their overlays retain the source image licenses below. "
+               "COCO metadata does not supply author names; the original photo pages are retained. "
+               "Full source metadata and overlay modifications are recorded in `attribution.json`.", ""]
+    for example in examples:
+        license = example["license"]
+        credits.append(f"- COCO {example['image_id']}: [original photo]({example['source_photo_page']}), "
+                       f"[{license['name']}]({license['url']}).")
+    (root / "detections/README.md").write_text("\n".join(credits) + "\n")
     fig, axes = plt.subplots(1, len(examples), figsize=(12, 3.6), squeeze=False)
     for ax, example in zip(axes[0], examples):
         ax.imshow(plt.imread(root / f"detections/coco_{example['image_id']}_detections.jpg"))

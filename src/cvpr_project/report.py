@@ -119,7 +119,7 @@ Offline COCOeval uses every held-out image, threshold zero, up to 100 queries, a
 
 AP values above are percentages, with COCO IoU 0.50:0.95 for AP. Visualization uses threshold 0.7 only; the illustrated detections and attribution metadata are in `results/detections`. Online misses/rejections never select the images used in this table.
 
-![Actual DETR detections on COCO images; sources and licenses are recorded in detections/attribution.json.](../results/figures/detection_examples.png)"""))
+![Actual eager FP32 DETR detections on calibration images; sources and licenses are recorded in detections/attribution.json and detections/README.md.](../results/figures/detection_examples.png)"""))
     sections.append(("Experimental method and calibration", f"""The timing device is {hardware['name']} with {hardware['multiprocessors']} multiprocessors and {hardware['total_memory_bytes']/1e9:.2f} GB visible device memory. The isolated environment uses PyTorch {hardware['torch']}, CUDA build {hardware['cuda_build']}, and pinned Transformers 4.46.3. Initial compatibility smoke used the other card's MIG 2g.20gb partition; it is excluded from full-device timing claims. Formal timing checks other GPU activity instead of terminating unrelated work or changing clocks, drivers, or MIG configuration.
 
 {host_text}
