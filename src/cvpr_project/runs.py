@@ -93,7 +93,27 @@ def other_gpu_pids():
             except (OSError, ValueError, IndexError):
                 return False
         return False
-    return [int(x) for x in result.stdout.splitlines() if x.strip().isdigit() and not own_process(int(x))]
+    others = [int(x) for x in result.stdout.splitlines() if x.strip().isdigit() and not own_process(int(x))]
+    if others:
+        # Local diagnostics distinguish an actual foreign job from a stale
+        # driver PID or thread identifier without changing the exclusion rule.
+        processes = []
+        for pid in others:
+            detail = {"pid": pid}
+            try:
+                status = Path(f"/proc/{pid}/status").read_text()
+                detail.update({key: next((line.split(":", 1)[1].strip() for line in status.splitlines()
+                                         if line.startswith(key + ":")), None) for key in ["Name", "Tgid", "PPid"]})
+                detail["cwd"] = str(Path(f"/proc/{pid}/cwd").resolve())
+            except OSError:
+                detail["process_no_longer_present"] = True
+            processes.append(detail)
+        try:
+            write_json(ARTIFACTS / "gpu_interference_checks" / f"probe-{time.time_ns()}.json",
+                       {"observer_pid": os.getpid(), "host_ns": time.monotonic_ns(), "processes": processes})
+        except OSError:
+            pass
+    return others
 
 
 def assert_no_other_gpu_jobs():
