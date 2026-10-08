@@ -1,0 +1,4 @@
+interface:
+  display_name: "CVPR Course Project"
+  short_description: "Run the H800 vision project with reproducible evidence"
+  default_prompt: "Use $run-cvpr-course-project to continue the CISC8005 project from its latest verified milestone."
