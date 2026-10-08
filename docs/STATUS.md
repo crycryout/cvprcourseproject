@@ -8,11 +8,11 @@
 | M0 模型/数据/质量 | 已完成 | 官方COCO与固定模型revision；输入/类别/坐标验证；FP32 4桶calibration AP变化≤0.000003 pp |
 | M1 baseline/profile | FP32 pilot已完成；profile待采集 | E0/E1各1000真实请求；E1 E2E p95=32.824750 ms |
 | M2 graph/pipeline | 输出/生命周期验收通过；overlap待profile | 1000真实请求stress；所有bucket/部分batch/延迟CPU消费 |
-| M3 调度/冻结 | 正在校准，未冻结 | service表、开放环与恢复机制已运行；R0/F0/C0/D0搜索进行中 |
+| M3 调度/冻结 | 正在重新校准，未冻结 | 修正决策时钟刷新和严格drain截断；R0/F0/C0/D0搜索待新版本完成 |
 | M4 实验 | 未开始 | 无AP/serving实测 |
 | M5 报告 | 实现证据生成器，完整报告待实测 | 英文Markdown/PDF、曲线、消融与时间线生成代码已实现 |
 
-当前任务：`calibrate`，由`run_when_idle.py`在空闲窗口自动恢复。最近预算约0.70 GPU-hour，其中0.25为未计量smoke的保守预留；准确实时值以`artifacts/cost_ledger.jsonl`和active lease为准。短暂其他GPU活动会中止当前配置并保留失败，不结束其他任务。项目存储约10.5 GB。
+当前任务：`calibrate`，由`run_when_idle.py`在空闲窗口自动恢复。最近预算约1.11 GPU-hour，其中0.25为未计量smoke的保守预留；准确实时值以`artifacts/cost_ledger.jsonl`和active lease为准。短暂其他GPU活动会中止当前配置并保留失败，不结束其他任务。项目存储约10.5 GB。
 
 ## 历史执行记录（以顶部当前状态为准）
 
@@ -45,3 +45,5 @@ FP32稳定性验收：calibration b1/b2/b4/b8 AP=36.083574/36.083573/36.083571/3
 FP32编译基线验收通过：4个calibration bucket最大AP变化0.000006个百分点；1000请求stress最大logit差0.003231、normalized box差0.000351（冻结的绝对界0.01/0.000521）。初始严格FP32容差失败已保留；最终编译基线将列入全部质量/serving比较。当前正在执行R0/F0初始搜索和最终rate复核，再校准C0/D0。主实验待freeze后开始。
 
 校准前13个配置已完成；修正D0剩余时间估计后重新校准，旧记录按source hash保留，不混用。未观察到CUDA forward开始的排队批次保持完整R_b；第一次观察后才扣除elapsed，避免把排队时间当成执行时间。6项CPU协议测试覆盖此回归。FP32 E1 E2E p95=32.824750 ms，服务表b1/2/4/8=10.632/17.055/30.173/56.955 ms。尚未开始held-out推理。
+
+冻结前计时复核：CPU消费/解码后重新读取决策时钟，避免数毫秒旧now影响等待/可行性判断；CPU结果若在drain cap之后才完成，标记为cap时unfinished并保留实际时间。观察时长也在cap截断。8项CPU协议测试通过。已保存的旧时钟版本校准记录不复用；新版本重新搜索。尚未开始held-out推理。

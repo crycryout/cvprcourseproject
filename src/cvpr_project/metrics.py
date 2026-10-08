@@ -2,6 +2,14 @@
 import numpy as np
 
 
+def censor_completions_at_cap(rows, cap_ns):
+    """A result materialized just after the drain cap remains unfinished at cap."""
+    for row in rows:
+        if row["status"] == "completed" and row["complete_ns"] > cap_ns:
+            row["status"] = "unfinished"
+            row["completion_observed_after_drain_cap"] = True
+
+
 def summarize(rows, measurement_s, observed_s, min_deadline_s):
     cohort = [r for r in rows if r["measurement"]]
     completed = [r for r in cohort if r["status"] == "completed"]

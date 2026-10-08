@@ -57,3 +57,10 @@ The drain cap closes the observation window before cleanup. Results obtained
 during cleanup do not retroactively turn unfinished requests into completions.
 Every measurement-cohort request remains in the SLO denominator. Completed
 percentiles, completion ratio, and goodput are reported together.
+
+Scheduling refreshes the host clock after CPU consumption/preprocessing work.
+GPU work keeps its full calibrated remaining estimate until a forward-start
+event is observed. A CPU result materialized after the drain cap remains
+unfinished at the cap even if its device copy finished earlier; its actual
+timestamp is retained with an explicit censoring flag. Observation time is
+clamped before synchronization/cleanup.

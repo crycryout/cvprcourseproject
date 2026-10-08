@@ -1,7 +1,7 @@
 import pytest
 from cvpr_project.trace import make_trace, trace_hash
 from cvpr_project.scheduler import Ready, Scheduler, remaining_service_ns
-from cvpr_project.metrics import summarize
+from cvpr_project.metrics import summarize, censor_completions_at_cap
 from cvpr_project.intervals import overlapping_duration
 
 
@@ -71,3 +71,13 @@ def test_profile_overlap_uses_union_and_separate_copy_durations():
     assert overlapping_duration(kernels, copies) == 4
     assert overlapping_duration([], copies) == 0
     assert overlapping_duration(kernels, [(3, 4), (3, 4)]) == 2
+
+
+def test_cpu_result_after_drain_cap_is_censored_even_if_gpu_copy_finished():
+    rows = [dict(measurement=True, status="completed", arrival_ns=0, deadline_ns=100,
+                 enqueue_ns=0, complete_ns=t, identity_ok=True) for t in [89, 90, 91]]
+    censor_completions_at_cap(rows, 90)
+    m = summarize(rows, 60, 90, .01)
+    assert [r["status"] for r in rows] == ["completed", "completed", "unfinished"]
+    assert m["offered"] == 3 and m["ontime"] == 2 and m["unfinished"] == 1
+    assert m["slo_success"] == 2 / 3 and m["completion_ratio"] == 2 / 3

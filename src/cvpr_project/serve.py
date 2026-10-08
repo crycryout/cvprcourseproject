@@ -8,7 +8,7 @@ import time
 import threading
 import sys
 import torch
-from .metrics import summarize
+from .metrics import summarize, censor_completions_at_cap
 from .scheduler import Scheduler, Ready, remaining_service_ns
 from .runs import write_json, other_gpu_pids
 from .trace import trace_hash
@@ -154,6 +154,11 @@ def run_serving(executor, corpus, trace, policy, settings, service_ns, s_base_s,
                                 s.forward_observed_start_ns = time.monotonic_ns()
                             gpu_remaining += remaining_service_ns(service_ns[s.bucket],
                                 s.forward_observed_start_ns, time.monotonic_ns())
+                    # CPU decoding/consumption above may take milliseconds.
+                    # Refresh the absolute decision time after that work.
+                    now = time.monotonic_ns()
+                    if now >= stop_ns:
+                        break
                     decision = scheduler.decide(ready, now, gpu_remaining)
                     if decision.request_ids:
                         slot = executor.free_slot(decision.bucket)
@@ -174,7 +179,8 @@ def run_serving(executor, corpus, trace, policy, settings, service_ns, s_base_s,
                 # CUDA events are queried without a device-wide synchronization.
                 time.sleep(0.00005)
         finally:
-            ended_ns = time.monotonic_ns()
+            loop_exit_ns = time.monotonic_ns()
+            ended_ns = min(loop_exit_ns, stop_ns)
             monitor_stop.set()
             monitor_thread.join(timeout=12)
             if sys.exc_info()[0] is not None and output:
@@ -209,9 +215,11 @@ def run_serving(executor, corpus, trace, policy, settings, service_ns, s_base_s,
                 rows[rid]["status"] = "rejected"
     channel.close()
     channel.join_thread()
+    censor_completions_at_cap(rows, stop_ns)
     observed = max(measurement_s, (ended_ns - epoch.value) / 1e9 - warmup_s)
     metrics = summarize(rows, measurement_s, observed, min(a.relative_deadline_s for a in trace))
     metrics.update(policy=policy, trace_sha256=trace_hash(trace), peak_pending=peak_pending,
+                   observation_cutoff_ns=stop_ns, loop_overrun_after_cap_ms=max(0, loop_exit_ns-stop_ns)/1e6,
                    shared_gpu_jobs_observed=shared_activity.is_set(), gpu_activity_samples=activity_samples,
                    steady_window_completion_rps=sum(r["status"] == "completed" and
                        epoch.value + warmup_s * 1e9 <= r["complete_ns"] <
