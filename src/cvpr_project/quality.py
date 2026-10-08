@@ -104,6 +104,14 @@ def stress_outputs(eager, graph, corpus, requests=1000, atol=1e-5, rtol=1e-4, bo
                 torch.testing.assert_close(gs.host_boxes[:n], held_boxes, atol=0, rtol=0)
                 torch.testing.assert_close(second.host_logits[:n], held_logits.flip(0), atol=atol, rtol=rtol)
                 torch.testing.assert_close(second.host_boxes[:n], held_boxes.flip(0), atol=boxes_atol, rtol=rtol)
+                # Compare the second slot directly to eager too: two indirect
+                # approximate comparisons must not double the allowed bound.
+                reference_logits = es.host_logits[:n].flip(0)
+                reference_boxes = es.host_boxes[:n].flip(0)
+                torch.testing.assert_close(second.host_logits[:n], reference_logits, atol=atol, rtol=rtol)
+                torch.testing.assert_close(second.host_boxes[:n], reference_boxes, atol=boxes_atol, rtol=rtol)
+                max_logits_error = max(max_logits_error, float((second.host_logits[:n].float() - reference_logits.float()).abs().max()))
+                max_boxes_error = max(max_boxes_error, float((second.host_boxes[:n].float() - reference_boxes.float()).abs().max()))
                 graph.consume(second, corpus)
             max_logits_error = max(max_logits_error, float((held_logits.float() - es.host_logits[:n].float()).abs().max()))
             max_boxes_error = max(max_boxes_error, float((held_boxes.float() - es.host_boxes[:n].float()).abs().max()))
