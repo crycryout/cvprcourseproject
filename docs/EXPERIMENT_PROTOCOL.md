@@ -24,7 +24,11 @@ COCO category_id不连续，必须使用checkpoint id2label和官方映射核实
 
 先FP32 eager建立参照，再检查BF16与参照在calibration上的AP差异。主轨默认BF16，若差异>0.3 AP百分点则所有方法主轨统一回到FP32，冻结后不再根据held-out改变精度。FP32时TF32设置也统一并记录。
 
+冻结前还检查同精度各batch bucket相对batch1的calibration AP变化；若BF16不满足0.1个百分点runtime质量门槛，统一回到FP32并重新标定所有policy。此额外稳定性检查仅使用calibration，并在观察到held-out结果前确定；保留失败的BF16证据。FP32若也失败，先修复正确性，不开始正式矩阵。
+
 runtime优化前后使用**同精度/权重/后端/输入**：FP32 raw logits/normalized boxes以atol=1e-5,rtol=1e-4起步；BF16以与FP32参照观察到的数值误差制定并记录容差，不能为了让测试过关无限放宽。主要正确性验收为同精度AP变化≤0.1百分点及1000次request_id/output完整性压力测试；超出先查race、mask、dummy、decode和精度。
+
+编译兼容性记录初始FP32严格容差的全部失败。融合改变浮点运算顺序时，在held-out之前额外冻结一次明确的语义误差界：logits绝对差≤0.01；由cxcywh误差界推导的原图xyxy角点位移≤0.5像素（normalized box atol=0.5/(1.5×calibration最大原图边长)，rtol=0）。仍须通过1000请求压力测试及每个bucket的完整calibration AP≤0.1门槛，最后独立验证held-out AP。不得在此误差界失败后继续放宽。Graph与eager的同bucket比较保留初始严格容差。初始失败与最终误差界都写入报告。
 
 独立离线遍历4000 held-out图像，使用pycocotools COCOeval、IoU0.50:0.95，报告AP/AP50/AP75/AP_small/medium/large。对所有实际backend和batch bucket验证；在线超时样本仍参与离线AP。不同纯调度策略若共享同一已验证executor，可复用该executor的离线AP，但要验证在线request_id→输出匹配。报告这是4000图像subset AP，不能与原论文全5000图像分数直接比较。
 

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cvpr-project"
+version = "2.0.0"
+description = "Reproducible DETR CUDA Graph and deadline-aware serving experiments"
+requires-python = ">=3.10"
+dependencies = [
+  "torch==2.14.0", "transformers==4.46.3",
+  "numpy==1.26.4", "pillow==10.4.0", "pycocotools==2.0.8",
+  "matplotlib==3.9.2", "pandas==2.2.3", "scipy==1.14.1",
+  "huggingface-hub==0.26.2",
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.3.4"]
+paper = ["reportlab==4.2.5"]
+
+[project.scripts]
+cvpr-project = "cvpr_project.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

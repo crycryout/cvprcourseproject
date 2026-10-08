@@ -6,7 +6,7 @@ English title: **Deadline-Aware Object Detection Serving on NVIDIA H800 with CUD
 
 以预训练DETR为视觉工作负载，研究提交、传输、同步和排队开销。重点是MLSys / AI Infra运行时设计，不训练新视觉模型，不研究token pruning/merging。真实图像输入、检测框输出和COCO检测精度评测保留，满足课程的视觉任务边界。
 
-> 2026-10-08按用户反馈重新选题。旧AP-ToMe方案已退出执行计划，保留在Git历史提交 `a9491421aa1d607b34fe10894ea8b021544f8144`。所有当前docs、config、skill和工具以本版为准。当前仅完成研究设计与交接，尚无H800实验结果。
+> v2推理、开放环调度、校准/冻结、质量评估、矩阵恢复、profiling及报告代码已实现。FP32模型与Graph正确性、真实E0/E1 pilot和编译基线已通过；完整实验正在执行，见[当前状态](docs/STATUS.md)。旧AP-ToMe保留在Git历史提交 `a9491421aa1d607b34fe10894ea8b021544f8144`。
 
 ## 为什么贴近你的背景
 
@@ -32,8 +32,16 @@ English title: **Deadline-Aware Object Detection Serving on NVIDIA H800 with CUD
 其他：[课程映射](docs/COURSE_REQUIREMENTS.md)、[相关资料](docs/RELATED_WORK.md)、[报告提纲](docs/REPORT_OUTLINE.md)、[状态](docs/STATUS.md)、[配置](configs/project.json)。
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r configs/requirements.lock.txt
+python -m pip install --no-deps -e .
+python -m pytest -q
+python -m cvpr_project --help
 python3 scripts/preflight.py --output artifacts/preflight_v2.json
 python3 scripts/make_matrix.py --output artifacts/serving_matrix_v2.json
 ```
 
-这两条命令已实现，仅检查环境和生成实验计划；`cvpr_project`推理主体仍需服务器Codex实现。详细启动流程见交接文件。预计2–3周、8–20 GPU-hours，需实测pilot修正；自动执行上限30 GPU-hours。
+完整复现：确认一张完整H800空闲后运行`CVPR_GPU=0 bash scripts/reproduce.sh`。需要官方COCO下载及固定DETR权重，环境锁为实测Python 3.10/PyTorch 2.14.0/CUDA 13.0；数据、权重、原始请求日志和完整profile仅保留本地，不上传Git。CPU协议检查不需要GPU。
+
+已完成的配置按manifest和hash恢复；GPU干扰会保存失败并等待空闲后重试。已有freeze与新配置冲突时拒绝覆盖，重做实验使用新checkout/evidence目录。完整矩阵包括252主实验、12 EDF控制及36有效编译基线，计时窗口每个60秒；预算上限30 GPU-hours/30 GB。详细操作见[H800交接](docs/H800_HANDOFF.md)，CUDA生命周期见[CUDA_RUNTIME](docs/CUDA_RUNTIME.md)。

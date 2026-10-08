@@ -1,12 +1,12 @@
 {
   "protocol_version": 2,
-  "status": "planned_not_executed",
+  "status": "protocol_configuration",
   "course": "CISC8005",
   "project": "deadline-aware-object-detection-serving",
   "model": {
     "candidate_id": "facebook/detr-resnet-50",
-    "revision": null,
-    "revision_requires_server_verification": true,
+    "revision": "70120ba84d68ca1211e007c4fb61d0cd5424be54",
+    "revision_requires_server_verification": false,
     "weights_frozen": true,
     "training": false,
     "shortest_edge": 480,
@@ -14,9 +14,10 @@
     "padded_height": 640,
     "padded_width": 640,
     "pixel_mask_required": true,
-    "precision_candidate": "bf16",
+    "precision_candidate": "fp32",
     "calibration_bf16_max_ap_drop_pp": 0.3,
-    "runtime_max_ap_change_pp": 0.1
+    "runtime_max_ap_change_pp": 0.1,
+    "precision_selection_note": "BF16 calibration b2 AP drift -0.111329 pp violated runtime 0.1 pp gate; FP32 selected before held-out."
   },
   "dataset": {
     "name": "COCO2017_val",
@@ -28,7 +29,12 @@
     "evaluation": "pycocotools_COCOeval_bbox"
   },
   "runtime": {
-    "batch_buckets_candidates": [1, 2, 4, 8],
+    "batch_buckets_candidates": [
+      1,
+      2,
+      4,
+      8
+    ],
     "slots_per_bucket": 2,
     "compute_streams": 1,
     "max_locked_next_batches": 1,
@@ -36,20 +42,53 @@
     "overflow_rule": "reject_newest_count_as_SLO_failure",
     "drop_expired": false,
     "result_cache": false,
-    "search_wait_ms": [0, 1, 2]
+    "search_wait_ms": [
+      0,
+      1,
+      2
+    ]
   },
   "policies": {
-    "main": ["E0", "E1", "G0", "P0", "R0", "F0", "D0"],
+    "main": [
+      "E0",
+      "E1",
+      "G0",
+      "P0",
+      "R0",
+      "F0",
+      "D0"
+    ],
     "required_ablation": "A0",
     "optional_after_bounded_attempt": "C0"
   },
   "workload": {
-    "arrival_types": ["periodic", "poisson", "burst"],
-    "rate_multipliers": [0.3, 0.6, 0.9, 1.1],
+    "arrival_types": [
+      "periodic",
+      "poisson",
+      "burst"
+    ],
+    "rate_multipliers": [
+      0.3,
+      0.6,
+      0.9,
+      1.1
+    ],
     "rate_reference": "calibrated_F0_backlogged_pipeline_throughput",
-    "trace_seeds": [17, 42, 2026],
-    "deadline_multipliers": [2, 4, 8],
-    "deadline_probabilities": [0.5, 0.3, 0.2],
+    "trace_seeds": [
+      17,
+      42,
+      2026
+    ],
+    "deadline_multipliers": [
+      2,
+      4,
+      8
+    ],
+    "deadline_probabilities": [
+      0.5,
+      0.3,
+      0.2
+    ],
     "deadline_reference": "calibrated_E1_batch1_E2E_p95",
     "burst_period_ms": 1000,
     "burst_active_ms": 200,
@@ -63,7 +102,10 @@
   },
   "resources": {
     "default_gpus": 1,
-    "estimated_gpu_hours_range": [8, 20],
+    "estimated_gpu_hours_range": [
+      8,
+      20
+    ],
     "automated_gpu_hours_cap": 30,
     "project_storage_gb_cap": 30,
     "pilot_minutes": 10,
