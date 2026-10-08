@@ -1,52 +1,55 @@
 ---
 name: run-cvpr-course-project
-description: Complete and resume the CISC8005 cvprcourseproject on NVIDIA H800, including DeiT image classification, ToMe/AP-ToMe implementation, controlled experiments, profiling, and evidence-backed course reporting. Use for this repository's implementation, training, evaluation, debugging, analysis, report writing, or interrupted-run recovery.
+description: Implement and resume the CISC8005 H800 computer vision serving project using pretrained DETR, CUDA Graph buckets, CPU-GPU pipelining, deadline-aware batching, COCO quality checks, and reproducible latency/goodput evaluation. Use for this repository's runtime implementation, profiling, scheduling, experiments, debugging, report writing, or recovery. The previous AP-ToMe training plan is superseded.
 ---
 
-# Run the CVPR course project
+# Run the visual inference systems course project
 
-Execute the requested research work in `crycryout/cvprcourseproject`; do not merely restate its plan. Treat this as a repository-scoped skill intended for the user's H800 Codex client, not as proof of a globally installed skill.
+Complete the current v2 project, not another plan. Use the user's existing H800 resources and systems background. Do not train a vision model or implement token merging. This is a repository-scoped skill.
 
-## Establish state
+## Establish current state
 
-1. Locate the repository containing `AGENTS.md`, `PROJECT_PLAN.md`, and `configs/project.json`. If invoked elsewhere, request a repository path; do not launch jobs in an unrelated directory.
-2. Read `AGENTS.md`, `docs/STATUS.md`, and the relevant sections of `PROJECT_PLAN.md`. Inspect existing processes, manifests, checkpoints, and local changes before resuming work.
-3. Read `docs/EXPERIMENT_PROTOCOL.md` before changing algorithms or running experiments; read `docs/IMPLEMENTATION_PLAN.md` for the active milestone. Use `references/evidence-gates.md` for completion checks.
-4. Run `python3 scripts/preflight.py --output artifacts/preflight.json` and `python3 scripts/make_matrix.py --output artifacts/validation_matrix.json` when environment/config evidence is absent or stale. Do not treat these planning tools as model experiments.
-5. Identify the first unmet gate and perform it. Communicate the current milestone, evidence, remaining uncertainty, and next concrete action in Chinese.
+1. Locate the repository with `AGENTS.md`, `PROJECT_PLAN.md`, and `configs/project.json`. Read them plus `docs/STATUS.md`; check active jobs, local modifications, and evidence before resuming.
+2. Require protocol_version=2 on artifacts. Do not reuse a v1 AP-ToMe matrix, checkpoint, or claimed metric as current evidence.
+3. Read `docs/EXPERIMENT_PROTOCOL.md` before experiments and `docs/IMPLEMENTATION_PLAN.md` for the current milestone. Read `references/evidence-gates.md` before advancing.
+4. Run the existing `scripts/preflight.py` and `scripts/make_matrix.py` when necessary. These probe environment and emit plans only. Implement future `cvpr_project` CLI before executing its examples.
+5. State the current gate, real evidence, uncertainty, and next executable step in concise Chinese, then do the work.
 
-## Execute the milestone sequence
+## Execute M0 through M5
 
-- **M0:** Verify dataset and non-distilled DeiT-Small weights, isolate the environment, create the class-stratified 45k/5k split, record hashes and exact dependency versions. Read `docs/RELATED_WORK.md` and resolve the nearest prior-work overlap before making novelty claims.
-- **M1:** Implement the training/evaluation foundation; pass a tiny-set overfit check and a <=10-minute pilot. Estimate measured cost before training seed17. Select checkpoints only on validation.
-- **M2:** Implement the pinned ToMe reference behavior and shared attention adapter. Pass r=0 dense equivalence, token mass/shape/CLS tests, and small-tensor reference comparisons before scaling.
-- **M3:** Implement partition-wise AP protection and matched random protection. Protect tokens from both source and destination roles; keep actual per-layer token counts identical to ToMe. Select p only with seed17 validation and save a frozen protocol.
-- **M4:** Complete the other training seeds under the fixed recipe, evaluate the sealed test set after freezing, benchmark both explicit and SDPA tracks, and analyze sample-aligned predictions and raw timing records.
-- **M5:** Generate tables/figures from completed runs and write the English report using `docs/REPORT_OUTLINE.md`. Write reproducibility commands and evidence links, then return results for the user's review.
+- **M0:** Verify pretrained DETR/processor revision and weights; implement COCO's 1000 calibration / 4000 held-out split; validate resizing, fixed padding, pixel_mask, label mapping, and original-coordinate box decoding. Establish a same-precision quality reference. Read `docs/RELATED_WORK.md` for prior-art boundaries.
+- **M1:** Implement serial eager E0/E1 and complete <=10-minute real-image pilot. Measure the entire pipeline, identify actual bottlenecks, and revise compute estimates. Do not assume PCIe or launch dominates.
+- **M2:** Implement batch graph buckets and fixed buffer pools with safe slot/event lifetimes; validate G0 and P0. Capture static forward or a justified partial subgraph. Verify outputs across repeated requests, partial batches, mixed image shapes, and delayed CPU consumption.
+- **M3:** Implement open-loop trace replay, tuned fixed-delay batching, EDF control, and the explicit deadline-feasibility heuristic. Calibrate all methods fairly; freeze service tables, common buckets, SLOs, rates, precision and configs before held-out evaluation.
+- **M4:** Execute 252 main and 12 EDF-control planned runs within budget; attempt a bounded compile baseline. Collect independent offline COCO quality plus online timing/goodput, rejects, misses and unfinished requests. Generate results from raw evidence.
+- **M5:** Write the English report with `docs/REPORT_OUTLINE.md`; produce reproducibility commands, figures and limitations for the user's review. Use `docs/H800_HANDOFF.md` for startup/recovery instructions.
 
-Read `docs/H800_HANDOFF.md` for startup/recovery wording. Implement future `cvpr_project` CLI commands before trying to run them; only the two planning tools exist in the initial repository.
+## Enforce execution correctness
 
-## Preserve experimental meaning
+Keep weights, input processing, precision and postprocessing common. Never remove pixel_mask or change image quality to make graph capture succeed. Graph replay uses captured addresses; new tensors do not automatically replace them.
 
-- Reuse one dense checkpoint per training seed across every compression method. Do not fine-tune AP alone or compare differently trained backbones.
-- Keep the official test labels out of training, recipe selection, checkpoint selection, and p/r tuning. Require a matching freeze artifact for final test. If leaked, disclose the leak and downgrade claims rather than concealing it.
-- Use the exact parity partition and mass-weighted aggregation in the plan. Do not silently replace per-partition protection with global top-p, or decrease r to satisfy a mask.
-- Verify p=0 equivalence, actual sequence lengths, per-forward mass reset, deterministic random-protection identity, and protected-token invariance at the merge boundary.
-- Include attention-score extraction, sorting, matching, gathering, scattering, and required synchronization in latency. Do not compare only against an intentionally slow dense backend.
-- Separate algorithmic FLOPs, GPU event latency, host-wall latency, and full pipeline scope. Do not label batched milliseconds as per-image latency.
-- Keep precision, preprocessing, sample IDs, and backend metadata explicit. Profile actual kernels; an SDPA call does not guarantee a FlashAttention kernel.
-- Preserve unsuccessful configurations and negative results. Do not guarantee gains, infer measurements from paper tables, or fill absent metrics with plausible values.
+Give each bucket/slot correct static buffers and a valid graph instance. Do not overwrite host input before H2D completes, device input before consumption, or output before D2H and CPU consumption complete. Use explicit CUDA event dependencies; keep one compute stream initially. Dummy lanes must be valid tensors/masks and never appear as real outputs. Trace actual overlap rather than assuming async means overlap.
 
-## Use resources and recover safely
+Do not add host-wide synchronization for every stage in the optimized pipeline; use events and record the residual necessary waits. Debug synchronizations must not silently remain in performance runs. Include legitimate pack/copy/queue/postprocess costs and graph pool memory.
 
-Inspect existing PyTorch and available GPU memory before installation. Do not change system drivers/global packages, GPU power settings, or other users' processes. Use one GPU by default; use the second only for independent work on an idle device. Reserve uncontended intervals for formal timing.
+## Enforce experimental meaning
 
-Track GPU-hours and storage in manifests across sessions. Plan for 24–60 GPU-hours; stop new costly runs at the 80 GPU-hour or 50 GB project cap and report what is complete. Implement checkpoint recovery and avoid duplicate jobs. If over budget, remove optional work and use the documented minimum scope, labeling omitted seeds or experiments.
+Use real COCO image bytes. Label periodic/Poisson/burst arrivals as synthetic and do not describe this as real video or production traffic. Start E2E timing at scheduled arrival, finish when CPU detection results are available. Keep GPU-event microbenchmarks separate.
 
-If downloading data/weights is blocked, give exact required local inputs and resume once supplied. Never silently substitute random weights. Do not ask again for ordinary reversible implementation choices already authorized by the project request.
+Count every offered request in the SLO denominator, including overflow rejection, failure and unfinished drain. Report completed-request percentiles alongside completion ratio. Never drop expired images only in the proposed policy. Prevent coordinated omission and detect load-generator lag.
 
-## Finish honestly
+Calibrate R0/F0 as well as D0; compare F0/A0/D0 to separate EDF from service-time feasibility. Try `torch.compile` for at most two hours, report whether it includes automatic graphs, and keep it if valid even if it beats the proposal. Never claim superiority over unmeasured TensorRT/Triton systems.
 
-Update `docs/STATUS.md` after each gate with real evidence, active runs, cost, and next action. Never mark a run complete from an existing directory alone. Preserve run manifests and failed runs.
+Evaluate offline AP over all 4000 held-out images, not just successful online requests. Preserve source/revision hashes and label/output mappings. Do not tune using held-out outcomes or invent literature/accuracy/speedup. Existing Graph, pipelining and EDF are not novel claims.
 
-Before publishing source/results, inspect staged files for large weights, raw course PDFs, secrets, private paths, and license notices. Do not upload those files. Do not submit coursework or contact the instructor. The user reviews the final report.
+## Control resources and resume
+
+Inspect server environment and idle GPUs. Use isolated dependencies, no driver/global package replacement, no GPU power changes, no killing unrelated jobs. Use one H800 and avoid second-card CPU/PCIe interference during timing. Do not claim GH200/C2C results.
+
+Plan 8–20 GPU-hours, cap automated jobs at 30 GPU-hours and 30 GB project storage. Count failed jobs and compatibility attempts across sessions. Limit capture debugging to two hours before an evidence-backed partial-capture fallback. Stop new costly work at caps and deliver measured scope with omissions explicit.
+
+Resume from manifests and actual active processes, not directory names. Preserve interrupted/failed runs. If download is blocked, request exact local files with verified sources; never substitute random weights. Proceed autonomously with ordinary authorized implementation choices.
+
+## Complete the handoff
+
+Update STATUS after each verified gate. Publish only source and sanitized small evidence, not model weights, datasets, instructor PDF, secrets, private paths, or full traces. Preserve upstream licenses. Do not submit coursework or contact the instructor. Report results honestly even if no optimization improves the strongest baseline.

@@ -1,165 +1,122 @@
-# 项目设计与完成计划
+# 项目计划 v2：面向时延要求的目标检测推理系统
 
-**推荐完成：Attention-Protected Token Merging for Efficient Image Classification: An Accuracy–Latency Study on NVIDIA H800。**
+**将项目主线从视觉压缩算法改为推理系统：用预训练目标检测器研究CUDA Graph、CPU–GPU流水线与请求调度。**
 
-这是一个可控的计算机视觉课程研究：输入图像，以分类准确率为质量指标，通过合并视觉 token 减少计算，同时测量 H800 的真实收益。课程允许非 SOTA 的自提方法，适合用完整研究过程取得扎实交付。
+英文题目：Deadline-Aware Object Detection Serving on NVIDIA H800 with CUDA Graphs and CPU–GPU Pipelining。
 
-目录：1.问题与范围；2.方法；3.实验；4.日程与预算；5.风险和交付。
+目录：1.定位；2.问题；3.运行时；4.实验；5.进度与退路。
 
-## 1. 研究问题与范围
+## 1. 为什么重新选题
 
-### 1.1 为什么选择它
+上一版AP-ToMe需要研究视觉token重要性、模型精度和微调，与你的MLSys/AI Infra积累不够直接。新版直接用到你已有的GPU推理、CUDA Graph、CPU–GPU同步和serving经验：模型权重冻结，把研究变量放到runtime。
 
-| 维度 | 选择理由 |
+| 方向 | 在本项目的位置 |
 |---|---|
-| 课程匹配 | 原生图像输入、视觉分类任务、明确算法与实验 |
-| 与你的方向连接 | token 数、注意力后端、GPU 利用率、实际延迟，而非纯模型调参 |
-| 可完成性 | 单 H800、约 22M 参数的 DeiT-Small、公开的小规模数据集；不训练大模型 |
-| 可解释性 | token 合并图、重要区域保护图、准确率–延迟曲线适合论文式报告 |
-| 风险控制 | 基线复现即能形成完整实证研究；扩展失败不会使课程项目归零 |
+| 视觉任务 | 输入RGB图片，输出类别、置信度与bounding boxes |
+| 研究对象 | 单GPU目标检测请求的执行和调度 |
+| 方法 | 预捕获batch graph +固定buffer池 +异步流水线 +deadline-aware batching |
+| 质量约束 | 相同模型/输入分辨率/精度下，优化前后检测结果和COCO AP基本一致 |
+| 主要指标 | 端到端p50/p95/p99、按时完成的请求率、吞吐、资源占用 |
 
-### 1.2 三个问题
+这属于视觉推理系统课程项目。课程PDF第8页允许视觉主题及非SOTA自提方案，因此按文字范围匹配；不能宣称教师已经批准系统侧选题。最终报告需明确目标检测问题和视觉质量证据，不能只交CUDA微基准。
 
-1. **RQ1**：固定每层 token 数时，保护分类注意力较高的 token，是否比普通 ToMe 保留更多分类信息？
-2. **RQ2**：这类保护带来的分数计算、排序和数据重排开销，在 H800 上是否值得？
-3. **RQ3**：结论是否随 batch size 和 attention backend 改变？
+无需新训练、人工标注或机器人环境。第一版不实现HTTP/RPC服务、不接摄像头、不做追踪；在本机用真实图片和可复现到达序列构造serving harness。称为目标检测serving实验，不能冒称真实视频或生产流量。
 
-主方法命名 **AP-ToMe（Attention-Protected Token Merging）**。这是课程工作名称，不是声称首创的论文方法名。EViT、ToMe、SAD-TM 等已覆盖相关思想；本项目贡献限于明确定义的变体、受控比较及 H800 上的证据。详见 `docs/RELATED_WORK.md`。
+## 2. 研究问题和有边界的贡献
 
-### 1.3 固定范围
+**RQ1：** H800运行小批次视觉检测时，瓶颈是GPU计算、host launch gap、预处理，还是H2D/D2H与同步？
 
-- 主数据：CIFAR-100；45,000 train / 5,000 validation / 官方 10,000 test。
-- 主模型：非蒸馏版 DeiT-Small/16，224×224 输入，12 blocks，196 image tokens + 1 CLS token。
-- 方法：Dense、ToMe、AP-ToMe、Random-Protect-ToMe；统一使用同一训练 seed 的 dense checkpoint。
-- 不做多 GPU 通信优化、LLM serving、检测/分割、自定义 CUDA kernel；可选扩展只在主实验完成后做。
-- CIFAR-100 原图为 32×32，放大至 224×224 不增加细节；不能据此宣称对高分辨率真实场景或 ImageNet 都有效。
+**RQ2：** CUDA Graph与固定缓冲区/异步copy能否减少真实请求延迟？二者单独效果和组合效果是什么？
 
-## 2. 方法：精确定义
+**RQ3：** 到达速率变化、请求具有不同deadline时，使用实测batch服务时间选择graph bucket，能否比调优后的固定等待批处理获得更高SLO goodput？
 
-### 2.1 先理解基线
+课程方法简称 **deadline-aware graph-bucket batching**，只指本仓库的组合与评估。CUDA Graph、流水线、EDF和dynamic batching都是已有技术；不宣称首创调度器或OSDI级创新。有效贡献是明确策略、正确实现、消融和真实瓶颈分析。
 
-ViT 把 224×224 图像分成 14×14 个 patch，形成 196 个图像 token，加上分类 token（CLS）。Dense 在所有层保留它们。ToMe 在注意力残差更新之后、MLP 之前，把相似 token 合并，以减少后续处理数量。
+### 2.1 视觉载体
 
-主基线采用官方 ToMe 的 bipartite soft matching 逻辑与 size-weighted average，使用本文共同指定的层间合并计划。它属于 **将 ToMe 迁移到 CIFAR-100 的受控评估**，不称为精确复现原论文 ImageNet 数字。
+主模型：`facebook/detr-resnet-50`，加载预训练COCO checkpoint，不更新权重。模型/processor使用同一不可变revision，记录下载文件SHA-256。候选来源支持`no_timm`分支，但在服务器先核验并解析为具体commit，不能浮动引用。
 
-### 2.2 AP-ToMe：保留重要 token，再合并其余 token
+数据：COCO2017 validation 5,000图像及instances标注。固定排序后划分1,000 calibration、4,000 held-out evaluation；不训练、不用calibration结论调held-out结果。细节见实验协议。
 
-在第 l 个 block，用当前层 Q、K 和 token mass 定义 CLS 对第 j 个 token 的分数：
+为固定shape，第一版统一processor resize：shortest_edge=480、longest_edge=640，保持比例，再右/下pad至640×640，携带正确pixel_mask。这是部署预处理设置，不是原论文的800/1333设置，因此不以论文AP作为复现目标。所有runtime必须共用这一视觉设置，不通过降低精度或分辨率赢得速度。
 
-`a_j = mean_h softmax_j(q_CLS,h · k_j,h / sqrt(d) + log(s_j))`。
+## 3. 运行时设计
 
-其中 s_j 是此 token 已聚合的原始 token 数；初始为 1。主实验所有 merging 方法统一 `prop_attn=true`。先对含 CLS 的完整序列 softmax，再提取图像 token 分数。排名是启发式，不等于真实因果重要性，也不等于 segmentation mask。
+### 3.1 数据路径
 
-具体流程：
+原始图像字节到达 → CPU decode/resize/normalize → ready queue → batching → pinned host buffer → H2D → DETR forward → D2H logits/boxes → CPU后处理与坐标恢复 → 结果交付。
 
-1. 完成当前层 attention 和第一条 residual；获取注意力里的 K，以及 CLS attention row。
-2. **保持官方 ToMe 的偶数/奇数序列分区 A/B**，不要先重排全序列。CLS 始终位于 A，既不能合并出去，也不能成为合并目的地。
-3. 在 A 的图像 token 和 B 的图像 token 内分别保护分数最高的 p 比例；保护 token 在本次 merge 中既不能作 source，也不能作 destination。
-4. 对剩余 A/B token 用跨 head 平均 K 的归一化余弦相似度匹配，每个候选 A 选择一个 B，再取最佳 r 条 source edge；允许多个 A 合入同一 B。
-5. 按 token mass 加权聚合；保留官方输出顺序和 CLS 首位；将新序列输入 MLP，更新 mass 后进入下一层。
+计时从计划到达时刻开始，终点是对应request_id的CPU结果可用。既包含排队和预处理，也包含拷贝、GPU、输出同步及后处理。另测GPU-resident forward解释瓶颈，但不能将其称为端到端延迟。
 
-这是 **分区内保护**，不是全局 top-p 保护。分区选择保证 p=0 时能退化为相同实现的普通 ToMe，避免把不同二分图误当成单纯保护消融。
+### 3.2 Graph bucket和双缓冲
 
-### 2.3 固定 shape 与可行性
+固定batch候选{1,2,4,8}，所有tensor shape/address在每个graph内保持稳定；按实际可用显存排除OOM bucket并冻结共同集合。batch不足时使用最小可容纳bucket、dummy lane和valid_count；dummy lane必须是合法图像/有效mask，不能全masked制造NaN，且绝不输出为真实检测结果。
 
-设 A 中非 CLS 数为 nA，B 中图像数为 nB，计划合并 r 个：
+每个(bucket,slot)预分配自己的host/device输入及输出存储；默认2 slots、1个compute stream。独立graph实例绑定各slot地址，共享只读权重。严格禁止在上次D2H和CPU消费完成前覆盖output或复用slot。显存受限时共同减bucket/slot并说明，不以隐藏串行化伪称双缓冲。
 
-`kA = min(ceil(p*nA), nA-r)`；`kB = min(ceil(p*nB), nB-1)`。
+在capture前warmup；模型设eval/inference_mode，固定backend/精度。capture只包含已验证可捕获的forward或明确的静态子图；CPU图像处理、queue逻辑、文件I/O放在capture外。不得为capture删除pixel_mask或改变检测数学语义。
 
-要求 `0 <= r <= nA` 且在 r>0 时 nB>=1。保护 kA/kB 个 token，保证足够合法 source 和至少一个 destination。p 是配置常数；各样本的保护对象不同，保护数量一致。每层实际长度由计划决定，不按样本动态裁剪。对 r=0 直接 no-op；禁止为满足保护规则静默减少 r，非法配置应报错。
+copy stream与compute stream通过events建立H2D完成→forward、forward完成→D2H的依赖。copy/compute是否真的重叠由trace证明。第一版一个compute stream，不做并发graph kernels，避免对graph pool并发安全的额外假设。
 
-聚合一个 destination j 及其 sources I 时：
+### 3.3 截止时间感知调度：精确定义
 
-`s'_j = s_j + sum_i s_i`；`x'_j = (s_j*x_j + sum_i s_i*x_i) / s'_j`。
+请求i带有arrival `a_i`、deadline `d_i=a_i+D_i`、图像ID和ready时间。ready queue按deadline排序（相同deadline按arrival、request_id）。在compute可接受下一批时做决策，不允许无限预提交；最多一批执行、一批已确定并预拷贝。
 
-同时更新 provenance（仅用于可视化），计时路径关闭 provenance tracking。保护仅约束 merge，不禁止 token 在正常 attention/MLP 中更新。浮点 ties 固定原序号优先，不能用 CPU 排序破坏 GPU 测速。
+在calibration上测每个batch bucket的保守剩余服务时间 `R_b`：从dispatch到CPU结果可用的p95，涵盖pack/H2D/forward/D2H/postprocess。另估计已排队GPU工作的剩余时间 `G`；不使用未来到达信息。保守估计不扣除尚未验证的overlap收益。
 
-### 2.4 合并预算
+对于n=1..min(ready_count,max_bucket)：取EDF前n项，令b为能容纳n的最小bucket。预计完成时间 `F(n)=now+G+R_b`。只有F(n)不晚于这n个请求的最早deadline时，n才是可行候选。优先选择`n/R_b`最大的可行候选，tie取较小完成时间，再取较小bucket。没有可行候选时立即服务最早deadline请求；**不通过丢弃困难请求美化goodput**。
 
-主实验前两层不合并，从第 3 层到第 12 层每层合并 r∈{4,8,12} 个。对应最后的 image tokens 是 156、116、76（另外始终有 1 个 CLS）。
+允许有限等待以聚合：仅在有空闲slot、当前候选bucket未满或存在更大bucket、且更大bucket满足 `now+wait+G+R_next <= earliest_deadline` 时等待。wait不超过冻结的tau，且对最老ready请求的累计人为等待不超过tau；下一到达或timer先触发就重新判断，不能每次重置timer无限等待。tau在calibration从{0,1,2}ms选，冻结后固定。不存在可行更大bucket就立即dispatch。
 
-| r | 每层计划 | 最后图像 token | 用途 |
-|---|---|---:|---|
-| 0 | 12 层均为 0 | 196 | Dense / 零合并一致性 |
-| 4 | [0,0,4,4,4,4,4,4,4,4,4,4] | 156 | 温和压缩 |
-| 8 | [0,0,8,8,8,8,8,8,8,8,8,8] | 116 | 中等压缩 |
-| 12 | [0,0,12,12,12,12,12,12,12,12,12,12] | 76 | 较强压缩 |
+策略是可检验启发式，不保证deadline。服务时间估计不准也必须报告miss，不能回填真实未来运行时间作在线决策。
 
-AP-ToMe 在验证集选择 p∈{0.10,0.20}；p=0 由 ToMe 代表。Random-Protect 在同样分区随机保护同样数量，隔离“保留数量”和“保护重要性”的效果。详细选择与随机数规则见实验协议。
+### 3.4 基线和必要消融
 
-### 2.5 防止 attention 后端造成假结论
+| ID | 方法 | 用途 |
+|---|---|---|
+| E0 | eager、batch1、pageable/synchronous copy、串行pipeline | 常规朴素起点 |
+| E1 | eager、batch1、pinned预分配、串行pipeline | 单独隔离buffer/copy方式 |
+| G0 | CUDA Graph、batch1、pinned、串行pipeline | 隔离graph收益 |
+| P0 | CUDA Graph、batch1、双缓冲异步pipeline | 隔离overlap收益 |
+| R0 | eager + pipeline + 调优固定等待dynamic batching | 强非graph基线 |
+| F0 | graph + pipeline + 调优固定等待dynamic batching | 主要对手 |
+| D0 | graph + pipeline + 本节deadline-aware策略 | 课程方法 |
 
-分两条实验轨：
+R0/F0使用同一bucket集合，FIFO、max_batch和max_wait均在相同calibration搜索预算内调优，不能故意选差参数。必须在关键高负载场景增加A0：EDF + 与F0相同的固定等待，隔离单纯EDF与服务时间可行性判断。
 
-- **算法轨**：Dense/ToMe/AP/Random 均使用相同 explicit attention 实现，便于验证数值及抽取完整 attention；不作为“击败优化 Dense”的唯一证据。
-- **部署轨**：Dense 使用已验证的 PyTorch SDPA（scaled dot-product attention）路径；ToMe/AP 尽量使用 SDPA，AP 另外只计算 CLS 的一行概率。为 token mass 加的 mask 可能改变实际 kernel，必须用 profiler 核实，不能把 SDPA API 等同 FlashAttention。
+另外对`torch.compile`优化基线给最多2小时兼容/正确性尝试；成功则加入C0（compile + pipeline + 固定等待），与最快有效基线比较。编译mode可能自动使用CUDAGraph，要记录实际设置，不能把它叫纯kernel fusion。失败保留证据并明确结论限于已实现基线。
 
-两条轨均保留所有运行开销。先做 eager，`torch.compile` 只作为可选独立实验，编译时间单列且双方公平优化。若 AP-ToMe 未能超过最快有效 Dense，就报告未实现部署加速。
+## 4. 实验范围和成功标准
 
-## 3. 实验设计
+主实验覆盖平稳Poisson、等间隔、突发三类**合成到达轨迹**；每类4个负载，3个种子，各方法共享相同真实图像ID/到达/deadline。模型权重不变，三个种子是流量种子，不是训练seed。
 
-主实验流程和精确默认值见 `docs/EXPERIMENT_PROTOCOL.md`；参数集中在 `configs/project.json`。
+主结果必须给COCO AP/AP50/AP75、低延迟/高负载曲线、SLO goodput、拒绝/超时数量、stage时间、profile和资源开销。AP在所有held-out图像上独立离线评估，不能只算在线按时返回的简单样本。
 
-### 3.1 必须完成
+研究目标（非结果）：在检测AP变化≤0.1个百分点的条件下，相对调优F0提高至少10%的按时完成率，或在完成率与SLO成功率均不下降的可复现场景降低p95至少10%。仅完成请求的p95降低不能单独证明服务能力改善；必须一并报告拒绝/unfinished和goodput。不达到仍可完成课程项目，结论写瓶颈和无收益的条件。
 
-1. 训练同一 recipe 的 3 个 dense seeds：17、42、2026；验证选择 checkpoint，测试集封存。
-2. 在 seed 17 checkpoint 的完整验证集筛选保护比例；冻结每个 r 的 p 和所有比较配置。
-3. 在三个 dense checkpoints 上运行固定方法，得到准确率、分样本预测和成对差值。
-4. 在独占 H800 上对 batch 1/16/64 测延迟、吞吐、显存，分析 scoring/merge/attention/MLP 开销。
-5. 从真实结果生成主表、Pareto 图、消融表和 token 可视化，再形成论文式报告。
+不要求GH200、不做CPU内存offload：DETR权重较小，不应人为制造不真实的容量瓶颈。H800上的PCIe/synchronization实验只能支持该平台，不宣称C2C可获得同样收益。
 
-### 3.2 正向假设与合格交付分开
+## 5. 进度、资源与停止条件
 
-**研究目标（不是承诺）：** 在至少一个固定 token 预算下，AP 比 ToMe 保留更多准确率；或相对最快 dense 在精度下降不超过 1.0 个百分点时提高吞吐 10% 以上。
+不再按固定日历日期排任务，按验收门槛推进；建议2–3周。官方deadline未知，后续得到截止日期时逆推收尾时间。
 
-**完成标准：** 即使两个目标都未达到，只要实现正确、比较公平、结果可复现并解释失败原因，仍完成项目。不能把目标数字填入结果表。
-
-主要比较以百分点（percentage points, pp）衡量 accuracy 差异，注明置信区间及 seed 方差。对“最好”的操作点，只能在验证集和预设性能协议上选择。
-
-### 3.3 最小版本与可选扩展
-
-最小可交付：1 个 dense seed、Dense + ToMe 三种预算、batch 1/16/64、两条后端轨、完整真实性说明及局限。必须注明单 seed，不得当作完整实验。
-
-完整版本：3 seeds + AP + Random 消融。
-
-可选项最多选一个：CIFAR-10 的外部任务复核、DeiT-Tiny 的模型泛化，或对双方 `torch.compile` 的附加比较。扩展前先计算剩余 GPU 预算；不能并行堆满所有扩展。
-
-## 4. 四周完成计划
-
-以 2026-10-09 开始为例；真实课程 deadline 未提供。每个阶段先通过验收再扩大规模。
-
-| 阶段 | 建议日期 | 主要动作 | 退出条件 |
+| 阶段 | 主要动作 | 验收 | 人工工作估计 |
 |---|---|---|---|
-| M0 设定 | 10/09–10/10 | 建环境、核实数据/预训练来源、冻结划分、补读近邻方法 | 能载入模型，输出100类，split无交集，预检记录齐全 |
-| M1 Dense | 10/11–10/14 | tiny-set过拟合、10分钟pilot、训练seed17 | 验证曲线合理、可恢复checkpoint、真实成本估计 |
-| M2 ToMe | 10/15–10/18 | 接入merge、正确性测试、验证三种预算 | r=0等价，mass守恒，长度正确，与官方算法对齐 |
-| M3 AP | 10/19–10/22 | 实现保护/随机消融、验证筛选与配置冻结 | 保护不被merge，p=0等价，冻结记录已保存 |
-| M4 证据 | 10/23–10/29 | 补齐3 seeds、正式test和性能实验 | 原始证据完备，主表/曲线可脚本再生成 |
-| M5 写作 | 10/30–11/05 | 分析负面结果、写报告、完成可复现检查 | 报告所有数值能追溯到run，限制与引用明确 |
+| M0 | 环境、模型、图像预处理与质量参考 | 真实框可视化、坐标正确、hash、reference AP | 3–5小时 |
+| M1 | 串行baseline及端到端profile | 1000次pilot与阶段时间；瓶颈证据 | 3–5小时 |
+| M2 | graph/buffer/pipeline | 结果一致、无race、capture边界、真实overlap trace | 5–8小时 |
+| M3 | 到达生成器、调度器、冻结配置 | 无丢失/重复、open-loop可靠、deterministic trace | 4–6小时 |
+| M4 | 完整比较、消融和统计 | request日志、AP、图表与可复现汇总 | 3–5小时 |
+| M5 | 写论文式报告 | 数值都能追溯，局限和来源明确 | 4–6小时 |
 
-这些日期是可调整的内部安排，不代表教师要求。建议本人投入约 25–40 小时用于文献理解、抽查代码/实验及报告修订；Agent 自动工作时间另计。
+规划GPU-hours：模型/正确性1–3、runtime调试2–5、正式负载/quality/profile4–9、重跑预留1–3，总计8–20；不是性能实测。自动上限30 GPU-hours、存储30GB。首轮≤10分钟pilot重估；正式benchmark独占一张GPU，不在第二张卡并发干扰共享CPU/PCIe。
 
-### 4.1 H800 预算（待 pilot 修正）
+### 5.1 早期决策门槛
 
-| 工作 | 规划 GPU-hours |
-|---|---:|
-| 环境/正确性/pilot | 1–3 |
-| 3个dense seeds，默认各30 epochs | 12–30 |
-| 验证筛选、test评估、性能和profiling | 6–15 |
-| 失败重跑与预留 | 5–12 |
+- 若host launch gap很小：保留graph负结果，把重点放到排队/批处理；不能宣称必有同步瓶颈。
+- 若H2D/D2H占比<5%：降低copy优化优先级，仍给完整分解；不用人为放大传输数据。
+- 若CPU预处理占主导：先固定且公平调优worker数，再比较GPU runtime；CPU worker数量必须各方法相同。
+- 若完整forward无法capture：限定2小时排查；允许可解释的部分capture并给coverage及fallback成本，不换成随机模型。
+- 若M3不能如期完成：交付E0/E1/G0/P0/R0/F0的完整分析，标记未实现deadline策略。不要拖延基础结果来追求“创新”。
 
-合计约 **24–60 GPU-hours**；上界为规划余量，非实测预测。自动执行总上限 80 GPU-hours；存储软上限 50 GB。两卡不能把 GPU-hours 除二，只能在独立任务上缩短 wall time。
-
-pilot 以 `ceil(45000/effective_batch) × measured_step_seconds × epochs` 估算训练，并加上验证、数据启动和存盘成本。若预计超预算，先减可选项，再减 recipe 搜索，最后降级为单 seed 最小版本并披露；不能缩小test却不说明。
-
-## 5. 失败处理和最终交付
-
-| 风险 | 处理 |
-|---|---|
-| 预训练下载或数据被阻断 | 支持用户提供本地路径和哈希；不能静默以随机权重替代 |
-| 老ToMe与新timm不兼容 | 在隔离环境移植最小merge/attention adapter，保留来源和测试，不降级系统驱动 |
-| Dense收敛差 | 先查标签、normalize、train/eval、head与权重；只在validation上有限调整 |
-| AP不改善准确率 | 保留负结果，随机保护检验假设；将报告聚焦真实accuracy–latency trade-off |
-| 有FLOP减少但无加速 | 用profile说明选择开销、矩阵尺寸及后端差异，避免选择性省略batch1 |
-
-最终提交包建议包含：英文论文式报告、源码与锁定环境、实验配置/小型结果文件、复现步骤、5类关键图表。短演示材料仅在课程要求或本人需要时制作。用户负责最终审阅和提交。
+最小项目：单模型、真实检测AP、串行/graph/pipeline对比及profile；完整项目增加F0/D0、三类负载与EDF消融。可选扩展最多一个：第二个检测模型或真实视频帧trace；不要同时扩展两者。

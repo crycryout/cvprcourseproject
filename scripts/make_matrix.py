@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Validate the research design and emit planned validation runs, never results."""
+"""Validate v2 serving protocol and emit planned cases, never measured results."""
 import argparse
 import hashlib
+import itertools
 import json
-import math
 from pathlib import Path
 
 
@@ -12,83 +12,70 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def trace_schedule(config, r, p):
-    model, merge = config["model"], config["merging"]
-    n = model["initial_image_tokens"] + model["special_tokens"]
-    trace = []
-    for block in range(model["num_blocks"]):
-        amount = 0 if block < merge["warmup_blocks"] else r
-        n_a = (n + 1) // 2 - 1  # even full-sequence partition, excluding CLS
-        n_b = n // 2
-        require(0 <= amount <= n_a, f"block {block}: insufficient source tokens")
-        require(amount == 0 or n_b >= 1, f"block {block}: no destination")
-        k_a = min(math.ceil(p * n_a), n_a - amount) if amount else 0
-        k_b = min(math.ceil(p * n_b), n_b - 1) if amount else 0
-        require(k_a >= 0 and k_b >= 0, "negative protection count")
-        require(n - amount - 1 >= merge["min_image_tokens"], "too few image tokens")
-        trace.append({"block_1based": block + 1, "input_tokens_with_cls": n,
-                      "r": amount, "protected_a": k_a, "protected_b": k_b,
-                      "output_tokens_with_cls": n - amount})
-        n -= amount
-    return trace
+def build_matrix(c):
+    require(c.get('protocol_version') == 2, 'only current protocol v2 is accepted')
+    model, data, runtime, work = c['model'], c['dataset'], c['runtime'], c['workload']
+    require(model['weights_frozen'] and not model['training'], 'this project does not train models')
+    require(model['pixel_mask_required'], 'DETR padding requires valid pixel masks')
+    require(model['shortest_edge'] <= model['longest_edge'] <= min(model['padded_height'], model['padded_width']),
+            'resize exceeds fixed padded dimensions')
+    require(data['calibration_images'] + data['held_out_images'] == 5000, 'invalid COCO val split')
+    require(data['held_out_requires_freeze'], 'held-out evaluation requires frozen calibration')
+    buckets = runtime['batch_buckets_candidates']
+    require(buckets == sorted(set(buckets)) and buckets[0] == 1, 'buckets must be unique sorted and include 1')
+    require(all(isinstance(b, int) and b > 0 for b in buckets), 'invalid bucket size')
+    require(runtime['compute_streams'] == 1, 'v2 default supports one compute stream')
+    require(runtime['slots_per_bucket'] == 2, 'v2 reference plan requires two slots')
+    require(not runtime['drop_expired'] and not runtime['result_cache'], 'no selective expiration or cached detections')
+    require(work['arrival_mode'] == 'open_loop_scheduled', 'closed-loop arrivals hide queueing')
+    require(work['slo_denominator'] == 'all_offered_in_measurement_window', 'SLO denominator must include rejects')
+    require(abs(sum(work['deadline_probabilities']) - 1) < 1e-9, 'deadline probabilities must sum to one')
+    require(len(work['deadline_probabilities']) == len(work['deadline_multipliers']), 'deadline mixture mismatch')
+    require(all(x > 0 for x in work['rate_multipliers']), 'rates must be positive')
+    require(work['burst_active_ms'] * work['burst_active_rate_factor'] == work['burst_period_ms'], 'burst mean rate mismatch')
+    require(work['measurement_seconds'] > 0 and work['drain_cap_seconds'] >= 0, 'invalid run duration')
+    cases = []
 
+    def add(policy, trace, rate, seed, stage):
+        cases.append({'case_id': f'v2_{policy}_{trace}_rho{rate:.1f}_seed{seed}',
+                      'protocol_version': 2, 'status': 'planned', 'policy': policy,
+                      'arrival_type': trace, 'rate_multiplier': rate, 'trace_seed': seed,
+                      'stage': stage, 'requires_frozen_calibration': True,
+                      'absolute_rate_and_deadlines': 'resolve_from_frozen_artifact_not_guessed'})
 
-def build_matrix(config):
-    model, data, merge = config["model"], config["dataset"], config["merging"]
-    require(model["special_tokens"] == 1 and not model["distilled"], "requires only one CLS token")
-    require(model["input_size"] % model["patch_size"] == 0, "non-integral patch grid")
-    require((model["input_size"] // model["patch_size"]) ** 2 == model["initial_image_tokens"],
-            "image-token count disagrees with patch grid")
-    require(data["train_samples"] + data["validation_samples"] == 50000, "invalid train/val split")
-    require(data["test_samples"] == 10000 and data["label_mode"] == "fine", "invalid CIFAR-100 test/labels")
-    require(data["validation_per_class"] * model["num_classes"] == data["validation_samples"],
-            "validation class count mismatch")
-    require(merge["selection_split"] == "validation" and data["test_requires_frozen_protocol"],
-            "test leakage in selection settings")
-    require(0 <= merge["warmup_blocks"] < model["num_blocks"], "invalid warmup blocks")
-    require(merge["selection_training_seed"] in config["training"]["seeds"], "selection seed missing")
-    require(all(isinstance(r, int) and r > 0 for r in merge["r_candidates"]), "r must be positive integer")
-    require(len(set(merge["r_candidates"])) == len(merge["r_candidates"]), "duplicate r values")
-    for p in merge["protection_candidates"] + [merge["random_development_p"]]:
-        require(0 < p < 1, "protection ratio must lie in (0,1)")
-    runs = []
-
-    def add(method, r, p, purpose):
-        trace = trace_schedule(config, r, p)
-        runs.append({
-            "config_id": f"{method}_r{r}_p{p:.2f}", "status": "planned",
-            "method": method, "r": r, "p": p,
-            "training_seed": merge["selection_training_seed"], "split": "validation",
-            "backend": "explicit_eager", "purpose": purpose,
-            "layer_trace": trace, "final_image_tokens": trace[-1]["output_tokens_with_cls"] - 1,
-        })
-
-    add("dense", 0, 0.0, "quality_reference")
-    for r in merge["r_candidates"]:
-        add("tome", r, 0.0, "compression_reference")
-        for p in merge["protection_candidates"]:
-            add("ap_tome", r, p, "validation_selection")
-        add("random_protect", r, merge["random_development_p"], "development_only_not_final_ablation")
-    return {"schema_version": 1, "status": "plan_not_results", "runs": runs,
-            "final_ablation_rule": "Use selected AP p for Random at each r after freezing; do not reuse development p blindly."}
+    for policy, trace, rate, seed in itertools.product(c['policies']['main'], work['arrival_types'],
+                                                      work['rate_multipliers'], work['trace_seeds']):
+        add(policy, trace, rate, seed, 'main')
+    for trace, rate, seed in itertools.product(['poisson', 'burst'], [0.9, 1.1], work['trace_seeds']):
+        add(c['policies']['required_ablation'], trace, rate, seed, 'required_edf_ablation')
+    require(len({x['case_id'] for x in cases}) == len(cases), 'duplicate cases')
+    optional_count = len(work['arrival_types']) * len(work['rate_multipliers']) * len(work['trace_seeds'])
+    max_seconds = sum(work[k] for k in ['warmup_seconds', 'measurement_seconds', 'drain_cap_seconds'])
+    return {'protocol_version': 2, 'status': 'plan_not_results', 'cases': cases,
+            'counts': {'main': sum(x['stage'] == 'main' for x in cases),
+                       'required_ablation': sum(x['stage'] != 'main' for x in cases),
+                       'optional_C0_if_valid': optional_count},
+            'nominal_main_plus_ablation_gpu_hours_upper_excluding_setup': round(len(cases) * max_seconds / 3600, 3),
+            'budget_note': 'This is scheduled runtime, not measured cost. Calibration/capture/compile/quality/debug are extra.',
+            'optional_policy': c['policies']['optional_after_bounded_attempt']}
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", type=Path, default=Path("configs/project.json"))
-    parser.add_argument("--output", type=Path)
-    args = parser.parse_args()
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--config', type=Path, default=Path('configs/project.json'))
+    p.add_argument('--output', type=Path)
+    args = p.parse_args()
     raw = args.config.read_bytes()
     result = build_matrix(json.loads(raw))
-    result["config_sha256"] = hashlib.sha256(raw).hexdigest()
-    text = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
+    result['config_sha256'] = hashlib.sha256(raw).hexdigest()
+    text = json.dumps(result, ensure_ascii=False, indent=2) + '\n'
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(text, encoding="utf-8")
-        print(f"Validated {len(result['runs'])} planned configurations; wrote {args.output}")
+        args.output.write_text(text, encoding='utf-8')
+        print(json.dumps({'validated': True, 'counts': result['counts'], 'output': str(args.output)}))
     else:
-        print(text, end="")
+        print(text, end='')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

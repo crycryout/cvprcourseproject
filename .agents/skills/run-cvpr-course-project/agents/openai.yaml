@@ -1,4 +1,4 @@
 interface:
-  display_name: "CVPR Course Project"
-  short_description: "Run the H800 vision project with reproducible evidence"
-  default_prompt: "Use $run-cvpr-course-project to continue the CISC8005 project from its latest verified milestone."
+  display_name: "CV Inference Systems Project"
+  short_description: "Build H800 detection serving with graphs and SLO batching"
+  default_prompt: "Use $run-cvpr-course-project to complete the current H800 object detection serving milestone with verified evidence."

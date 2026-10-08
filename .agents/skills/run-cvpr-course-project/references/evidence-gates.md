@@ -1,27 +1,26 @@
-# Evidence gates
+# v2 evidence gates
 
-Use this checklist when deciding whether to advance or report completion. File presence alone is insufficient.
-
-| Gate | Minimum evidence | If missing |
+| Gate | Required evidence | Failure response |
 |---|---|---|
-| M0 | CUDA smoke; actual model identifier/weight hash; data/split hashes and class counts; environment lock | Repair environment/data, do not train or call the model pretrained without verified weights |
-| M1 | Tiny-set overfit; measured pilot; seed17 train/validation curves; recoverable checkpoint with best-validation selection | Diagnose training or run the bounded pilot; no invented accuracy target |
-| M2 | r=0 equivalence; p=0/reference merge agreement; correct mass/CLS/token lengths; actual validation runs | Repair algorithm before benchmarking |
-| M3 | Protected source+destination exclusion; deterministic random identity; validation p selection; frozen protocol | Complete controls before official test |
-| M4 | Completed manifests; all requested training seeds or declared downgrade; sample-level predictions; raw timing; backend/kernel evidence | Execute missing runs within budget or disclose reduced scope |
-| M5 | Report numbers trace to runs; generated figures; runnable reproduction instructions; prior-work/limitations | Fix traceability, never fill gaps with estimates |
+| M0 | Model/processor/hash, calibration/eval IDs, correct masks/categories/boxes, reference AP | Fix vision pipeline before optimization |
+| M1 | Real E0/E1 events, 1000-request pilot, stage profile, actual budget estimate | Identify bottleneck; do not assume one |
+| M2 | Safe slot/event lifecycle, matching outputs/AP, partial-batch stress, capture coverage, overlap trace | Diagnose races or graph breaks; retain valid partial capture within bounded effort |
+| M3 | Open-loop trace determinism, loadgen lag, denominator accounting, tuned controls, frozen service/SLO/load table | Repair harness before held-out comparisons |
+| M4 | Request logs, completed/failed counts, offline AP, paired trace results, A0 control, compile status | Run missing cases within cap or disclose reduced scope |
+| M5 | All tables trace to runs, executable reproduction, visual examples, limitations/prior work | Never fill missing metrics with guesses |
 
-## Mandatory manifest semantics
+## Manifest contract
 
-Store at least `run_id`, `stage`, `status`, `git_sha`, `dirty_diff_sha256` if dirty, `config_sha256`, `dataset_split_sha256`, `checkpoint_sha256` when used, `training_seed`, `protection_seed` when used, `backend`, `dtype`, `batch_size`, `started_at`, `ended_at`, `gpu_hours`, `command`, and evidence paths.
+Include protocol_version=2, unique run_id, policy, trace_seed/type/hash, frozen_config_sha256, model/processor/data-split hashes, source Git SHA and dirty diff hash, precision/backend/bucket set, CPU workers, GPU model, timing scopes, timestamps, actual cost and evidence paths. Do not include credentials or private hostnames in public files.
 
-Use `planned`, `running`, `completed`, `failed`, or `interrupted` states; do not store estimates in measured fields. Cumulative compute includes failed runs. Count each active GPU's elapsed job duration and distinguish allocated GPU-hours from utilization. Hash sanitized config snapshots, not secret-bearing environment dumps.
+Request records preserve scheduled and actual arrival, stage host timestamps, CUDA durations in a separate clock domain, request/image IDs, deadline, batch/slot/valid_count, completion and status. Distinguish completed, rejected, failed, missed deadline and unfinished; late completion is a completion and an SLO failure, not two distinct requests.
 
-Store predictions keyed by stable sample ID; join only on identical sample IDs. Pair within the same checkpoint/seed and split. Keep performance repetitions separate from training seeds. Compute summary files from completed evidence only.
+Runs may be planned/running/completed/completed_with_failures/interrupted/failed. Synthetic tests cannot enter measured summary. Count all offered requests for the fixed measurement cohort even if they finish in drain; report drain and unfinished censoring explicitly.
 
-## Recovery examples
+## Recovery checks
 
-- Existing best checkpoint but missing manifest: inspect its metadata and logs; reconstruct provenance only when supported, otherwise mark unverified and rerun a bounded verification.
-- No H800 visible: implement CPU correctness tests and data plumbing, but do not claim H800 performance or silently replace the planned hardware.
-- AP slower than dense: report the slowdown; inspect score/match/scatter costs; complete the controlled study without hiding the optimized dense comparison.
-- Test evaluated before freeze: preserve the event and document compromised selection independence; do not erase results or claim untouched test.
+- Existing graph object is not a portable checkpoint: reconstruct/capture in a new process and revalidate addresses/weights/config.
+- Existing output folder without manifest is unverified. Inspect real logs, never mark success based on filenames.
+- Faster GPU-forward but slower E2E means no E2E win; profile CPU/queue/copy costs and report both.
+- Faster than E0 but slower than F0/C0 means the proposal did not beat the optimized baseline.
+- Near-zero transfer share means PCIe optimization has limited headroom; do not amplify inputs or offload small weights to manufacture a bottleneck.
