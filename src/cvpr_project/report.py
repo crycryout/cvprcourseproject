@@ -20,6 +20,14 @@ def write_report(results="results", destination="docs/REPORT.md"):
     runs = pd.read_csv(root / "summary.csv")
     precision = read_json(root / "precision_v2.json")
     stress = read_json(root / "stress_v2.json")
+    pool = read_json(root / "graph_pool_v2.json")
+    pool_table = table(["Initialization/storage item", "Measured value", "Scope"], [
+        ["Capture plus capture warmup", f"{pool['capture']['initialization_seconds']:.3f} s", "All 8 graph slots; excludes model loading"],
+        ["Pinned host slot storage", f"{pool['pinned_host_bytes']/2**20:.2f} MiB", "Graph executor only"],
+        ["GPU allocated", f"{pool['gpu_allocated_bytes']/2**30:.3f} GiB", "Calibration process; graph and eager resident"],
+        ["GPU peak allocated", f"{pool['gpu_peak_allocated_bytes']/2**30:.3f} GiB", "Calibration process since allocator peak reset"],
+        ["GPU reserved", f"{pool['gpu_reserved_bytes']/2**30:.3f} GiB", "Calibration process caching allocator"],
+    ])
     pilots = read_json(root / "pilot_summary.json")["rows"]
     overlap = read_json(root / "profile_overlap.json")["profiles"]
     hardware_path = root / "environment_timing_v2.json"
@@ -98,7 +106,7 @@ Waiting is bounded by the oldest ready timestamp plus frozen tau. The implementa
 
 {service}
 
-E0 uses pageable synchronous serial copying; E1 uses pinned buffers with a serial pipeline; G0 adds graph replay; P0 adds two-slot pipelining. R0 and F0 use tuned FIFO timers with eager and graph execution respectively. A0 shares F0's timer and executor but changes the ready order to EDF. D0 changes batch feasibility selection. The pool remains resident across randomized cases; standalone graph initialization/memory evidence is reported separately."""))
+E0 uses pageable synchronous serial copying; E1 uses pinned buffers with a serial pipeline; G0 adds graph replay; P0 adds two-slot pipelining. R0 and F0 use tuned FIFO timers with eager and graph execution respectively. A0 shares F0's timer and executor but changes the ready order to EDF. D0 changes batch feasibility selection. Executor pools remain resident across randomized cases; capture time and scoped storage evidence are reported separately."""))
     sections.append(("Vision correctness and quality", f"""The immutable model revision is `{frozen['model']['revision']}`. Model configuration, processor configuration, and weights have SHA-256 identities. COCO image IDs are numerically sorted and permuted by PCG64 seed 20261008; the first 1,000 form calibration and the remaining 4,000 form held-out evaluation. These are project subsets of official validation, not an official test split. The split and annotation bytes are hashed.
 
 The official processor resizes with shortest edge 480 and longest edge 640 while preserving aspect ratio. It normalizes and pads on the right and bottom to 640x640. The corresponding pixel mask distinguishes real pixels from padding. Tests compare valid pixels and padding against the unpadded official processor path. Box decoding uses the official postprocessor and original image (height,width), including an analytically known box test. COCO's non-contiguous category IDs are checked against checkpoint labels rather than shifted by one.
@@ -159,7 +167,11 @@ Separate E1, P0 and valid C0 profiles replay calibration images at 0.3 and 1.1 t
 
 ![Separate P0 correlated CUDA timeline; blue denotes kernels and orange denotes memory copies.](../results/figures/profile_P0_timeline.png)
 
-Graph initialization includes warmup, every slot's capture, and private pools. Graph and pinned-memory metadata are saved in `graph_pool_v2.json`; per-run memory includes all resident executor pools because the matrix reuses one process across randomized policies. These numbers must not be interpreted as an isolated E0-versus-F0 memory comparison. Main-process CPU cores are CPU seconds divided by wall seconds over warmup, measurement, drain and request export; the separate load generator is excluded. Completed-batch occupancies are in `batch_distribution.csv`.
+Graph initialization includes capture warmup, every slot's capture, and private pools. The calibration snapshot below retains graph and eager executors simultaneously; GPU allocator counters are process-wide, while pinned bytes sum this graph executor's slots. They are not an incremental graph memory measurement. The peak also retains earlier serial work in that calibration process.
+
+{pool_table}
+
+Per-run memory includes all resident executor pools because the matrix reuses one process across randomized policies. These numbers must not be interpreted as an isolated E0-versus-F0 memory comparison. Main-process CPU cores are CPU seconds divided by wall seconds over warmup, measurement, drain and request export; the separate load generator is excluded. Completed-batch occupancies are in `batch_distribution.csv`.
 
 {cpu_table}
 
