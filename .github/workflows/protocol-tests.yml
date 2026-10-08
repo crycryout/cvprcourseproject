@@ -13,3 +13,5 @@ jobs:
       - run: python -m pytest -q
       - run: python -m cvpr_project --help
       - run: python scripts/make_matrix.py --output artifacts/serving_matrix_v2.json
+      - if: ${{ hashFiles('results/delivery.json') != '' }}
+        run: python scripts/verify_results.py
