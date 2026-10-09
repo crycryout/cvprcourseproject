@@ -6,7 +6,7 @@ English title: **Deadline-Aware Object Detection Serving on NVIDIA H800 with CUD
 
 以预训练DETR为视觉工作负载，研究提交、传输、同步和排队开销。重点是MLSys / AI Infra运行时设计，不训练新视觉模型，不研究token pruning/merging。真实图像输入、检测框输出和COCO检测精度评测保留，满足课程的视觉任务边界。
 
-> v2运行时、校准/冻结、矩阵恢复、profiling和报告生成器已实现，10项CPU测试通过。当前发现校准误选MIG分区，旧记录已保留并剔除；完整GPU0处于MIG开启但无实例状态，等待管理员恢复。正式实验与报告尚未完成，见[当前状态](docs/STATUS.md)。旧AP-ToMe只保留Git历史。
+> v2运行时、校准/冻结、矩阵恢复、profiling和报告生成器已实现，10项CPU测试通过。完整H800已恢复；252组新校准、Graph/compile各1000请求验证和冻结已完成，正在进行12组4000图像留出集精度评估。旧MIG记录已保留并剔除，正式serving实验与报告尚未完成，见[当前状态](docs/STATUS.md)。旧AP-ToMe只保留Git历史。
 
 ## 为什么贴近你的背景
 
@@ -46,4 +46,4 @@ python3 scripts/make_matrix.py --output artifacts/serving_matrix_v2.json
 
 已完成的配置按manifest和hash恢复；GPU干扰会保存失败并等待空闲后重试。已有freeze与新配置冲突时拒绝覆盖，重做实验使用新checkout/evidence目录。完整矩阵包括252主实验、12 EDF控制及36有效编译基线，计时窗口每个60秒；预算上限30 GPU-hours/30 GB。详细操作见[H800交接](docs/H800_HANDOFF.md)，CUDA生命周期见[CUDA_RUNTIME](docs/CUDA_RUNTIME.md)。
 
-当前实验恢复：激活环境后执行`CVPR_GPU=0 bash scripts/resume_experiments.sh`。程序先将nvidia-smi物理序号解析为GPU UUID；runtime以真实CUDA属性和UUID hash核对设备，拒绝把MIG分区冒充完整卡。GPU0当前需管理员关闭空配置MIG模式，见[恢复命令](docs/STATUS.md)。
+当前实验恢复：激活环境后执行`CVPR_GPU=0 bash scripts/resume_experiments.sh`。程序先将nvidia-smi物理序号解析为GPU UUID；runtime以真实CUDA属性和UUID hash核对设备，拒绝把MIG分区冒充完整卡。先检查是否已有恢复队列运行，再启动；当前设备和进度见[状态](docs/STATUS.md)。
