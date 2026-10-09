@@ -1,6 +1,6 @@
 # 状态 v2
 
-更新日期：2026-10-09（澳门）。完整GPU0已恢复，M0–M3的新设备验证、252组校准与冻结完成；M4正在进行留出集精度评估，正式serving结果与报告尚未完成。
+更新日期：2026-10-09（澳门）。完整GPU0已恢复，M0–M3的新设备验证、252组校准与冻结完成；12组留出集精度检查全部通过，M4正在进行300组正式serving计时，报告尚未完成。
 
 | 阶段 | 当前状态 | 真实证据与剩余工作 |
 |---|---|---|
@@ -8,14 +8,14 @@
 | M1 baseline | 完整卡重测完成 | 实际CUDA设备为H800 PCIe、114 SM、85,017,493,504 bytes；E1 E2E p95=32.409165 ms，统一8个CPU workers |
 | M2 graph/pipeline | 新scope验证完成 | Graph与compile各1000请求，覆盖两slot及逆序logits/boxes；Graph最大误差0，compile logits/boxes最大差0.003231/0.000351；warmup后显存allocated增长0 |
 | M3 调度/冻结 | 252/252，已冻结 | R0/F0各96、C0 48、D0 12；共同lambda_ref=167.555394 rps，F0/A0 b4 wait0、C0 b8 wait0、D0 b8 tau1；freeze先于留出集推理 |
-| M4 实验 | 留出集AP进行中 | 12个backend/bucket各遍历4000图像；eager b1已完成；300个正式serving配置随后执行，尚无正式serving结论 |
+| M4 实验 | AP 12/12通过，300组正式计时进行中 | 每个backend/bucket独立遍历全部4000图像；参考AP=36.311754，最大绝对变化0.000112 pp；尚无全矩阵serving结论 |
 | M5 报告 | 生成器完成，待真实结果 | 曲线、消融、质量表、profile与英文Markdown/PDF代码齐备；暂无报告PDF |
 
 ## 当前运行与预算
 
-恢复队列已自动推进至`evaluate-quality`。整机没有其他GPU计算任务，GPU0为完整卡、MIG Disabled；所有新阶段以相同物理UUID hash核对实际CUDA设备。冻结hash：`2ba3f2e355d8ee1c23b310df9206e71a9b3629384d6b7bc2e3938863014f9d9e`。held-out评估开始后不再修改参数。
+恢复队列已自动完成`evaluate-quality`（UTC 03:59:38），于UTC 04:00:39启动`run-matrix`。整机没有其他GPU计算任务，GPU0为完整卡、MIG Disabled；所有新阶段以相同物理UUID hash核对实际CUDA设备。冻结hash：`2ba3f2e355d8ee1c23b310df9206e71a9b3629384d6b7bc2e3938863014f9d9e`。held-out评估开始后不再修改参数。
 
-当前已入账4.961/30 GPU-hour（含旧失败/错scope工作及0.25小时保守预留），存储11.57/30 GB；正在运行的阶段结束后追加实际成本。300个正式配置的10秒预热+60秒窗口合计至少5小时50分钟，另含drain和初始化。完成后还需真实profile、Nsight、英文报告、证据校验及GitHub发布。
+截至留出集AP完成，累计5.253/30 GPU-hour（含旧失败/错scope工作及0.25小时保守预留），存储13.94/30 GB；后续阶段继续计入实际成本。300个正式配置的10秒预热+60秒窗口合计至少5小时50分钟，另含drain和初始化。完成后还需真实profile、Nsight、英文报告、证据校验及GitHub发布。
 
 10项CPU协议/硬件边界测试通过；本轮GPU数值一致性也已通过，二者分别记录。旧MIG结果不进入本轮统计。
 

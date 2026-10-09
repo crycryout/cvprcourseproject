@@ -6,7 +6,7 @@ English title: **Deadline-Aware Object Detection Serving on NVIDIA H800 with CUD
 
 以预训练DETR为视觉工作负载，研究提交、传输、同步和排队开销。重点是MLSys / AI Infra运行时设计，不训练新视觉模型，不研究token pruning/merging。真实图像输入、检测框输出和COCO检测精度评测保留，满足课程的视觉任务边界。
 
-> v2运行时、校准/冻结、矩阵恢复、profiling和报告生成器已实现，10项CPU测试通过。完整H800已恢复；252组新校准、Graph/compile各1000请求验证和冻结已完成，正在进行12组4000图像留出集精度评估。旧MIG记录已保留并剔除，正式serving实验与报告尚未完成，见[当前状态](docs/STATUS.md)。旧AP-ToMe只保留Git历史。
+> v2运行时、校准/冻结、矩阵恢复、profiling和报告生成器已实现，10项CPU测试通过。完整H800已恢复；252组校准、Graph/compile各1000请求验证和冻结已完成。12组4000图像留出集精度评估全部通过（AP最大差0.000112 pp），正在执行300组正式serving计时。旧MIG记录已保留并剔除，全矩阵结果与报告尚未完成，见[当前状态](docs/STATUS.md)。旧AP-ToMe只保留Git历史。
 
 ## 为什么贴近你的背景
 
