@@ -1,0 +1,28 @@
+{
+  "all_quality_gates_passed": true,
+  "annotation_sha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f",
+  "evaluated_images_per_configuration": 4000,
+  "evaluations": 12,
+  "frozen_config_sha256": "2ba3f2e355d8ee1c23b310df9206e71a9b3629384d6b7bc2e3938863014f9d9e",
+  "hardware": {
+    "compute_capability": [
+      9,
+      0
+    ],
+    "cuda_build": "13.0",
+    "cudnn_version": 92400,
+    "device_uuid_sha256": "d1a32d6aace58dc1ff9ac39d49c974e147e18f1a65eb3ffb0be106ac03f868b1",
+    "multiprocessors": 114,
+    "name": "NVIDIA H800 PCIe",
+    "torch": "2.14.0+cu130",
+    "total_memory_bytes": 85017493504
+  },
+  "maximum_abs_AP_change_pp": 0.00011154654288247912,
+  "precision": "fp32",
+  "protocol_version": 2,
+  "quality_csv_sha256": "bfd7d69991716881c8edc3ce2253f653890a812c641be6821f79d41fd826e9c2",
+  "quality_gate_pp": 0.1,
+  "reference_AP": 36.31175367412548,
+  "scope": "completed_offline_quality_stage; formal_serving_matrix_and_report_pending",
+  "split_sha256": "3ede0df1a6eb2bfc8a49c99084f2fdcac1fcb6b9fa3685176f635ba36502b9a2"
+}
