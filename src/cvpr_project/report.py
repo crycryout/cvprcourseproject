@@ -11,6 +11,48 @@ def table(headers, rows):
                      ["| " + " | ".join(str(x) for x in row) + " |" for row in rows])
 
 
+def native_profile_evidence(root):
+    path = root / "nsight_v2.json"
+    if not path.exists():
+        return "No native Nsight evidence is available in this result set."
+    record = read_json(path)
+    if record.get("status") != "completed":
+        return f"Native Nsight collection has status `{record.get('status')}`; no uncollected counters are inferred."
+    systems = record["systems"]
+    kernels = systems["statistics"]["cuda_gpu_kern_sum"][:3]
+    def kernel_label(name):
+        tile = re.search(r"tilesize(\d+x\d+x\d+)", name)
+        if tile and "fprop_implicit_gemm_f32" in name and "cudnn" in name:
+            return f"cuDNN FP32 convolution, tile {tile.group(1)}"
+        return name[:72] + ("..." if len(name) > 72 else "")
+    kernel_table = table(["Kernel family / tile (full names in JSON)", "Kernel-time share", "Instances", "Mean instance (us)"],
+                         [[kernel_label(row["Name"]),
+                           row["Time (%)"] + "%", row["Instances"],
+                           f"{float(row['Avg (ns)'])/1000:.3f}"] for row in kernels])
+    metrics = {row["Metric Name"]: row for row in record["compute"]["metrics"]}
+    wanted = [("gpu__time_duration.avg", "Kernel duration"),
+              ("sm__throughput.avg.pct_of_peak_sustained_elapsed", "SM throughput / peak sustained"),
+              ("sm__warps_active.avg.pct_of_peak_sustained_active", "Active warps / peak sustained")]
+    counter_table = table(["Measured counter", "Value", "Unit"],
+                          [[label, f"{float(metrics[name]['Metric Value']):.3f}", metrics[name]["Metric Unit"]]
+                           for name, label in wanted if name in metrics])
+    passes = record["compute"].get("replay_passes")
+    replay_text = f"The capture completed {passes} replay passes. " if passes else ""
+    return ("A separate native P0 high-load capture used calibration images and explicit CUDA Graph node tracing. "
+            "The first graph-level capture recorded whole-graph execution but no individual kernel table; it was preserved "
+            "and recaptured with `--cuda-graph-trace=node`. The table below gives accumulated CUDA-kernel time shares "
+            "within this instrumented trace, not fractions of request E2E time. Its leading symbols are cuDNN FP32 "
+            "forward-convolution implicit-GEMM kernels. Full symbols, CUDA API/memcpy/NVTX tables, commands and report "
+            "SHA-256 identities are in `nsight_v2.json`. [Nsight Systems trace granularity](https://docs.nvidia.com/nsight-systems/UserGuide/index.html).\n\n" +
+            kernel_table + "\n\n" +
+            "Nsight Compute then filtered one instance of the leading accumulated-time symbol, using a real "
+            "calibration image already resident on the GPU at batch one. " + replay_text +
+            "Its counters describe that input/kernel instance rather than the average of all convolution shapes or "
+            "the full serving pipeline. The import exposes " + str(len(metrics)) +
+            " recorded metric values; both wide and long CSV layouts are supported, and the original successful capture "
+            "was reused when fixing the wide-layout parser. GPU clocks were left unchanged.\n\n" + counter_table)
+
+
 def write_report(results="results", destination="docs/REPORT.md"):
     root = Path(results)
     delivery = read_json(root / "delivery.json")
@@ -29,6 +71,7 @@ def write_report(results="results", destination="docs/REPORT.md"):
         ["GPU reserved", f"{pool['gpu_reserved_bytes']/2**30:.3f} GiB", "Calibration process caching allocator"],
     ])
     pilots = read_json(root / "pilot_summary.json")["rows"]
+    formal_stages = pd.read_csv(root / "stage_summary.csv")
     overlap = read_json(root / "profile_overlap.json")["profiles"]
     hardware_path = root / "environment_timing_v2.json"
     hardware = read_json(hardware_path if hardware_path.exists() else root / "environment_v2.json")["cuda_device"]
@@ -69,6 +112,29 @@ def write_report(results="results", destination="docs/REPORT.md"):
                   [[p["policy"], *[f"{p['stage_median_ms'][k]:.3f}" for k in
                     ["preprocess_ms", "pack_ms", "h2d_ms", "forward_ms", "d2h_ms", "postprocess_ms"]],
                     f"{p['e2e_p95_ms']:.3f}"] for p in pilots])
+    formal_stage_table = table(["Policy", "CPU wait", "Preprocess", "Ready wait", "Pack", "H2D", "Forward", "D2H", "Postprocess"],
+                              [[p, *[f"{g[k].mean():.3f}" for k in
+                                ["request_cpu_queue_p50_ms", "request_preprocess_p50_ms", "request_ready_queue_p50_ms",
+                                 "batch_pack_p50_ms", "batch_h2d_p50_ms", "batch_forward_p50_ms",
+                                 "batch_d2h_p50_ms", "batch_postprocess_p50_ms"]]]
+                               for p, g in formal_stages.groupby("policy")])
+    occupancy_table = table(["Policy", "Mean completed-batch occupancy"],
+                            [[p, f"{g.batch_mean_valid_count.mean():.3f}"]
+                             for p, g in formal_stages.groupby("policy")])
+    observed_occupancy = formal_stages.groupby("policy").batch_mean_valid_count.mean()
+    observed_goodput = runs.groupby("policy").goodput_rps.mean()
+    d0_gap_percent = 100 * (observed_goodput["D0"] / observed_goodput["F0"] - 1)
+    interpretation = (f"The primary comparison is a negative result: mean goodput across the 36 shared grid settings "
+                      f"is {observed_goodput['D0']:.3f} requests/s for D0 and {observed_goodput['F0']:.3f} for F0 "
+                      f"({d0_gap_percent:+.1f} percent relative to F0). D0's mean of per-run batch occupancies is "
+                      f"{observed_occupancy['D0']:.3f}, versus {observed_occupancy['F0']:.3f} for F0. "
+                      "Thus the feasibility heuristic predominantly dispatched single requests despite an available "
+                      "batch-eight bucket. This is consistent with a loss of batching efficiency, but does not isolate "
+                      "one unique cause: queue ordering, deadline slack, prefetch locking and service estimation also interact. "
+                      "The frozen configuration is retained rather than retuned on these held-out outcomes. "
+                      "All three serial controls have zero on-time goodput on this F0-normalized overload grid; their "
+                      "completed-request tails and formal CPU-wait medians show the accumulated backlog. They do not "
+                      "measure the controls' unsaturated latency.")
     cpu_table = table(["Policy", "Mean CPU cores", "Max allocated GiB", "Mean dummy fraction"],
                      [[p, f"{g.main_process_cpu_core_equivalents.mean():.2f}",
                        f"{g.gpu_peak_allocated_gib.max():.2f}", f"{g.dummy_lane_fraction.mean():.3f}"]
@@ -171,6 +237,18 @@ The latency axes use a logarithmic scale so overload tails and shorter latencies
 
 {stage}
 
+The next table uses formal serving logs rather than pilot extrapolation. Each cell is the arithmetic mean of per-run medians in milliseconds. CPU wait is enqueue-to-preprocess-start, and ready wait is preprocess-end-to-dispatch. These request stages cover completed measurement-cohort requests; copy/forward/pack/postprocess stages deduplicate shared batch records by bucket, slot and dispatch. Rejected and unfinished requests remain in the separate all-offered SLO denominator. Event forward duration is a device-stream span and can include launch gaps; it is not total kernel busy time. The analyzer independently checks raw request counts, on-time decisions and latency percentiles against each run's metrics. Full per-run values and request CSV hashes are exported in `stage_summary.csv`.
+
+{formal_stage_table}
+
+Each main-policy row covers 36 grid settings; A0 covers only its 12 prescribed high-load controls. These across-grid stage averages therefore have different workload coverage. Paired F0/A0/D0 controls remain the basis for the EDF comparison.
+
+Batch occupancy below is also a mean of per-run values, using completed measurement-cohort batches. It records what the frozen scheduler actually dispatched, rather than treating configured max_batch as achieved batch size. Occupancy and queue-stage differences are descriptive evidence; they do not isolate a unique cause for every goodput difference.
+
+{occupancy_table}
+
+{interpretation}
+
 ![E0, E1, G0 and P0 execution controls with shared traces; shaded regions show seed ranges.](../results/figures/execution_ablation.png)
 
 `submit_host_ms` includes Python packing/submission and can overlap GPU execution. A long host submission is not, by itself, measured idle launch gap. H2D/D2H event durations are device measurements. CPU JPEG/transform and postprocessing remain part of the serving scope. The profiler shows kernel and memcpy intervals in its correlated clock; only actual interval intersection establishes copy/compute overlap.
@@ -180,6 +258,8 @@ The latency axes use a logarithmic scale so overload tails and shorter latencies
 Separate E1, P0 and valid C0 profiles replay calibration images at 0.3 and 1.1 times the frozen common capacity, using each policy's frozen settings. Their profiled metrics include instrumentation overhead and never replace formal timing. Profiles ending in `_low` denote 0.3 load; the others denote 1.1 load. GPU-resident forward microbenchmarks use 50 timed samples after 10 warmups per bucket and exclude JPEG processing, transfer, queueing, and CPU postprocessing; the measured values are exported in `forward_microbench.csv`.
 
 ![Separate P0 correlated CUDA timeline; blue denotes kernels and orange denotes memory copies.](../results/figures/profile_P0_timeline.png)
+
+{native_profile_evidence(root)}
 
 Graph initialization includes capture warmup, every slot's capture, and private pools. The calibration snapshot below retains graph and eager executors simultaneously; GPU allocator counters are process-wide, while pinned bytes sum this graph executor's slots. They are not an incremental graph memory measurement. The peak also retains earlier serial work in that calibration process.
 
@@ -213,13 +293,14 @@ Code implementation, debugging assistance, and report assembly used Codex. The u
 
 
 def _pdf(sections, title, destination, root):
-    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, Table, TableStyle, Image
+    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
     from reportlab.lib import colors
     from reportlab.lib.pagesizes import A4
     styles = getSampleStyleSheet()
-    styles.add(ParagraphStyle(name="PaperBody", fontName="Helvetica", fontSize=9, leading=12,
-                             spaceAfter=7, splitLongWords=True))
+    styles["Heading2"].keepWithNext = True
+    styles.add(ParagraphStyle(name="PaperBody", fontName="Helvetica", fontSize=9, leading=11.5,
+                             spaceAfter=6, splitLongWords=True))
     styles.add(ParagraphStyle(name="PaperTitle", fontName="Helvetica-Bold", fontSize=18, leading=22, spaceAfter=12))
     styles.add(ParagraphStyle(name="PaperCaption", fontName="Helvetica-Oblique", fontSize=8, leading=10, spaceAfter=7))
     doc = SimpleDocTemplate(str(destination), pagesize=A4, rightMargin=42, leftMargin=42,
@@ -232,7 +313,7 @@ def _pdf(sections, title, destination, root):
         return text
     for i, (heading, body) in enumerate(sections):
         if i:
-            story.append(PageBreak())
+            story.append(Spacer(1, 12))
         if not i:
             story.append(Paragraph(title, styles["PaperTitle"]))
             story.append(Paragraph("CISC8005 — measured protocol v2", styles["Normal"]))
@@ -258,6 +339,7 @@ def _pdf(sections, title, destination, root):
                     file = root / "figures" / Path(m[2]).name
                     if file.exists():
                         image = Image(str(file))
+                        image.keepWithNext = True
                         scale = doc.width / image.imageWidth
                         image.drawWidth, image.drawHeight = doc.width, image.imageHeight * scale
                         story.extend([image, Paragraph(m[1], styles["PaperCaption"])])

@@ -1,0 +1,252 @@
+{
+  "manifest": {
+    "absolute_rate_and_deadlines": "resolve_from_frozen_artifact_not_guessed",
+    "actual_gpu_hours": 0.025208775262193134,
+    "actual_image_bytes": "COCO2017_validation_held_out_subset",
+    "arrival_type": "periodic",
+    "backend": "graph",
+    "case_id": "v2_G0_periodic_rho1.1_seed2026",
+    "common_buckets": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "cpu_workers": 8,
+    "cuda_device_info": {
+      "compute_capability": [
+        9,
+        0
+      ],
+      "cuda_build": "13.0",
+      "cudnn_version": 92400,
+      "device_uuid_sha256": "d1a32d6aace58dc1ff9ac39d49c974e147e18f1a65eb3ffb0be106ac03f868b1",
+      "multiprocessors": 114,
+      "name": "NVIDIA H800 PCIe",
+      "torch": "2.14.0+cu130",
+      "total_memory_bytes": 85017493504
+    },
+    "data_split_sha256": "3ede0df1a6eb2bfc8a49c99084f2fdcac1fcb6b9fa3685176f635ba36502b9a2",
+    "elapsed_seconds": 90.75159049127251,
+    "ended_utc": "2026-10-09T15:01:18.230372+00:00",
+    "evidence": {
+      "metrics": "metrics.json",
+      "requests": "request_events.csv"
+    },
+    "frozen_config_sha256": "2ba3f2e355d8ee1c23b310df9206e71a9b3629384d6b7bc2e3938863014f9d9e",
+    "gpu_after": {
+      "fields": [
+        "index",
+        "name",
+        "memory.used",
+        "utilization.gpu",
+        "temperature.gpu",
+        "power.draw"
+      ],
+      "rows": [
+        "0, NVIDIA H800 PCIe, 7879, 0, 42, 87.75",
+        "1, NVIDIA H800 PCIe, 87, [N/A], 34, 51.79"
+      ]
+    },
+    "gpu_before": {
+      "fields": [
+        "index",
+        "name",
+        "memory.used",
+        "utilization.gpu",
+        "temperature.gpu",
+        "power.draw"
+      ],
+      "rows": [
+        "0, NVIDIA H800 PCIe, 7879, 0, 56, 100.04",
+        "1, NVIDIA H800 PCIe, 87, [N/A], 35, 52.00"
+      ]
+    },
+    "model_files_sha256": {
+      "config.json": "ea65a2708a8fb81c71fffb93c8f68e43b7f8f8ee7b931597e3f1a94fdf683d3b",
+      "preprocessor_config.json": "6842c9a3895e41cfd135d0c2f925dd46a1224aeb6e943b040cf597f394a60791",
+      "pytorch_model.bin": "883e4b0a898b87cc8ce28b33e04f86413984f67f7a44e96de5d05473bb0931b4"
+    },
+    "model_revision": "70120ba84d68ca1211e007c4fb61d0cd5424be54",
+    "offered_rate_rps": 184.3109333206322,
+    "policy": "G0",
+    "precision": "fp32",
+    "protocol_version": 2,
+    "rate_multiplier": 1.1,
+    "request_events_sha256": "fe92badc11d82c7e88342b03d747edecae7f43368f446d1c1387e6b7ca288eb4",
+    "requires_frozen_calibration": true,
+    "run_id": "v2_G0_periodic_rho1.1_seed2026-20261009T145947-db80f6f3",
+    "settings": {
+      "max_batch": 1,
+      "wait_ms": 0
+    },
+    "source": {
+      "dirty_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_sha": "97688b6d5432a0c70d0cb9a9462da70a95c38ecf",
+      "packages": {
+        "numpy": "1.26.4",
+        "pillow": "10.4.0",
+        "pycocotools": "2.0.8",
+        "torch": "2.14.0",
+        "torchvision": null,
+        "transformers": "4.46.3"
+      },
+      "source_files_sha256": {
+        "src/cvpr_project/__init__.py": "f0ae05b12972ddfb51158e213eeda09473f17a98b5883f698cd08f0870bfa56a",
+        "src/cvpr_project/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+        "src/cvpr_project/analysis.py": "7a052963dcd8f8c007266a678ad3f74966d49394cb7c160aded4339a6ef79aa1",
+        "src/cvpr_project/benchmark.py": "eb2395135a8afdafbd93b148e1390ccecae57c05d9c55f5f44baed4a3d83494b",
+        "src/cvpr_project/buffer_pool.py": "7c32f84d463ff6387e06dae34309af4d3a0ea15a9e66afbf5e2204354a77894f",
+        "src/cvpr_project/calibration.py": "5c19912fa2658cf7444fe0a8f4dcc16c0f538b425af1d7b55916d5f19e78928c",
+        "src/cvpr_project/cli.py": "09da8a908fdbb89836d5d9677616e95acd2bf16ef3fbc006ae175fbaa7a85bc9",
+        "src/cvpr_project/data.py": "eb301e58b74fb5303074d5481753ac61c559750732bc97298b84fc4cc8e5ce08",
+        "src/cvpr_project/executor.py": "02c13bfe974c74633a139bfd816ffeb951418e84b26356ce8c8625e9b607c8b6",
+        "src/cvpr_project/graph_pool.py": "2cf2b843b845b2a9238d9faceb4e41bfa53a89e83d704156f6cea855cf24a5c0",
+        "src/cvpr_project/hardware.py": "38e47084c33e116053400f8c80c7cabb342f99e4206d863684745f4f4e3c51df",
+        "src/cvpr_project/intervals.py": "3c9ee1a3fbd1baf18412b5d60c1e72c15b690860a094d964595c42dbafeb16ed",
+        "src/cvpr_project/matrix.py": "d9a86be7662efd490b3c6f7f2981fe0a0215f779bb8ed6b91644ab12f237565d",
+        "src/cvpr_project/metrics.py": "a4b775547bc1f5dbc4776edae1ed04990e4be82c32a888a15ec529a20829559e",
+        "src/cvpr_project/model.py": "594eef251e32a7f821e1d7c2674b07007a9b9a8d97a912c5449bb47226c2e740",
+        "src/cvpr_project/profile.py": "217b186ff47663d94f0e57a5ef6d7d28cd8af70ea7f311ceb8678f7fa06780cd",
+        "src/cvpr_project/quality.py": "28d23c14d3ca2b8ebfa8a4ae73374b083c4904c7d65015a06529a7c894d0e371",
+        "src/cvpr_project/report.py": "ecc350c343cfd55dda071ec0d30065f1d3a397fb63c3a3af5ba2f5b1cf567e8a",
+        "src/cvpr_project/runs.py": "289a615de705f51645914831f43546fe021e66071e123ea2ce0c24ef9e2ef1a2",
+        "src/cvpr_project/scheduler.py": "0e0133d8fb5eeca37a26107f7c7450864205b21e86b80df8f9ca9dd09eea1951",
+        "src/cvpr_project/serve.py": "218cdb046ce72e25c6102c3dc9494ea8f4a8db0f92720d5aa40cd391a463458e",
+        "src/cvpr_project/trace.py": "3d4cacf916579c6cf86fded5f8a0128a18cec3e2f94195c831cb3ccc85e60e2f"
+      }
+    },
+    "stage": "main",
+    "started_utc": "2026-10-09T14:59:47.434515+00:00",
+    "status": "completed",
+    "synthetic_arrivals": true,
+    "timing_scope": "RAM_encoded_image_bytes_to_CPU_detections",
+    "trace_seed": 2026,
+    "trace_sha256": "1e435436bbf72295a5be78a7ca0970540b424350d6bcb0f1d8f1b98603e62cbc"
+  },
+  "metrics": {
+    "cohort_throughput_rps_including_drain": 20.679813977332756,
+    "completed": 1636,
+    "completed_measurement_batch_distribution": {
+      "b1_n1": 1636
+    },
+    "completed_measurement_batches": 1636,
+    "completion_ratio": 0.14794718755652017,
+    "cpu_measurement_scope": "main_process_warmup_measurement_drain_and_request_export_excludes_loadgen",
+    "dummy_lane_fraction": 0.0,
+    "failed": 0,
+    "generator_lag_p99_ms": 0.0012624300000000004,
+    "goodput_rps": 0.0,
+    "gpu_activity_samples": [
+      {
+        "host_ns": 3753883130704420,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753888231004053,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753893306700706,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753898382925917,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753903436521716,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753908514564154,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753913614657285,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753918714203077,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753923786498399,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753928835931221,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753933915007393,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753938990779299,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753944078795256,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753949150394739,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753954222083520,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753959318234517,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753964411233706,
+        "other_gpu_process_count": 0
+      },
+      {
+        "host_ns": 3753969486444291,
+        "other_gpu_process_count": 0
+      }
+    ],
+    "late_completed": 1636,
+    "latency_p50_ms": 19132.790232,
+    "latency_p95_ms": 19261.666283000002,
+    "latency_p99_ms": 19279.7698835,
+    "loadgen_limited": false,
+    "loop_overrun_after_cap_ms": 0.0,
+    "main_process_cpu_core_equivalents": 0.8935520365016446,
+    "main_process_cpu_seconds": 81.08688408499984,
+    "measurement_seconds": 60,
+    "memory": {
+      "capture": {
+        "capture": "full_DETR_forward_with_pixel_mask",
+        "initialization_seconds": 1.2228526202961802,
+        "private_graph_pools": true,
+        "protocol_version": 2,
+        "slots": 8
+      },
+      "compute_streams": 1,
+      "gpu_allocated_bytes": 1060484096,
+      "gpu_peak_allocated_bytes": 1060484096,
+      "gpu_reserved_bytes": 7522484224,
+      "pinned_host_bytes": 246912000,
+      "slots_per_bucket": 2
+    },
+    "observation_cutoff_ns": 3753983250385863,
+    "observed_seconds_including_drain": 79.110963077,
+    "offered": 11058,
+    "ontime": 0,
+    "peak_pending": 1,
+    "policy": "G0",
+    "protocol_version": 2,
+    "rejected": 9422,
+    "shared_gpu_jobs_observed": false,
+    "slo_success": 0.0,
+    "steady_window_completion_rps": 27.266666666666666,
+    "trace_sha256": "1e435436bbf72295a5be78a7ca0970540b424350d6bcb0f1d8f1b98603e62cbc",
+    "unfinished": 0
+  }
+}

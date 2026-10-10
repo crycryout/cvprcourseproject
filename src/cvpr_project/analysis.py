@@ -12,6 +12,42 @@ from .matrix import load_frozen
 from .intervals import overlapping_duration
 
 
+def stage_evidence(path, manifest, metrics):
+    """Summarize formal request stages and independently check cohort accounting."""
+    if sha256(path) != manifest["request_events_sha256"]:
+        raise ValueError(f"Request evidence hash changed: {manifest['run_id']}")
+    rows = pd.read_csv(path)
+    if not rows.request_id.is_unique:
+        raise ValueError(f"Duplicate request IDs: {manifest['run_id']}")
+    cohort = rows[rows.measurement]
+    completed = cohort[cohort.status == "completed"]
+    ontime = completed[(completed.complete_ns <= completed.deadline_ns) & (completed.identity_ok == True)]
+    for name, actual in [("offered", len(cohort)), ("ontime", len(ontime))] + [
+            (status, int((cohort.status == status).sum()))
+            for status in ["completed", "rejected", "failed", "unfinished"]]:
+        if actual != metrics[name]:
+            raise ValueError(f"Raw {name} disagrees with metrics: {manifest['run_id']}")
+    latency = (completed.complete_ns - completed.arrival_ns) / 1e6
+    for percentile in [50, 95, 99]:
+        actual = float(np.percentile(latency, percentile)) if len(latency) else None
+        expected = metrics[f"latency_p{percentile}_ms"]
+        if actual != expected and (actual is None or expected is None or
+                                   not np.isclose(actual, expected, rtol=1e-8, atol=1e-8)):
+            raise ValueError(f"Raw p{percentile} disagrees with metrics: {manifest['run_id']}")
+    batches = completed.drop_duplicates(["bucket", "slot_id", "dispatch_ns"])
+    result = {key: manifest[key] for key in ["run_id", "policy", "arrival_type", "rate_multiplier", "trace_seed"]}
+    result.update(completed_requests=len(completed), completed_batches=len(batches),
+                  request_events_sha256=manifest["request_events_sha256"],
+                  request_preprocess_p50_ms=completed.preprocess_ms.median(),
+                  request_cpu_queue_p50_ms=((completed.preprocess_start_ns - completed.enqueue_ns) / 1e6).median(),
+                  request_ready_queue_p50_ms=((completed.dispatch_ns - completed.ready_ns) / 1e6).median(),
+                  request_latency_p50_ms=latency.median(),
+                  batch_mean_valid_count=batches.valid_count.mean())
+    for name in ["pack", "h2d", "forward", "d2h", "postprocess", "submit_host"]:
+        result[f"batch_{name}_p50_ms"] = batches[f"{name}_ms"].median()
+    return result
+
+
 def ablation_figures(frame, output):
     """Plot execution controls and EDF/service-feasibility controls separately."""
     colors = {policy: plt.get_cmap("tab10")(i) for i, policy in enumerate(sorted(frame.policy.unique()))}
@@ -130,7 +166,7 @@ def analyze(runs, output, frozen_path):
     evidence = output / "evidence"
     evidence.mkdir(exist_ok=True)
     frozen = load_frozen(frozen_path)
-    records, failures, batch_rows = [], [], []
+    records, failures, batch_rows, stage_rows = [], [], [], []
     seen = set()
     for path in sorted(root.glob("*/manifest.json")):
         manifest = read_json(path)
@@ -147,6 +183,7 @@ def analyze(runs, output, frozen_path):
         if key in seen:
             raise ValueError(f"Duplicate successful case {key}; select a predeclared run, not the fastest")
         seen.add(key)
+        stage_rows.append(stage_evidence(path.parent / "request_events.csv", manifest, metrics))
         row = {"run_id": manifest["run_id"], "case_id": key, "policy": manifest["policy"],
                "arrival_type": manifest["arrival_type"], "rate_multiplier": manifest["rate_multiplier"],
                "trace_seed": manifest["trace_seed"], "offered_rate_rps": manifest["offered_rate_rps"],
@@ -170,13 +207,14 @@ def analyze(runs, output, frozen_path):
     colors = {policy: plt.get_cmap("tab10")(i) for i, policy in enumerate(sorted(frame.policy.unique()))}
     frame.to_csv(output / "summary.csv", index=False)
     pd.DataFrame(batch_rows).to_csv(output / "batch_distribution.csv", index=False)
+    pd.DataFrame(stage_rows).to_csv(output / "stage_summary.csv", index=False)
     ablation_figures(frame, figures)
     detection_figure(output, figures)
     metrics_to_plot = [("latency_p95_ms", "Completed-request p95 latency (ms)", "latency_p95"),
                        ("latency_p99_ms", "Completed-request p99 latency (ms)", "latency_p99"),
-                       ("goodput_rps", "On-time results per second (all-offered denominator)", "goodput"),
-                       ("slo_success", "SLO success fraction (all offered requests)", "slo_success"),
-                       ("completion_ratio", "Completion fraction (including drain)", "completion_ratio")]
+                       ("goodput_rps", "On-time results per second", "goodput"),
+                       ("slo_success", "SLO success / all offered", "slo_success"),
+                       ("completion_ratio", "Completion fraction", "completion_ratio")]
     for metric, ylabel, name in metrics_to_plot:
         fig, axes = plt.subplots(1, 3, figsize=(13, 3.8), sharey=False)
         for ax, kind in zip(axes, ["periodic", "poisson", "burst"]):
@@ -190,11 +228,11 @@ def analyze(runs, output, frozen_path):
             ax.set_title(f"Synthetic {kind} arrivals")
             ax.set_xlabel("Offered rate / common F0 capacity")
             ax.grid(alpha=.2)
-        axes[0].set_ylabel(ylabel + (", log scale" if metric.startswith("latency_") else ""))
+        axes[0].set_ylabel(ylabel + ("\nlog scale" if metric.startswith("latency_") else ""))
         handles, labels = axes[-1].get_legend_handles_labels()
         fig.legend(handles, labels, loc="upper center", ncol=5)
         fig.tight_layout(rect=[0, 0, 1, .84])
-        fig.savefig(figures / f"{name}.png", dpi=160)
+        fig.savefig(figures / f"{name}.png", dpi=160, bbox_inches="tight")
         plt.close(fig)
     # Paired seed differences; do not treat individual requests as independent runs.
     pairs = []
@@ -216,6 +254,22 @@ def analyze(runs, output, frozen_path):
               "quality_gate_passed": q["quality_gate_passed"], "predictions_sha256": q.get("predictions_sha256")}
              for q in quality["rows"]]
     pd.DataFrame(qrows).to_csv(output / "quality.csv", index=False)
+    write_json(output / "quality_gate_v2.json", {
+        "protocol_version": 2,
+        "scope": "completed_offline_quality_stage; serving_evidence_in_delivery_json",
+        "frozen_config_sha256": frozen["frozen_config_sha256"],
+        "annotation_sha256": frozen["data"]["annotation_sha256"],
+        "split_sha256": frozen["data"]["split_sha256"],
+        "hardware": frozen["calibration"]["cuda_device_info"],
+        "precision": frozen["calibration"]["precision"],
+        "evaluations": len(qrows),
+        "evaluated_images_per_configuration": len(frozen["data"]["held_out"]),
+        "reference_AP": quality["reference_AP"],
+        "maximum_abs_AP_change_pp": max(abs(q["AP_change_pp"]) for q in qrows),
+        "quality_gate_pp": .1,
+        "all_quality_gates_passed": quality["all_quality_gates_passed"],
+        "quality_csv_sha256": sha256(output / "quality.csv"),
+    })
     profiles = []
     microbench = []
     for trace_path in Path("artifacts").glob("profile*/timeline.json"):

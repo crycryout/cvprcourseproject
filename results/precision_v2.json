@@ -1,0 +1,179 @@
+{
+  "attention_implementation": "eager",
+  "bf16_AP": 35.955743503353496,
+  "bf16_boxes_atol": 0.972412109375,
+  "bf16_drop_pp": 0.12783052909447434,
+  "bf16_logits_atol": 8.763248443603516,
+  "bf16_vs_fp32_raw_errors": [
+    {
+      "boxes_max_abs_error": 0.7067562937736511,
+      "image_id": 350679,
+      "logits_max_abs_error": 4.76568603515625
+    },
+    {
+      "boxes_max_abs_error": 0.2661166787147522,
+      "image_id": 353027,
+      "logits_max_abs_error": 2.5000953674316406
+    },
+    {
+      "boxes_max_abs_error": 0.03294958174228668,
+      "image_id": 62353,
+      "logits_max_abs_error": 1.3919363021850586
+    },
+    {
+      "boxes_max_abs_error": 0.972412109375,
+      "image_id": 332845,
+      "logits_max_abs_error": 3.488487958908081
+    },
+    {
+      "boxes_max_abs_error": 0.10364103317260742,
+      "image_id": 520707,
+      "logits_max_abs_error": 3.068178653717041
+    },
+    {
+      "boxes_max_abs_error": 0.39617303013801575,
+      "image_id": 478286,
+      "logits_max_abs_error": 4.777788162231445
+    },
+    {
+      "boxes_max_abs_error": 0.303688645362854,
+      "image_id": 328430,
+      "logits_max_abs_error": 3.0942811965942383
+    },
+    {
+      "boxes_max_abs_error": 0.02209600806236267,
+      "image_id": 269942,
+      "logits_max_abs_error": 1.9963657855987549
+    },
+    {
+      "boxes_max_abs_error": 0.06390199065208435,
+      "image_id": 342186,
+      "logits_max_abs_error": 1.1016488075256348
+    },
+    {
+      "boxes_max_abs_error": 0.09122808277606964,
+      "image_id": 419601,
+      "logits_max_abs_error": 2.0171823501586914
+    },
+    {
+      "boxes_max_abs_error": 0.12609648704528809,
+      "image_id": 514979,
+      "logits_max_abs_error": 1.4915447235107422
+    },
+    {
+      "boxes_max_abs_error": 0.05633413791656494,
+      "image_id": 395903,
+      "logits_max_abs_error": 0.6559066772460938
+    },
+    {
+      "boxes_max_abs_error": 0.43748605251312256,
+      "image_id": 488075,
+      "logits_max_abs_error": 6.4259819984436035
+    },
+    {
+      "boxes_max_abs_error": 0.5064007043838501,
+      "image_id": 500613,
+      "logits_max_abs_error": 3.46842098236084
+    },
+    {
+      "boxes_max_abs_error": 0.32725077867507935,
+      "image_id": 539883,
+      "logits_max_abs_error": 2.4208173751831055
+    },
+    {
+      "boxes_max_abs_error": 0.31088486313819885,
+      "image_id": 195165,
+      "logits_max_abs_error": 3.980286121368408
+    },
+    {
+      "boxes_max_abs_error": 0.14565128087997437,
+      "image_id": 45229,
+      "logits_max_abs_error": 4.269197463989258
+    },
+    {
+      "boxes_max_abs_error": 0.1359519064426422,
+      "image_id": 137294,
+      "logits_max_abs_error": 1.8950471878051758
+    },
+    {
+      "boxes_max_abs_error": 0.4875974655151367,
+      "image_id": 11813,
+      "logits_max_abs_error": 3.7243103981018066
+    },
+    {
+      "boxes_max_abs_error": 0.5445146560668945,
+      "image_id": 192871,
+      "logits_max_abs_error": 8.763248443603516
+    }
+  ],
+  "bucket_quality_calibration": [
+    {
+      "AP": 35.844414299541135,
+      "AP_change_from_batch1_pp": -0.11132920381236033,
+      "bucket": 2,
+      "precision": "bf16"
+    },
+    {
+      "AP": 36.083572609302635,
+      "AP_change_from_batch1_pp": -1.423145334911169e-06,
+      "bucket": 2,
+      "precision": "fp32"
+    },
+    {
+      "AP": 36.08357115981422,
+      "AP_change_from_batch1_pp": -2.872633750428122e-06,
+      "bucket": 4,
+      "precision": "fp32"
+    },
+    {
+      "AP": 36.08357107659307,
+      "AP_change_from_batch1_pp": -2.955854903063937e-06,
+      "bucket": 8,
+      "precision": "fp32"
+    }
+  ],
+  "fp32_AP": 36.08357403244797,
+  "held_out_used": false,
+  "maximum_bf16_drop_pp": 0.3,
+  "precision": "fp32",
+  "prefreeze_fallback_reason": "Calibration BF16 bucket 2 changes AP by -0.111329 pp (>0.1 pp)",
+  "protocol_version": 2,
+  "selection_subset": "calibration",
+  "source": {
+    "dirty_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "git_sha": "46ee2cf14e14fbc197a94cf2de2f20443563cc67",
+    "packages": {
+      "numpy": "1.26.4",
+      "pillow": "10.4.0",
+      "pycocotools": "2.0.8",
+      "torch": "2.14.0",
+      "torchvision": null,
+      "transformers": "4.46.3"
+    },
+    "source_files_sha256": {
+      "src/cvpr_project/__init__.py": "f0ae05b12972ddfb51158e213eeda09473f17a98b5883f698cd08f0870bfa56a",
+      "src/cvpr_project/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "src/cvpr_project/analysis.py": "7a052963dcd8f8c007266a678ad3f74966d49394cb7c160aded4339a6ef79aa1",
+      "src/cvpr_project/benchmark.py": "eb2395135a8afdafbd93b148e1390ccecae57c05d9c55f5f44baed4a3d83494b",
+      "src/cvpr_project/buffer_pool.py": "7c32f84d463ff6387e06dae34309af4d3a0ea15a9e66afbf5e2204354a77894f",
+      "src/cvpr_project/calibration.py": "5c19912fa2658cf7444fe0a8f4dcc16c0f538b425af1d7b55916d5f19e78928c",
+      "src/cvpr_project/cli.py": "09da8a908fdbb89836d5d9677616e95acd2bf16ef3fbc006ae175fbaa7a85bc9",
+      "src/cvpr_project/data.py": "eb301e58b74fb5303074d5481753ac61c559750732bc97298b84fc4cc8e5ce08",
+      "src/cvpr_project/executor.py": "02c13bfe974c74633a139bfd816ffeb951418e84b26356ce8c8625e9b607c8b6",
+      "src/cvpr_project/graph_pool.py": "2cf2b843b845b2a9238d9faceb4e41bfa53a89e83d704156f6cea855cf24a5c0",
+      "src/cvpr_project/hardware.py": "38e47084c33e116053400f8c80c7cabb342f99e4206d863684745f4f4e3c51df",
+      "src/cvpr_project/intervals.py": "3c9ee1a3fbd1baf18412b5d60c1e72c15b690860a094d964595c42dbafeb16ed",
+      "src/cvpr_project/matrix.py": "d9a86be7662efd490b3c6f7f2981fe0a0215f779bb8ed6b91644ab12f237565d",
+      "src/cvpr_project/metrics.py": "a4b775547bc1f5dbc4776edae1ed04990e4be82c32a888a15ec529a20829559e",
+      "src/cvpr_project/model.py": "594eef251e32a7f821e1d7c2674b07007a9b9a8d97a912c5449bb47226c2e740",
+      "src/cvpr_project/profile.py": "217b186ff47663d94f0e57a5ef6d7d28cd8af70ea7f311ceb8678f7fa06780cd",
+      "src/cvpr_project/quality.py": "28d23c14d3ca2b8ebfa8a4ae73374b083c4904c7d65015a06529a7c894d0e371",
+      "src/cvpr_project/report.py": "bc92b9b27522ba1bad44a5afb710e2d460f666f053d8e36de9e096141a619f54",
+      "src/cvpr_project/runs.py": "289a615de705f51645914831f43546fe021e66071e123ea2ce0c24ef9e2ef1a2",
+      "src/cvpr_project/scheduler.py": "0e0133d8fb5eeca37a26107f7c7450864205b21e86b80df8f9ca9dd09eea1951",
+      "src/cvpr_project/serve.py": "218cdb046ce72e25c6102c3dc9494ea8f4a8db0f92720d5aa40cd391a463458e",
+      "src/cvpr_project/trace.py": "3d4cacf916579c6cf86fded5f8a0128a18cec3e2f94195c831cb3ccc85e60e2f"
+    }
+  },
+  "tf32": false
+}

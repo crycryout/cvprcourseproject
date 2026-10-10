@@ -1,0 +1,15 @@
+{
+  "capture": {
+    "capture": "full_DETR_forward_with_pixel_mask",
+    "initialization_seconds": 0.8149266969412565,
+    "private_graph_pools": true,
+    "protocol_version": 2,
+    "slots": 8
+  },
+  "compute_streams": 1,
+  "gpu_allocated_bytes": 803386368,
+  "gpu_peak_allocated_bytes": 1747106816,
+  "gpu_reserved_bytes": 6446645248,
+  "pinned_host_bytes": 246912000,
+  "slots_per_bucket": 2
+}

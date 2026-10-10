@@ -1,0 +1,333 @@
+{
+  "entries": [
+    {
+      "elapsed_seconds": 900,
+      "measured": false,
+      "protocol_version": 2,
+      "reason": "Initial smoke calls preceded the lease meter. A 15-minute reserve is charged, not claimed as measured GPU time.",
+      "stage": "initial_preflight_and_MIG_capture_smoke",
+      "status": "conservative_unmetered_setup_bound"
+    },
+    {
+      "elapsed_seconds": 81.67087030410767,
+      "ended_utc": "2026-10-08T16:08:51.960389+00:00",
+      "protocol_version": 2,
+      "stage": "verify-model",
+      "started_utc": "2026-10-08T16:07:30.289519+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 113.35895252227783,
+      "ended_utc": "2026-10-08T16:11:41.760848+00:00",
+      "protocol_version": 2,
+      "stage": "pilot",
+      "started_utc": "2026-10-08T16:09:48.401896+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 5.136562824249268,
+      "ended_utc": "2026-10-08T16:13:44.996701+00:00",
+      "protocol_version": 2,
+      "stage": "compile-baseline",
+      "started_utc": "2026-10-08T16:13:39.860135+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 129.39158296585083,
+      "ended_utc": "2026-10-08T16:18:15.293572+00:00",
+      "protocol_version": 2,
+      "stage": "compile-baseline",
+      "started_utc": "2026-10-08T16:16:05.901990+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 50.21113967895508,
+      "ended_utc": "2026-10-08T16:21:09.394989+00:00",
+      "protocol_version": 2,
+      "stage": "calibration-bucket-quality-and-memory",
+      "started_utc": "2026-10-08T16:20:19.183851+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 185.43976736068726,
+      "ended_utc": "2026-10-08T16:27:41.585456+00:00",
+      "protocol_version": 2,
+      "stage": "verify-model",
+      "started_utc": "2026-10-08T16:24:36.145694+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 137.22004508972168,
+      "ended_utc": "2026-10-08T16:30:37.528018+00:00",
+      "protocol_version": 2,
+      "stage": "pilot",
+      "started_utc": "2026-10-08T16:28:20.307978+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 91.08134865760803,
+      "ended_utc": "2026-10-08T16:35:29.591805+00:00",
+      "protocol_version": 2,
+      "stage": "compile-baseline",
+      "started_utc": "2026-10-08T16:33:58.510451+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 156.2080614566803,
+      "ended_utc": "2026-10-08T16:43:18.212676+00:00",
+      "protocol_version": 2,
+      "stage": "compile-baseline",
+      "started_utc": "2026-10-08T16:40:42.004615+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 515.5225570201874,
+      "ended_utc": "2026-10-08T16:54:28.513927+00:00",
+      "protocol_version": 2,
+      "stage": "calibrate",
+      "started_utc": "2026-10-08T16:45:52.991363+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 157.92740035057068,
+      "ended_utc": "2026-10-08T17:01:59.156437+00:00",
+      "protocol_version": 2,
+      "stage": "calibrate",
+      "started_utc": "2026-10-08T16:59:21.229044+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 21.018028736114502,
+      "ended_utc": "2026-10-08T17:06:47.328540+00:00",
+      "protocol_version": 2,
+      "stage": "calibrate",
+      "started_utc": "2026-10-08T17:06:26.310514+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 1451.575154542923,
+      "ended_utc": "2026-10-08T17:33:56.507742+00:00",
+      "protocol_version": 2,
+      "stage": "calibrate",
+      "started_utc": "2026-10-08T17:09:44.932585+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 2053.7156929969788,
+      "ended_utc": "2026-10-08T18:11:23.319709+00:00",
+      "protocol_version": 2,
+      "stage": "calibrate",
+      "started_utc": "2026-10-08T17:37:09.604011+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 388.1994004249573,
+      "ended_utc": "2026-10-08T18:20:27.436045+00:00",
+      "protocol_version": 2,
+      "stage": "calibrate",
+      "started_utc": "2026-10-08T18:13:59.236650+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 95.15035653114319,
+      "ended_utc": "2026-10-08T18:29:34.546489+00:00",
+      "protocol_version": 2,
+      "stage": "calibrate",
+      "started_utc": "2026-10-08T18:27:59.396132+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 925.4788329601288,
+      "ended_utc": "2026-10-08T18:52:44.610737+00:00",
+      "protocol_version": 2,
+      "stage": "calibrate",
+      "started_utc": "2026-10-08T18:37:19.131910+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 1060.5443935394287,
+      "ended_utc": "2026-10-08T19:22:59.427885+00:00",
+      "protocol_version": 2,
+      "stage": "calibrate",
+      "started_utc": "2026-10-08T19:05:18.883495+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 2.9289169311523438,
+      "ended_utc": "2026-10-08T20:37:54.349238+00:00",
+      "protocol_version": 2,
+      "stage": "shared-host-nontiming-slot-correctness",
+      "started_utc": "2026-10-08T20:37:51.420322+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 186.7339527606964,
+      "ended_utc": "2026-10-09T01:04:10.761853+00:00",
+      "protocol_version": 2,
+      "stage": "verify-model",
+      "started_utc": "2026-10-09T01:01:04.027900+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 136.5343792438507,
+      "ended_utc": "2026-10-09T01:07:30.310189+00:00",
+      "protocol_version": 2,
+      "stage": "pilot",
+      "started_utc": "2026-10-09T01:05:13.775808+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 157.11323189735413,
+      "ended_utc": "2026-10-09T01:11:10.081103+00:00",
+      "protocol_version": 2,
+      "stage": "compile-baseline",
+      "started_utc": "2026-10-09T01:08:32.967873+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 8594.598845243454,
+      "ended_utc": "2026-10-09T03:35:27.085814+00:00",
+      "protocol_version": 2,
+      "stage": "calibrate",
+      "started_utc": "2026-10-09T01:12:12.486975+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 90.19300937652588,
+      "ended_utc": "2026-10-09T03:38:03.439909+00:00",
+      "protocol_version": 2,
+      "stage": "post-calibration-slot-validation",
+      "started_utc": "2026-10-09T03:36:33.246901+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 1224.829268693924,
+      "ended_utc": "2026-10-09T03:59:36.603145+00:00",
+      "protocol_version": 2,
+      "stage": "evaluate-quality",
+      "started_utc": "2026-10-09T03:39:11.773881+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 7407.497949361801,
+      "ended_utc": "2026-10-09T06:04:07.692191+00:00",
+      "protocol_version": 2,
+      "stage": "run-matrix",
+      "started_utc": "2026-10-09T04:00:40.194249+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 157.51985692977905,
+      "ended_utc": "2026-10-09T06:09:24.321327+00:00",
+      "protocol_version": 2,
+      "stage": "run-matrix",
+      "started_utc": "2026-10-09T06:06:46.801477+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 132.09889721870422,
+      "ended_utc": "2026-10-09T06:12:40.108744+00:00",
+      "protocol_version": 2,
+      "stage": "run-matrix",
+      "started_utc": "2026-10-09T06:10:28.009853+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 10484.819949865341,
+      "ended_utc": "2026-10-09T16:56:14.427812+00:00",
+      "protocol_version": 2,
+      "stage": "run-matrix",
+      "started_utc": "2026-10-09T14:01:29.607863+00:00",
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": 29.497892379760742,
+      "ended_utc": "2026-10-10T11:36:36.383777+00:00",
+      "protocol_version": 2,
+      "stage": "evaluate-quality",
+      "started_utc": "2026-10-10T11:36:06.885892+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 7442.393256664276,
+      "ended_utc": "2026-10-10T13:41:43.757985+00:00",
+      "protocol_version": 2,
+      "stage": "run-matrix",
+      "started_utc": "2026-10-10T11:37:41.364728+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 50.10200309753418,
+      "ended_utc": "2026-10-10T13:43:39.755795+00:00",
+      "protocol_version": 2,
+      "stage": "profile",
+      "started_utc": "2026-10-10T13:42:49.653799+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 48.859302043914795,
+      "ended_utc": "2026-10-10T13:45:35.072474+00:00",
+      "protocol_version": 2,
+      "stage": "profile",
+      "started_utc": "2026-10-10T13:44:46.213171+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 30.067197561264038,
+      "ended_utc": "2026-10-10T13:47:11.891726+00:00",
+      "protocol_version": 2,
+      "stage": "profile",
+      "started_utc": "2026-10-10T13:46:41.824528+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 59.524312019348145,
+      "ended_utc": "2026-10-10T13:49:15.753799+00:00",
+      "protocol_version": 2,
+      "stage": "profile",
+      "started_utc": "2026-10-10T13:48:16.229493+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 46.28516674041748,
+      "ended_utc": "2026-10-10T13:51:09.122153+00:00",
+      "protocol_version": 2,
+      "stage": "profile",
+      "started_utc": "2026-10-10T13:50:22.836986+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 43.440460205078125,
+      "ended_utc": "2026-10-10T13:52:58.230351+00:00",
+      "protocol_version": 2,
+      "stage": "profile",
+      "started_utc": "2026-10-10T13:52:14.789898+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 23.677454233169556,
+      "ended_utc": "2026-10-10T13:54:32.956880+00:00",
+      "protocol_version": 2,
+      "stage": "native-profile-serving-graph",
+      "started_utc": "2026-10-10T13:54:09.279415+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 26.810121059417725,
+      "ended_utc": "2026-10-10T13:59:30.146675+00:00",
+      "protocol_version": 2,
+      "stage": "native-profile-serving-graph",
+      "started_utc": "2026-10-10T13:59:03.336557+00:00",
+      "status": "completed"
+    },
+    {
+      "elapsed_seconds": 8.749110221862793,
+      "ended_utc": "2026-10-10T13:59:48.471485+00:00",
+      "protocol_version": 2,
+      "stage": "native-profile-forward-graph",
+      "started_utc": "2026-10-10T13:59:39.722368+00:00",
+      "status": "completed"
+    }
+  ],
+  "protocol_version": 2
+}

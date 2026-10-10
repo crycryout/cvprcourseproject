@@ -1,6 +1,6 @@
 # 实现计划 v2
 
-当前仅`preflight.py`与`make_matrix.py`已实现。下列`cvpr_project`模块/CLI是待实现契约，禁止把文件名当作已有程序。
+下列`cvpr_project`模块和CLI已实现。本文件保留实现设计及验收规则；当前实测进度见[STATUS](STATUS.md)，不能把设计目标当作已测结果。各命令的参数以`python -m cvpr_project <command> --help`为准；已有冻结实验应从恢复入口续跑，避免覆盖校准证据。
 
 ## M0：检测正确性
 
@@ -49,7 +49,7 @@ ServiceTable(bucket_to_dispatch_to_result_p95_ns)
 
 先calibration freeze，再跑脚本计划中的252个主run（7 policies×3 traces×4 loads×3 seeds）、12个A0消融；C0若可用按完整36个trace配置追加。每run60秒测量，另有预热/drain，按pilot预算分组执行并支持resume。
 
-正式命令的预期接口（实现与`--help`通过后使用）：
+正式命令示例（首次复现使用新checkout；已有freeze使用恢复入口）：
 
 ```bash
 python -m cvpr_project prepare-data --config configs/project.json

@@ -1,0 +1,11 @@
+{
+  "backend": "graph",
+  "bucket": 4,
+  "capacity_config_sha256": "145dfbdaadf8f649a40e996c6a1fb99cac4e0d7dbf965c208967783a65430d55",
+  "completed_in_window": 15080,
+  "duration_seconds": 90.00008681602776,
+  "lambda_ref_rps": 167.55539392784743,
+  "protocol_version": 2,
+  "scope": "backlogged_RAM_encoded_bytes_to_CPU_results",
+  "workers": 8
+}

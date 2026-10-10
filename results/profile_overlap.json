@@ -1,0 +1,71 @@
+{
+  "profiles": [
+    {
+      "clock": "profiler_correlated_CUPTI_trace_clock",
+      "copy_duration_us": 204182.08800000045,
+      "copy_kernel_overlap_us": 133644.5460205078,
+      "fraction_copy_time_overlapping_kernel": 0.6545360924142745,
+      "gpu_events": 607022,
+      "memcpy_events": 2524,
+      "overlap_verified": true,
+      "profile": "profile_P0",
+      "status": "measured"
+    },
+    {
+      "clock": "profiler_correlated_CUPTI_trace_clock",
+      "copy_duration_us": 68661.76800000001,
+      "copy_kernel_overlap_us": 31187.85107421875,
+      "fraction_copy_time_overlapping_kernel": 0.4542244102164504,
+      "gpu_events": 201058,
+      "memcpy_events": 836,
+      "overlap_verified": true,
+      "profile": "profile_P0_low",
+      "status": "measured"
+    },
+    {
+      "clock": "profiler_correlated_CUPTI_trace_clock",
+      "copy_duration_us": 229818.3239999998,
+      "copy_kernel_overlap_us": 128853.28002929688,
+      "fraction_copy_time_overlapping_kernel": 0.5606745266721943,
+      "gpu_events": 37091,
+      "memcpy_events": 372,
+      "overlap_verified": true,
+      "profile": "profile_C0",
+      "status": "measured"
+    },
+    {
+      "clock": "profiler_correlated_CUPTI_trace_clock",
+      "copy_duration_us": 73482.82999999993,
+      "copy_kernel_overlap_us": 1236.4852294921875,
+      "fraction_copy_time_overlapping_kernel": 0.016826859138280175,
+      "gpu_events": 63751,
+      "memcpy_events": 500,
+      "overlap_verified": true,
+      "profile": "profile_C0_low",
+      "status": "measured"
+    },
+    {
+      "clock": "profiler_correlated_CUPTI_trace_clock",
+      "copy_duration_us": 33207.88500000003,
+      "copy_kernel_overlap_us": 0.0,
+      "fraction_copy_time_overlapping_kernel": 0.0,
+      "gpu_events": 99086,
+      "memcpy_events": 721,
+      "overlap_verified": false,
+      "profile": "profile_E1",
+      "status": "measured"
+    },
+    {
+      "clock": "profiler_correlated_CUPTI_trace_clock",
+      "copy_duration_us": 34509.469000000005,
+      "copy_kernel_overlap_us": 0.0,
+      "fraction_copy_time_overlapping_kernel": 0.0,
+      "gpu_events": 102934,
+      "memcpy_events": 749,
+      "overlap_verified": false,
+      "profile": "profile_E1_low",
+      "status": "measured"
+    }
+  ],
+  "protocol_version": 2
+}

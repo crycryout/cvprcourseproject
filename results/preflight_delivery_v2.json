@@ -1,0 +1,48 @@
+{
+  "architecture": "x86_64",
+  "cuda_smoke_passed": false,
+  "cuda_smoke_requested": false,
+  "gpu_driver_versions": [
+    "580.173.02"
+  ],
+  "gpus": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "0, NVIDIA H800 PCIe, 81559, 0, 0, 580.173.02\n1, NVIDIA H800 PCIe, 81559, 87, [N/A], 580.173.02"
+  },
+  "host": {
+    "cpu_models": [
+      "Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz"
+    ],
+    "kernel_release": "5.15.0-131-generic",
+    "logical_processors": 96,
+    "physical_cores": 48,
+    "probe_process_affinity_count": 96,
+    "ram_total_bytes": 269863182336,
+    "sockets": 2
+  },
+  "next_gate": "M0 v2: verify DETR/processor, COCO split, quality and isolated environment",
+  "note": "CUDA smoke alone does not verify runtime readiness or an idle GPU.",
+  "packages": {
+    "matplotlib": "3.9.2",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "pycocotools": "2.0.8",
+    "pytest": "8.3.4",
+    "torch": "2.14.0",
+    "torchvision": null,
+    "transformers": "4.46.3"
+  },
+  "protocol_version": 2,
+  "purpose": "environment_probe_not_inference_benchmark",
+  "python": "3.10.12",
+  "ready_for_experiments": false,
+  "system": "Linux",
+  "timestamp_utc": "2026-10-10T11:35:01.807486+00:00",
+  "torch_probe": {
+    "cuda_available": true,
+    "cuda_build": "13.0",
+    "torch": "2.14.0+cu130"
+  },
+  "working_disk_free_gb": 646.87
+}

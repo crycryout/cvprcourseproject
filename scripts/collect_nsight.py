@@ -12,6 +12,34 @@ from cvpr_project.matrix import load_frozen
 from cvpr_project.runs import assert_no_other_gpu_jobs, read_json, run_id, sha256, stamp, write_json
 
 
+def compute_metric_rows(output):
+    """Read either long metric rows or Nsight Compute's wide raw CSV layout."""
+    parsed = list(csv.reader(io.StringIO(output)))
+    index = next((i for i, row in enumerate(parsed) if "Metric Name" in row), None)
+    if index is not None:
+        header = parsed[index]
+        return [{key: item[key] for key in ["Kernel Name", "Metric Name", "Metric Unit", "Metric Value"]}
+                for row in parsed[index + 1:] if len(row) == len(header)
+                for item in [dict(zip(header, row))]]
+    index = next((i for i, row in enumerate(parsed) if "Kernel Name" in row and "ID" in row), None)
+    if index is None or index + 1 >= len(parsed):
+        raise ValueError("Nsight Compute import has no actual metric header")
+    header, units = parsed[index], parsed[index + 1]
+    if len(units) != len(header) or units[header.index("ID")]:
+        raise ValueError("Nsight Compute wide CSV has no matching units row")
+    metadata = {"ID", "Process ID", "Process Name", "Host Name", "Kernel Name", "Context",
+                "Stream", "Block Size", "Grid Size", "Device", "CC"}
+    metrics = []
+    for row in parsed[index + 2:]:
+        if len(row) != len(header) or not row[header.index("ID")].isdigit():
+            continue
+        for column, name in enumerate(header):
+            if name not in metadata and row[column]:
+                metrics.append({"Kernel Name": row[header.index("Kernel Name")], "Metric Name": name,
+                                "Metric Unit": units[column], "Metric Value": row[column]})
+    return metrics
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", default="artifacts/nsight_v2")
@@ -62,7 +90,8 @@ def main():
         assert_no_other_gpu_jobs()
         prefix = root / run_id("P0-systems")
         metadata = prefix.with_suffix(".json")
-        execute("nsys-capture", [nsys, "profile", "--sample=none", "--cpuctxsw=none",
+        state["systems_trace_granularity"] = "node"
+        execute("nsys-capture", [nsys, "profile", "--sample=none", "--cpuctxsw=none", "--cuda-graph-trace=node",
             "--trace=cuda,nvtx,osrt", "--capture-range=cudaProfilerApi", "--capture-range-end=stop",
             "--force-overwrite=false", "--output", str(prefix), sys.executable,
             "scripts/profile_native.py", "--backend", "graph", "--mode", "serving",
@@ -78,6 +107,9 @@ def main():
             header_index = next((i for i, row in enumerate(parsed)
                                  if any(key in row for key in ["Name", "Operation", "Range"])), None)
             if header_index is None:
+                state.update(status="failed", failed_stage=f"nsys-{name}-parse",
+                             last_error=f"No CSV table in actual Nsight report {name}; inspect the preserved log")
+                write_json(state_path, state)
                 raise ValueError(f"No CSV table in actual Nsight report {name}")
             header = parsed[header_index]
             statistics[name] = [dict(zip(header, row)) for row in parsed[header_index + 1:]
@@ -93,7 +125,7 @@ def main():
         prefix = root / run_id("P0-hotspot")
         kernel = state["selected_hotspot_kernel"]
         metadata = prefix.with_suffix(".json")
-        execute("ncu-capture", [ncu, "--clock-control", "none", "--profile-from-start", "off",
+        capture_output = execute("ncu-capture", [ncu, "--clock-control", "none", "--profile-from-start", "off",
             "--kernel-name-base", "demangled", "--kernel-name", "regex:" + re.escape(kernel),
             "--launch-count", "1", "--set", "basic", "--export", str(prefix),
             sys.executable, "scripts/profile_native.py", "--backend", "graph", "--mode", "forward",
@@ -102,20 +134,13 @@ def main():
         if not report.exists() or not metadata.exists():
             raise RuntimeError("Nsight Compute did not produce a report and actual native-input metadata")
         output = execute("ncu-import", [ncu, "--import", str(report), "--csv", "--page", "raw"])
-        parsed = list(csv.reader(io.StringIO(output)))
-        index = next((i for i, row in enumerate(parsed) if "Metric Name" in row), None)
-        if index is None:
-            raise ValueError("Nsight Compute import has no real metric rows")
-        metrics = []
-        for row in parsed[index + 1:]:
-            if len(row) != len(parsed[index]):
-                continue
-            item = dict(zip(parsed[index], row))
-            metrics.append({key: item[key] for key in ["Kernel Name", "Metric Name", "Metric Unit", "Metric Value"]})
+        metrics = compute_metric_rows(output)
         if not metrics:
             raise ValueError("Nsight Compute captured zero matching kernels; repair the filter")
         state["compute"] = {"report": report.name, "report_sha256": sha256(report),
-                            "metadata": read_json(metadata), "metrics": metrics}
+                            "metadata": read_json(metadata), "metrics": metrics,
+                            "replay_passes": int(re.findall(r"(\d+)\s+passes", capture_output)[0])
+                            if re.findall(r"(\d+)\s+passes", capture_output) else None}
     state.update(status="completed", ended_utc=stamp())
     state.pop("last_error", None)
     state.pop("failed_stage", None)

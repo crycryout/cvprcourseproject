@@ -49,6 +49,18 @@ def main():
         assert len(manifest["request_events_sha256"]) == 64
         trace_groups[(row["arrival_type"], row["rate_multiplier"], row["trace_seed"])].add(manifest["trace_sha256"])
     assert len(trace_groups) == 36 and all(len(hashes) == 1 for hashes in trace_groups.values())
+    with (root / "stage_summary.csv").open() as f:
+        stages = list(csv.DictReader(f))
+    assert len(stages) == len(rows)
+    stage_by_run = {r["run_id"]: r for r in stages}
+    assert len(stage_by_run) == len(rows) and set(stage_by_run) == {r["run_id"] for r in rows}
+    for row in rows:
+        stage = stage_by_run[row["run_id"]]
+        evidence = read_json(root / "evidence" / f"{row['run_id']}.json")
+        assert stage["request_events_sha256"] == evidence["manifest"]["request_events_sha256"]
+        close(stage["completed_requests"], row["completed"])
+        close(stage["completed_batches"], evidence["metrics"]["completed_measurement_batches"])
+        assert 1 <= float(stage["batch_mean_valid_count"]) <= max(frozen["calibration"]["common_buckets"])
     with (root / "quality.csv").open() as f:
         quality = list(csv.DictReader(f))
     assert len(quality) == (12 if counts["C0"] else 8)
@@ -57,6 +69,10 @@ def main():
         assert q["precision"] == frozen["calibration"]["precision"]
         assert q["quality_gate_passed"] == "True" and abs(float(q["AP_change_pp"])) <= .1
         assert len(q["predictions_sha256"]) == 64
+    gate = read_json(root / "quality_gate_v2.json")
+    assert gate["all_quality_gates_passed"] and gate["frozen_config_sha256"] == identity
+    assert gate["hardware"] == hardware and gate["quality_csv_sha256"] == sha256(root / "quality.csv")
+    assert gate["evaluations"] == len(quality) and gate["evaluated_images_per_configuration"] == 4000
     for name in ["buffer_pool.py", "data.py", "executor.py", "graph_pool.py", "metrics.py", "model.py", "hardware.py",
                  "scheduler.py", "serve.py", "trace.py", "quality.py", "matrix.py"]:
         path = Path("src/cvpr_project") / name
@@ -69,6 +85,19 @@ def main():
             profile = read_json(root / f"profile_{policy}{suffix}.json")
             assert profile["frozen_config_sha256"] == identity and profile["rate_multiplier"] == rate
             assert profile["hardware"] == hardware and profile["profiler_not_formal_timing"]
+    nsight = read_json(root / "nsight_v2.json")
+    assert nsight["status"] == "completed" and nsight["systems_trace_granularity"] == "node"
+    assert nsight["frozen_config_sha256"] == identity and nsight["profiler_not_formal_timing"]
+    for name, mode in [("systems", "serving"), ("compute", "forward")]:
+        capture = nsight[name]
+        meta = capture["metadata"]
+        assert meta["frozen_config_sha256"] == identity and meta["hardware"] == hardware
+        assert meta["input_subset"] == "calibration" and meta["mode"] == mode
+        assert meta["profiler_not_formal_timing"] and meta["backend"] == "graph"
+        assert len(capture["report_sha256"]) == 64
+    assert nsight["systems"]["statistics"]["cuda_gpu_kern_sum"]
+    assert nsight["compute"]["metrics"] and nsight["compute"]["metadata"]["bucket"] == 1
+    assert all(m["Kernel Name"] == nsight["selected_hotspot_kernel"] for m in nsight["compute"]["metrics"])
     assert all((root / "figures" / f"{name}.png").exists() for name in
                ["latency_p95", "latency_p99", "goodput", "deadline_ablation", "execution_ablation", "detection_examples"])
     print(f"Verified {len(rows)} serving cases, {len(quality)} complete 4000-image quality evaluations, shared traces, accounting, and frozen runtime.")

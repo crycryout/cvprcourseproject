@@ -1,0 +1,3849 @@
+{
+  "action": "Preserve all files and charged costs; reject these calibration records; require verified full GPU UUID and matching hardware for pilot, calibration, freeze, quality and main matrix.",
+  "all_archived_calibration_counts": [
+    {
+      "cases": 58,
+      "device_name": "NVIDIA H800 PCIe",
+      "multiprocessors": 114,
+      "status": "completed"
+    },
+    {
+      "cases": 113,
+      "device_name": "NVIDIA H800 PCIe MIG 2g.20gb",
+      "multiprocessors": 30,
+      "status": "completed"
+    },
+    {
+      "cases": 5,
+      "device_name": "NVIDIA H800 PCIe MIG 2g.20gb",
+      "multiprocessors": 30,
+      "status": "failed"
+    },
+    {
+      "cases": 3,
+      "device_name": "NVIDIA H800 PCIe",
+      "multiprocessors": 114,
+      "status": "failed"
+    }
+  ],
+  "archive_directory": "artifacts/hardware_scope_attempts/cuda-ordinal-mismatch-20261008T205929-29f267c6",
+  "archived_file_index": [
+    {
+      "bytes": 345,
+      "original_file": "artifacts/capacity_v2.json",
+      "sha256": "35f9999d10069f6a861997ab3c978ff88331412e134cfa07b88ded61c738e730"
+    },
+    {
+      "bytes": 6370,
+      "original_file": "artifacts/precision_v2.json",
+      "sha256": "bdb0694d4d129fdab38480b802e2c8a895e433427df9f978cda5b571cc0e2d93"
+    },
+    {
+      "bytes": 364146,
+      "original_file": "artifacts/pilot_E0_v2.json",
+      "sha256": "8223362e709c3961bccc440b52c82af501b692478f040aba9e62fc6c2690e567"
+    },
+    {
+      "bytes": 364761,
+      "original_file": "artifacts/pilot_E1_v2.json",
+      "sha256": "af6c9b0adf23e704f7ad124066e3b0845c8800f2645483fd66bfb8165eab6016"
+    },
+    {
+      "bytes": 1268,
+      "original_file": "artifacts/stress_v2.json",
+      "sha256": "48e315fe9f6e351fdce09ea6334bc9417d13d7ee463f343c7c472e709d259ac8"
+    },
+    {
+      "bytes": 114959,
+      "original_file": "artifacts/service_table_v2.json",
+      "sha256": "17416e99ed89761f1a987701204552da708c20814fc3723a3ac8cdda1669b395"
+    },
+    {
+      "bytes": 397,
+      "original_file": "artifacts/graph_pool_v2.json",
+      "sha256": "bede193513d8d259ab4933ca218c1c771301e25665750eb7fa02957286201629"
+    },
+    {
+      "bytes": 447,
+      "original_file": "artifacts/cpu_workers_v2.json",
+      "sha256": "a22a3c7899726b9c733a03912c7fb2f2d4ab5bde54da8799aa37d38d8b0ad855"
+    },
+    {
+      "bytes": 8197,
+      "original_file": "artifacts/compile_v2.json",
+      "sha256": "9d8a8df823e7982d902866c4d678f9dc19adfc0f76b8f82a81bf5845d7a93e29"
+    },
+    {
+      "bytes": 2780,
+      "original_file": "artifacts/environment_v2.json",
+      "sha256": "55658f3248ba4d180e0e7e19d8e851e78637f5b37c9e0cb862ecae488e968e40"
+    },
+    {
+      "bytes": 2780,
+      "original_file": "artifacts/environment_timing_v2.json",
+      "sha256": "3b6f7dfcc24e4b4ade4b1fbc0c9a432c0a5f12400fdefb8c7a8d7863fb897093"
+    },
+    {
+      "bytes": 3252,
+      "original_file": "artifacts/compile_attempts/compile-20261008T161609-9eff8610.json",
+      "sha256": "0e631841fca5b8befa053d7bfd4e4e087157f96451189f36013144ee26c8b804"
+    },
+    {
+      "bytes": 3193,
+      "original_file": "artifacts/compile_attempts/compile-20261008T163401-8578b153.json",
+      "sha256": "e9ed17c62017fd9761cb22086d6a209b3090b3491d19f3cc8e119265c082b543"
+    },
+    {
+      "bytes": 2970,
+      "original_file": "artifacts/compile_attempts/compile-initial-mode-options-failure.json",
+      "sha256": "ded9770319233c771fe6e8d448cccdafcb461f4e73ebf7f6534b7a0932c20cb7"
+    },
+    {
+      "bytes": 8197,
+      "original_file": "artifacts/compile_attempts/compile-20261008T164045-ec93756c.json",
+      "sha256": "9d8a8df823e7982d902866c4d678f9dc19adfc0f76b8f82a81bf5845d7a93e29"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l0/initial_R0_b4_w2_l0-20261008T172636-a777e185/manifest.json",
+      "sha256": "75b4692609468618ecfdc9a2f2824d1b758c36008409592f4801f6a8c0b0e9c5"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l0/initial_R0_b4_w2_l0-20261008T172636-a777e185/settings.json",
+      "sha256": "38e216e93a00394878b3772d76d51d9bc735dbca873fd3819e216f2ea98ec489"
+    },
+    {
+      "bytes": 171893,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l0/initial_R0_b4_w2_l0-20261008T172636-a777e185/request_events.csv",
+      "sha256": "d4110380c695289125773aa349a48085b63b6d7057236b624dfff6422a750363"
+    },
+    {
+      "bytes": 1736,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l0/initial_R0_b4_w2_l0-20261008T172636-a777e185/metrics.json",
+      "sha256": "9426491e7b80229be6fe4e606ff686cc25505a8968234b88178c95e2bc663123"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l0/initial_R0_b4_w2_l0-20261008T175829-9ec3edb7/manifest.json",
+      "sha256": "8ac9af2dd418b33a144b7607b904d6f52afff517f790a7ae88df6e20a981540e"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l0/initial_R0_b4_w2_l0-20261008T175829-9ec3edb7/settings.json",
+      "sha256": "38e216e93a00394878b3772d76d51d9bc735dbca873fd3819e216f2ea98ec489"
+    },
+    {
+      "bytes": 172370,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l0/initial_R0_b4_w2_l0-20261008T175829-9ec3edb7/request_events.csv",
+      "sha256": "808166961ba604431636436eaa5e0f5738ca1d588c36ea24c824b3cf6493a715"
+    },
+    {
+      "bytes": 1742,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l0/initial_R0_b4_w2_l0-20261008T175829-9ec3edb7/metrics.json",
+      "sha256": "bfbcc1571b77c5d094bef6b8042af27ba21241f698d3ca1de60f8158cf2a87d9"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l2/initial_F0_b8_w1_l2-20261008T190728-3f69e7bd/manifest.json",
+      "sha256": "3b09f89e78b62f2eefff6d37f43cbbb808ad7e3ecb51ca0083978d8eedd38d09"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l2/initial_F0_b8_w1_l2-20261008T190728-3f69e7bd/settings.json",
+      "sha256": "54846b245fec237c4913225501e4839c973738d6410f113c97b29539fdaa046e"
+    },
+    {
+      "bytes": 691497,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l2/initial_F0_b8_w1_l2-20261008T190728-3f69e7bd/request_events.csv",
+      "sha256": "7c9bb21c80063ac416b499ea272a08455e9cb15f878aa04858ba436fd64d6c16"
+    },
+    {
+      "bytes": 2034,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l2/initial_F0_b8_w1_l2-20261008T190728-3f69e7bd/metrics.json",
+      "sha256": "b63a7db6ec132125df33c8d71f743678769f9aedcb9b89bf1c49c94eb6564c2b"
+    },
+    {
+      "bytes": 4703,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l2/initial_R0_b8_w1_l2-20261008T173159-f9cf8970/manifest.json",
+      "sha256": "1e9723690e4cbd289b0483ba19ec82b77353904f53b69125ca8ccbcabbd337ff"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l2/initial_R0_b8_w1_l2-20261008T173159-f9cf8970/settings.json",
+      "sha256": "eb5d194f5399ceda74e233734dbc45fae3bfdacc7944fc2ed8ec641c0da3089e"
+    },
+    {
+      "bytes": 699528,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l2/initial_R0_b8_w1_l2-20261008T173159-f9cf8970/request_events.csv",
+      "sha256": "2533069b67f69a0d9e465d8f788817386fd551dc34fe4dd1f17130223366a12a"
+    },
+    {
+      "bytes": 1665,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l2/initial_R0_b8_w1_l2-20261008T173159-f9cf8970/metrics.json",
+      "sha256": "687a1b7c8f5af8f5711990157e4680d82f42da3b7a9ce242ad09bfb742858a71"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l2/initial_R0_b8_w1_l2-20261008T180427-652d9e1f/manifest.json",
+      "sha256": "2049d94745875bea2938231ad16747921287e2110b7e3f962bf45f38fe49b4c6"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l2/initial_R0_b8_w1_l2-20261008T180427-652d9e1f/settings.json",
+      "sha256": "eb5d194f5399ceda74e233734dbc45fae3bfdacc7944fc2ed8ec641c0da3089e"
+    },
+    {
+      "bytes": 690558,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l2/initial_R0_b8_w1_l2-20261008T180427-652d9e1f/request_events.csv",
+      "sha256": "73c09044940035b7fa7cb54d7b4cb8f2aa7b22a2eb27064b6c65439546224ccb"
+    },
+    {
+      "bytes": 1906,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l2/initial_R0_b8_w1_l2-20261008T180427-652d9e1f/metrics.json",
+      "sha256": "bd99133bfced51ddf655bf860149a26957cb21b4f5b8c13635913d9ae5ece4f7"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l1/initial_R0_b2_w2_l1-20261008T175136-75764f9c/manifest.json",
+      "sha256": "f0706100191aea62fac1c84a2f266118855fd5905bcc23c2634a455baf34d4c4"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l1/initial_R0_b2_w2_l1-20261008T175136-75764f9c/settings.json",
+      "sha256": "e2a3ace210e5fa8aa937122cbcbc8d77be2c5079ea2c023528bdfedf56631c89"
+    },
+    {
+      "bytes": 350605,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l1/initial_R0_b2_w2_l1-20261008T175136-75764f9c/request_events.csv",
+      "sha256": "14e8131775036de813712b1b9705ecb38df6309afeb4f171cc6c30eca40f760d"
+    },
+    {
+      "bytes": 1789,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l1/initial_R0_b2_w2_l1-20261008T175136-75764f9c/metrics.json",
+      "sha256": "69798c6fb856bb5a6764b07aa300455d528e50a96e868ee686fa1d005e5a8b36"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l1/initial_R0_b2_w2_l1-20261008T172034-df99695c/manifest.json",
+      "sha256": "c252328169280a4c6db61593471ec35b24bcf943c2d4fdd6e7ac2ae20ad768bc"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l1/initial_R0_b2_w2_l1-20261008T172034-df99695c/settings.json",
+      "sha256": "e2a3ace210e5fa8aa937122cbcbc8d77be2c5079ea2c023528bdfedf56631c89"
+    },
+    {
+      "bytes": 349700,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l1/initial_R0_b2_w2_l1-20261008T172034-df99695c/request_events.csv",
+      "sha256": "46846d323efeef8a401657c5d0bd79ad9f10ae45ed9c144bd6355b269d9b5985"
+    },
+    {
+      "bytes": 1622,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l1/initial_R0_b2_w2_l1-20261008T172034-df99695c/metrics.json",
+      "sha256": "60132ec1713be72473b67161035273b46f1e6ef2834646dde5a22c6a0111d77f"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l2/initial_R0_b4_w1_l2-20261008T175705-ebaf7e72/manifest.json",
+      "sha256": "1bd77c7606286256aafa7b994d0fbc85b6e682fa89d2cc97c22fca333480169c"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l2/initial_R0_b4_w1_l2-20261008T175705-ebaf7e72/settings.json",
+      "sha256": "ea20183dede64631bd8c1a3839d647b1d2a8d4f00f13bb8123347d521e77fad6"
+    },
+    {
+      "bytes": 675928,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l2/initial_R0_b4_w1_l2-20261008T175705-ebaf7e72/request_events.csv",
+      "sha256": "b54312c691eca801624cce061e7cca608600e4376587306c2f2066576333afdb"
+    },
+    {
+      "bytes": 1910,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l2/initial_R0_b4_w1_l2-20261008T175705-ebaf7e72/metrics.json",
+      "sha256": "d3b1541d39930055b4905aa2a282545204c07eae6ea09ce71b69a3510f838ac0"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l2/initial_R0_b4_w1_l2-20261008T172529-1b750223/manifest.json",
+      "sha256": "194fbcc33008557681ecb3ecad1944b98c87b46103d96260d6f538617f9a1375"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l2/initial_R0_b4_w1_l2-20261008T172529-1b750223/settings.json",
+      "sha256": "ea20183dede64631bd8c1a3839d647b1d2a8d4f00f13bb8123347d521e77fad6"
+    },
+    {
+      "bytes": 699166,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l2/initial_R0_b4_w1_l2-20261008T172529-1b750223/request_events.csv",
+      "sha256": "e2c9ccf1f3e019cb33ee443fea7c9fff5f1e013696361306db1452ba5fa7ed33"
+    },
+    {
+      "bytes": 1662,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l2/initial_R0_b4_w1_l2-20261008T172529-1b750223/metrics.json",
+      "sha256": "2278bc176e8e3efcc2e62fd6b7571aa8a25833182f0173acec0d5c3c3bab4dd2"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l2/initial_R0_b8_w0_l2-20261008T180200-effdf59a/manifest.json",
+      "sha256": "f97398452345d8da8fc120dcf46c64085415c26bfd53e84b472fa7420575173f"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l2/initial_R0_b8_w0_l2-20261008T180200-effdf59a/settings.json",
+      "sha256": "472d85fcef2533ad855966d9f5f31e34a16e583d7c8bec63bba5339ed404198f"
+    },
+    {
+      "bytes": 690234,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l2/initial_R0_b8_w0_l2-20261008T180200-effdf59a/request_events.csv",
+      "sha256": "940df1d6e3b40715c22486c3aca697f3f2ff19efb526b99e581d79e652e2e25e"
+    },
+    {
+      "bytes": 1908,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l2/initial_R0_b8_w0_l2-20261008T180200-effdf59a/metrics.json",
+      "sha256": "1a66047d3fad5f731492ab1c31ea0f4d41be2a03ba6936464d51661c1c3efeab"
+    },
+    {
+      "bytes": 4592,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l2/initial_R0_b8_w0_l2-20261008T172950-8ffce1f5/manifest.json",
+      "sha256": "bc77624bcb898b5cd9a1b451292921e6b5bf04f5e0e2d056aacbc41aa3223b26"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l2/initial_R0_b8_w0_l2-20261008T172950-8ffce1f5/settings.json",
+      "sha256": "472d85fcef2533ad855966d9f5f31e34a16e583d7c8bec63bba5339ed404198f"
+    },
+    {
+      "bytes": 699556,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l2/initial_R0_b8_w0_l2-20261008T172950-8ffce1f5/request_events.csv",
+      "sha256": "5b1723515029a79b3a4ca58ac323768c9b2c74916b654222183f635bcc39a9ef"
+    },
+    {
+      "bytes": 1654,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l2/initial_R0_b8_w0_l2-20261008T172950-8ffce1f5/metrics.json",
+      "sha256": "58847b8239e395a533e1f411fbad6280abe4b47c80e8dc85d4eb244a6ab51151"
+    },
+    {
+      "bytes": 4703,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l1/initial_R0_b8_w1_l1-20261008T173127-0990a0e2/manifest.json",
+      "sha256": "5193a94a8433c0dc1822bd28c2b79f22b5fc14daf4c0d05345a12729f78b669f"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l1/initial_R0_b8_w1_l1-20261008T173127-0990a0e2/settings.json",
+      "sha256": "6f221e7a244911d6ec656ed5b8fa95865338d391559568a6d13c250fd3a0d724"
+    },
+    {
+      "bytes": 349720,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l1/initial_R0_b8_w1_l1-20261008T173127-0990a0e2/request_events.csv",
+      "sha256": "0021cd03bb1408ef6dca6cb4f7b407ef57d7cff7750918a0966984091db1b43b"
+    },
+    {
+      "bytes": 1640,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l1/initial_R0_b8_w1_l1-20261008T173127-0990a0e2/metrics.json",
+      "sha256": "6bed4fd6382eec2fde94e6a467a02bee09e5c8124371f200eee0acb04863179d"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l1/initial_R0_b8_w1_l1-20261008T180355-7fe8ac92/manifest.json",
+      "sha256": "990a4175653893b24971a369d448aae62557cf3e6d87bed9fc497f227ef86481"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l1/initial_R0_b8_w1_l1-20261008T180355-7fe8ac92/settings.json",
+      "sha256": "6f221e7a244911d6ec656ed5b8fa95865338d391559568a6d13c250fd3a0d724"
+    },
+    {
+      "bytes": 350418,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l1/initial_R0_b8_w1_l1-20261008T180355-7fe8ac92/request_events.csv",
+      "sha256": "a8c9d4c29cc4cce1efa24e6b047c866f5687acc99a1fe6e02c4d59ff4b1f3b3c"
+    },
+    {
+      "bytes": 1722,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l1/initial_R0_b8_w1_l1-20261008T180355-7fe8ac92/metrics.json",
+      "sha256": "8edc0d77812c6f1c9419e103dbf634f5ef7711b0954d706658143451a7910407"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l0/initial_F0_b1_w0_l0-20261008T180817-1dbb2981/manifest.json",
+      "sha256": "f64bc423295cfdf570e5f12d065680b58a08d27610863f423cb22cea5a0e59cf"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l0/initial_F0_b1_w0_l0-20261008T180817-1dbb2981/settings.json",
+      "sha256": "ebce81848110aaf25f9f6f8ee7bbdaccb92852abfd1e3edd81debd3b04aeb46b"
+    },
+    {
+      "bytes": 172175,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l0/initial_F0_b1_w0_l0-20261008T180817-1dbb2981/request_events.csv",
+      "sha256": "40b77c554c18cb9c23d611f9dd7e66c3743fe42e34d38a5ec50f1411cfbedc13"
+    },
+    {
+      "bytes": 1856,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l0/initial_F0_b1_w0_l0-20261008T180817-1dbb2981/metrics.json",
+      "sha256": "b0ad2aa6d8b9ef76dda3a89ef780d4a08a1524f04fe86a3683223f38bc516033"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l1/initial_R0_b4_w1_l1-20261008T175633-c39ead79/manifest.json",
+      "sha256": "62ac03229ba7e505e9f4064c9136b49e10bfa53663348e4c681b138010c11eff"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l1/initial_R0_b4_w1_l1-20261008T175633-c39ead79/settings.json",
+      "sha256": "fcdee4714a1521bcb2e41cc3fb663c61bfb6ff54071b48ad135c093ac0cf92a2"
+    },
+    {
+      "bytes": 350220,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l1/initial_R0_b4_w1_l1-20261008T175633-c39ead79/request_events.csv",
+      "sha256": "eaf7b16c8591584cae0e442363536016a3552aec0578bb3d40d735fba4678d4f"
+    },
+    {
+      "bytes": 1721,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l1/initial_R0_b4_w1_l1-20261008T175633-c39ead79/metrics.json",
+      "sha256": "89af85b22f88b2e01e474a22f508592854ffc25a72da1af5e66bb8500768e09b"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l1/initial_R0_b4_w1_l1-20261008T172457-45fb5326/manifest.json",
+      "sha256": "e3733af532999821744a39ec0721c619ad9fd0146d772771efb44cc9042302af"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l1/initial_R0_b4_w1_l1-20261008T172457-45fb5326/settings.json",
+      "sha256": "fcdee4714a1521bcb2e41cc3fb663c61bfb6ff54071b48ad135c093ac0cf92a2"
+    },
+    {
+      "bytes": 349697,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l1/initial_R0_b4_w1_l1-20261008T172457-45fb5326/request_events.csv",
+      "sha256": "f290f7dbe8b7a5cb52317978f9b7e4bd1611a7d0849e0db73fbfa83094dce141"
+    },
+    {
+      "bytes": 1638,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l1/initial_R0_b4_w1_l1-20261008T172457-45fb5326/metrics.json",
+      "sha256": "c5d1e466d0ace5082bfe5dca35db910f45e725e44f778e18e7a7afcfa5de06d6"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l2/initial_R0_b2_w1_l2-20261008T171853-0e9b112a/manifest.json",
+      "sha256": "1b05ed42763a7bbd36168adcb5a1560482bcc18e631d5a172ac6d115b51d7ba2"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l2/initial_R0_b2_w1_l2-20261008T171853-0e9b112a/settings.json",
+      "sha256": "421c6862eca6d0c6b77ff53379d80673f1e8ae3d656107805bbcb3a3c9a0c2a2"
+    },
+    {
+      "bytes": 699081,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l2/initial_R0_b2_w1_l2-20261008T171853-0e9b112a/request_events.csv",
+      "sha256": "dbaf9068df7e8e88b76df7b342a9899de016ad18011f2071fbb0d996a03b0e51"
+    },
+    {
+      "bytes": 1661,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l2/initial_R0_b2_w1_l2-20261008T171853-0e9b112a/metrics.json",
+      "sha256": "d5936c2caf8750e5cf2f5e10deebd231a779b5fe83b0b430c2a9a30c88725985"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l2/initial_R0_b2_w1_l2-20261008T174939-9acb1f77/manifest.json",
+      "sha256": "7524c57bbb8696836484f82f4b5f9d8f3237cf8e05d87f02534e638ccd9e1585"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l2/initial_R0_b2_w1_l2-20261008T174939-9acb1f77/settings.json",
+      "sha256": "421c6862eca6d0c6b77ff53379d80673f1e8ae3d656107805bbcb3a3c9a0c2a2"
+    },
+    {
+      "bytes": 656614,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l2/initial_R0_b2_w1_l2-20261008T174939-9acb1f77/request_events.csv",
+      "sha256": "133ded130994fc922caa0416b104d075c41c5e205bc36bb5aa0a181685b88656"
+    },
+    {
+      "bytes": 1987,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l2/initial_R0_b2_w1_l2-20261008T174939-9acb1f77/metrics.json",
+      "sha256": "60c0e19aef7e854b92952011876c37bc72a53448219ca00f032248fb4412bb50"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T174103-37b66666/manifest.json",
+      "sha256": "f7ef6f1e45e37ef140c7a707de430436a9813a44831e0c564af2b70b637f3f2e"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T174103-37b66666/settings.json",
+      "sha256": "f7a974029da5fb3b16c9af006a0b84cb6cb353d1e722a8fe2c7980b21f8c8c3a"
+    },
+    {
+      "bytes": 172501,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T174103-37b66666/request_events.csv",
+      "sha256": "3e1bca661aefcdb9c93970c33a5d13d793ac46d8521fc3ca19cecca735c70b6c"
+    },
+    {
+      "bytes": 1721,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T174103-37b66666/metrics.json",
+      "sha256": "fc6b34aab6d586aea203ad2e5c0c46738c3acaac873268832772efffcd624727"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T164838-5cc448a8/manifest.json",
+      "sha256": "2121307f27ebb27622ec2ff0bf3ba3b2de2bd77b7530a6174ce714478a990af1"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T164838-5cc448a8/settings.json",
+      "sha256": "f7a974029da5fb3b16c9af006a0b84cb6cb353d1e722a8fe2c7980b21f8c8c3a"
+    },
+    {
+      "bytes": 172030,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T164838-5cc448a8/request_events.csv",
+      "sha256": "c4c939c3dc463ede93d9123952d32e405ca94dba3636b1337fc2b591c1f3b87d"
+    },
+    {
+      "bytes": 1642,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T164838-5cc448a8/metrics.json",
+      "sha256": "0bc7d2913f8fbd2fbf3ceee9a972de299f6c983df29f25e7510532168a1064d9"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T171047-ff41d46d/manifest.json",
+      "sha256": "c77fd0d99c57d51565ae22e2e96c74f14046426a36d15dd2d87aa90299fcd7ee"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T171047-ff41d46d/settings.json",
+      "sha256": "f7a974029da5fb3b16c9af006a0b84cb6cb353d1e722a8fe2c7980b21f8c8c3a"
+    },
+    {
+      "bytes": 172045,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T171047-ff41d46d/request_events.csv",
+      "sha256": "d4a73f52c1b288d02cf5651c933abfdf947d3e676a163df17c1c0985b5532ecb"
+    },
+    {
+      "bytes": 1643,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l0/initial_R0_b1_w1_l0-20261008T171047-ff41d46d/metrics.json",
+      "sha256": "9551e607f19eae2402361394b7dc3d7e63a8e42432e85080043fb9d2fa2c1d33"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l2/initial_R0_b2_w2_l2-20261008T175208-480cc65b/manifest.json",
+      "sha256": "e5d0a9c1ab3af86e2b644a64f9b5d14ff18b5198b24923e9e9405831f2246758"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l2/initial_R0_b2_w2_l2-20261008T175208-480cc65b/settings.json",
+      "sha256": "504599368f04f8c8cab187dcb4c16f91b4a31fbf6a463e021aa2f290d33c69af"
+    },
+    {
+      "bytes": 654554,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l2/initial_R0_b2_w2_l2-20261008T175208-480cc65b/request_events.csv",
+      "sha256": "2b8e6e200ad3bbbeaa291cb0bd88af4a854d65ba14fae307d82e4bc114e02616"
+    },
+    {
+      "bytes": 1983,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l2/initial_R0_b2_w2_l2-20261008T175208-480cc65b/metrics.json",
+      "sha256": "10e610c674c569c1690c81a77af8143b19bd83e779f64612a9255cf4a38365e6"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l2/initial_R0_b2_w2_l2-20261008T172106-eefd02c2/manifest.json",
+      "sha256": "8523e4d2dad8e83fde56d44403847b295f807dc733763f42136b5bf996e03ef4"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l2/initial_R0_b2_w2_l2-20261008T172106-eefd02c2/settings.json",
+      "sha256": "504599368f04f8c8cab187dcb4c16f91b4a31fbf6a463e021aa2f290d33c69af"
+    },
+    {
+      "bytes": 699075,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l2/initial_R0_b2_w2_l2-20261008T172106-eefd02c2/request_events.csv",
+      "sha256": "f043bd0baa04e03012f0ccf49c00d6640f5f519d3c41b4f228b9c3ec5af88a4e"
+    },
+    {
+      "bytes": 1730,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l2/initial_R0_b2_w2_l2-20261008T172106-eefd02c2/metrics.json",
+      "sha256": "30d37dc5eb5111a276a5b6e3350c0ede5d27afb0cd1313a6671688c193dc386b"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l0/initial_R0_b8_w0_l0-20261008T180056-48513017/manifest.json",
+      "sha256": "8cafa53c6803706848923171f22c2a4c1743cbdb540fc167b7407141c316a0b8"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l0/initial_R0_b8_w0_l0-20261008T180056-48513017/settings.json",
+      "sha256": "9bb33564fab1205f8a178d49117ee29dfafab442e255d693c173738dc73bcb33"
+    },
+    {
+      "bytes": 172373,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l0/initial_R0_b8_w0_l0-20261008T180056-48513017/request_events.csv",
+      "sha256": "2a2437131c2d8b5dd384d4f3b5233bef7dc42d2027afb6888bb46977247a8e27"
+    },
+    {
+      "bytes": 1825,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l0/initial_R0_b8_w0_l0-20261008T180056-48513017/metrics.json",
+      "sha256": "eff46aad230990731c26822ca4bf8a9cd2691825066f20b9c8319252a3bfc708"
+    },
+    {
+      "bytes": 4589,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l0/initial_R0_b8_w0_l0-20261008T172846-c5e7f96f/manifest.json",
+      "sha256": "536746d6f8635717758c175c899feb219864410a99770f7a1c0e59f4bfd85471"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l0/initial_R0_b8_w0_l0-20261008T172846-c5e7f96f/settings.json",
+      "sha256": "9bb33564fab1205f8a178d49117ee29dfafab442e255d693c173738dc73bcb33"
+    },
+    {
+      "bytes": 171937,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l0/initial_R0_b8_w0_l0-20261008T172846-c5e7f96f/request_events.csv",
+      "sha256": "041a3aaf6bf88e4a793a4486ef82557bf7786ccf85c2e8ebe9a27051199d52bd"
+    },
+    {
+      "bytes": 1656,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l0/initial_R0_b8_w0_l0-20261008T172846-c5e7f96f/metrics.json",
+      "sha256": "46d01be748926aebce3e78d058cc2d4a0a2db49b8f1c5e2975bfb3a88db5be8f"
+    },
+    {
+      "bytes": 4710,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l0/review_R0_b1_w2_l0-20261008T191737-554c9824/manifest.json",
+      "sha256": "02eb94335e2a7f99c3e34c9af41211d223a075af5fbadad329c31852150356d5"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l0/review_R0_b1_w2_l0-20261008T191737-554c9824/settings.json",
+      "sha256": "7ebf111f437bd0ad1e0d15ded30fe6c89c032fa107857ee7ad1577c279e4015b"
+    },
+    {
+      "bytes": 151569,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l0/review_R0_b1_w2_l0-20261008T191737-554c9824/request_events.csv",
+      "sha256": "767199ac53a9720c3fa9510ec971c8732de6261a6efb6d40aa8dc1f404b2d5f7"
+    },
+    {
+      "bytes": 1731,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l0/review_R0_b1_w2_l0-20261008T191737-554c9824/metrics.json",
+      "sha256": "93d921b68750acf5772c9d95ac6827e57b05e24137ef18b8263fee2fd4cd281a"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l0/initial_F0_b2_w2_l0-20261008T184054-c50cff33/manifest.json",
+      "sha256": "3fa5201214af7c7f662a995b1a20855e0229c217c046a954b7e4d9844383c268"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l0/initial_F0_b2_w2_l0-20261008T184054-c50cff33/settings.json",
+      "sha256": "2c07fb4e7865783ebe18c3bf224a24e4a808d50baaee42888097d6b1d070f0e7"
+    },
+    {
+      "bytes": 171950,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l0/initial_F0_b2_w2_l0-20261008T184054-c50cff33/request_events.csv",
+      "sha256": "0648fc326f6d70347e287dca9a61a55a4ed48f39c606a7ac06137bb057238ddc"
+    },
+    {
+      "bytes": 1848,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l0/initial_F0_b2_w2_l0-20261008T184054-c50cff33/metrics.json",
+      "sha256": "ee5888627964eadba4dd0eb1227b9c6e2502666f6fceac6a357798d0759fff1b"
+    },
+    {
+      "bytes": 4710,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w1_l0/review_R0_b2_w1_l0-20261008T192209-0893be23/manifest.json",
+      "sha256": "c027b2349a3ce46370e8b27347f7c01c68c91453b245c94a80811135adeacc92"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w1_l0/review_R0_b2_w1_l0-20261008T192209-0893be23/settings.json",
+      "sha256": "e10e5102a557bac8fe417584b756047213a389d9aa0e8f7c7117685126d9d6a6"
+    },
+    {
+      "bytes": 151480,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w1_l0/review_R0_b2_w1_l0-20261008T192209-0893be23/request_events.csv",
+      "sha256": "93a351aa7afd91a44886683ceba7c438c93bb90b2cd15784e947d2024dfe1df7"
+    },
+    {
+      "bytes": 1723,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w1_l0/review_R0_b2_w1_l0-20261008T192209-0893be23/metrics.json",
+      "sha256": "bbfb074ae3822dcac70085b7c158f56a24db0e27283f7824eea75c2b6eae5730"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l2/initial_R0_b8_w2_l2-20261008T180653-ddfc0adb/manifest.json",
+      "sha256": "5ca32636454ef673a6f4ca96a8ea98fb034a5d36322b93803e63d3b717a49a72"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l2/initial_R0_b8_w2_l2-20261008T180653-ddfc0adb/settings.json",
+      "sha256": "41b7cd0c9b68d78e73e73f81b0dc238e9c97be4b0701b2149d4858bbf6d06af4"
+    },
+    {
+      "bytes": 690373,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l2/initial_R0_b8_w2_l2-20261008T180653-ddfc0adb/request_events.csv",
+      "sha256": "fa903fec05b7564e090c3194efa24119e50e1dea3e6d6b7216fed79311cc13e9"
+    },
+    {
+      "bytes": 1917,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l2/initial_R0_b8_w2_l2-20261008T180653-ddfc0adb/metrics.json",
+      "sha256": "b449427aeba5e933f786c768b01bd0de55a2a534f6e31df9565c926ed00a598e"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l0/initial_F0_b4_w2_l0-20261008T184817-3ae70eb9/manifest.json",
+      "sha256": "66532c0aae849b6b3ee4bc9f5d364113e536b6c7622eaa61744282ed697dd1b5"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l0/initial_F0_b4_w2_l0-20261008T184817-3ae70eb9/settings.json",
+      "sha256": "de54775e7407de56bad47d8f453ca58e14c3ddc8cd08d5ed2adc9447fe1c2895"
+    },
+    {
+      "bytes": 171929,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l0/initial_F0_b4_w2_l0-20261008T184817-3ae70eb9/request_events.csv",
+      "sha256": "41226d04c8c5d9500556300880e7f3835d40027fcfca2625d0fbf07d23115168"
+    },
+    {
+      "bytes": 1865,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l0/initial_F0_b4_w2_l0-20261008T184817-3ae70eb9/metrics.json",
+      "sha256": "8e0cd2edbe2b18f2a0ad4b9bfa1d43134bfebfd939b9e7137b20b179732724e9"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l1/initial_F0_b8_w2_l1-20261008T190923-d6a311a2/manifest.json",
+      "sha256": "dad39a7d26469cd2834733d2480b7fca04b952c7fe32f90d00dcd31762496271"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l1/initial_F0_b8_w2_l1-20261008T190923-d6a311a2/settings.json",
+      "sha256": "27ede704497accad52f4dd7431a1e5e00b6261fc7dbefff1075c04411c0db02c"
+    },
+    {
+      "bytes": 349633,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l1/initial_F0_b8_w2_l1-20261008T190923-d6a311a2/request_events.csv",
+      "sha256": "655d98b72c5c2de9851c65845a7871000f8e67830325a66425dc16b313eb58c7"
+    },
+    {
+      "bytes": 1848,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l1/initial_F0_b8_w2_l1-20261008T190923-d6a311a2/metrics.json",
+      "sha256": "37f81dc197291ca9d3f47d1f44895b7de809a5a913e5b1142e24e9bcaa784cb6"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l3/initial_R0_b2_w1_l3-20261008T175021-9259f2cf/manifest.json",
+      "sha256": "14067fc771180d7500d04001352aafdbeb36da2874935620a2a242dd13ce3bd2"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l3/initial_R0_b2_w1_l3-20261008T175021-9259f2cf/settings.json",
+      "sha256": "a8c2da03dc84577e8bd839513d580038a0ded32378f9a98d026269ec24068f0a"
+    },
+    {
+      "bytes": 857597,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l3/initial_R0_b2_w1_l3-20261008T175021-9259f2cf/request_events.csv",
+      "sha256": "d15912984488b59faa3b857654934214edb4cc866f43b5d9b19b09405a3fd088"
+    },
+    {
+      "bytes": 1985,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l3/initial_R0_b2_w1_l3-20261008T175021-9259f2cf/metrics.json",
+      "sha256": "e82b5f80ab58214ed3f192f7c4c56356a86afce488b7577797f8dc796cc4832a"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l3/initial_R0_b2_w1_l3-20261008T171925-1fc3e567/manifest.json",
+      "sha256": "cce8101aad23b49c8c6c02d3389d8a84457d3960ce28bad6361442975a49d9e1"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l3/initial_R0_b2_w1_l3-20261008T171925-1fc3e567/settings.json",
+      "sha256": "a8c2da03dc84577e8bd839513d580038a0ded32378f9a98d026269ec24068f0a"
+    },
+    {
+      "bytes": 977016,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l3/initial_R0_b2_w1_l3-20261008T171925-1fc3e567/request_events.csv",
+      "sha256": "fbcf6e62f012f37f1508219a4416c99afaf68ceeeb86c8f99b4ff9b6caac966b"
+    },
+    {
+      "bytes": 1725,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l3/initial_R0_b2_w1_l3-20261008T171925-1fc3e567/metrics.json",
+      "sha256": "6c6e3da20dbd8093da3daa19e92d3d518654fe1a9d5f23d706a06785fc9b9c89"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l0/initial_F0_b4_w0_l0-20261008T184323-0eae8930/manifest.json",
+      "sha256": "1897e017b18ab81b0384947966efd79ae2b92239e8c9396e23822fb238711ae5"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l0/initial_F0_b4_w0_l0-20261008T184323-0eae8930/settings.json",
+      "sha256": "302521f96bae4fda5ff1af76a0a1ffe211a198a2bbd2a35b03cd6630e893fb04"
+    },
+    {
+      "bytes": 171947,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l0/initial_F0_b4_w0_l0-20261008T184323-0eae8930/request_events.csv",
+      "sha256": "5463f988e6e516556e4f90c3d93e580097c540039b7c644c0db8e30def5a4a62"
+    },
+    {
+      "bytes": 1874,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l0/initial_F0_b4_w0_l0-20261008T184323-0eae8930/metrics.json",
+      "sha256": "2899216a9abd5e1fb220c9887db01529873b4873ee18fd1aeb29b4a55c809418"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l1/initial_F0_b1_w0_l1-20261008T180849-aa9965cf/manifest.json",
+      "sha256": "d0a85cb7d59ec21bfbb1be90558a9ea712b21e6c394df53f29e57ed202492bfa"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l1/initial_F0_b1_w0_l1-20261008T180849-aa9965cf/settings.json",
+      "sha256": "873bfe3f22accf01ece6d785a53214d6247b91583d63adb0fa6c6b66cba1fdfe"
+    },
+    {
+      "bytes": 350390,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l1/initial_F0_b1_w0_l1-20261008T180849-aa9965cf/request_events.csv",
+      "sha256": "3394b96abbd34735145e2a41eb7221d8079886c8b69bc969e99dbdb03537b9f3"
+    },
+    {
+      "bytes": 1830,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l1/initial_F0_b1_w0_l1-20261008T180849-aa9965cf/metrics.json",
+      "sha256": "a30786ff6879585e3473abc9b74b100d2384f687e2ce7e809a7233fca1631f96"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l0/initial_F0_b4_w1_l0-20261008T184550-76697c24/manifest.json",
+      "sha256": "550c8b1b53adfa6392d8501771add60023479957909dc8851f4a25f1f8f18df2"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l0/initial_F0_b4_w1_l0-20261008T184550-76697c24/settings.json",
+      "sha256": "923124f490b82f46c70eae07ca2b801f1ff7567ebf8beee2f2ef02c3aaf2d9d8"
+    },
+    {
+      "bytes": 171996,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l0/initial_F0_b4_w1_l0-20261008T184550-76697c24/request_events.csv",
+      "sha256": "85fafb27b6057be02aabb03c51e4c35b80b9e3ec6e70aac353e59d3f21c45c3b"
+    },
+    {
+      "bytes": 1856,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l0/initial_F0_b4_w1_l0-20261008T184550-76697c24/metrics.json",
+      "sha256": "aa3a5e626d7d745bb07871e41adfbaeb33ae11eea57c665ff8e2a54adffedb54"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T165247-1b6f8fcd/manifest.json",
+      "sha256": "ee2e4f5a05d5fd3ace025e4ff27de2d9a98b1aac2d642395c861b108f65fcc57"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T165247-1b6f8fcd/settings.json",
+      "sha256": "93c02bde6cee99d7950ead1e5181513b024a0e83815a1f892aaa4a433c746408"
+    },
+    {
+      "bytes": 815012,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T165247-1b6f8fcd/request_events.csv",
+      "sha256": "519ed753372d849a53c3627c66452d8ed67eb62bcfd8ef375c348c03b7f17816"
+    },
+    {
+      "bytes": 1827,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T165247-1b6f8fcd/metrics.json",
+      "sha256": "e081cab00e5df377f029f3ec37bbf682a3f6cb9daedf38dddcabf8c73d594ce1"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T174523-91e9e84d/manifest.json",
+      "sha256": "fdda11e1b50c7934c52df7a9060b9a420d4cdbd460deb7c10734702ae68a36b4"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T174523-91e9e84d/settings.json",
+      "sha256": "93c02bde6cee99d7950ead1e5181513b024a0e83815a1f892aaa4a433c746408"
+    },
+    {
+      "bytes": 814697,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T174523-91e9e84d/request_events.csv",
+      "sha256": "90afbd44c5b3a558a235eccb2880edf35b22b6ab0df400af13dfce268367ca80"
+    },
+    {
+      "bytes": 1986,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T174523-91e9e84d/metrics.json",
+      "sha256": "3b6e937f9f6db16176a80e4f97933d605e5b66dfa3eaea11e56f7dc59c602323"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T171456-afb6e44a/manifest.json",
+      "sha256": "549150a03a8463f2889aed53ce80df444c9c135036ab20a683ede84da03c0236"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T171456-afb6e44a/settings.json",
+      "sha256": "93c02bde6cee99d7950ead1e5181513b024a0e83815a1f892aaa4a433c746408"
+    },
+    {
+      "bytes": 821335,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T171456-afb6e44a/request_events.csv",
+      "sha256": "d7e244d7190ddcd160d6b708137f59d3b664ec8226b4e4f0d576d1d7ccfed4f9"
+    },
+    {
+      "bytes": 1814,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l3/initial_R0_b1_w2_l3-20261008T171456-afb6e44a/metrics.json",
+      "sha256": "6916f779783fbab09333a7f24594fc17b846391e943e058d735bb03a625622b2"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l0/initial_R0_b2_w2_l0-20261008T175104-3ce42769/manifest.json",
+      "sha256": "72fedf642a770430eeaa08509342f4d8805675dc942598c3d690b1ef679b416c"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l0/initial_R0_b2_w2_l0-20261008T175104-3ce42769/settings.json",
+      "sha256": "2cb5adda23b43154ac6fbe554f60bd55a154dc8b37ed4bdebf9816e06edd2893"
+    },
+    {
+      "bytes": 172519,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l0/initial_R0_b2_w2_l0-20261008T175104-3ce42769/request_events.csv",
+      "sha256": "dbdc79394f6a8525ab4bc992e9e0466b129897eef99119e19e4fb8ee71fd4ebc"
+    },
+    {
+      "bytes": 1731,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l0/initial_R0_b2_w2_l0-20261008T175104-3ce42769/metrics.json",
+      "sha256": "80f1c266f798847c8897aa55ae045c11052ae01be5bb2c59f8310c25356441f3"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l0/initial_R0_b2_w2_l0-20261008T172002-87ef4e4e/manifest.json",
+      "sha256": "9b3680640040ebc9a232031c02c81afa7fbc7b6b712ca7ea0c27f3594d0f7025"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l0/initial_R0_b2_w2_l0-20261008T172002-87ef4e4e/settings.json",
+      "sha256": "2cb5adda23b43154ac6fbe554f60bd55a154dc8b37ed4bdebf9816e06edd2893"
+    },
+    {
+      "bytes": 171904,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l0/initial_R0_b2_w2_l0-20261008T172002-87ef4e4e/request_events.csv",
+      "sha256": "cf6131be7b4a5f25268ff4f6bde3551b1e58e81908e9363b564f485ab4d14c16"
+    },
+    {
+      "bytes": 1644,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l0/initial_R0_b2_w2_l0-20261008T172002-87ef4e4e/metrics.json",
+      "sha256": "a1ac51631603fa8fa23348759e5045ab6a79cbd50c48a8c540a86edd1745a0da"
+    },
+    {
+      "bytes": 4708,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l3/review_R0_b1_w2_l3-20261008T191914-bd3a5cf2/manifest.json",
+      "sha256": "f1f47042eddf5062fbfe714ad533c577550e8598c96e8d3c541195bdfed2a190"
+    },
+    {
+      "bytes": 152,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l3/review_R0_b1_w2_l3-20261008T191914-bd3a5cf2/settings.json",
+      "sha256": "07e6d040308066746e9adaee9d4516716cc6af170fb1d9620fff9f0437ea11e7"
+    },
+    {
+      "bytes": 550735,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l3/review_R0_b1_w2_l3-20261008T191914-bd3a5cf2/request_events.csv",
+      "sha256": "e1f690bbc51ced0d9bdb1cdc76ab1c2276f7db7bb2827b23dd70dd90443ca711"
+    },
+    {
+      "bytes": 1872,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l3/review_R0_b1_w2_l3-20261008T191914-bd3a5cf2/metrics.json",
+      "sha256": "784fcfba55afbdb515cf5c813c1e1ddbdda3562bc2903982e8452ef778e3de21"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l1/initial_F0_b4_w0_l1-20261008T184354-a0e44389/manifest.json",
+      "sha256": "578ab8818ae43d766c3313005eff7f2ecea3fcb3fbf564cf8f518680582afd5f"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l1/initial_F0_b4_w0_l1-20261008T184354-a0e44389/settings.json",
+      "sha256": "4bd1ee0c904915f0eb5e771b2362f946bb9690793819e4cb44e2b0abe0722601"
+    },
+    {
+      "bytes": 349258,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l1/initial_F0_b4_w0_l1-20261008T184354-a0e44389/request_events.csv",
+      "sha256": "d8f74cbd44635ca11f8718fbdbe1c9c84c53617a01d64b2a4e9cf99badc972c9"
+    },
+    {
+      "bytes": 1846,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l1/initial_F0_b4_w0_l1-20261008T184354-a0e44389/metrics.json",
+      "sha256": "54fe9e16c61cade53532d744b7267ae042b04dff39f9aa51cc658ac65958aefd"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l2/initial_F0_b2_w1_l2-20261008T183929-ea153cf3/manifest.json",
+      "sha256": "106464ffbdd6b6e56878830d34629b1fdaf1f991cd1b336a1b7e368b1e5b1861"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l2/initial_F0_b2_w1_l2-20261008T183929-ea153cf3/settings.json",
+      "sha256": "e80208d4aec6024d5d4cc0097cda7e3c8732948d8d913bb66f4ded410d1a8a98"
+    },
+    {
+      "bytes": 663126,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l2/initial_F0_b2_w1_l2-20261008T183929-ea153cf3/request_events.csv",
+      "sha256": "29dda6578eae307362871bd4890cb44e6eef9a1ecfb1af0c57e046c0f3b48e96"
+    },
+    {
+      "bytes": 2123,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l2/initial_F0_b2_w1_l2-20261008T183929-ea153cf3/metrics.json",
+      "sha256": "663ab0a51c703d5c5aad319c9b8a0645d9a31d93ce32ed368a9dda751714e9b5"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l3/initial_R0_b8_w1_l3-20261008T180508-9c125351/manifest.json",
+      "sha256": "4a2e8439eb88383315c552122c29695c4c21818a441d3509add4a3209d2cf60c"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l3/initial_R0_b8_w1_l3-20261008T180508-9c125351/settings.json",
+      "sha256": "4daad21bdb0e59f3433b21676875717f009a4dfb3524b804d93654850c14fd7d"
+    },
+    {
+      "bytes": 905750,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l3/initial_R0_b8_w1_l3-20261008T180508-9c125351/request_events.csv",
+      "sha256": "02ee3ea9d772b51fe531c655e6fbb16eaca42aa0461cbf05ebbc1f61bfde597e"
+    },
+    {
+      "bytes": 1919,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l3/initial_R0_b8_w1_l3-20261008T180508-9c125351/metrics.json",
+      "sha256": "9f60ff099ddee9426ce1055a297c0ad452d4d58232c4ca01ec42f658ac52e537"
+    },
+    {
+      "bytes": 4702,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l3/initial_R0_b8_w1_l3-20261008T173232-c2154c53/manifest.json",
+      "sha256": "b140d0a02a05a7f5d73767847011b7bc0397374d9d4112bb3d226b0903a40e07"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l3/initial_R0_b8_w1_l3-20261008T173232-c2154c53/settings.json",
+      "sha256": "4daad21bdb0e59f3433b21676875717f009a4dfb3524b804d93654850c14fd7d"
+    },
+    {
+      "bytes": 1388582,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l3/initial_R0_b8_w1_l3-20261008T173232-c2154c53/request_events.csv",
+      "sha256": "ee6ec2601ef9dddb63eb2e141a5811e0943db0d37bfc804e7085774c4e620fba"
+    },
+    {
+      "bytes": 1735,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l3/initial_R0_b8_w1_l3-20261008T173232-c2154c53/metrics.json",
+      "sha256": "9340b53749a3ee69fac4cc8182b2b057803b723c730d8922d213fecd543beb30"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l3/initial_R0_b4_w0_l3-20261008T172350-5731e85c/manifest.json",
+      "sha256": "2ebef003244c84e05658629368a1be30677ec3305b9ef8b1da8c4882e16fd6f0"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l3/initial_R0_b4_w0_l3-20261008T172350-5731e85c/settings.json",
+      "sha256": "f1eab410b12bd9e3901ba4494bac753d5892ec3de673a02f599ff92bf94c5976"
+    },
+    {
+      "bytes": 1113402,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l3/initial_R0_b4_w0_l3-20261008T172350-5731e85c/request_events.csv",
+      "sha256": "53aaf472410aa638af3c8aa745a353ba81f1b7e8d20d6240d4fe9c2f016d6f8e"
+    },
+    {
+      "bytes": 1732,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l3/initial_R0_b4_w0_l3-20261008T172350-5731e85c/metrics.json",
+      "sha256": "5a4d97b763f372fbdb822cd077653be8036ac1b1c83852c0128aaf619e3b140f"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l3/initial_R0_b4_w0_l3-20261008T175519-9557874d/manifest.json",
+      "sha256": "2aa1eb0bedf642cb05982584007d440b37c713a169fd9b55a30a825198bf5014"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l3/initial_R0_b4_w0_l3-20261008T175519-9557874d/settings.json",
+      "sha256": "f1eab410b12bd9e3901ba4494bac753d5892ec3de673a02f599ff92bf94c5976"
+    },
+    {
+      "bytes": 874544,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l3/initial_R0_b4_w0_l3-20261008T175519-9557874d/request_events.csv",
+      "sha256": "6e65b3e39a04aeb2a85ec13bded4b9e67d5fc2606273a566749e41ca1f1e1a2a"
+    },
+    {
+      "bytes": 1903,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l3/initial_R0_b4_w0_l3-20261008T175519-9557874d/metrics.json",
+      "sha256": "0b44090f34b6a45bfe3b3b99a3bdaaa240a083ae88a4e74b43a702a2238de585"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l3/initial_R0_b8_w2_l3-20261008T180735-7f1112a0/manifest.json",
+      "sha256": "8f03c0ea3c0b59749d0d9aca013b5e2fa383f877a768271e7b7a1d8924e4d9cf"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l3/initial_R0_b8_w2_l3-20261008T180735-7f1112a0/settings.json",
+      "sha256": "103dda41b2f7ee3bbeb649838594a660dd9afa037800846e018be77a15a2b080"
+    },
+    {
+      "bytes": 905682,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l3/initial_R0_b8_w2_l3-20261008T180735-7f1112a0/request_events.csv",
+      "sha256": "2c1b8d97eb29f8d4ac6ba2e4fcabbd5704c03c6a9e167af9988690a9697cf89b"
+    },
+    {
+      "bytes": 1911,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l3/initial_R0_b8_w2_l3-20261008T180735-7f1112a0/metrics.json",
+      "sha256": "80ce2a05eb0a2a473e13088ab89cf72c23aac37083dac4bde1f4e00e590603fa"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l1/initial_F0_b4_w1_l1-20261008T184622-cbbd6c5e/manifest.json",
+      "sha256": "c223e78569d428414a424b34181b6cdca4718700807ff0f687bdf0d346cad2c0"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l1/initial_F0_b4_w1_l1-20261008T184622-cbbd6c5e/settings.json",
+      "sha256": "bc98d756df29eb59e01ece0b64bf2e5a774c05f08cd00809f94d2d8974d4480c"
+    },
+    {
+      "bytes": 349383,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l1/initial_F0_b4_w1_l1-20261008T184622-cbbd6c5e/request_events.csv",
+      "sha256": "6ff5f59278c72b4a9fda2c2263fd4eb9a86a887c5c246accf0c141771b3c1454"
+    },
+    {
+      "bytes": 1845,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l1/initial_F0_b4_w1_l1-20261008T184622-cbbd6c5e/metrics.json",
+      "sha256": "3d5002070bb0e67a577a907aaae1194e009b4bda670f90c715997d134e5208fa"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l0/review_R0_b1_w1_l0-20261008T191517-dcd86123/manifest.json",
+      "sha256": "d963ede2ffc068b8be9d4e4658920e2edaa158789ad89c9a56f1686f4308d4ef"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l0/review_R0_b1_w1_l0-20261008T191517-dcd86123/settings.json",
+      "sha256": "e4cb227bc7057552b6d4bfd863159425a149421fef1e53176a40a31e63a6acad"
+    },
+    {
+      "bytes": 151535,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l0/review_R0_b1_w1_l0-20261008T191517-dcd86123/request_events.csv",
+      "sha256": "5f81c69736a53d19c338edb9fc5f2dbcd76e8be58c380d1b3d925a2cc1666b7d"
+    },
+    {
+      "bytes": 1726,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l0/review_R0_b1_w1_l0-20261008T191517-dcd86123/metrics.json",
+      "sha256": "aba8883db79d1a6ad01544f74e37a6e55ac1828f41e7471d81d3c79e8b0b9f3e"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l3/initial_R0_b4_w2_l3-20261008T172811-f77d3c4f/manifest.json",
+      "sha256": "17ef21d7ffac0fde2582ae15dadc173cfedd1172cced4208717618f09a0eb86a"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l3/initial_R0_b4_w2_l3-20261008T172811-f77d3c4f/settings.json",
+      "sha256": "9c3d76ce60dcd14f81e65d3d5a31c08aef74b598aaa683ee2f55f272af5624d4"
+    },
+    {
+      "bytes": 1144696,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l3/initial_R0_b4_w2_l3-20261008T172811-f77d3c4f/request_events.csv",
+      "sha256": "adc52d411df7a32f6f3ddc962cdb45d7c53a415debb6ba3b2ea5c20846d51853"
+    },
+    {
+      "bytes": 1731,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l3/initial_R0_b4_w2_l3-20261008T172811-f77d3c4f/metrics.json",
+      "sha256": "57f0d43e20a0cc69a6762bdbfb944678e258c7a64762e993991ebd945774bf7e"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l3/initial_R0_b4_w2_l3-20261008T180014-025f0bb3/manifest.json",
+      "sha256": "c8db4b575b497c91f88ffe08b6f74c39ea563823d54ed004aed6e0eab2e23ed7"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l3/initial_R0_b4_w2_l3-20261008T180014-025f0bb3/settings.json",
+      "sha256": "9c3d76ce60dcd14f81e65d3d5a31c08aef74b598aaa683ee2f55f272af5624d4"
+    },
+    {
+      "bytes": 890162,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l3/initial_R0_b4_w2_l3-20261008T180014-025f0bb3/request_events.csv",
+      "sha256": "7228dfe219b780e810a2d3f284c13260ba6e2aa54d6ab8b731d97ecc151c4955"
+    },
+    {
+      "bytes": 1904,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l3/initial_R0_b4_w2_l3-20261008T180014-025f0bb3/metrics.json",
+      "sha256": "660911ecc7fbec467352ac00cf5aa274062f7f7d8cbb04a004bd6dc2a2f274f1"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l2/review_R0_b1_w1_l2-20261008T191621-39112a8b/manifest.json",
+      "sha256": "886e6a03ecc16dfea8e6fafffaeace5b287b01e48451d5c75f1bdc90c78ade92"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l2/review_R0_b1_w1_l2-20261008T191621-39112a8b/settings.json",
+      "sha256": "8a9cc59f3777dc3427f0600e9ab041d1a0920afe370eaa93d178b896bace3281"
+    },
+    {
+      "bytes": 451590,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l2/review_R0_b1_w1_l2-20261008T191621-39112a8b/request_events.csv",
+      "sha256": "e4cb552b31b86db05136b7816dcede0d64011c20ac685d98c5d864b442d47018"
+    },
+    {
+      "bytes": 1788,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l2/review_R0_b1_w1_l2-20261008T191621-39112a8b/metrics.json",
+      "sha256": "c05173d6b07250344f7fabb8611c385896e641f294a3fe0ea57d6b9ab0094647"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l2/initial_F0_b2_w2_l2-20261008T184157-f137ea5e/manifest.json",
+      "sha256": "9443cad302887e70b110ca4286de1bde1d2729f6d026e2aa10b57b60af750773"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l2/initial_F0_b2_w2_l2-20261008T184157-f137ea5e/settings.json",
+      "sha256": "a5a5ffbc42fc8dde92fa8db59d716e03777765474aee31acf5515cf25d9e237d"
+    },
+    {
+      "bytes": 661217,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l2/initial_F0_b2_w2_l2-20261008T184157-f137ea5e/request_events.csv",
+      "sha256": "5e4bdbf18a8ab25766e0ab9c380503ae353177796a85f97f05fea1695b017810"
+    },
+    {
+      "bytes": 2112,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l2/initial_F0_b2_w2_l2-20261008T184157-f137ea5e/metrics.json",
+      "sha256": "355db6c192d8ac91f0828774d705e8f849f27ba3a446b9000e3c07769e861aea"
+    },
+    {
+      "bytes": 4708,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l3/review_R0_b2_w0_l3-20261008T192132-bba1dfb9/manifest.json",
+      "sha256": "1457e397555921fa5c6faf812f3b614059e49af37989860bd03ef41bcf9a96c3"
+    },
+    {
+      "bytes": 152,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l3/review_R0_b2_w0_l3-20261008T192132-bba1dfb9/settings.json",
+      "sha256": "8990aa81bdc5c00586581d04e6eb1088c6a4949133277b5b84d3e2674e9054ad"
+    },
+    {
+      "bytes": 548985,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l3/review_R0_b2_w0_l3-20261008T192132-bba1dfb9/request_events.csv",
+      "sha256": "0c25c8377c71c606bb39594d4fba0fd9bf45244861455114316cf548476cfeea"
+    },
+    {
+      "bytes": 1875,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l3/review_R0_b2_w0_l3-20261008T192132-bba1dfb9/metrics.json",
+      "sha256": "f93728fdd509ba4c7889381a9142580121e2b26e6975d6ec0fc1ac866d74d28b"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l3/initial_F0_b2_w2_l3-20261008T184240-875a1539/manifest.json",
+      "sha256": "103b672a665e65aa99e1d0bbd63d31807a43b6ed51d1141b4814cc1384d993e0"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l3/initial_F0_b2_w2_l3-20261008T184240-875a1539/settings.json",
+      "sha256": "97140d67e2affe2b6fd70bcd1788f65d5f3959978b6494b11cb39a1cc84636a5"
+    },
+    {
+      "bytes": 874561,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l3/initial_F0_b2_w2_l3-20261008T184240-875a1539/request_events.csv",
+      "sha256": "e25323440e52f7b525f6b0521cee586d973280e56883a7c69521645e6afa4037"
+    },
+    {
+      "bytes": 2113,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l3/initial_F0_b2_w2_l3-20261008T184240-875a1539/metrics.json",
+      "sha256": "2f8dcb8552b321117f64dd5cfa5f1f4936e3dcf97b9a6e5637cec0dc51a26f84"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l1/initial_F0_b1_w1_l1-20261008T181422-4d4e370d/manifest.json",
+      "sha256": "cf97f8651273eda76f0d68212d0170ee032056985c58cfb58190e8c04288cf8c"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l1/initial_F0_b1_w1_l1-20261008T181422-4d4e370d/settings.json",
+      "sha256": "0d684da9c2518a8b029159befd916653645260403ab1c8bcc17e8a3a7f9e9edc"
+    },
+    {
+      "bytes": 350408,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l1/initial_F0_b1_w1_l1-20261008T181422-4d4e370d/request_events.csv",
+      "sha256": "896f7b4056fab8d4e52622e4edfe595bd5461a1d9b53e717be606d9a764a73be"
+    },
+    {
+      "bytes": 1829,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l1/initial_F0_b1_w1_l1-20261008T181422-4d4e370d/metrics.json",
+      "sha256": "d2e4f7d9f21c1647fcca42a5a67845c518cc5aaa8e1738a4621ea67e2f36832d"
+    },
+    {
+      "bytes": 4857,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l1/initial_F0_b1_w1_l1-20261008T181119-7fa91358/manifest.json",
+      "sha256": "4da12e671ce43aa47b128b590ab0e4f86079faff878145d2f5a50cf89d3e928d"
+    },
+    {
+      "bytes": 77810,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l1/initial_F0_b1_w1_l1-20261008T181119-7fa91358/request_events.partial.csv",
+      "sha256": "6f1acbae36555a9204145aa9cbbcab076de99c24fbca007ef8c25d0df087d1fe"
+    },
+    {
+      "bytes": 78,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l1/initial_F0_b1_w1_l1-20261008T181119-7fa91358/gpu_activity_partial.json",
+      "sha256": "07f91c7cad295f5c08d2297430387bb2636f9e7ddf102441fe88cb12b2bc6217"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l2/initial_F0_b1_w0_l2-20261008T180921-2f3d3c8b/manifest.json",
+      "sha256": "937581239a192989c3f901ca2b21ca418e856ad5811cd5ab263484b77ff0ee6c"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l2/initial_F0_b1_w0_l2-20261008T180921-2f3d3c8b/settings.json",
+      "sha256": "b247f6cd5542cf07045ed28110c3885f13a70c3cde2b0ebe4525b1b9613f39fc"
+    },
+    {
+      "bytes": 639002,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l2/initial_F0_b1_w0_l2-20261008T180921-2f3d3c8b/request_events.csv",
+      "sha256": "d1c366d3d43175cf7d3ad9afc31abde481c794449756a2cb07b05c1667478cb9"
+    },
+    {
+      "bytes": 2101,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l2/initial_F0_b1_w0_l2-20261008T180921-2f3d3c8b/metrics.json",
+      "sha256": "38aed9b5a12316914d40f575157f2d983bc732674493f5166b57a588336c096a"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l3/initial_R0_b4_w1_l3-20261008T172601-2a45b2f5/manifest.json",
+      "sha256": "4c7cf2f4c8e248f447027f5b5095fdaa528b3f57fb76c49f71208f1c995ef7f6"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l3/initial_R0_b4_w1_l3-20261008T172601-2a45b2f5/settings.json",
+      "sha256": "27a9ef7d6bbaed0eb75cf04bf4e8ef24c480e2dfcb45ec997712a20239fd4a38"
+    },
+    {
+      "bytes": 1114345,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l3/initial_R0_b4_w1_l3-20261008T172601-2a45b2f5/request_events.csv",
+      "sha256": "22e695f791dae453c86468541bce82bdb560c20d578a53bf031872a49afa48fd"
+    },
+    {
+      "bytes": 1733,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l3/initial_R0_b4_w1_l3-20261008T172601-2a45b2f5/metrics.json",
+      "sha256": "3b8e2747797790d052cdc83ee4726be62b41741730778b44bd6cb9f049c6b959"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l3/initial_R0_b4_w1_l3-20261008T175747-6bb23bb6/manifest.json",
+      "sha256": "5167bbcda305d0235ce3695c73b88380f4024ab227d3442998966778b7fde73e"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l3/initial_R0_b4_w1_l3-20261008T175747-6bb23bb6/settings.json",
+      "sha256": "27a9ef7d6bbaed0eb75cf04bf4e8ef24c480e2dfcb45ec997712a20239fd4a38"
+    },
+    {
+      "bytes": 870255,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l3/initial_R0_b4_w1_l3-20261008T175747-6bb23bb6/request_events.csv",
+      "sha256": "282cc0fc994c850a4409ecb392da37eb7a902462f37bcb56fb08646b086dd388"
+    },
+    {
+      "bytes": 1895,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l3/initial_R0_b4_w1_l3-20261008T175747-6bb23bb6/metrics.json",
+      "sha256": "4c165aa3ffbac1733adba051f9f07d6d342eaba7f59b0cab7b3f8e44c0f4f927"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l2/initial_F0_b1_w1_l2-20261008T181454-806fd4e4/manifest.json",
+      "sha256": "d8fd307644d46f4f32a2810d009d7adc891044125584b18d266de4e70adf6616"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l2/initial_F0_b1_w1_l2-20261008T181454-806fd4e4/settings.json",
+      "sha256": "aef0d9590cc911a544781eebcb1e0c9521f63639bfb2996540d7da4f03e9d184"
+    },
+    {
+      "bytes": 639616,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l2/initial_F0_b1_w1_l2-20261008T181454-806fd4e4/request_events.csv",
+      "sha256": "e9888b6114ae384102eb4bb201742d14ca7ee500e1edd0efc71ff46cf7c24b98"
+    },
+    {
+      "bytes": 2108,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l2/initial_F0_b1_w1_l2-20261008T181454-806fd4e4/metrics.json",
+      "sha256": "0fa3975b22ecd2b43fb1835b8166600b5701f1ff9bf59acc5171ebffd3b57898"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T165135-4f13943a/manifest.json",
+      "sha256": "42057d7b36d66242028ec3fe7df9d4d878f243e33576f45a152981e2df380547"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T165135-4f13943a/settings.json",
+      "sha256": "d5e2d6768923e92b215bdf0313310cf876579b85dab068a13c5d84ae9cebc9ac"
+    },
+    {
+      "bytes": 349937,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T165135-4f13943a/request_events.csv",
+      "sha256": "66cadb3539fbf51562b7e71e14a30bcf7441b6d3ad7c3c072ab11d76bdd2b599"
+    },
+    {
+      "bytes": 1623,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T165135-4f13943a/metrics.json",
+      "sha256": "c3f8ff7ec97c416d5b917c2f853020d8ff510d27c20a80d1ebf26af824352ba4"
+    },
+    {
+      "bytes": 4586,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T171344-45464b76/manifest.json",
+      "sha256": "4b7b3fe3872ad787a607be35ada97c0c359d5bc6abe5781a73466fe68171f60a"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T171344-45464b76/settings.json",
+      "sha256": "d5e2d6768923e92b215bdf0313310cf876579b85dab068a13c5d84ae9cebc9ac"
+    },
+    {
+      "bytes": 350090,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T171344-45464b76/request_events.csv",
+      "sha256": "3515ab9648840604aa6ac04f01e0cd077441fb24abe10618371179e5a78f59f8"
+    },
+    {
+      "bytes": 1626,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T171344-45464b76/metrics.json",
+      "sha256": "7c5ef94016e6049b8ebe65d5536b23eadd2c3f303edb2ba61de58dd2353cffd8"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T174407-2f1e7f6d/manifest.json",
+      "sha256": "094502cf7f7539b18087aff460fb76cf8a00d4910c40bbe2e47c675508558a7e"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T174407-2f1e7f6d/settings.json",
+      "sha256": "d5e2d6768923e92b215bdf0313310cf876579b85dab068a13c5d84ae9cebc9ac"
+    },
+    {
+      "bytes": 351215,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T174407-2f1e7f6d/request_events.csv",
+      "sha256": "cf646d7e72931176031e254b6b826e947b09fec1a577cdd237bc6b28e0723dc3"
+    },
+    {
+      "bytes": 1707,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l1/initial_R0_b1_w2_l1-20261008T174407-2f1e7f6d/metrics.json",
+      "sha256": "6d3ae3abfe841e7fdeb05e3475ee0b6a434031cb99ac91bb0225637b02694e69"
+    },
+    {
+      "bytes": 4709,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l3/review_R0_b1_w1_l3-20261008T191655-b56038ef/manifest.json",
+      "sha256": "864421726cfce61e251b3e3269e8790d49f33900615e10ee35cf8d4e854842ab"
+    },
+    {
+      "bytes": 152,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l3/review_R0_b1_w1_l3-20261008T191655-b56038ef/settings.json",
+      "sha256": "fc41b35b1fd9a8f5f4f5ae615791d25f250a5bc27b52e17d88b1a1908b440f24"
+    },
+    {
+      "bytes": 550736,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l3/review_R0_b1_w1_l3-20261008T191655-b56038ef/request_events.csv",
+      "sha256": "d30676d8736a395399150b335189452435dcce2f81cfb5895fe309e806f6c1ab"
+    },
+    {
+      "bytes": 1890,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l3/review_R0_b1_w1_l3-20261008T191655-b56038ef/metrics.json",
+      "sha256": "fd9be30bf67cc4600713c39092e93cbb50d66b83c559860168d7f751565f9ada"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T174335-c31d5950/manifest.json",
+      "sha256": "0cf219b0307d02e4e9f355761f6d52dca99ee79af11aaa68aeb1651aa51275e1"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T174335-c31d5950/settings.json",
+      "sha256": "84e8be467b8776af1966cc5131c1ce074ac7516fcd277ccb581dd58f5b1b9402"
+    },
+    {
+      "bytes": 172695,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T174335-c31d5950/request_events.csv",
+      "sha256": "10287a76daa97674151519629cb389c9cc85b81c0e790b59607f24a2d79923eb"
+    },
+    {
+      "bytes": 1722,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T174335-c31d5950/metrics.json",
+      "sha256": "2efba7109ce4cbd2339154b5e0eea6d7b98555c45007d5367ea69f1b62ec4acc"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T171312-441454d8/manifest.json",
+      "sha256": "5ec68c85537cffcbe1fafc30c34faef17c5e8f1363f37bba106094875975c450"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T171312-441454d8/settings.json",
+      "sha256": "84e8be467b8776af1966cc5131c1ce074ac7516fcd277ccb581dd58f5b1b9402"
+    },
+    {
+      "bytes": 172012,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T171312-441454d8/request_events.csv",
+      "sha256": "2c8b8971aec319fac0c028913f141621af860e2f8c02f35bf6b84146eff1effa"
+    },
+    {
+      "bytes": 1651,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T171312-441454d8/metrics.json",
+      "sha256": "bc29de1196ad4bbbfecdfc4aca5d6a06c161a34984af8b7ba16a6eacbe2da84d"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T165103-623463cb/manifest.json",
+      "sha256": "f09389ce3ad1a593ab2621346b0f82c1e0a7b9f6772a5b125a4fe0c49585f84f"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T165103-623463cb/settings.json",
+      "sha256": "84e8be467b8776af1966cc5131c1ce074ac7516fcd277ccb581dd58f5b1b9402"
+    },
+    {
+      "bytes": 172094,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T165103-623463cb/request_events.csv",
+      "sha256": "a4a9d9ed466b333b5b5112ba7b025220079644df3d5f04c5e3dc33f4325c3194"
+    },
+    {
+      "bytes": 1653,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l0/initial_R0_b1_w2_l0-20261008T165103-623463cb/metrics.json",
+      "sha256": "b6cdb2d59321c233096dd7358c251f4e4974f8fc354b1c6067f1346e61361f81"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l1/review_R0_b1_w0_l1-20261008T191330-6cffa3aa/manifest.json",
+      "sha256": "94ed09c15f7e769a41e429d8664c63b59579ec36e36d65c8a3e45381492ccff2"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l1/review_R0_b1_w0_l1-20261008T191330-6cffa3aa/settings.json",
+      "sha256": "d5cc7ed4449311b57fd1208f7387f8b79f23a3e5b32e83373e0751d0a4c09bb3"
+    },
+    {
+      "bytes": 297329,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l1/review_R0_b1_w0_l1-20261008T191330-6cffa3aa/request_events.csv",
+      "sha256": "cfcc53c6ac41f0857388f91fe0a15241e539e1dda2dd3eef5f0e611d09224b32"
+    },
+    {
+      "bytes": 1725,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l1/review_R0_b1_w0_l1-20261008T191330-6cffa3aa/metrics.json",
+      "sha256": "928a1a3a65e2a55eb844f6c834bdd27521c946c6998a457925837fee1c105efd"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l0/initial_F0_b2_w0_l0-20261008T181851-2beb0541/manifest.json",
+      "sha256": "0324669c579dc80c12305e6452b4c8aacf516ae1b94616a34e6a13bd3efdd0f3"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l0/initial_F0_b2_w0_l0-20261008T181851-2beb0541/settings.json",
+      "sha256": "735bc1f0e9e7edf2a774e1db1890d3f719a731503ddeef9dfa595a00c9e1324d"
+    },
+    {
+      "bytes": 172249,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l0/initial_F0_b2_w0_l0-20261008T181851-2beb0541/request_events.csv",
+      "sha256": "be805bdf888d08b7d89fe5e68ec230c8894a6124072db4245d27bd898d9aacf6"
+    },
+    {
+      "bytes": 1850,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l0/initial_F0_b2_w0_l0-20261008T181851-2beb0541/metrics.json",
+      "sha256": "6198b6067aa575396a25dfc5e1181b29107f035801d312e3fa776576af10fe7d"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l2/initial_R0_b4_w0_l2-20261008T172318-39bcf160/manifest.json",
+      "sha256": "4a2649b4727b46bc9f8d6d2fa0edccbffc38467109857483c9be9653866eb3b8"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l2/initial_R0_b4_w0_l2-20261008T172318-39bcf160/settings.json",
+      "sha256": "6aa2a76765e4dd71f4803b75478efa33e2d2810b5d0214bd06000bb9989c423e"
+    },
+    {
+      "bytes": 699248,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l2/initial_R0_b4_w0_l2-20261008T172318-39bcf160/request_events.csv",
+      "sha256": "12819db9cced34545bf12a7f837dbe0726afc7d6f060b4c66ffe1973675f7e5f"
+    },
+    {
+      "bytes": 1650,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l2/initial_R0_b4_w0_l2-20261008T172318-39bcf160/metrics.json",
+      "sha256": "7fc9505bf5ab4e486feb4e294ac228e5276795a98f17a13e1349772d13f8edcc"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l2/initial_R0_b4_w0_l2-20261008T175437-a838e0ad/manifest.json",
+      "sha256": "864a71883135fc20cb3a363865aa1e1f230bf09b138a529753ab3b527feac039"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l2/initial_R0_b4_w0_l2-20261008T175437-a838e0ad/settings.json",
+      "sha256": "6aa2a76765e4dd71f4803b75478efa33e2d2810b5d0214bd06000bb9989c423e"
+    },
+    {
+      "bytes": 676359,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l2/initial_R0_b4_w0_l2-20261008T175437-a838e0ad/request_events.csv",
+      "sha256": "6ba51585ba64324565681482562d5e23e62c9f870aeb3839217671b172843a4d"
+    },
+    {
+      "bytes": 1921,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l2/initial_R0_b4_w0_l2-20261008T175437-a838e0ad/metrics.json",
+      "sha256": "30812a548f472504ef6d5b2b2c42dd8fc5f7a540e9095d2a321df240c92cc58b"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l0/initial_F0_b1_w1_l0-20261008T181047-e31e365e/manifest.json",
+      "sha256": "f8f8da0cb78c6635c090a63baa8e38d4dd4166e7287c527bd11b00da0d332469"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l0/initial_F0_b1_w1_l0-20261008T181047-e31e365e/settings.json",
+      "sha256": "b2b2cd5df153c1f892e73f6f70cca868741dc81f80ba6f339c0b70649acb021b"
+    },
+    {
+      "bytes": 172209,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l0/initial_F0_b1_w1_l0-20261008T181047-e31e365e/request_events.csv",
+      "sha256": "4a67af017ee01026554e15533392023989b3dd5d71620fb3ef9a47e30c0b3027"
+    },
+    {
+      "bytes": 1845,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l0/initial_F0_b1_w1_l0-20261008T181047-e31e365e/metrics.json",
+      "sha256": "154ae9b29a68f51db5cc556216b67727457d72f343b5a0a975bd9872447508ad"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T171609-2cad3caa/manifest.json",
+      "sha256": "6c8526aa465be4e020074ecbbd93b8ef666009b87fa79ccc01f853bf0332825b"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T171609-2cad3caa/settings.json",
+      "sha256": "1f22c8f5c742c0cb5483173ec0bb7c7642cbbfe01989f59640fad047bb07f50f"
+    },
+    {
+      "bytes": 349748,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T171609-2cad3caa/request_events.csv",
+      "sha256": "96e0c570500508d4e4428f0c68aed9d1d83ff95beb37b8530e346a7651225509"
+    },
+    {
+      "bytes": 1624,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T171609-2cad3caa/metrics.json",
+      "sha256": "a9f89bf209a645ab2958cbb5a1320f9ac83a41405e8390bb958b4d77982ab9ba"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T174638-62a4bc65/manifest.json",
+      "sha256": "902acdb9b289517a42958ae15b3e4670b1c6cbd7fd15c58f29aec5075724aeef"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T174638-62a4bc65/settings.json",
+      "sha256": "1f22c8f5c742c0cb5483173ec0bb7c7642cbbfe01989f59640fad047bb07f50f"
+    },
+    {
+      "bytes": 350577,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T174638-62a4bc65/request_events.csv",
+      "sha256": "5aabf3054ebc9268b5d8f133c572cb1f8e0a75335b5168154c7c700bb5e41e10"
+    },
+    {
+      "bytes": 1705,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T174638-62a4bc65/metrics.json",
+      "sha256": "2f9efb79c2edf7e5282c0f8d34f8da54f002d61fc9a75b1c1c6abf8b495f31e9"
+    },
+    {
+      "bytes": 4644,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T165359-6bb6e703/manifest.json",
+      "sha256": "208256eb6ca046983dceb6aa9a97611a4f07a351dbe2464697435310cba77987"
+    },
+    {
+      "bytes": 305148,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T165359-6bb6e703/request_events.partial.csv",
+      "sha256": "252d05242dc4117a239851b74e022e647e12d549779972af32a705d0025a86d2"
+    },
+    {
+      "bytes": 378,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l1/initial_R0_b2_w0_l1-20261008T165359-6bb6e703/gpu_activity_partial.json",
+      "sha256": "ee7447716673a68d8135e23703b3fac4519a9dd804c820a065c522fb4d636751"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l1/initial_F0_b2_w0_l1-20261008T181923-02b94115/manifest.json",
+      "sha256": "31d5315f8e31b9852229434c40a7fa922940d80b13b5ba7c6f80663b2bf72725"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l1/initial_F0_b2_w0_l1-20261008T181923-02b94115/settings.json",
+      "sha256": "87b6dec51c889b88cb69098de2efd1fec436d242a8e1cfd31d5d40c43efb774c"
+    },
+    {
+      "bytes": 349844,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l1/initial_F0_b2_w0_l1-20261008T181923-02b94115/request_events.csv",
+      "sha256": "df55d58a7d6a4732b46bee75674386c7d1dc1bea763a7e48fae601886d23c661"
+    },
+    {
+      "bytes": 1829,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l1/initial_F0_b2_w0_l1-20261008T181923-02b94115/metrics.json",
+      "sha256": "89ec22ee7125af56c4b6f3ff501b81b2e3e86d34c69f3582277836ee24f4b0fb"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l2/initial_F0_b4_w1_l2-20261008T184654-15753420/manifest.json",
+      "sha256": "5fee625a8ee39a7da5bfb4030c87b7faaa1c9012ba172dd8798845826a6508a6"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l2/initial_F0_b4_w1_l2-20261008T184654-15753420/settings.json",
+      "sha256": "06e2574c10493b4d9ea4b8b943c8ab7f69505b19b93e978f1481f7aad001d749"
+    },
+    {
+      "bytes": 681593,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l2/initial_F0_b4_w1_l2-20261008T184654-15753420/request_events.csv",
+      "sha256": "f2cbb7d997c8dca988aa30c00e56706f848ee9f7d1b869caff780ffc389c7f11"
+    },
+    {
+      "bytes": 2048,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l2/initial_F0_b4_w1_l2-20261008T184654-15753420/metrics.json",
+      "sha256": "2b8ce1b5d5cfdd749c3ce7645f8c54d44f030c9e33c58c0809f9820237bc28cd"
+    },
+    {
+      "bytes": 4856,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l3/initial_F0_b8_w0_l3-20261008T185230-a906af55/manifest.json",
+      "sha256": "c41a537a225c8ad064aa0aa43be899d2c692371800fd3bf6bb633ca071e672df"
+    },
+    {
+      "bytes": 541999,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l3/initial_F0_b8_w0_l3-20261008T185230-a906af55/request_events.partial.csv",
+      "sha256": "b9f18bdcc3ef6e0e6f1913f282ca0b0b76b5d1a427b4f97f9ae4d7500fa5b921"
+    },
+    {
+      "bytes": 228,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l3/initial_F0_b8_w0_l3-20261008T185230-a906af55/gpu_activity_partial.json",
+      "sha256": "f4ef755e83f558994812e0c74670ee27ec211b407ae81ca9aceb716500957cc1"
+    },
+    {
+      "bytes": 4710,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l3/initial_F0_b8_w0_l3-20261008T190543-dec6e405/manifest.json",
+      "sha256": "b266059aba973aaf565d241824005fb783fb02abbcc37d0cc634279b39c8b94f"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l3/initial_F0_b8_w0_l3-20261008T190543-dec6e405/settings.json",
+      "sha256": "a27c2f2a4b4e493c4a2763ec8f5fd92bedf05c33d03bd5b392e3faf2760a90ea"
+    },
+    {
+      "bytes": 906946,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l3/initial_F0_b8_w0_l3-20261008T190543-dec6e405/request_events.csv",
+      "sha256": "28b4b090673c665ed73a2f9c08fd224d85720cb64dd103ad9121ba3aae3b28f1"
+    },
+    {
+      "bytes": 2032,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l3/initial_F0_b8_w0_l3-20261008T190543-dec6e405/metrics.json",
+      "sha256": "06ea12541246ffdc9dfbd4e0c6ec5123828c5d3824538bed8b2b6c2117c2023f"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T164942-4d3d61c3/manifest.json",
+      "sha256": "8da5b3c90a4217f4f7d0e855dcad3e6222c08bdeafcff77105cbf1a490dcda37"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T164942-4d3d61c3/settings.json",
+      "sha256": "9be9e1454e11a9c2662a2030492bc5204d204297c86d4f3b1e9e4133c6975909"
+    },
+    {
+      "bytes": 611309,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T164942-4d3d61c3/request_events.csv",
+      "sha256": "79cfa2575a59aeb8ac6fbbec4abe6a9601f0b831bfb4c4e7654c499784e694ef"
+    },
+    {
+      "bytes": 1818,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T164942-4d3d61c3/metrics.json",
+      "sha256": "83f5a904dacd3efb795973c013e3431c7402c81f901367e62e1b8658d42bfc95"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T174208-fdf434ce/manifest.json",
+      "sha256": "876d51a5436dbf03080b5cb75d26ae7bf57bfcf0dfe3db532af6f9e564765ca0"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T174208-fdf434ce/settings.json",
+      "sha256": "9be9e1454e11a9c2662a2030492bc5204d204297c86d4f3b1e9e4133c6975909"
+    },
+    {
+      "bytes": 613240,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T174208-fdf434ce/request_events.csv",
+      "sha256": "0a6067a16a07cf0bf5813065a570ea40cfd267999bba97a0e3af05e908a97bb1"
+    },
+    {
+      "bytes": 1970,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T174208-fdf434ce/metrics.json",
+      "sha256": "1d4602e504fa6b28a6cb4d08e22b6b83d36808ae111843b5ff7a2b1b7800f03e"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T171150-a61d7fec/manifest.json",
+      "sha256": "062a959ef34ad3cbf69edd90248c8a2ac0259ff506b92583f878d1d7a4d30102"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T171150-a61d7fec/settings.json",
+      "sha256": "9be9e1454e11a9c2662a2030492bc5204d204297c86d4f3b1e9e4133c6975909"
+    },
+    {
+      "bytes": 609605,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T171150-a61d7fec/request_events.csv",
+      "sha256": "5183061aeae496016808c1747b31aa5e7fd935b14b02fab2b2dbb83bd3eaff3c"
+    },
+    {
+      "bytes": 1825,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l2/initial_R0_b1_w1_l2-20261008T171150-a61d7fec/metrics.json",
+      "sha256": "4ac6db7d13147ce46fb9398e9663460e73b68445ca0e924324b3065b3bd00e90"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l2/initial_F0_b8_w0_l2-20261008T185149-4483bafc/manifest.json",
+      "sha256": "6db1d78faa7b9a36d54955ffca11fccac4c4c40f808e4f55a271f588f1f1a344"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l2/initial_F0_b8_w0_l2-20261008T185149-4483bafc/settings.json",
+      "sha256": "8a91e008e8f596044f38df437b890a16be02949addb05fba43571079c6ed4985"
+    },
+    {
+      "bytes": 692557,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l2/initial_F0_b8_w0_l2-20261008T185149-4483bafc/request_events.csv",
+      "sha256": "dee76755b21c4c758449165b6fa455c45312f08d41bff55381fbb057b2c9cabd"
+    },
+    {
+      "bytes": 2039,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l2/initial_F0_b8_w0_l2-20261008T185149-4483bafc/metrics.json",
+      "sha256": "dc8d5a6f71980d2fb65b79622e04ce21f3a032c682edc200660bc505a24f5602"
+    },
+    {
+      "bytes": 4710,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l2/initial_F0_b8_w2_l2-20261008T190955-608ec812/manifest.json",
+      "sha256": "63c11ef1e0566c6db08c555eb6293f93065e220372e54863f3840b71c1154e3f"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l2/initial_F0_b8_w2_l2-20261008T190955-608ec812/settings.json",
+      "sha256": "b7aa6c2ffec2d9807f4c7a9721f7ad464f27e0ccd328bfbbdbd4ebe6768df234"
+    },
+    {
+      "bytes": 690288,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l2/initial_F0_b8_w2_l2-20261008T190955-608ec812/request_events.csv",
+      "sha256": "741d990c5d31a6a51d6b4b1833d349f438c2ac21227537771758cd1662d27c0f"
+    },
+    {
+      "bytes": 2032,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l2/initial_F0_b8_w2_l2-20261008T190955-608ec812/metrics.json",
+      "sha256": "3cae30e4ad1aa6c21e7e1d3eb24d032eaa0c314b742066dd57f6e51b49c8c54c"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l3/initial_F0_b4_w2_l3-20261008T185003-10905f93/manifest.json",
+      "sha256": "9d460fe8e7563c8579695b5c912beada69d1f495008df7e3979e04743991f74e"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l3/initial_F0_b4_w2_l3-20261008T185003-10905f93/settings.json",
+      "sha256": "995d3238128d3d327b04c4d5a20b138ae5e6d3addcc24e09c0b0fb3c124597c5"
+    },
+    {
+      "bytes": 894778,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l3/initial_F0_b4_w2_l3-20261008T185003-10905f93/request_events.csv",
+      "sha256": "0fac8e5c82c00191077ceace6ceee9696f7e501113666636b92d43cc28165694"
+    },
+    {
+      "bytes": 2033,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l3/initial_F0_b4_w2_l3-20261008T185003-10905f93/metrics.json",
+      "sha256": "bcbc2e2500acc28265c7ac95bbbbab7094ec8c640f2dbde8aca1d93ee2686ba6"
+    },
+    {
+      "bytes": 4710,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l1/review_R0_b1_w1_l1-20261008T191549-521bfef8/manifest.json",
+      "sha256": "fdef074eec3ec06d5d8c666a3bbd059fb5b90f2df351971c7f68734b079a6d6c"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l1/review_R0_b1_w1_l1-20261008T191549-521bfef8/settings.json",
+      "sha256": "b6362d6a0388e7c6710858dc5bb9a16c63ac3af9e2cd0d74fb38c0fde30ef595"
+    },
+    {
+      "bytes": 297115,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l1/review_R0_b1_w1_l1-20261008T191549-521bfef8/request_events.csv",
+      "sha256": "75ea03a1431591ce0e8fd65199b0bda5a75ce92094522056943b0d3581bfccb8"
+    },
+    {
+      "bytes": 1733,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w1_l1/review_R0_b1_w1_l1-20261008T191549-521bfef8/metrics.json",
+      "sha256": "238a5c6c44e7f9294f7e3b753d98fb9cf1eaba3edbc14f6e52d3c7ed239d8309"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l1/initial_R0_b4_w0_l1-20261008T175405-93b3aceb/manifest.json",
+      "sha256": "af0903ae708ca7a4f762ceac45e93391e743c21e5b63667aa4daeddaa0f0349d"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l1/initial_R0_b4_w0_l1-20261008T175405-93b3aceb/settings.json",
+      "sha256": "67d902f87ecc5d49a6e0fa3a7664cc8963da1b19f8a0c8d8aaf98608fc5aab41"
+    },
+    {
+      "bytes": 350280,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l1/initial_R0_b4_w0_l1-20261008T175405-93b3aceb/request_events.csv",
+      "sha256": "90bde22678bfecbf151065b73c6148badc9756329b05d322143233b6130a9920"
+    },
+    {
+      "bytes": 1807,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l1/initial_R0_b4_w0_l1-20261008T175405-93b3aceb/metrics.json",
+      "sha256": "d754aeee9a0cb4caa9ee5bddb403330cb238e6bfabfe1bb1eb207aa7dc1b6cf3"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l1/initial_R0_b4_w0_l1-20261008T172246-847f6138/manifest.json",
+      "sha256": "5cfce38c87fd4960489466eb07ef99682f91a281a3d46643526df0f182ca1c91"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l1/initial_R0_b4_w0_l1-20261008T172246-847f6138/settings.json",
+      "sha256": "67d902f87ecc5d49a6e0fa3a7664cc8963da1b19f8a0c8d8aaf98608fc5aab41"
+    },
+    {
+      "bytes": 349610,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l1/initial_R0_b4_w0_l1-20261008T172246-847f6138/request_events.csv",
+      "sha256": "2f0dbe4441443e983bef2d369d9d8632aa1339c92fc26bb38b5774d478ff9c04"
+    },
+    {
+      "bytes": 1638,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l1/initial_R0_b4_w0_l1-20261008T172246-847f6138/metrics.json",
+      "sha256": "b4f464d27005aec199512b5e101c73ae4cfa8c74fd46ad0efbcf429b86dcb885"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l2/initial_R0_b4_w2_l2-20261008T172739-855adf2b/manifest.json",
+      "sha256": "ae92d146130f8c26bd85906c88aa000280ca7be4494b7fcdc2edf37efeeb4b52"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l2/initial_R0_b4_w2_l2-20261008T172739-855adf2b/settings.json",
+      "sha256": "1e02a8119c823a412583acb0b9ed124806b0a47e4591fd0722f78031d9fda9aa"
+    },
+    {
+      "bytes": 699268,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l2/initial_R0_b4_w2_l2-20261008T172739-855adf2b/request_events.csv",
+      "sha256": "71ce9f7c5b44d7727397206116619abeeb6a781bd770816401740e1283c76b09"
+    },
+    {
+      "bytes": 1673,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l2/initial_R0_b4_w2_l2-20261008T172739-855adf2b/metrics.json",
+      "sha256": "8f3da994ec8acbcc01292553f3ec06bcbfae8e38226a3d8f651d36243fdc2e2c"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l2/initial_R0_b4_w2_l2-20261008T175932-758283f7/manifest.json",
+      "sha256": "c5ef6e8abc37d1deb2d19ad330cd3729a13119b2c4bd468dbb4c54726e453c73"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l2/initial_R0_b4_w2_l2-20261008T175932-758283f7/settings.json",
+      "sha256": "1e02a8119c823a412583acb0b9ed124806b0a47e4591fd0722f78031d9fda9aa"
+    },
+    {
+      "bytes": 676375,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l2/initial_R0_b4_w2_l2-20261008T175932-758283f7/request_events.csv",
+      "sha256": "e6391a23a4bfe97554a6e1611b269832a584795e18ed41460d035cb4afc5a446"
+    },
+    {
+      "bytes": 1898,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l2/initial_R0_b4_w2_l2-20261008T175932-758283f7/metrics.json",
+      "sha256": "92e1e203c07139b705b68b8233c731013aecac1deec584de79c8e406bf0d3a5b"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l1/initial_R0_b2_w1_l1-20261008T174907-ed468be1/manifest.json",
+      "sha256": "4925d9724b35286af6b081c76a057d17d6aa78c47db6c648993fbe0790ecb715"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l1/initial_R0_b2_w1_l1-20261008T174907-ed468be1/settings.json",
+      "sha256": "0a912576db0c1703ec5d985af17730a6c3e9762891427b588684d4fda1e57cda"
+    },
+    {
+      "bytes": 350586,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l1/initial_R0_b2_w1_l1-20261008T174907-ed468be1/request_events.csv",
+      "sha256": "2da3ad72d53cef1ef3f46165cb20bfa9e9dd65f05d1fe5675ae4bb3c12234861"
+    },
+    {
+      "bytes": 1706,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l1/initial_R0_b2_w1_l1-20261008T174907-ed468be1/metrics.json",
+      "sha256": "b49babd2f717b83a454d9005bdc034ccd5bf5b67f15e815fae64936cfd82119b"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l1/initial_R0_b2_w1_l1-20261008T171821-8387ceaa/manifest.json",
+      "sha256": "916c3f462a31284e981049b34557bce226568780a959be7a2b8efb2bcc5ab53b"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l1/initial_R0_b2_w1_l1-20261008T171821-8387ceaa/settings.json",
+      "sha256": "0a912576db0c1703ec5d985af17730a6c3e9762891427b588684d4fda1e57cda"
+    },
+    {
+      "bytes": 349630,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l1/initial_R0_b2_w1_l1-20261008T171821-8387ceaa/request_events.csv",
+      "sha256": "415e69085f0b917b00c747d40f8edd4704326a0021811656998cc65262918dbc"
+    },
+    {
+      "bytes": 1704,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l1/initial_R0_b2_w1_l1-20261008T171821-8387ceaa/metrics.json",
+      "sha256": "1214d2fbec30f1d228cda1ef0283abb50713f81cc81d7ecf366133bcbf6624fd"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l0/initial_F0_b1_w2_l0-20261008T181621-4cdaa2f5/manifest.json",
+      "sha256": "ef894d35c06986c02ff995572f1177f38a1726871e3e43177346a534fab16099"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l0/initial_F0_b1_w2_l0-20261008T181621-4cdaa2f5/settings.json",
+      "sha256": "565ddf3b27f4e52962a4a644efdd627afa1e1c461f2c4b50ec81e706fc382217"
+    },
+    {
+      "bytes": 172277,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l0/initial_F0_b1_w2_l0-20261008T181621-4cdaa2f5/request_events.csv",
+      "sha256": "07dc5f7fb25662a679e02945abb7b22693eb95c779b59d655b846231b3b0372c"
+    },
+    {
+      "bytes": 1923,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l0/initial_F0_b1_w2_l0-20261008T181621-4cdaa2f5/metrics.json",
+      "sha256": "89fb832fb3243a6a6447142001a9ed9fa14b4ea8ac4b5785c888060d27410265"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l2/review_R0_b2_w0_l2-20261008T192100-f150eef2/manifest.json",
+      "sha256": "fea11a50aa01b966045a6b7f8a41096c6650daec573b9b3ac3cf3c7a15ec3e5f"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l2/review_R0_b2_w0_l2-20261008T192100-f150eef2/settings.json",
+      "sha256": "8e6b6d8adb03481a975a076f072aa073de4cde34f5741ef962e2f1933469659a"
+    },
+    {
+      "bytes": 450375,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l2/review_R0_b2_w0_l2-20261008T192100-f150eef2/request_events.csv",
+      "sha256": "1ca81bdcb258de04af25fe24e9a8131210a1b5528c3c6cce8f0096d3a664979b"
+    },
+    {
+      "bytes": 1816,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l2/review_R0_b2_w0_l2-20261008T192100-f150eef2/metrics.json",
+      "sha256": "6d2c53dd606f98a9264e90208935d1a1d485036352b412673c5c1df356d819b6"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l0/initial_R0_b4_w0_l0-20261008T175333-f19dd790/manifest.json",
+      "sha256": "be4646ca488b747cd23aa5f485be5617faabc5cbc06e23e4983a88bd0e471c25"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l0/initial_R0_b4_w0_l0-20261008T175333-f19dd790/settings.json",
+      "sha256": "71730e5732a9dc46844577e17adfe1b5f03b04cbf207234c28bb58e1fa43f27b"
+    },
+    {
+      "bytes": 172425,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l0/initial_R0_b4_w0_l0-20261008T175333-f19dd790/request_events.csv",
+      "sha256": "712b5b9b50a380e51dfaa6b2a9792cec7e1188f3d00836e460131fae2176bf67"
+    },
+    {
+      "bytes": 1745,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l0/initial_R0_b4_w0_l0-20261008T175333-f19dd790/metrics.json",
+      "sha256": "ddc1c3843d9f0315a4d61bc7b4f8b764b08cf399ef7645ca30a40aea08b64d9e"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l0/initial_R0_b4_w0_l0-20261008T172214-b93794ba/manifest.json",
+      "sha256": "eb977b4af500f08bbb399996293efe392f44543a8d5993f4c1c79c922ac6d67c"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l0/initial_R0_b4_w0_l0-20261008T172214-b93794ba/settings.json",
+      "sha256": "71730e5732a9dc46844577e17adfe1b5f03b04cbf207234c28bb58e1fa43f27b"
+    },
+    {
+      "bytes": 171969,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l0/initial_R0_b4_w0_l0-20261008T172214-b93794ba/request_events.csv",
+      "sha256": "a307997b13d8ffea750bdab6d1893ef56935009a50a03a4024b3e0f058bd360a"
+    },
+    {
+      "bytes": 1663,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w0_l0/initial_R0_b4_w0_l0-20261008T172214-b93794ba/metrics.json",
+      "sha256": "d812ae8c5336c1add9228b9f697231c9b3288e1392f425bddcd202f5b43afd6b"
+    },
+    {
+      "bytes": 4710,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l2/review_R0_b1_w0_l2-20261008T191402-015465ea/manifest.json",
+      "sha256": "95e19e06804a5db93a2dd7bc69f123b3cbed5483875b2ca7811c623b3f410ecf"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l2/review_R0_b1_w0_l2-20261008T191402-015465ea/settings.json",
+      "sha256": "795be2ec8062d86599efb07a01e6248b7a81ab62a479e65b550fbee15596f813"
+    },
+    {
+      "bytes": 451730,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l2/review_R0_b1_w0_l2-20261008T191402-015465ea/request_events.csv",
+      "sha256": "ecc84994b7897cb8299b7a3bb62178cbed9eeac7f81e0b9990cb9031a4cbd51a"
+    },
+    {
+      "bytes": 1786,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l2/review_R0_b1_w0_l2-20261008T191402-015465ea/metrics.json",
+      "sha256": "24f575829e334f15d1c9654a525b6d39d8718b6ac1312efcb06a531010df2fb5"
+    },
+    {
+      "bytes": 4708,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l3/review_R0_b1_w0_l3-20261008T191435-03883a0c/manifest.json",
+      "sha256": "07f5869505af0283d18f2e2c11048d42c3de5dca209b355dd40b3765ad988d6f"
+    },
+    {
+      "bytes": 152,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l3/review_R0_b1_w0_l3-20261008T191435-03883a0c/settings.json",
+      "sha256": "3e17e5ac6287726d1b9aa4f9a026265860b73663f2733c45f0ff46a2630eeb60"
+    },
+    {
+      "bytes": 550756,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l3/review_R0_b1_w0_l3-20261008T191435-03883a0c/request_events.csv",
+      "sha256": "e3c6647a896482000478b27217e027561b2c4a04bd1c14356d8bb0ecc3a91107"
+    },
+    {
+      "bytes": 1959,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l3/review_R0_b1_w0_l3-20261008T191435-03883a0c/metrics.json",
+      "sha256": "ce55f7dbfa92800e9d15cc6e0a35a75535cf68791a590dd44b724b27c68a7d24"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l1/initial_F0_b8_w0_l1-20261008T185117-279adfb2/manifest.json",
+      "sha256": "d5a4629d96d5168501317b6dbb60c608faf09fcce8fe4be0a0a65bd33cf2eabc"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l1/initial_F0_b8_w0_l1-20261008T185117-279adfb2/settings.json",
+      "sha256": "6bd5ce6769e1c90d53b9b7563fb95fe51485a4d4af85d97cfeca153793cfce63"
+    },
+    {
+      "bytes": 349536,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l1/initial_F0_b8_w0_l1-20261008T185117-279adfb2/request_events.csv",
+      "sha256": "f58c2335f7bbeddaff8168ab7e80c28a14d4c2ee178010f7f185a7fdf274fe8d"
+    },
+    {
+      "bytes": 1842,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l1/initial_F0_b8_w0_l1-20261008T185117-279adfb2/metrics.json",
+      "sha256": "d5556ec38dcf28d202b038c5e85cb1bc903c8625505a96504c890dca314bf13d"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l3/initial_F0_b1_w1_l3-20261008T181537-8bf4c5c0/manifest.json",
+      "sha256": "aa0c7d439c14460f7e9f64b7b008ae015d143ba83a6647841a9b53b74b3ffc68"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l3/initial_F0_b1_w1_l3-20261008T181537-8bf4c5c0/settings.json",
+      "sha256": "2c8eba42a1b096b8387de22cc40e7fecace5d46da731ca2c471468de1c5cbe53"
+    },
+    {
+      "bytes": 855997,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l3/initial_F0_b1_w1_l3-20261008T181537-8bf4c5c0/request_events.csv",
+      "sha256": "a95d79a7ff54706627e8469120450a7e5f0b2a1dc55ba19d4b2b1d7b1b1ac871"
+    },
+    {
+      "bytes": 2105,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w1_l3/initial_F0_b1_w1_l3-20261008T181537-8bf4c5c0/metrics.json",
+      "sha256": "b1dcf96b17c99564efd2a060175f1ac9632dceb25972d6149680679dc6e5551a"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l2/initial_R0_b2_w0_l2-20261008T171641-a82d380e/manifest.json",
+      "sha256": "46c0a9e1c3dd74e9ac17684c5635e8dde175c7f59c991f93fd7e5534a7ec1865"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l2/initial_R0_b2_w0_l2-20261008T171641-a82d380e/settings.json",
+      "sha256": "22fcac37a3e589660308c091c972196b98389924ec668833204b303da1a8e13d"
+    },
+    {
+      "bytes": 698910,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l2/initial_R0_b2_w0_l2-20261008T171641-a82d380e/request_events.csv",
+      "sha256": "251496735ce0f3407eb4740f0e970318aa9a31a65801e4c10f4411ca8b2bd60d"
+    },
+    {
+      "bytes": 1735,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l2/initial_R0_b2_w0_l2-20261008T171641-a82d380e/metrics.json",
+      "sha256": "1ad69ee9e742ae6f30e690bb362442e61813d4b31cb6e7bfdfc6d69e7b5d7fc9"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l2/initial_R0_b2_w0_l2-20261008T174710-c6f182f6/manifest.json",
+      "sha256": "3c9fc93ea370e3d54d304357144af351e7432294411349ab9604c86e39c897b2"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l2/initial_R0_b2_w0_l2-20261008T174710-c6f182f6/settings.json",
+      "sha256": "22fcac37a3e589660308c091c972196b98389924ec668833204b303da1a8e13d"
+    },
+    {
+      "bytes": 656939,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l2/initial_R0_b2_w0_l2-20261008T174710-c6f182f6/request_events.csv",
+      "sha256": "3a8063acadf956a0f2a930908474b67a4bd5fd87c61b59f40ddfd6b41cf190a7"
+    },
+    {
+      "bytes": 1975,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l2/initial_R0_b2_w0_l2-20261008T174710-c6f182f6/metrics.json",
+      "sha256": "c85e3b06ce7c395444b5c8ed0b764a292c97e4df97ce2bdb7b02ca46bd444c28"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l2/review_R0_b1_w2_l2-20261008T191840-4df0cb99/manifest.json",
+      "sha256": "44f17b1bd116767f7ff31926bb75180b782b887e5937de106a5a6f6f331641f5"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l2/review_R0_b1_w2_l2-20261008T191840-4df0cb99/settings.json",
+      "sha256": "f2e543c9c90d01480f4ba616807af81549e75fc455fcf1420bafeb19d8bf74d4"
+    },
+    {
+      "bytes": 451728,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l2/review_R0_b1_w2_l2-20261008T191840-4df0cb99/request_events.csv",
+      "sha256": "35f1202aec71aaa62a1387c82448b88385224e0780073ad204abb5ba618fcfce"
+    },
+    {
+      "bytes": 1792,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l2/review_R0_b1_w2_l2-20261008T191840-4df0cb99/metrics.json",
+      "sha256": "2858a75964941e24845df3e44f3bff48b96ed1bbf855157ae72ba745d1459eb9"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l3/initial_F0_b8_w1_l3-20261008T190810-14591ffb/manifest.json",
+      "sha256": "610a5cb5e62cd063218d44f73ab3d01e496665a7a05fbcba9d3ecfb8024a2d13"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l3/initial_F0_b8_w1_l3-20261008T190810-14591ffb/settings.json",
+      "sha256": "051ef4c9e6f58aef62e6cde5090791a93bb79bd5b826df28b23f55a6353d9180"
+    },
+    {
+      "bytes": 908264,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l3/initial_F0_b8_w1_l3-20261008T190810-14591ffb/request_events.csv",
+      "sha256": "3f8b29cc5450ff4ee41a8664eaf66698d61875dff2fe3ba27c9251ebb93b3f7b"
+    },
+    {
+      "bytes": 2012,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l3/initial_F0_b8_w1_l3-20261008T190810-14591ffb/metrics.json",
+      "sha256": "2dd7714eebc61d2fcb2ebbadc0513363fb388c36a025cab9aa054821b8996170"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l0/review_R0_b1_w0_l0-20261008T191258-475082ce/manifest.json",
+      "sha256": "83c25ef60dd807ee467e329de30c03d842c97f193d2f3d0ef206190ee7aa9a4d"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l0/review_R0_b1_w0_l0-20261008T191258-475082ce/settings.json",
+      "sha256": "544f4557e46b3da2001005bf4f28df24a2e05c6532dfdc59acd11164ebbe6c16"
+    },
+    {
+      "bytes": 151539,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l0/review_R0_b1_w0_l0-20261008T191258-475082ce/request_events.csv",
+      "sha256": "cc21c2273d96308689ceebea3b7407703063fa3f09b44f056dea2707af6a20da"
+    },
+    {
+      "bytes": 1731,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w0_l0/review_R0_b1_w0_l0-20261008T191258-475082ce/metrics.json",
+      "sha256": "bfc6c5ffbe09328562be1bcaf878c2fc0d5ce9e96c22c2e0f8e8c4550b308556"
+    },
+    {
+      "bytes": 4589,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l0/initial_R0_b4_w1_l0-20261008T172425-17b7aa0d/manifest.json",
+      "sha256": "069c96cf0c8a4d096d60f040b5897e9369146cb9210cf9de3263f0d05e2f07ae"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l0/initial_R0_b4_w1_l0-20261008T172425-17b7aa0d/settings.json",
+      "sha256": "94a0f4dbdec079a4c4318a16955f41af09e692179761595ddf07dea8e16ffe18"
+    },
+    {
+      "bytes": 171921,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l0/initial_R0_b4_w1_l0-20261008T172425-17b7aa0d/request_events.csv",
+      "sha256": "48f5c7738a350f36e29afc39ee0b129a4daf5d83d3843b2d2be0007a94fca279"
+    },
+    {
+      "bytes": 1656,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l0/initial_R0_b4_w1_l0-20261008T172425-17b7aa0d/metrics.json",
+      "sha256": "3d48aaf01784ef65e13b53665407ef5f19cf9b6a8de7e072badad28b4c844e96"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l0/initial_R0_b4_w1_l0-20261008T175601-89d4547e/manifest.json",
+      "sha256": "54cec94f7bde6c1c7d8c67903d717b81bfe4e3f3c9e1183dbed5a68816072331"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l0/initial_R0_b4_w1_l0-20261008T175601-89d4547e/settings.json",
+      "sha256": "94a0f4dbdec079a4c4318a16955f41af09e692179761595ddf07dea8e16ffe18"
+    },
+    {
+      "bytes": 172459,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l0/initial_R0_b4_w1_l0-20261008T175601-89d4547e/request_events.csv",
+      "sha256": "75476d1b28dfc0371bd2deb85580d47198dc820b900150e820f78848af1b69d8"
+    },
+    {
+      "bytes": 1823,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w1_l0/initial_R0_b4_w1_l0-20261008T175601-89d4547e/metrics.json",
+      "sha256": "449eb2c058dd9511b756628615261784c3be9002728e15def48d37b6a6937e8c"
+    },
+    {
+      "bytes": 4856,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w1_l1/review_R0_b2_w1_l1-20261008T192240-38d889be/manifest.json",
+      "sha256": "85ff1baa9f71de2fc18e2880953a9ce152367a78cbcac1c28b74275b46348fd8"
+    },
+    {
+      "bytes": 188452,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w1_l1/review_R0_b2_w1_l1-20261008T192240-38d889be/request_events.partial.csv",
+      "sha256": "2fed9fd8b01c08b57ca91f47ced0e722bb26335e68ab14e9acec24eae7b7ebe6"
+    },
+    {
+      "bytes": 303,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w1_l1/review_R0_b2_w1_l1-20261008T192240-38d889be/gpu_activity_partial.json",
+      "sha256": "3005a21fe7c7bf2066f2f5d3d1f97f7bb71f66d9dbee256a5e43282173eda1ee"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l3/initial_F0_b4_w0_l3-20261008T184508-7aca1493/manifest.json",
+      "sha256": "32ec9c7e57d07f8066844582aca282b665f543c2e9045a37c17b53dcda454872"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l3/initial_F0_b4_w0_l3-20261008T184508-7aca1493/settings.json",
+      "sha256": "325717abb00eb85aeecaa89f2e31e7f4cbe201b0b7cb730bfae2497458623286"
+    },
+    {
+      "bytes": 892976,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l3/initial_F0_b4_w0_l3-20261008T184508-7aca1493/request_events.csv",
+      "sha256": "7abea1022aab0cfeb1410c626ae4b3af74a799b45613ebdef4a68175de603b88"
+    },
+    {
+      "bytes": 2025,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l3/initial_F0_b4_w0_l3-20261008T184508-7aca1493/metrics.json",
+      "sha256": "297b2f594646f1b2b3aa365b89241fc676e67f27d264fbc5348cad021383c0c0"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l2/initial_F0_b4_w2_l2-20261008T184921-7963c4a1/manifest.json",
+      "sha256": "f1fdcc7c777599efa36502256a191c66e06891dfe4f5689a592dc4a198955af7"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l2/initial_F0_b4_w2_l2-20261008T184921-7963c4a1/settings.json",
+      "sha256": "c91176491d7ea429f33b47c466b7c22b5ccaefafb2ad38b440db806de9763640"
+    },
+    {
+      "bytes": 679221,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l2/initial_F0_b4_w2_l2-20261008T184921-7963c4a1/request_events.csv",
+      "sha256": "12912c559a0e9f170e944cd18fff54879ea60c793f4961599bd1933504ab2342"
+    },
+    {
+      "bytes": 2023,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l2/initial_F0_b4_w2_l2-20261008T184921-7963c4a1/metrics.json",
+      "sha256": "aec7ff295bfa1a3f380ac81288977f74c491862a101bcedd54313cd2906dbfaa"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T165022-33d5626d/manifest.json",
+      "sha256": "153201c1e5c163037e26a58719d0ace6afa9a0d0b3fec49857e8f0e1f2632007"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T165022-33d5626d/settings.json",
+      "sha256": "e9c7d574a0d59226c18c22d7318b2d52699641a133a73d6277381fe776eea79e"
+    },
+    {
+      "bytes": 815764,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T165022-33d5626d/request_events.csv",
+      "sha256": "0b8ef4b33f0fdbe23d502687fb82c29b4e433c54f8958ee75bcaf4db2a17800b"
+    },
+    {
+      "bytes": 1819,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T165022-33d5626d/metrics.json",
+      "sha256": "18ecf27b5fd8998ae6988495d3d02cd3abe4d0c98f0d4c332c080e9da858c188"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T174252-0934cc3f/manifest.json",
+      "sha256": "542dc557990f2ff5e509f7305c5c679f019e53377dbe533e6af5ae10e693db17"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T174252-0934cc3f/settings.json",
+      "sha256": "e9c7d574a0d59226c18c22d7318b2d52699641a133a73d6277381fe776eea79e"
+    },
+    {
+      "bytes": 814003,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T174252-0934cc3f/request_events.csv",
+      "sha256": "a9b86377a8fb46f6e4a026c7833a437f2e230c427d4478296ae579ce40e4a043"
+    },
+    {
+      "bytes": 1971,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T174252-0934cc3f/metrics.json",
+      "sha256": "17d5e7785e8eadd749591425c72e43d0dd8295658a6e598179d37e05f8b48f05"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T171231-7d70523e/manifest.json",
+      "sha256": "536a1161839f2af4cbd0863e66b87f16ce80775186ddb0bf71402bd5256ddf46"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T171231-7d70523e/settings.json",
+      "sha256": "e9c7d574a0d59226c18c22d7318b2d52699641a133a73d6277381fe776eea79e"
+    },
+    {
+      "bytes": 811712,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T171231-7d70523e/request_events.csv",
+      "sha256": "cd64d56f94a94eff191be7182aa75751d2730fa549e5d9e0ecb4cd55f2b8ec7f"
+    },
+    {
+      "bytes": 1820,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l3/initial_R0_b1_w1_l3-20261008T171231-7d70523e/metrics.json",
+      "sha256": "058482452a27f987d64ac10a371daec2ac867e5d0124d04c48d02a52f13b3ab1"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T171537-59fae87b/manifest.json",
+      "sha256": "a4a33b06b567afd855351067e773eb2fe0ba8eeff0df4799aa534e5e36507a19"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T171537-59fae87b/settings.json",
+      "sha256": "f0dfba0f3a8a69048cd6ad7722bda48369cec01ac5779272a2fde6edbe842b24"
+    },
+    {
+      "bytes": 171963,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T171537-59fae87b/request_events.csv",
+      "sha256": "8ddec1191abec44ddcf3a9106502b748b5252931d4b633f6994eb85a024ea35a"
+    },
+    {
+      "bytes": 1635,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T171537-59fae87b/metrics.json",
+      "sha256": "3951e054eb76d1b2adcbbfbdda003116ddbc0e2e0c2447dce90ea69c32de3d58"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T165328-2b694190/manifest.json",
+      "sha256": "78977a307dae588d4b50020607b7b025f2e566080e9d4fcd3d75ea13215745bc"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T165328-2b694190/settings.json",
+      "sha256": "f0dfba0f3a8a69048cd6ad7722bda48369cec01ac5779272a2fde6edbe842b24"
+    },
+    {
+      "bytes": 171927,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T165328-2b694190/request_events.csv",
+      "sha256": "a3ce3c8c62bec19d3411a865b4803a783f308c048eb4e18c1b995a6d4069e88a"
+    },
+    {
+      "bytes": 1649,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T165328-2b694190/metrics.json",
+      "sha256": "f5e3d58db78c370db5b3b7353489e01dec6ee4cf64e304e38d26b55295717a65"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T174606-edc1b09c/manifest.json",
+      "sha256": "10590a31282fc06825aa4f38522b66b106c61412d6828eee87e49cd63b3350e6"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T174606-edc1b09c/settings.json",
+      "sha256": "f0dfba0f3a8a69048cd6ad7722bda48369cec01ac5779272a2fde6edbe842b24"
+    },
+    {
+      "bytes": 172482,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T174606-edc1b09c/request_events.csv",
+      "sha256": "3b40a0e755fbe2c38b7124fb78c95302b21bedc20e27d69866872571cbdff4dc"
+    },
+    {
+      "bytes": 1809,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l0/initial_R0_b2_w0_l0-20261008T174606-edc1b09c/metrics.json",
+      "sha256": "30f2ecd5847080325b629d90773bb870442258ae0d28f0dc3beb433283321000"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T171118-3974ed90/manifest.json",
+      "sha256": "f8e39def26313c59cf8c21dd156f8211b009a86e3937d64e171a5b14f0560d46"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T171118-3974ed90/settings.json",
+      "sha256": "84e76f2da9164469b1d8b84e27eb0d067ad505835cd9a2c03a8dd66a5d470df4"
+    },
+    {
+      "bytes": 350096,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T171118-3974ed90/request_events.csv",
+      "sha256": "f8f038cecdc3f72f1a7d5694ef43a9d76f6ff1f7e7bc47baaec153359c77ebfb"
+    },
+    {
+      "bytes": 1622,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T171118-3974ed90/metrics.json",
+      "sha256": "33d031d84c0ba1f4da0a24a343aa379f88145b03512da6902df7d1a4ff8dd188"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T174135-73f9b81b/manifest.json",
+      "sha256": "20ed727a6db1284dcda24f38c15342879ca025bd0f49c306034022c163502dc7"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T174135-73f9b81b/settings.json",
+      "sha256": "84e76f2da9164469b1d8b84e27eb0d067ad505835cd9a2c03a8dd66a5d470df4"
+    },
+    {
+      "bytes": 351181,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T174135-73f9b81b/request_events.csv",
+      "sha256": "ee5207620f798db1cb3fd5a25c9187044ffcee3b200258190913f556ec59e3ac"
+    },
+    {
+      "bytes": 1704,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T174135-73f9b81b/metrics.json",
+      "sha256": "ae7d73ca4e7f697cd16cbaab8e82004efc566d1cb63db2c564c2dd2d50b7a274"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T164910-3cee46d1/manifest.json",
+      "sha256": "df7cb6c957c1d8b393f5aec59dd4e65d2952d18c5fa31762a39885bbbfa93ebd"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T164910-3cee46d1/settings.json",
+      "sha256": "84e76f2da9164469b1d8b84e27eb0d067ad505835cd9a2c03a8dd66a5d470df4"
+    },
+    {
+      "bytes": 349980,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T164910-3cee46d1/request_events.csv",
+      "sha256": "e5964cb973333020b8306b9a52583921c582304e37d4049bf1e9090d76957d3a"
+    },
+    {
+      "bytes": 1622,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w1_l1/initial_R0_b1_w1_l1-20261008T164910-3cee46d1/metrics.json",
+      "sha256": "8e882700fca6e1e32f54f0bc64c27eb7805ed8de4d7aa891715d3b1532bd3817"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l0/initial_F0_b8_w1_l0-20261008T190624-661a7f7b/manifest.json",
+      "sha256": "d60859347c9ff4d21e854c8818838f94ea0e75f35c303c31117f3e5bc91bf4d0"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l0/initial_F0_b8_w1_l0-20261008T190624-661a7f7b/settings.json",
+      "sha256": "20208fcbca8f0bff5a33aa8cf6eae7744cdfec78e46af4afd3cb36bfbaaa6372"
+    },
+    {
+      "bytes": 172145,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l0/initial_F0_b8_w1_l0-20261008T190624-661a7f7b/request_events.csv",
+      "sha256": "338d773de9fba114d1b7a84bb48da9ebe82bb1c2708fa4da651e78528ff46a12"
+    },
+    {
+      "bytes": 1874,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l0/initial_F0_b8_w1_l0-20261008T190624-661a7f7b/metrics.json",
+      "sha256": "f9d67b362fc51b864c786c8ecd7054e4279ab4a6cc8842ba29fc68287d64e983"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l0/initial_R0_b8_w1_l0-20261008T180323-455f2ac9/manifest.json",
+      "sha256": "837dd6346a0332b6dcac0d512f670e78f4a9485f71bc5e65d63bb9666ecf49a6"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l0/initial_R0_b8_w1_l0-20261008T180323-455f2ac9/settings.json",
+      "sha256": "ac944870e6a2ae747c44bfb9d43991c92d9beb904a58aed3146f95a4abbbe63b"
+    },
+    {
+      "bytes": 172314,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l0/initial_R0_b8_w1_l0-20261008T180323-455f2ac9/request_events.csv",
+      "sha256": "a94fa55e6373db64a28da06aff5fc99be1d99bda33838332a5fe7e1f98aa27a2"
+    },
+    {
+      "bytes": 1741,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l0/initial_R0_b8_w1_l0-20261008T180323-455f2ac9/metrics.json",
+      "sha256": "631075c23932e9a3279d2071de115302d53fe6599e6ddb7b1eb6c0193e07c0c7"
+    },
+    {
+      "bytes": 4703,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l0/initial_R0_b8_w1_l0-20261008T173056-9fcb5ad8/manifest.json",
+      "sha256": "625eda4b19170774cea61c079ae028320871d276fe1375d5c315aa2ee30a98c2"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l0/initial_R0_b8_w1_l0-20261008T173056-9fcb5ad8/settings.json",
+      "sha256": "ac944870e6a2ae747c44bfb9d43991c92d9beb904a58aed3146f95a4abbbe63b"
+    },
+    {
+      "bytes": 171889,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l0/initial_R0_b8_w1_l0-20261008T173056-9fcb5ad8/request_events.csv",
+      "sha256": "c55d34fad0d948bfe5d0e8b33b2a11b1b95ffd788c53d436d16026cd96d89c89"
+    },
+    {
+      "bytes": 1734,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w1_l0/initial_R0_b8_w1_l0-20261008T173056-9fcb5ad8/metrics.json",
+      "sha256": "db02c0f33c3964d85ab8e8573aa1d9e642761c212613ef205afabba51463f3f1"
+    },
+    {
+      "bytes": 4758,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l1/initial_R0_b8_w2_l1-20261008T173337-4d6255c2/manifest.json",
+      "sha256": "cbaa5156022e4e1ffc4db2c33566635255aeacc66818286c86bf8725c6c4ae25"
+    },
+    {
+      "bytes": 221202,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l1/initial_R0_b8_w2_l1-20261008T173337-4d6255c2/request_events.partial.csv",
+      "sha256": "69ba852d8a7374c71b2ec947ce78621dbf98877641b3c36cdcbda35b3041d251"
+    },
+    {
+      "bytes": 303,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l1/initial_R0_b8_w2_l1-20261008T173337-4d6255c2/gpu_activity_partial.json",
+      "sha256": "b358d0f8a45a3d8721c01feb35969f9706df2169f5d68a0344a62dc9caaff6c8"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l1/initial_R0_b8_w2_l1-20261008T180622-c25432e2/manifest.json",
+      "sha256": "0f6fa51a9ad0a55047b1f001bfa3b17c65702bf0ff15fc5df7cdf6b2afa2f729"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l1/initial_R0_b8_w2_l1-20261008T180622-c25432e2/settings.json",
+      "sha256": "65116888c6efc795f879aefca40371cfe862afab23d98edf42b68424b21bbc54"
+    },
+    {
+      "bytes": 350251,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l1/initial_R0_b8_w2_l1-20261008T180622-c25432e2/request_events.csv",
+      "sha256": "19a59e8069eca0d1d7e101d9c139146115e2ef9bba5f9b48c73c04f55bc7204d"
+    },
+    {
+      "bytes": 1720,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l1/initial_R0_b8_w2_l1-20261008T180622-c25432e2/metrics.json",
+      "sha256": "b485028ddead1bdc64c366fda7258432c23dfdb96f7cf3c1a11d60e0d0b626da"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T164757-7922f637/manifest.json",
+      "sha256": "dfba4953d6afadd80edbf08edaca972b7b9d5695d08f5719ca06e01fb47b02c0"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T164757-7922f637/settings.json",
+      "sha256": "60dba0bb2ffd31da3416abcee0259f77976614909d490e5e316aaa7d2ae019f0"
+    },
+    {
+      "bytes": 813705,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T164757-7922f637/request_events.csv",
+      "sha256": "272a36ac78825431d27b74762df3e666e6b8d938a37149f750d3faa02522fafc"
+    },
+    {
+      "bytes": 1818,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T164757-7922f637/metrics.json",
+      "sha256": "390406675dd57f50259ef0768f5381dd1372cd64bd12bd5dbbef4f21d3b08526"
+    },
+    {
+      "bytes": 4586,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T171006-467e43d8/manifest.json",
+      "sha256": "40ba41c4b32097fcf37957877b97ad7e8becd2db1bf65bebdd19b5e404bb7827"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T171006-467e43d8/settings.json",
+      "sha256": "60dba0bb2ffd31da3416abcee0259f77976614909d490e5e316aaa7d2ae019f0"
+    },
+    {
+      "bytes": 807275,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T171006-467e43d8/request_events.csv",
+      "sha256": "47f9dba65b2a00f1b3233794cb7c16cc4cf2437439def4232b25227aab4b9050"
+    },
+    {
+      "bytes": 1812,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T171006-467e43d8/metrics.json",
+      "sha256": "28d5a2b5fcd7e69fa8cc5b34c2a3237a1d45167941a73c092f235af4dc99c671"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T174019-23a55b43/manifest.json",
+      "sha256": "2b77e6020cf6de8e340316dfe460d37d586bed0b8791dab8cd8e50b06a579f8f"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T174019-23a55b43/settings.json",
+      "sha256": "60dba0bb2ffd31da3416abcee0259f77976614909d490e5e316aaa7d2ae019f0"
+    },
+    {
+      "bytes": 814122,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T174019-23a55b43/request_events.csv",
+      "sha256": "300d8b6ae99ed861e8acca6c6479fa013ad8904d6c07f26c82ed09fb67475eea"
+    },
+    {
+      "bytes": 1990,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T174019-23a55b43/metrics.json",
+      "sha256": "41ca07b59f1d02a879f72a0127237ec1da38f503eaa24aff73eeccf25bc6eae5"
+    },
+    {
+      "bytes": 4733,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T170127-d7809f9f/manifest.json",
+      "sha256": "089673def15ece343fb8ae58235c45330347e4291688904925cf80e76ac93ca7"
+    },
+    {
+      "bytes": 738704,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T170127-d7809f9f/request_events.partial.csv",
+      "sha256": "abe6804a7ced896cf0a961a565173ac92d8c436eff1bd61321ba64552594aefc"
+    },
+    {
+      "bytes": 528,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l3/initial_R0_b1_w0_l3-20261008T170127-d7809f9f/gpu_activity_partial.json",
+      "sha256": "224274840d658bcac075197829cb9f33b1485c05eb1a3b19d06dfdc4238a0b70"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T174439-bdfb278c/manifest.json",
+      "sha256": "bfc6cdd2c1d47039ab0aed04fdb9c47298fb647095cd7e08c0d92b747f7b8ba2"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T174439-bdfb278c/settings.json",
+      "sha256": "609b762a4c77b21cbfe973855be9aee7a2960ce6f1f9247b482a2692d12c065d"
+    },
+    {
+      "bytes": 615234,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T174439-bdfb278c/request_events.csv",
+      "sha256": "f330d250c3ec7357d38c5c5427d78a6a6e11e37aa7dad374d44fc484648b18ba"
+    },
+    {
+      "bytes": 1975,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T174439-bdfb278c/metrics.json",
+      "sha256": "b2d9b9a036701df34787491c6a9c8ff04019f9996f6ef2416738117f020887e3"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T165207-accac19e/manifest.json",
+      "sha256": "62e31118936463359dca5ea1b57149249b2e081cbf1d44baf862145b8e7640cc"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T165207-accac19e/settings.json",
+      "sha256": "609b762a4c77b21cbfe973855be9aee7a2960ce6f1f9247b482a2692d12c065d"
+    },
+    {
+      "bytes": 609775,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T165207-accac19e/request_events.csv",
+      "sha256": "f7765bfb6ecd23107bd49edddba0790e273cac08988a9c6d9f11a24e3addc9c5"
+    },
+    {
+      "bytes": 1820,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T165207-accac19e/metrics.json",
+      "sha256": "eb23ff7b0b3a410b3a5c615df1376a7509f5384b24df84fe386b69c6f1141840"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T171416-d2e16b47/manifest.json",
+      "sha256": "f88cf1144420614499cdf3c7cecd786b30a72a7ac3fb49bfeadb8dba2cab1c91"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T171416-d2e16b47/settings.json",
+      "sha256": "609b762a4c77b21cbfe973855be9aee7a2960ce6f1f9247b482a2692d12c065d"
+    },
+    {
+      "bytes": 607518,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T171416-d2e16b47/request_events.csv",
+      "sha256": "b4af222506e35b2d22e3daed5fa4fdddf811e7dc123f69fa71996dd4e2b5de66"
+    },
+    {
+      "bytes": 1804,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w2_l2/initial_R0_b1_w2_l2-20261008T171416-d2e16b47/metrics.json",
+      "sha256": "06ec388333d51b9df9ba2c3062f3dbd054641659f357c4200b45dc18eca93f25"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l0/review_R0_b2_w0_l0-20261008T191956-e3eda9c1/manifest.json",
+      "sha256": "f22c65c8b54d76c53274474bfaaaf553c9f66700e218814cd0eeff3544a0fb68"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l0/review_R0_b2_w0_l0-20261008T191956-e3eda9c1/settings.json",
+      "sha256": "1c4fbfe6e243e46f886a6e280d53a34d30816de7c0fd87720907ddfe91e2e77d"
+    },
+    {
+      "bytes": 151490,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l0/review_R0_b2_w0_l0-20261008T191956-e3eda9c1/request_events.csv",
+      "sha256": "73481320b9ffd41f7d86258b9dcc597abf487535a4920c667cf8f231322e0c53"
+    },
+    {
+      "bytes": 1790,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l0/review_R0_b2_w0_l0-20261008T191956-e3eda9c1/metrics.json",
+      "sha256": "a3145e1d879b3e9d06a8255c09d0a19ad0fc71fea35c38d0da5aa83cd0820da4"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l3/initial_F0_b4_w1_l3-20261008T184736-f89f327d/manifest.json",
+      "sha256": "738e72c4bba8d0d03344b7434f8589360525569def5b8807328752452b9ff85f"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l3/initial_F0_b4_w1_l3-20261008T184736-f89f327d/settings.json",
+      "sha256": "d10b84b042d4f1fa3305309d82cff3fbd3ea35199c275e91fb89924514896edf"
+    },
+    {
+      "bytes": 896535,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l3/initial_F0_b4_w1_l3-20261008T184736-f89f327d/request_events.csv",
+      "sha256": "538bb26179ae351d13a8fabd3c77169993581132da98218628ba04f27786106a"
+    },
+    {
+      "bytes": 2015,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w1_l3/initial_F0_b4_w1_l3-20261008T184736-f89f327d/metrics.json",
+      "sha256": "dbdf0feac4604a0f081bb2a14291bc93807ec57464d041e18f0cdd732859cd9f"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l1/review_R0_b2_w0_l1-20261008T192028-4110d37b/manifest.json",
+      "sha256": "1e248c2208a4e163874c652fb5c051061ead9332eb512d3d6842cda45c5fad30"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l1/review_R0_b2_w0_l1-20261008T192028-4110d37b/settings.json",
+      "sha256": "fb6db612518fd9487e21c1acd27c4e13df7c9ed8bf5e14ad5c2ef524c65b9049"
+    },
+    {
+      "bytes": 296902,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l1/review_R0_b2_w0_l1-20261008T192028-4110d37b/request_events.csv",
+      "sha256": "87549afdcf712e9ce648af311a515a865cfeeaa4f77be416ea0549e751de6aeb"
+    },
+    {
+      "bytes": 1727,
+      "original_file": "artifacts/calibration_runs/review_R0_b2_w0_l1/review_R0_b2_w0_l1-20261008T192028-4110d37b/metrics.json",
+      "sha256": "e92beab7674d7c59bdc8055fa25e29e26773bdd2e62c58438d440ed5ad01bd3f"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l1/initial_F0_b1_w2_l1-20261008T181652-280bbb32/manifest.json",
+      "sha256": "c4c386524033001856a18916a0ae093b320c8baa3e421dda8e43d214ca9f6537"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l1/initial_F0_b1_w2_l1-20261008T181652-280bbb32/settings.json",
+      "sha256": "2ff231aa8dba0b918b47fefd54271d74799ee3c5d408def161b77266336c66e5"
+    },
+    {
+      "bytes": 350348,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l1/initial_F0_b1_w2_l1-20261008T181652-280bbb32/request_events.csv",
+      "sha256": "f1b9a380c574210ae569a24a5034273d4ab56414f20ea6e9c7733ebb193f483f"
+    },
+    {
+      "bytes": 1832,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l1/initial_F0_b1_w2_l1-20261008T181652-280bbb32/metrics.json",
+      "sha256": "4efbb83f2e9ecde06f9c086f2ad313eedd5b440f49441550ed9fc40139bc36fd"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l3/initial_F0_b2_w1_l3-20261008T184011-218cef63/manifest.json",
+      "sha256": "5ffa75c300f5cdd99e98fce00d57388389321df1da3e8556cd763eb3ecdc847a"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l3/initial_F0_b2_w1_l3-20261008T184011-218cef63/settings.json",
+      "sha256": "ed957823a0a253d1e9140cccecf8df6c2eda212186c194b8028b586c9f988fcf"
+    },
+    {
+      "bytes": 875593,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l3/initial_F0_b2_w1_l3-20261008T184011-218cef63/request_events.csv",
+      "sha256": "379c0ada1d481b230c656dc0a54debd974eb315e2383dd5e89f3af2e2f8736b9"
+    },
+    {
+      "bytes": 2100,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l3/initial_F0_b2_w1_l3-20261008T184011-218cef63/metrics.json",
+      "sha256": "da3fa61aa80bea5f096009ab508ab7ce5ba5c46e09ed8a389e407f1a587be26a"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l3/initial_F0_b8_w2_l3-20261008T191036-bce2185d/manifest.json",
+      "sha256": "bac720b22de71adb8f7317def69b8fd66c79a1d7e3d1e4ce4157ddb544822035"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l3/initial_F0_b8_w2_l3-20261008T191036-bce2185d/settings.json",
+      "sha256": "594c588f6e32ac0652d22b554244f9a9de0349250f6eb63df095f6a8d454c9f5"
+    },
+    {
+      "bytes": 906671,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l3/initial_F0_b8_w2_l3-20261008T191036-bce2185d/request_events.csv",
+      "sha256": "3511ff8a4cf85ef5e0325ec667b47161882244ba390a844ecd27cfca72d0c860"
+    },
+    {
+      "bytes": 2034,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l3/initial_F0_b8_w2_l3-20261008T191036-bce2185d/metrics.json",
+      "sha256": "4d5b8306ba891b11075079c34c9ca6273e36dbc0f757ef551ff0fdc241624d6f"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l1/initial_F0_b2_w2_l1-20261008T184126-786833ad/manifest.json",
+      "sha256": "e391f6f7063ec3daf7eaa2b5ab30fe59660a45569d911f269123631e0f5c6d45"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l1/initial_F0_b2_w2_l1-20261008T184126-786833ad/settings.json",
+      "sha256": "ddf69a01379fab9bbdd84d88b2aa2b86caf9b4afddd996f3b0da8d5d66c7811c"
+    },
+    {
+      "bytes": 349440,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l1/initial_F0_b2_w2_l1-20261008T184126-786833ad/request_events.csv",
+      "sha256": "6a8367db1b30f18b03eeaa63dae27063ec576e4870f255acdb1a6780a561eb94"
+    },
+    {
+      "bytes": 1911,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w2_l1/initial_F0_b2_w2_l1-20261008T184126-786833ad/metrics.json",
+      "sha256": "6278aecf3ae5a5c70abcf7ba7e83e9ef3b12656ad396abc084431d0d9ce61919"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l2/initial_F0_b2_w0_l2-20261008T182823-e3f89b5f/manifest.json",
+      "sha256": "6f1d85c00ca178cb5e04effd1e1d976fe8abc3c3b1a3a73c49ddc4b003b331da"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l2/initial_F0_b2_w0_l2-20261008T182823-e3f89b5f/settings.json",
+      "sha256": "7d469ff61c684e3eaa472329fe58d2aa5c29b0bb9fb7555ac8c75dd144bb3de5"
+    },
+    {
+      "bytes": 660549,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l2/initial_F0_b2_w0_l2-20261008T182823-e3f89b5f/request_events.csv",
+      "sha256": "c642875f0eb4db07fc99132e9195e10eb101e53c4fb76e8432066a5466976b8b"
+    },
+    {
+      "bytes": 2108,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l2/initial_F0_b2_w0_l2-20261008T182823-e3f89b5f/metrics.json",
+      "sha256": "66cd522e64c7314163beb270fa322ae65b9c7b0f35e12d78576741677a471b68"
+    },
+    {
+      "bytes": 4856,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l2/initial_F0_b2_w0_l2-20261008T181955-950d05fc/manifest.json",
+      "sha256": "51e3013c955e24ac08b7bad3f27b26c2d5d9224021f55d363539a60a612361dd"
+    },
+    {
+      "bytes": 579201,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l2/initial_F0_b2_w0_l2-20261008T181955-950d05fc/request_events.partial.csv",
+      "sha256": "655cc0f322a1c8c72edb2c590637f538184c57abe460941414c65ae35218aa25"
+    },
+    {
+      "bytes": 528,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l2/initial_F0_b2_w0_l2-20261008T181955-950d05fc/gpu_activity_partial.json",
+      "sha256": "ac593ca7e571b65bc9e7d595c9d8c5b951af8ba60d1789463c4824755a67e0c9"
+    },
+    {
+      "bytes": 4595,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l3/initial_R0_b8_w0_l3-20261008T173022-0bdae06f/manifest.json",
+      "sha256": "7ace8642dce47f0630e8a6223169cba128acfe567d68a8a0b9300a1b203648a3"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l3/initial_R0_b8_w0_l3-20261008T173022-0bdae06f/settings.json",
+      "sha256": "7e550485042d242ecc679da55ad01f444404bcae521eead0daeebdb0f015f00a"
+    },
+    {
+      "bytes": 1348453,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l3/initial_R0_b8_w0_l3-20261008T173022-0bdae06f/request_events.csv",
+      "sha256": "b2ee3a194fbafce9fd22824512f050c542aa9295dbefceb0684911dafd645604"
+    },
+    {
+      "bytes": 1746,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l3/initial_R0_b8_w0_l3-20261008T173022-0bdae06f/metrics.json",
+      "sha256": "668b6e452093b6aefe54436459984b7f1ffdfa785d7349ef787627eb09a5bb30"
+    },
+    {
+      "bytes": 4710,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l3/initial_R0_b8_w0_l3-20261008T180241-df515bc8/manifest.json",
+      "sha256": "3950c621572357c57462734de0ed60d2ba1401a0fa5d2d22f8bffa6ec1a8bb8d"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l3/initial_R0_b8_w0_l3-20261008T180241-df515bc8/settings.json",
+      "sha256": "7e550485042d242ecc679da55ad01f444404bcae521eead0daeebdb0f015f00a"
+    },
+    {
+      "bytes": 900055,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l3/initial_R0_b8_w0_l3-20261008T180241-df515bc8/request_events.csv",
+      "sha256": "4dd7f69f006974cd660e530929a3eb45126211e0e15e02a87ef241750c8fef30"
+    },
+    {
+      "bytes": 1918,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l3/initial_R0_b8_w0_l3-20261008T180241-df515bc8/metrics.json",
+      "sha256": "50b0ee1153cee89eb6bcac168b77884dfe22658956d00042fe644116615ce7e0"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l0/initial_R0_b2_w1_l0-20261008T171749-cebb4413/manifest.json",
+      "sha256": "a032ed4b26542640af1cb0b8e012e4b0a2b0726b6d90cd78d5d32516416b0631"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l0/initial_R0_b2_w1_l0-20261008T171749-cebb4413/settings.json",
+      "sha256": "4d06e9a618eb931881ed0cc3d293a160a62cd72a56c8991d5fb7fb9d9a5da34b"
+    },
+    {
+      "bytes": 171926,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l0/initial_R0_b2_w1_l0-20261008T171749-cebb4413/request_events.csv",
+      "sha256": "d400229157c0444e40058ff70d63c572700769093d16e054492fa10792308154"
+    },
+    {
+      "bytes": 1642,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l0/initial_R0_b2_w1_l0-20261008T171749-cebb4413/metrics.json",
+      "sha256": "43eb9e88ed5c0863efd4bf8786714e9ad3ddb914c01b20d01a15a2d8a82d8ff1"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l0/initial_R0_b2_w1_l0-20261008T174835-f8ec310f/manifest.json",
+      "sha256": "f9721c0debc1e8fd98ef0ee9287aada959e8229c8c06301ad99c4fc209da2215"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l0/initial_R0_b2_w1_l0-20261008T174835-f8ec310f/settings.json",
+      "sha256": "4d06e9a618eb931881ed0cc3d293a160a62cd72a56c8991d5fb7fb9d9a5da34b"
+    },
+    {
+      "bytes": 172418,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l0/initial_R0_b2_w1_l0-20261008T174835-f8ec310f/request_events.csv",
+      "sha256": "02452ea47746428afabb7eb4666a516623cadb17120ad78704d4a41834d8db1e"
+    },
+    {
+      "bytes": 1720,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w1_l0/initial_R0_b2_w1_l0-20261008T174835-f8ec310f/metrics.json",
+      "sha256": "2282d0d9ef6d34bccbac346969688066280c3eb81548b612aeb210a761e014f3"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l0/initial_R0_b8_w2_l0-20261008T180550-a43d67e7/manifest.json",
+      "sha256": "32d07ad2069a8178dab281e77d84ad8e49c655b5c41580fa2fe701947cd0546b"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l0/initial_R0_b8_w2_l0-20261008T180550-a43d67e7/settings.json",
+      "sha256": "1ce01c4c06bba12b069eeda344b733a064879c76b76480a8358239d47519fdd4"
+    },
+    {
+      "bytes": 172448,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l0/initial_R0_b8_w2_l0-20261008T180550-a43d67e7/request_events.csv",
+      "sha256": "6f843fb7f04e6cda16902012bced3d9d1bf97e7e006c2fc8aaedd8ef885ebffc"
+    },
+    {
+      "bytes": 1747,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l0/initial_R0_b8_w2_l0-20261008T180550-a43d67e7/metrics.json",
+      "sha256": "b0a1ac9ec2444b120032bf82a1524540b16055fe51d8b5e28d311e5a8db22c25"
+    },
+    {
+      "bytes": 4704,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l0/initial_R0_b8_w2_l0-20261008T173306-7d853b5c/manifest.json",
+      "sha256": "142fec29d0fe86732a9008195c2e7a2a30a2b27c89325de368f984bd5fe077d9"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l0/initial_R0_b8_w2_l0-20261008T173306-7d853b5c/settings.json",
+      "sha256": "1ce01c4c06bba12b069eeda344b733a064879c76b76480a8358239d47519fdd4"
+    },
+    {
+      "bytes": 171847,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l0/initial_R0_b8_w2_l0-20261008T173306-7d853b5c/request_events.csv",
+      "sha256": "f2ae96abe91d29297e7fc631d52be08193056941954315047cd09955edbaccd3"
+    },
+    {
+      "bytes": 1739,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w2_l0/initial_R0_b8_w2_l0-20261008T173306-7d853b5c/metrics.json",
+      "sha256": "a31d79f75fc68d71392c05fa6df118075ce1e3f0c5e98fd83071acb71768546b"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l3/initial_R0_b2_w2_l3-20261008T172138-fe85e614/manifest.json",
+      "sha256": "2dd65e561db09a7161ea7af3b458b6ea6920516afbe2df34631efed7cd9c1023"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l3/initial_R0_b2_w2_l3-20261008T172138-fe85e614/settings.json",
+      "sha256": "b0d06baee71ef608dc649cb1ba1a8e340d5eb645184fe804b045e2fe190acb38"
+    },
+    {
+      "bytes": 967173,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l3/initial_R0_b2_w2_l3-20261008T172138-fe85e614/request_events.csv",
+      "sha256": "2ae71eb245d4ac3f0d40f06fabdb413f083b0761e5c94c0f2c20c3b8579f7d64"
+    },
+    {
+      "bytes": 1736,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l3/initial_R0_b2_w2_l3-20261008T172138-fe85e614/metrics.json",
+      "sha256": "cbf346ce97df7db2bab78c3be400c59e99cd569845e92739ba50f4d225e348a6"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l3/initial_R0_b2_w2_l3-20261008T175251-f37ced01/manifest.json",
+      "sha256": "4bc4fe8456d529ee489604138578151c971ac69bf3fb36242e7c4a9414ded1ba"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l3/initial_R0_b2_w2_l3-20261008T175251-f37ced01/settings.json",
+      "sha256": "b0d06baee71ef608dc649cb1ba1a8e340d5eb645184fe804b045e2fe190acb38"
+    },
+    {
+      "bytes": 839409,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l3/initial_R0_b2_w2_l3-20261008T175251-f37ced01/request_events.csv",
+      "sha256": "9b6914716bf6bc681f52d25eb0deb4c17fa3b296ef434605a9729650e1f847ba"
+    },
+    {
+      "bytes": 1987,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w2_l3/initial_R0_b2_w2_l3-20261008T175251-f37ced01/metrics.json",
+      "sha256": "c8ddd7f041db55685794f3df6be6583f157a45ec229026824768db3c9095ad7b"
+    },
+    {
+      "bytes": 4856,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l3/initial_F0_b2_w0_l3-20261008T182905-c7c49b88/manifest.json",
+      "sha256": "69e6c05ba05e7d338e0f4d060458065d095a9e85bb40d027821c2492fd9a59bd"
+    },
+    {
+      "bytes": 727296,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l3/initial_F0_b2_w0_l3-20261008T182905-c7c49b88/request_events.partial.csv",
+      "sha256": "a627f0b6334ee8b2a1ad52d3459e47cba58e89162656cf601eabcee0cfdb68c7"
+    },
+    {
+      "bytes": 453,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l3/initial_F0_b2_w0_l3-20261008T182905-c7c49b88/gpu_activity_partial.json",
+      "sha256": "001dce7ac4235df78a11a8212eea2d53d561d5ab6dc11c85a58a2955a3a7fd95"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l3/initial_F0_b2_w0_l3-20261008T183742-1c04af71/manifest.json",
+      "sha256": "02e65926bf3175225f224b76844eed71ee08e878dbc2b2953345bf8fcc3c7130"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l3/initial_F0_b2_w0_l3-20261008T183742-1c04af71/settings.json",
+      "sha256": "8fe613f9ea43822d8d64d6310e8322670fc2c15beb78464b8e7367bb3debb2d6"
+    },
+    {
+      "bytes": 874185,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l3/initial_F0_b2_w0_l3-20261008T183742-1c04af71/request_events.csv",
+      "sha256": "fc405c08971911bb23e67f0e5293bbae663d44e74c9cb0692f93ad8cf7341626"
+    },
+    {
+      "bytes": 2107,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w0_l3/initial_F0_b2_w0_l3-20261008T183742-1c04af71/metrics.json",
+      "sha256": "b57bd895feac1fd9b611480f9f56f3e3163d837de48c3cfa4ebcecb8cf065644"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l0/initial_F0_b8_w0_l0-20261008T185045-fa647c05/manifest.json",
+      "sha256": "70bc8ec5bb82de02636561f6df9b988acaf518fbe9d88f21b330f7f98ccbd7be"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l0/initial_F0_b8_w0_l0-20261008T185045-fa647c05/settings.json",
+      "sha256": "1fe4f3579c4dde6354cfb29855da8889f9480677af0c30963b411b6029c4ae9e"
+    },
+    {
+      "bytes": 172052,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l0/initial_F0_b8_w0_l0-20261008T185045-fa647c05/request_events.csv",
+      "sha256": "7611e59f1803608a14396a09bbdf61a75892c9886ac828fedf559682ac9248a6"
+    },
+    {
+      "bytes": 1873,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w0_l0/initial_F0_b8_w0_l0-20261008T185045-fa647c05/metrics.json",
+      "sha256": "6dcd18dfcd3921ff4790e976aeb662688b495089ff8430a1a38b533b8a524841"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l0/initial_F0_b8_w2_l0-20261008T190851-bec51c66/manifest.json",
+      "sha256": "67c6ea106d4842266da0f8f6cd967e220463a740a167474acf72bc1c42d3604e"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l0/initial_F0_b8_w2_l0-20261008T190851-bec51c66/settings.json",
+      "sha256": "39a7d878ca959ac518c8e0b0c6b9a3ceab0a0be4d99d381d449544a154340b2a"
+    },
+    {
+      "bytes": 172066,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l0/initial_F0_b8_w2_l0-20261008T190851-bec51c66/request_events.csv",
+      "sha256": "9a12dd7ee541077b5f8f94cf5e5513b59bd4b4149a49652df72b99129b9f745d"
+    },
+    {
+      "bytes": 1932,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w2_l0/initial_F0_b8_w2_l0-20261008T190851-bec51c66/metrics.json",
+      "sha256": "73eca049397e92e2f6d341decff5f31dc149ddcc584dedfc7a7cace7492ea5e8"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l3/initial_F0_b1_w2_l3-20261008T181808-fb23152e/manifest.json",
+      "sha256": "e516d5ef87a728650c7f093e984b930f323069cc314e15e82c58fe974cb09163"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l3/initial_F0_b1_w2_l3-20261008T181808-fb23152e/settings.json",
+      "sha256": "1fec57812ef3849ca72e3a0675eefdf42c532bb81fb107e638696733af7bca20"
+    },
+    {
+      "bytes": 854160,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l3/initial_F0_b1_w2_l3-20261008T181808-fb23152e/request_events.csv",
+      "sha256": "6a54d03660776587ab95b42a19b479a947716058299bccda7f1f9570d0e03ded"
+    },
+    {
+      "bytes": 2108,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l3/initial_F0_b1_w2_l3-20261008T181808-fb23152e/metrics.json",
+      "sha256": "f3eb228596e2e3a8b70dac133d4144594bc02e69426948e39a5428503b1c4002"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l1/initial_R0_b4_w2_l1-20261008T172708-b8bfece4/manifest.json",
+      "sha256": "9e239401772c46b9b0821520f03afd8c0aab40af00f237ef6fdbdce9019321d1"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l1/initial_R0_b4_w2_l1-20261008T172708-b8bfece4/settings.json",
+      "sha256": "6dcb6d4a63da56fecd0cd2cc909318a23e28a2cbb02cd70056ac2274f72ed9cd"
+    },
+    {
+      "bytes": 349712,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l1/initial_R0_b4_w2_l1-20261008T172708-b8bfece4/request_events.csv",
+      "sha256": "8b2b0e5863a5390191599006cdddde8f96f9d2aca609c03d678a8a353270b28e"
+    },
+    {
+      "bytes": 1640,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l1/initial_R0_b4_w2_l1-20261008T172708-b8bfece4/metrics.json",
+      "sha256": "df86ff1cc67a999f98a4ee379cb50215ba9d28dea3297ae8959b5c21c27cbe62"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l1/initial_R0_b4_w2_l1-20261008T175900-a64117e0/manifest.json",
+      "sha256": "1102c448dd088c0b414b79d0844b85b46f77570579bdd9f231a0ef29d9630a8a"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l1/initial_R0_b4_w2_l1-20261008T175900-a64117e0/settings.json",
+      "sha256": "6dcb6d4a63da56fecd0cd2cc909318a23e28a2cbb02cd70056ac2274f72ed9cd"
+    },
+    {
+      "bytes": 350310,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l1/initial_R0_b4_w2_l1-20261008T175900-a64117e0/request_events.csv",
+      "sha256": "c752028bed629a96cfefab60f52a8894a77a4e006b8c0287bdc91fd308d25887"
+    },
+    {
+      "bytes": 1807,
+      "original_file": "artifacts/calibration_runs/initial_R0_b4_w2_l1/initial_R0_b4_w2_l1-20261008T175900-a64117e0/metrics.json",
+      "sha256": "981ab58133ff9fd54eced035d71008ebe34788e1fb1406744f0f88fd9e725ffc"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T173936-08129027/manifest.json",
+      "sha256": "e72348c67d5a70b2ae7872217067c755d3aea4d79994f225bdb8d73baf2e5000"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T173936-08129027/settings.json",
+      "sha256": "340c017c8a8963f9d88d00a6b5e2a55b5bdf550a4b3877d8bfa61d327fae1cc3"
+    },
+    {
+      "bytes": 610202,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T173936-08129027/request_events.csv",
+      "sha256": "c35acb218255c43c6b7d2c0a0b5688d740a9e16212ffae5ad5177afe8f9ba358"
+    },
+    {
+      "bytes": 1973,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T173936-08129027/metrics.json",
+      "sha256": "32556023e02d7f9ac683bf4d080f2ac1831b6ad70853e68436b2fa395043ee6b"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T170046-d0b08cc5/manifest.json",
+      "sha256": "e6f3b3a192708a62d3fee3cb3e3e757896303fd0464e374676871c7156ecfe1e"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T170046-d0b08cc5/settings.json",
+      "sha256": "340c017c8a8963f9d88d00a6b5e2a55b5bdf550a4b3877d8bfa61d327fae1cc3"
+    },
+    {
+      "bytes": 596384,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T170046-d0b08cc5/request_events.csv",
+      "sha256": "3b66e7e2349b03bfcae3ad01bedb557110f3cdcd7b2e52b86b2cb6c857f6bacf"
+    },
+    {
+      "bytes": 1818,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T170046-d0b08cc5/metrics.json",
+      "sha256": "7c3a35335bff34c90e7cc394417a6fc6da4e29eb86454e77cbf40d495777f854"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T164717-185b4db6/manifest.json",
+      "sha256": "edf6f25f17f486f4e3a7a8b2d670e10818c335406ac9a41f3d9395dcf421c841"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T164717-185b4db6/settings.json",
+      "sha256": "340c017c8a8963f9d88d00a6b5e2a55b5bdf550a4b3877d8bfa61d327fae1cc3"
+    },
+    {
+      "bytes": 616122,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T164717-185b4db6/request_events.csv",
+      "sha256": "3b2115bcb2fb92d3dc3e6e95e0f45f75e76cb8f2a074ca85b1ecf1e89c5f3614"
+    },
+    {
+      "bytes": 1823,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l2/initial_R0_b1_w0_l2-20261008T164717-185b4db6/metrics.json",
+      "sha256": "2f86032b488d8332a309a9c3d0d5412d58a769e42fbecd0bef14300902f6f7dd"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l1/initial_F0_b2_w1_l1-20261008T183857-30f21af9/manifest.json",
+      "sha256": "65df3424351ee9887cd1634abd43ed3623f65b13708fc47662da4f563c6aac0c"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l1/initial_F0_b2_w1_l1-20261008T183857-30f21af9/settings.json",
+      "sha256": "45f7a67a631a1c1c4c74d549e00f3967c6a4bc5301e5ce8beb73ede892c13be8"
+    },
+    {
+      "bytes": 349517,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l1/initial_F0_b2_w1_l1-20261008T183857-30f21af9/request_events.csv",
+      "sha256": "75621ca8e6b41d2aa7ad5b4664d7b868a613c2a77dc69e0f1848336ab5388f54"
+    },
+    {
+      "bytes": 1828,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l1/initial_F0_b2_w1_l1-20261008T183857-30f21af9/metrics.json",
+      "sha256": "d122eb674b05245cfd8b87d599c5ec5127e43b82bf3fa4d39910af51ad552092"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l1/initial_F0_b4_w2_l1-20261008T184849-f3c96117/manifest.json",
+      "sha256": "8fc44cbab798c8ab9e9d755345c24181bb1d633b518cb4c3c166cd07049e905c"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l1/initial_F0_b4_w2_l1-20261008T184849-f3c96117/settings.json",
+      "sha256": "a816036b4850cdaf5890983b7fd4bbf3c8192dc68ad80f9e3739e488c3fd3da9"
+    },
+    {
+      "bytes": 349385,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l1/initial_F0_b4_w2_l1-20261008T184849-f3c96117/request_events.csv",
+      "sha256": "dbb41513f0a1c3b0c35092c64c32a3de4678553b986c22058e11ab056938bcab"
+    },
+    {
+      "bytes": 1846,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w2_l1/initial_F0_b4_w2_l1-20261008T184849-f3c96117/metrics.json",
+      "sha256": "a656418117f03c148ad3a1f6787f3b7c7e3445dcba7193749f80eb19062c3f53"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l3/initial_F0_b1_w0_l3-20261008T181004-636005cf/manifest.json",
+      "sha256": "83fd10e264d105ef546f5c49ef7c0be60768967e8935a1d0f274aacd611976bd"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l3/initial_F0_b1_w0_l3-20261008T181004-636005cf/settings.json",
+      "sha256": "bbcc9fc078a496bbd5786fb0663555e4bdaec037b915d56710c7d2622e0f788b"
+    },
+    {
+      "bytes": 852875,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l3/initial_F0_b1_w0_l3-20261008T181004-636005cf/request_events.csv",
+      "sha256": "e55d866288f4093a1b90f11adb20310ed8d0ee2ada80ee9e44439dca27673521"
+    },
+    {
+      "bytes": 2112,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w0_l3/initial_F0_b1_w0_l3-20261008T181004-636005cf/metrics.json",
+      "sha256": "758028319b8ad47edbc0ffea8553b66ed1cc16c3ed37bc52b3193863a106e224"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l2/initial_F0_b4_w0_l2-20261008T184426-44454540/manifest.json",
+      "sha256": "61ae6e0425e0327bcb976cbdee7a0134376dd13a9688b2e7e105940025d4c83c"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l2/initial_F0_b4_w0_l2-20261008T184426-44454540/settings.json",
+      "sha256": "129b35ce0d1f6db5ae64601aa1a01359ad78b6d1a3ba6a389e1d40b5b6f24eda"
+    },
+    {
+      "bytes": 681795,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l2/initial_F0_b4_w0_l2-20261008T184426-44454540/request_events.csv",
+      "sha256": "cd6469020981ae351985ddfcfc5f786df39ab898e3da5357ffc6d0154f32ecfe"
+    },
+    {
+      "bytes": 2043,
+      "original_file": "artifacts/calibration_runs/initial_F0_b4_w0_l2/initial_F0_b4_w0_l2-20261008T184426-44454540/metrics.json",
+      "sha256": "3ccbfdec9041759a28462ac5ebc4ff958e9bc06f4ace80caf3afa600775a68f7"
+    },
+    {
+      "bytes": 4710,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l1/review_R0_b1_w2_l1-20261008T191808-198a4839/manifest.json",
+      "sha256": "c4d1a0ab430867ccc2c0f482a4ecab2bba4af4904d4b1583eaf57b2044765a5e"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l1/review_R0_b1_w2_l1-20261008T191808-198a4839/settings.json",
+      "sha256": "eb53ef8473640c1b144bac0cfe851e432677f970fd22a56eb52b89ab7a529bfe"
+    },
+    {
+      "bytes": 297212,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l1/review_R0_b1_w2_l1-20261008T191808-198a4839/request_events.csv",
+      "sha256": "707ce505ae7c04252cf69f4191e63eb0ac82f327bd27e62801aab63c15d445c7"
+    },
+    {
+      "bytes": 1725,
+      "original_file": "artifacts/calibration_runs/review_R0_b1_w2_l1/review_R0_b1_w2_l1-20261008T191808-198a4839/metrics.json",
+      "sha256": "6194dd8289b2d59eb7443ab4f9fb1469a70b20a0fd5a20fc0ae868e0996bf5af"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l3/initial_R0_b2_w0_l3-20261008T171713-36dd817c/manifest.json",
+      "sha256": "6cb4e9f0348e05e436603d45e650fe8a3ab38448269f6cc0fa9c97d7127681df"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l3/initial_R0_b2_w0_l3-20261008T171713-36dd817c/settings.json",
+      "sha256": "90728c5e7c12a308c6e280d0a96c47c52d479c0981b8be3ec78bdb7f63a0ef31"
+    },
+    {
+      "bytes": 969838,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l3/initial_R0_b2_w0_l3-20261008T171713-36dd817c/request_events.csv",
+      "sha256": "6a206001d18f2c9e8dba5723a33613f86284ce061cf73f714470fceeda6e84cd"
+    },
+    {
+      "bytes": 1729,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l3/initial_R0_b2_w0_l3-20261008T171713-36dd817c/metrics.json",
+      "sha256": "fc76c1a8804a506e4d4de9f83ef7c49a2780458f27f1aa038bcf30dc4ccbdd41"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l3/initial_R0_b2_w0_l3-20261008T174752-77ddf657/manifest.json",
+      "sha256": "d1d2ccf9ebb92de16091fafa33fe5b5a3d5909f02621c3977ab761d4e0959b79"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l3/initial_R0_b2_w0_l3-20261008T174752-77ddf657/settings.json",
+      "sha256": "90728c5e7c12a308c6e280d0a96c47c52d479c0981b8be3ec78bdb7f63a0ef31"
+    },
+    {
+      "bytes": 847507,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l3/initial_R0_b2_w0_l3-20261008T174752-77ddf657/request_events.csv",
+      "sha256": "650d1514301ed71f91a0b91ef5dfe72bb049f5c232c52c57ba3a0854e84f290b"
+    },
+    {
+      "bytes": 1985,
+      "original_file": "artifacts/calibration_runs/initial_R0_b2_w0_l3/initial_R0_b2_w0_l3-20261008T174752-77ddf657/metrics.json",
+      "sha256": "d960ac52498ca70a79bed661136a7fd90f86f69e4d86299b1019bf2436aa6fc3"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l1/initial_R0_b8_w0_l1-20261008T172918-7667cc62/manifest.json",
+      "sha256": "277168a71f77066fd7c48d359fc98a188fed6ea7cca678b0d3ee4399d5c777d1"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l1/initial_R0_b8_w0_l1-20261008T172918-7667cc62/settings.json",
+      "sha256": "80d3be6a3f7533df11f59dcec3b11deb961a3ab9b2609158d5d0ad0bb81b90bf"
+    },
+    {
+      "bytes": 349857,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l1/initial_R0_b8_w0_l1-20261008T172918-7667cc62/request_events.csv",
+      "sha256": "b9c26e8bb6417384e7f24d6a1af50e5d1c999f1e835c84b3d449ff2177624232"
+    },
+    {
+      "bytes": 1639,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l1/initial_R0_b8_w0_l1-20261008T172918-7667cc62/metrics.json",
+      "sha256": "638ee6b1b8609dede22edfee0e893f80a513b9cf7e99b7621f50024226d6b475"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l1/initial_R0_b8_w0_l1-20261008T180128-fc7fe1f0/manifest.json",
+      "sha256": "b1e338192ee3e4c6e054d8327c4687fca90998dbb5606b3962a22f258b0d81c6"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l1/initial_R0_b8_w0_l1-20261008T180128-fc7fe1f0/settings.json",
+      "sha256": "80d3be6a3f7533df11f59dcec3b11deb961a3ab9b2609158d5d0ad0bb81b90bf"
+    },
+    {
+      "bytes": 350266,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l1/initial_R0_b8_w0_l1-20261008T180128-fc7fe1f0/request_events.csv",
+      "sha256": "022311e08cc4d5e438b66431b099bd6ecb9d064b9fc77cf10edfd5ae1e47eea8"
+    },
+    {
+      "bytes": 1722,
+      "original_file": "artifacts/calibration_runs/initial_R0_b8_w0_l1/initial_R0_b8_w0_l1-20261008T180128-fc7fe1f0/metrics.json",
+      "sha256": "d08993ee25967879d1467aec26e1b799a08a976c9acf0555a4dbc770f34c5b61"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T170014-ee9048da/manifest.json",
+      "sha256": "0ca2975f9c773bd7fd447bc51de1815ca5d62c3f583b15bb126b372bd1055b86"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T170014-ee9048da/settings.json",
+      "sha256": "494897bbf98752f87f5d7c33d5c20a162129e731905e60c1b3eb39a40fc14472"
+    },
+    {
+      "bytes": 349945,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T170014-ee9048da/request_events.csv",
+      "sha256": "2c91c14c971d824f5f4d3c22cf6e4e013e1bddf08a83342a4ac6c7fb4d6431fb"
+    },
+    {
+      "bytes": 1622,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T170014-ee9048da/metrics.json",
+      "sha256": "f15316be582e1461028252c519d40506d217ffe00debb07411f1cf3d3add2b48"
+    },
+    {
+      "bytes": 4712,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T173904-beb7f3f1/manifest.json",
+      "sha256": "d5e649394dca0188e53246d4ab46ec59a9877700ee39542eeac91ca36679a208"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T173904-beb7f3f1/settings.json",
+      "sha256": "494897bbf98752f87f5d7c33d5c20a162129e731905e60c1b3eb39a40fc14472"
+    },
+    {
+      "bytes": 351185,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T173904-beb7f3f1/request_events.csv",
+      "sha256": "2daff69344f5d6b09a9bcfb8b38742187411bde6b8616fd070dbf31a1819092f"
+    },
+    {
+      "bytes": 1706,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T173904-beb7f3f1/metrics.json",
+      "sha256": "3ec81d70de879b4d46f2198f43b52018a9a6204b0715d679ddbdb33f98268da3"
+    },
+    {
+      "bytes": 4588,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T164645-5c5538b4/manifest.json",
+      "sha256": "f6474cdad1dd562fa0a6708bccab4d082153758cff12087a3fce1996863aa177"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T164645-5c5538b4/settings.json",
+      "sha256": "494897bbf98752f87f5d7c33d5c20a162129e731905e60c1b3eb39a40fc14472"
+    },
+    {
+      "bytes": 350081,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T164645-5c5538b4/request_events.csv",
+      "sha256": "5cb549f538431f3eab085b4e6523cfff1dc95c312c04a2e8c3e427c9edd706ce"
+    },
+    {
+      "bytes": 1622,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l1/initial_R0_b1_w0_l1-20261008T164645-5c5538b4/metrics.json",
+      "sha256": "38cccffe4c46f18b19d85718d0f845abcb16d85d58908108da650b4aa3837e1e"
+    },
+    {
+      "bytes": 4711,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l2/initial_F0_b1_w2_l2-20261008T181724-d845c744/manifest.json",
+      "sha256": "2c5a84819586f33ba2a8ea32e78d653e0a097369a3aa267b0ded9657be61a3c5"
+    },
+    {
+      "bytes": 154,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l2/initial_F0_b1_w2_l2-20261008T181724-d845c744/settings.json",
+      "sha256": "65a6688a5f3286eb697aa76208cf9e6dab8694f60c05c7e46a13bdddc230b881"
+    },
+    {
+      "bytes": 642250,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l2/initial_F0_b1_w2_l2-20261008T181724-d845c744/request_events.csv",
+      "sha256": "e793bcc18d1a81a14941af9c629d6d85264667e41b0be00b6d2c8c08fbb1c368"
+    },
+    {
+      "bytes": 2103,
+      "original_file": "artifacts/calibration_runs/initial_F0_b1_w2_l2/initial_F0_b1_w2_l2-20261008T181724-d845c744/metrics.json",
+      "sha256": "89f21933e0c639d6e7ef16aa9e2af813d9f190e14c1a6e238469a8da1a75d883"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T173832-2c7628e9/manifest.json",
+      "sha256": "f04e6a2ba1d016bb8696fee94a24372d6c55ee34beb1a5a45d130be535d4daf2"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T173832-2c7628e9/settings.json",
+      "sha256": "01e0d75bd95cde4d14bff5f775d75f3d426bc2140acdfd93ff3382f1db3c5ff7"
+    },
+    {
+      "bytes": 172565,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T173832-2c7628e9/request_events.csv",
+      "sha256": "37bb4a445a795236e14512206b3dbb6a9fc2e96706daf03ee8b89747b73b9eb7"
+    },
+    {
+      "bytes": 1732,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T173832-2c7628e9/metrics.json",
+      "sha256": "96694ea04b663d79b8db4a2d21d20e00fc42bb8e3bdfb965dfed6d1a7863bbe9"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T165942-521edb3e/manifest.json",
+      "sha256": "4ed9636e5e8c8ddb5c5ea5e17d29c04684a536cbf3fca69e04f4ba9e3857d473"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T165942-521edb3e/settings.json",
+      "sha256": "01e0d75bd95cde4d14bff5f775d75f3d426bc2140acdfd93ff3382f1db3c5ff7"
+    },
+    {
+      "bytes": 171994,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T165942-521edb3e/request_events.csv",
+      "sha256": "f6da37a64a8ce7af9d014d38fcf7c65d7b1a42808e5e0111d29b6097d9b37b9d"
+    },
+    {
+      "bytes": 1642,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T165942-521edb3e/metrics.json",
+      "sha256": "e0b1529a59e92c29ff32bc3667d92b77812f5d4bedfd81125fb33fc489aa3fce"
+    },
+    {
+      "bytes": 4587,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T164613-844f330c/manifest.json",
+      "sha256": "847cac81cc01d7f3b6077220b9f2cccb13e660fc8aa771c5226b224fa377d8f2"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T164613-844f330c/settings.json",
+      "sha256": "01e0d75bd95cde4d14bff5f775d75f3d426bc2140acdfd93ff3382f1db3c5ff7"
+    },
+    {
+      "bytes": 172042,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T164613-844f330c/request_events.csv",
+      "sha256": "4d9bd1fc6b88e7e3973daacd6a623a00d019151552a845db8b35d0435b1e8cba"
+    },
+    {
+      "bytes": 1649,
+      "original_file": "artifacts/calibration_runs/initial_R0_b1_w0_l0/initial_R0_b1_w0_l0-20261008T164613-844f330c/metrics.json",
+      "sha256": "56e9e2c2042b346a33d9fcc7a7a827102da4e49f8b05f6eb6aa2e4f59d1741e8"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l1/initial_F0_b8_w1_l1-20261008T190656-68474764/manifest.json",
+      "sha256": "1f4996f8653da56b569dd002eaf4596fed8fbd37594b5bb28790e1f975143391"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l1/initial_F0_b8_w1_l1-20261008T190656-68474764/settings.json",
+      "sha256": "7f64af6dbd6f6d738a1f3be4d7165f6a8b429a0e916562286b83587cb57cffd0"
+    },
+    {
+      "bytes": 349794,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l1/initial_F0_b8_w1_l1-20261008T190656-68474764/request_events.csv",
+      "sha256": "b1da130f430f457870249f939b239024f9d75d4d0826cbbd876f970bafca6b1e"
+    },
+    {
+      "bytes": 1928,
+      "original_file": "artifacts/calibration_runs/initial_F0_b8_w1_l1/initial_F0_b8_w1_l1-20261008T190656-68474764/metrics.json",
+      "sha256": "779f862ec14217ddf0facfe91ad8d1fe7ba0d0e8fb7330976507583b503ee52f"
+    },
+    {
+      "bytes": 4713,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l0/initial_F0_b2_w1_l0-20261008T183825-ddd022bd/manifest.json",
+      "sha256": "e4700c0d6eeb476534227b0da1e3402a4d6bf9be70c9bd67dda745f36f51d7bf"
+    },
+    {
+      "bytes": 155,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l0/initial_F0_b2_w1_l0-20261008T183825-ddd022bd/settings.json",
+      "sha256": "44a4a1200847b66053b2846367ac8e48cd932d76d83891956ef240ac2b0efec0"
+    },
+    {
+      "bytes": 171964,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l0/initial_F0_b2_w1_l0-20261008T183825-ddd022bd/request_events.csv",
+      "sha256": "57cbcfe337b660a74f8e9ec930177250ec31226970e94611761f5aa8c5349d0d"
+    },
+    {
+      "bytes": 1842,
+      "original_file": "artifacts/calibration_runs/initial_F0_b2_w1_l0/initial_F0_b2_w1_l0-20261008T183825-ddd022bd/metrics.json",
+      "sha256": "764b4f39d7e22b2b4442d9998301fbec23605e2383d204953557eea562b73e1c"
+    },
+    {
+      "bytes": 2270,
+      "original_file": "artifacts/quality_calibration_bf16_b2/metrics.json",
+      "sha256": "60eced8d2c9707a07c84796132265e61ff4715efc33872a76adb43626bdc266f"
+    },
+    {
+      "bytes": 44916763,
+      "original_file": "artifacts/quality_calibration_bf16_b2/predictions.json",
+      "sha256": "f267343f79fccfb634d1a999455318cf4d90c8920a9da6cbc8c600a0ab90a53e"
+    },
+    {
+      "bytes": 2276,
+      "original_file": "artifacts/quality_calibration_compile_fp32_b8/metrics.json",
+      "sha256": "6312ffdc72e8aabcb6f95c133e30072af56fa2f9f59288e08fb1f2ff33215d34"
+    },
+    {
+      "bytes": 53819810,
+      "original_file": "artifacts/quality_calibration_compile_fp32_b8/predictions.json",
+      "sha256": "3b0543e8b5df1b6385ee682b10ad1ee0003aeac4b8ca14891983bb504c69a79b"
+    },
+    {
+      "bytes": 2271,
+      "original_file": "artifacts/quality_calibration_eager_b2/metrics.json",
+      "sha256": "adf47c24aa7dc4799a0c848324126fe060a58ea059a0600f85b3f4783b69b547"
+    },
+    {
+      "bytes": 44916763,
+      "original_file": "artifacts/quality_calibration_eager_b2/predictions.json",
+      "sha256": "f267343f79fccfb634d1a999455318cf4d90c8920a9da6cbc8c600a0ab90a53e"
+    },
+    {
+      "bytes": 2275,
+      "original_file": "artifacts/quality_calibration_compile_fp32_b4/metrics.json",
+      "sha256": "4af46a5c858b9cbed4d4f83856e7ca0276d073445d231ef8cba3c0cc37363884"
+    },
+    {
+      "bytes": 53823304,
+      "original_file": "artifacts/quality_calibration_compile_fp32_b4/predictions.json",
+      "sha256": "606343aa93973d2dbb46d48643cfabccf8828003f59d08431ec98b3beebad8c1"
+    },
+    {
+      "bytes": 2272,
+      "original_file": "artifacts/quality_calibration_fp32_b2/metrics.json",
+      "sha256": "ccb4e76886fe1eb74086162d96d75f22eedec279dff83501b1c9dd477cc01650"
+    },
+    {
+      "bytes": 53822381,
+      "original_file": "artifacts/quality_calibration_fp32_b2/predictions.json",
+      "sha256": "2e1f5a50256c6fca6f2cb0c287df5c4fcf0b52e220cb6ebee8edfc292b4a0e4b"
+    },
+    {
+      "bytes": 2271,
+      "original_file": "artifacts/quality_calibration_fp32_b8/metrics.json",
+      "sha256": "96367257e6bd5625017d0320d75eff61e603d29ef3e565a4b1b3501687aad7cb"
+    },
+    {
+      "bytes": 53820813,
+      "original_file": "artifacts/quality_calibration_fp32_b8/predictions.json",
+      "sha256": "6694db07adcaacddf3a8804f506f159fdfcc09e6aff62a438aab709296d76009"
+    },
+    {
+      "bytes": 2271,
+      "original_file": "artifacts/quality_calibration_compile_fp32_b1/metrics.json",
+      "sha256": "acbfcfdba331a04257f728948d9750cf7f74607f6e978c01b26a96f208c2c29a"
+    },
+    {
+      "bytes": 53820692,
+      "original_file": "artifacts/quality_calibration_compile_fp32_b1/predictions.json",
+      "sha256": "95b0dae11d2a03ed659725d316310d92cd67802617f029ad669e7636ec73bfd1"
+    },
+    {
+      "bytes": 2272,
+      "original_file": "artifacts/quality_calibration_fp32_b4/metrics.json",
+      "sha256": "ec0a05cabf4b4c3c4c5ab3edd4692d4e63072c4e6d3cab746ec9e8992ca9d9a9"
+    },
+    {
+      "bytes": 53823358,
+      "original_file": "artifacts/quality_calibration_fp32_b4/predictions.json",
+      "sha256": "b51a344184036513d58d748eacf9aba2d00f408e06a67c61829abd2d53b7c5f6"
+    },
+    {
+      "bytes": 2277,
+      "original_file": "artifacts/quality_calibration_compile_fp32_b2/metrics.json",
+      "sha256": "6fa2edd4a18f4be3184f6b30d9528deec96f9b56012f39366128230630b6b72f"
+    },
+    {
+      "bytes": 53822586,
+      "original_file": "artifacts/quality_calibration_compile_fp32_b2/predictions.json",
+      "sha256": "c4384cd3a0d345dd572381becec9b5906d2cf99f7a6958c7178c49d711ce3708"
+    },
+    {
+      "bytes": 2285,
+      "original_file": "artifacts/quality_calibration_fp32/metrics.json",
+      "sha256": "547c2843fb167a71349b998233431358b2ab73753e8e42df4f911805816c6eb7"
+    },
+    {
+      "bytes": 53820503,
+      "original_file": "artifacts/quality_calibration_fp32/predictions.json",
+      "sha256": "d9c68ac49fefbed6fd8eb6ca238d996797ff857a5ba7c674d035faa0c5894e1e"
+    },
+    {
+      "bytes": 2278,
+      "original_file": "artifacts/quality_calibration_compile/metrics.json",
+      "sha256": "316b6ee31cd9f5a2d3c539f037007dd69d3f91e7f1de03f0de91d7b41b8ed254"
+    },
+    {
+      "bytes": 44914891,
+      "original_file": "artifacts/quality_calibration_compile/predictions.json",
+      "sha256": "a89627ea95aea73b4d711513f36229867b91c0d37add4a7dfa3dfb51cc2ff799"
+    },
+    {
+      "bytes": 2291,
+      "original_file": "artifacts/quality_calibration_bf16/metrics.json",
+      "sha256": "433c00bdc6b3c481a03ea6a6c58b5cfb9f54a306ea737519972e5650554af7e7"
+    },
+    {
+      "bytes": 44918898,
+      "original_file": "artifacts/quality_calibration_bf16/predictions.json",
+      "sha256": "47c0a4c546949cadbc498f693d59a8e45269e7462e7cf3b0d181d6c2b8332db3"
+    },
+    {
+      "bytes": 1338,
+      "original_file": "artifacts/compile_stress_fp32_v2.json",
+      "sha256": "e64a38719ea782b23dab52b3ec9280c78cabf739881f1a4ef30da2d66a117970"
+    },
+    {
+      "bytes": 62804,
+      "original_file": "results/detections/coco_353027_detections.jpg",
+      "sha256": "4852c09b9f14b2e99138ce615a3b6171ff2f7daa1f63ce8d2e5b1be5df3a6d90"
+    },
+    {
+      "bytes": 108044,
+      "original_file": "results/detections/coco_328430_detections.jpg",
+      "sha256": "fe98d13cd5f22f67d80e32fe32fcb27022030de5af8a0b4edfe073083d3fe927"
+    },
+    {
+      "bytes": 2202,
+      "original_file": "results/detections/attribution.json",
+      "sha256": "e8a1e6929fa4e9c7a603ea6ca3470bd911ea697d719283fbf20ec95a16c4d031"
+    },
+    {
+      "bytes": 87394,
+      "original_file": "results/detections/coco_350679_detections.jpg",
+      "sha256": "1a49f156a9d63e07db22bd7d35d4b0fb358f85037ec865f02bd67c3a94909cda"
+    }
+  ],
+  "cause": "Numeric CUDA_VISIBLE_DEVICES=0 resolved to H800 MIG 2g.20gb; CUDA device and physical nvidia-smi index were different.",
+  "current_clock_runtime_completed_mig_calibration_cases": 113,
+  "current_gpu0_state": {
+    "compute_instances": 0,
+    "compute_processes": 0,
+    "gpu_instances": 0,
+    "mig_mode": "Enabled"
+  },
+  "discovered_utc": "2026-10-08T20:59:30.941711+00:00",
+  "full_uuid_probe_error": "RuntimeError: No CUDA GPUs are available",
+  "gpu_mode_or_other_processes_changed_by_this_task": false,
+  "held_out_inference_started": false,
+  "nontiming_failure_elapsed_seconds": 2.9289169311523438,
+  "nontiming_validation_error": "CUDA error: CUBLAS_STATUS_ALLOC_FAILED when calling cublasCreate(handle)",
+  "observed_cuda_device": {
+    "multiprocessors": 30,
+    "name": "NVIDIA H800 PCIe MIG 2g.20gb",
+    "total_memory_bytes": 21072183296
+  },
+  "protocol_version": 2,
+  "source_at_fix": {
+    "dirty_diff_sha256": "604e8c58d9fdcc1d12b4a337604051edb97f7caa074523270cd6029c55f30561",
+    "git_sha": "78c69da599d73b823f15a7cbb529fec56b5c3650",
+    "packages": {
+      "numpy": "1.26.4",
+      "pillow": "10.4.0",
+      "pycocotools": "2.0.8",
+      "torch": "2.14.0",
+      "torchvision": null,
+      "transformers": "4.46.3"
+    },
+    "source_files_sha256": {
+      "src/cvpr_project/__init__.py": "f0ae05b12972ddfb51158e213eeda09473f17a98b5883f698cd08f0870bfa56a",
+      "src/cvpr_project/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "src/cvpr_project/analysis.py": "7a052963dcd8f8c007266a678ad3f74966d49394cb7c160aded4339a6ef79aa1",
+      "src/cvpr_project/benchmark.py": "eb2395135a8afdafbd93b148e1390ccecae57c05d9c55f5f44baed4a3d83494b",
+      "src/cvpr_project/buffer_pool.py": "7c32f84d463ff6387e06dae34309af4d3a0ea15a9e66afbf5e2204354a77894f",
+      "src/cvpr_project/calibration.py": "5c19912fa2658cf7444fe0a8f4dcc16c0f538b425af1d7b55916d5f19e78928c",
+      "src/cvpr_project/cli.py": "09da8a908fdbb89836d5d9677616e95acd2bf16ef3fbc006ae175fbaa7a85bc9",
+      "src/cvpr_project/data.py": "eb301e58b74fb5303074d5481753ac61c559750732bc97298b84fc4cc8e5ce08",
+      "src/cvpr_project/executor.py": "02c13bfe974c74633a139bfd816ffeb951418e84b26356ce8c8625e9b607c8b6",
+      "src/cvpr_project/graph_pool.py": "2cf2b843b845b2a9238d9faceb4e41bfa53a89e83d704156f6cea855cf24a5c0",
+      "src/cvpr_project/hardware.py": "38e47084c33e116053400f8c80c7cabb342f99e4206d863684745f4f4e3c51df",
+      "src/cvpr_project/intervals.py": "3c9ee1a3fbd1baf18412b5d60c1e72c15b690860a094d964595c42dbafeb16ed",
+      "src/cvpr_project/matrix.py": "d9a86be7662efd490b3c6f7f2981fe0a0215f779bb8ed6b91644ab12f237565d",
+      "src/cvpr_project/metrics.py": "a4b775547bc1f5dbc4776edae1ed04990e4be82c32a888a15ec529a20829559e",
+      "src/cvpr_project/model.py": "594eef251e32a7f821e1d7c2674b07007a9b9a8d97a912c5449bb47226c2e740",
+      "src/cvpr_project/profile.py": "217b186ff47663d94f0e57a5ef6d7d28cd8af70ea7f311ceb8678f7fa06780cd",
+      "src/cvpr_project/quality.py": "28d23c14d3ca2b8ebfa8a4ae73374b083c4904c7d65015a06529a7c894d0e371",
+      "src/cvpr_project/report.py": "71106e15b75e14cf2273a46884cd9e233ba75ceb1dac1ef3a38b20f4c12b2b1e",
+      "src/cvpr_project/runs.py": "289a615de705f51645914831f43546fe021e66071e123ea2ce0c24ef9e2ef1a2",
+      "src/cvpr_project/scheduler.py": "0e0133d8fb5eeca37a26107f7c7450864205b21e86b80df8f9ca9dd09eea1951",
+      "src/cvpr_project/serve.py": "218cdb046ce72e25c6102c3dc9494ea8f4a8db0f92720d5aa40cd391a463458e",
+      "src/cvpr_project/trace.py": "3d4cacf916579c6cf86fded5f8a0128a18cec3e2f94195c831cb3ccc85e60e2f"
+    }
+  },
+  "status": "superseded_device_scope_not_formal_evidence"
+}

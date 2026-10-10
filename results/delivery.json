@@ -1,0 +1,36 @@
+{
+  "compile_baseline_expected": 36,
+  "completed_cases": 300,
+  "expected_main_plus_ablation": 264,
+  "failures": [
+    {
+      "failure": "RuntimeError",
+      "run_id": "v2_C0_poisson_rho0.6_seed2026-20261009T060317-7e8726c6",
+      "status": "failed"
+    },
+    {
+      "failure": "RuntimeError",
+      "run_id": "v2_E0_poisson_rho0.6_seed2026-20261009T061205-1d938b1f",
+      "status": "failed"
+    },
+    {
+      "failure": "RuntimeError",
+      "run_id": "v2_E1_burst_rho0.3_seed42-20261009T165446-9f95ef74",
+      "status": "failed"
+    },
+    {
+      "failure": "RuntimeError",
+      "run_id": "v2_R0_poisson_rho0.6_seed2026-20261009T060823-d797a12b",
+      "status": "failed"
+    }
+  ],
+  "frozen_config_sha256": "2ba3f2e355d8ee1c23b310df9206e71a9b3629384d6b7bc2e3938863014f9d9e",
+  "protocol_version": 2,
+  "quality_gate_passed": true,
+  "resource_totals": {
+    "gpu_hours": 12.473090189364221,
+    "initial_unmetered_setup_reserve_hours": 0.25,
+    "metered_gpu_hours": 12.223090189364221,
+    "project_storage_gb": 16.768490828
+  }
+}

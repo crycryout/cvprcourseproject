@@ -23,6 +23,6 @@
   "quality_csv_sha256": "bfd7d69991716881c8edc3ce2253f653890a812c641be6821f79d41fd826e9c2",
   "quality_gate_pp": 0.1,
   "reference_AP": 36.31175367412548,
-  "scope": "completed_offline_quality_stage; formal_serving_matrix_and_report_pending",
+  "scope": "completed_offline_quality_stage; serving_evidence_in_delivery_json",
   "split_sha256": "3ede0df1a6eb2bfc8a49c99084f2fdcac1fcb6b9fa3685176f635ba36502b9a2"
 }

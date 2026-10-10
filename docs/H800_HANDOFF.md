@@ -42,4 +42,4 @@ codex
 
 在已有实验目录中恢复时不要重跑verify-model/pilot覆盖校准引用；检查active lease和freeze后，从未完成命令恢复。修改被冻结的runtime、数据或权重会被拒绝。完整重新复现应从新checkout与独立artifacts开始。
 
-硬件事件：数字CUDA序号与nvidia-smi物理序号不能在MIG环境中混用。runtime必须使用实际CUDA device name、SM数、可见内存、UUID hash和软件版本核对；pilot/calibration/freeze/quality/main一致才接受。当前GPU0开启MIG但无实例，管理员恢复后使用`CVPR_GPU=0 bash scripts/resume_experiments.sh`，该入口保留freeze并从未完成阶段续跑。详见STATUS。
+硬件事件：数字CUDA序号与nvidia-smi物理序号不能在MIG环境中混用。runtime必须使用实际CUDA device name、SM数、可见内存、UUID hash和软件版本核对；pilot/calibration/freeze/quality/main一致才接受。此前GPU0开启MIG但无实例的阻塞已解除，完整H800的新校准与冻结已完成。恢复前仍须核查实际设备及active process，再使用`CVPR_GPU=0 bash scripts/resume_experiments.sh`；该入口保留freeze并从未完成阶段续跑。详见STATUS。

@@ -1,0 +1,2029 @@
+{
+  "calibration_attempts": [
+    {
+      "config_sha256": "53e187139edee3246001de49556522407ef87bdb1cc5996b81a08eebec9e5659",
+      "elapsed_seconds": 31.633374524768442,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w0_l0-20261009T013923-3820ecbf",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "7027262dbb25427a35c486b4eb53ec765140914691d3eb6c098638826cff1a27",
+      "elapsed_seconds": 31.638850228860974,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w0_l1-20261009T013955-a77fbf5a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "62920c73db505fceb4759dd5a3c8730d7d85e551f300ecb04dbc3b4e2bd40766",
+      "elapsed_seconds": 31.686530674342066,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w0_l2-20261009T014027-069d6a93",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "8e4940c7de9977133e323ff808f9ddbff3560e4dca3d6774be55cb0d280f0f95",
+      "elapsed_seconds": 35.96878742193803,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w0_l3-20261009T014059-147f319d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "d60f7e819cbdc94537dd557432d7344dc662dbd1925e5f4cf37b0ec4b44a482e",
+      "elapsed_seconds": 31.642262765206397,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w1_l0-20261009T014135-b1b61bf0",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "42fc530ec5486dfdd36a94d4833635e60eddae22fe78c5adc7176eb9a1b8a959",
+      "elapsed_seconds": 31.629200751893222,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w1_l1-20261009T014207-fa1c7422",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "0ccc30745b41a5822a32d51e63e1181da33dc5a6bc81ffdff687f1f4c0f1aede",
+      "elapsed_seconds": 31.70912738982588,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w1_l2-20261009T014239-e0840e41",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "a6bd077eed6d5ff8c12e47481c735d2d1b9514fe14746de72f45bef0bd9a5292",
+      "elapsed_seconds": 35.94762553879991,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w1_l3-20261009T014311-6ca8a93a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "5e459528b79c73f03f9c10a37c2180b7cc55234e3ef8c556326bce8b078d8c5b",
+      "elapsed_seconds": 31.62172556994483,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w2_l0-20261009T014347-cd6f8185",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "7da62d5862076e3c587bddda33fcd59389f8b0ad74d3368c5ca76c90925b38f8",
+      "elapsed_seconds": 31.64743589097634,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w2_l1-20261009T014419-bd502708",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "0a574b6103581b10386017e1b6edb2082026c17a604c54f2ac81868fb91fef0a",
+      "elapsed_seconds": 31.71247792104259,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w2_l2-20261009T014451-fddf844e",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "21fd91b2ddce3b6c84be4fd1864fc29adb74e27bcff152931128b07db7675de8",
+      "elapsed_seconds": 35.96455958299339,
+      "error_type": null,
+      "run_id": "initial_F0_b1_w2_l3-20261009T014523-e6f1f496",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "382373986f21141cb3f0bcf81e0b9e90b16051ba64b5a0ea23acfc41f0c6223e",
+      "elapsed_seconds": 31.642961683683097,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w0_l0-20261009T014559-fa7fb68a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "a7eaf67ae3c4c6b475a946a90908948b1bb9368e2fb42f21739cf04290b76893",
+      "elapsed_seconds": 31.64039124501869,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w0_l1-20261009T014631-61f1edca",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "dd70732db4d56855f3637d61615f392515bce8bfe65d82e2f2274587034252ab",
+      "elapsed_seconds": 31.683511363808066,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w0_l2-20261009T014702-1ed2bd81",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "9d16470398a510ffbcd4aabbc3be5a7b14bd2374f253e644ef862690476eb761",
+      "elapsed_seconds": 31.78387277200818,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w0_l3-20261009T014734-c014244e",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "d2a07fbb6b41f5b4ea9972cec011ab345fb30dcd510ace49c0f4caa1fc13cf96",
+      "elapsed_seconds": 31.619761466048658,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w1_l0-20261009T014807-2e022ce5",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "7c1d5961dada3fa6a3256b4c2dda2b68a4bccb84d34527c08d59e7e0282283d5",
+      "elapsed_seconds": 31.638541854918003,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w1_l1-20261009T014838-526ad391",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "cf2114acb2f980df7e7699b86f8af034f20e49f736c6c5556988ca5aa1c80fdd",
+      "elapsed_seconds": 31.699990808032453,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w1_l2-20261009T014910-54821e07",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c7cb1a65b770095ff9a22058ff5d0bf0c961dd71d99fffd7f16382e7f053efd0",
+      "elapsed_seconds": 31.816193708218634,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w1_l3-20261009T014942-692a69d2",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "287196d12de81a1f9b6b77891b9dd7a0b50f801fb76c2b2e07b32f5b8864f037",
+      "elapsed_seconds": 31.6400677729398,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w2_l0-20261009T015014-2ef4ad3a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e018aa95af6bd167d020abe7e0d646d62a1dc95a992d0444e65cdde638001092",
+      "elapsed_seconds": 31.622914270032197,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w2_l1-20261009T015046-bb5bac9b",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "59aa2937ccb39055d7df07c411eda0747206c67494b7e0b1166ac5c4d6b8795e",
+      "elapsed_seconds": 31.701054258737713,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w2_l2-20261009T015118-34041bdd",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "b4c502e8b76fde274b5bf815f7175137863ef0a3357226001333bed1dc08e4b6",
+      "elapsed_seconds": 31.840443136170506,
+      "error_type": null,
+      "run_id": "initial_F0_b2_w2_l3-20261009T015150-0b70a123",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "8aec4cf645c44f60f0cd222afac6ce1499f882fe1c00fd75b9f97e40ba13de7a",
+      "elapsed_seconds": 31.620093109086156,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w0_l0-20261009T015222-67330322",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "7d8c0da900e55f0e53a24ee7c8b67ed16dbf713e016690e44b0f94c09ae3ff66",
+      "elapsed_seconds": 31.639389127958566,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w0_l1-20261009T015254-eead792e",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "72b0a3b61d7f40db38049e6766c41b30e7f5a6e80cf28afc5e4762e39fd3bcfd",
+      "elapsed_seconds": 31.70638164691627,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w0_l2-20261009T015326-e5dc4f8c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "2927dbc6b51dffb80ef58ee734548ea90c051dd8582956a34b0e2ccc2332242c",
+      "elapsed_seconds": 31.790469633881003,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w0_l3-20261009T015358-8c15b161",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "d60e4a644112186c5f1b4cc428c40c566b0db07b49e54ff38b015fac0a3f3c98",
+      "elapsed_seconds": 31.648820847738534,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w1_l0-20261009T015430-7b281cd4",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "a64fd97592b112d377afb6c0287dff7422efd7bd7bd1cdc7611c7fc3d641bac3",
+      "elapsed_seconds": 31.623509081080556,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w1_l1-20261009T015502-f0eaf8ed",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "8fcb124f255ec31bb08b2bcc80acbde62b934535faece8a321509358e161a220",
+      "elapsed_seconds": 31.697803582064807,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w1_l2-20261009T015534-d2660366",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "5e8c666cc9dd70a64e7d57b916faeedfb49b982f452db2e15c36c1c426403dea",
+      "elapsed_seconds": 31.767561567015946,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w1_l3-20261009T015606-c6a0c634",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "027a2d8ae35b82e23d9e66bf005662fb8131a16e0f391e08c9d9567e4ab64ae0",
+      "elapsed_seconds": 31.617206369061023,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w2_l0-20261009T015638-a7f9d2c1",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4705eb0300dea72b41434368a286588d4c3d50edb5bf2f5d52a767bb83e15681",
+      "elapsed_seconds": 31.63059866381809,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w2_l1-20261009T015709-7f03115d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "b9fe27c3e33234d4f0ea8d457e8da0447ee04e9533f53810672a73de4bc12b61",
+      "elapsed_seconds": 31.687349950894713,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w2_l2-20261009T015741-e7a2fccb",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "42584bcc8b6806fc434aa32f379a637cdd6848ffeb0285532e1d2796f0c97816",
+      "elapsed_seconds": 31.77055516699329,
+      "error_type": null,
+      "run_id": "initial_F0_b4_w2_l3-20261009T015813-6c3382da",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "552e8c9ab7d53c1842c51a82d88f43c89ac7a93f8a0473491da6d65af1d9aa30",
+      "elapsed_seconds": 31.621692020911723,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w0_l0-20261009T015845-ade52f40",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "33a684962b9e31a2fa43f0f5a2f739c213bd35ace22a266de3c560949b4641ca",
+      "elapsed_seconds": 31.61689415294677,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w0_l1-20261009T015917-e752544e",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e7cde7d39c3e6470d428e5e7bf976642dd39956f44e50638ac6a3e8036ec6d96",
+      "elapsed_seconds": 31.693310298025608,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w0_l2-20261009T015949-0ffa738f",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "5cf5f5b1449b24a0e94d71c241aa4d6374945cdc532e93ae13b0c5e7589ad376",
+      "elapsed_seconds": 31.791557334829122,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w0_l3-20261009T020021-2e9a144a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "3ec50651c42e367ee4468808d71a6a16b6a1fd3db2b9b26591cff87d05674d36",
+      "elapsed_seconds": 31.621090513188392,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w1_l0-20261009T020053-5b6b8f60",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "490cbad4bb0cfdf238a230f7367c85987498253b523992e57e70c8405ea37fa4",
+      "elapsed_seconds": 31.680220018606633,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w1_l1-20261009T020125-45f440e9",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "547c02eab96f96e022d19a62f82fd2914cf8d9a4cb8ef0c1a90e91885f4b2594",
+      "elapsed_seconds": 31.806065709795803,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w1_l2-20261009T020157-8510e072",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "76a0ac0c72bacc0e231fb354c22c05d70521d7eff905930d32e268f5759f4667",
+      "elapsed_seconds": 31.837968135252595,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w1_l3-20261009T020229-60664222",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "a984e4b2d39bea5bacfbc2198d63d17dc58f2b909d1bb5d3db1559f1ccd7d75a",
+      "elapsed_seconds": 31.62542814016342,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w2_l0-20261009T020301-962f7dfd",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e052dab847246083ea28462d19f1c5d28c7b74738716d52feb208c86a5b2e391",
+      "elapsed_seconds": 31.62735519418493,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w2_l1-20261009T020333-b5acd5ad",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "774a510d3a4a7596261a001f283e27b20a133db63760221cd2967c3c76f996b7",
+      "elapsed_seconds": 31.725653289817274,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w2_l2-20261009T020405-8903ff0a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "a4a8b559aece9fdc24c1aca04525be31c1d6d06f92e24325d9b7d50bdb946b93",
+      "elapsed_seconds": 31.757133036851883,
+      "error_type": null,
+      "run_id": "initial_F0_b8_w2_l3-20261009T020437-6b2c6e59",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "ef3b732d5036f122236c0f2345143541b354afe8b7fa884f01d89cf588ffbd13",
+      "elapsed_seconds": 31.59501560917124,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w0_l0-20261009T011233-4494e005",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "a1105d04b82e9c39c9d9c4dbd94a096dcec86ccc812ba0d01a19de8b92f6827d",
+      "elapsed_seconds": 31.586849780287594,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w0_l1-20261009T011304-83c8d463",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "fa0947823cea0ec575873dc8ab00246ca4ca6296be8fece11f1cbbdd12eba7d7",
+      "elapsed_seconds": 40.25154202710837,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w0_l2-20261009T011336-dcc4f3a7",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "ecd19603644480acde5397d862b6533fe296adbb9039215f4a615694ec5c72dd",
+      "elapsed_seconds": 40.43678885139525,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w0_l3-20261009T011417-d2852f0d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "06a72c3b9ed2031765036695cb777776102af16aacbb61f55b55c40285e7b2d1",
+      "elapsed_seconds": 31.569896452128887,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w1_l0-20261009T011457-29fbc09c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "b0fbae3e2722ee4812af752dbf259ed0b3b7742f4e4e8692a90b27423f38f458",
+      "elapsed_seconds": 31.598132209852338,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w1_l1-20261009T011529-987d490c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "5daa7f0e66f727bf5450d7b9360096b51647bf9b4f1a4eac4afaef02b7c69773",
+      "elapsed_seconds": 40.34161059977487,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w1_l2-20261009T011601-7e0468fe",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c08cca209087bcc20c3443bb704f25850283d4151a60055b3efc0c979accbe18",
+      "elapsed_seconds": 40.23862877814099,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w1_l3-20261009T011642-87914405",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4d4f14a7f3519afbe4a695bb32ee57ced34a436f82c360364189cfbf0e5e17a3",
+      "elapsed_seconds": 31.582231131847948,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w2_l0-20261009T011722-fd82eb78",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e3e6c8a3bc0b866f5fd3473140176e09ecd1740ed6b6139a720d2b73154a3207",
+      "elapsed_seconds": 31.58199042826891,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w2_l1-20261009T011754-0c492adf",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "8ed8c357860abd9f66d106f860f08721ec0625051dd8e2d4707413c47a4305cf",
+      "elapsed_seconds": 40.10819678520784,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w2_l2-20261009T011826-e8c62dc8",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "427e7247932ee2f7e009c4f3537c8799efaf9c04f51ac7d2e8685b7ca4d9b456",
+      "elapsed_seconds": 40.70169433020055,
+      "error_type": null,
+      "run_id": "initial_R0_b1_w2_l3-20261009T011906-65e7343f",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "2fb23eb79d6ca7dd8fa6cc4ec96521cc2d15b5dddc2f4d8d7f43fb3f5844fcfe",
+      "elapsed_seconds": 31.5816350011155,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w0_l0-20261009T011947-34c70c6c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "d61df6e6fc0f47df552055684712fde9f94389defe0646d2dc708f0c4c92139f",
+      "elapsed_seconds": 31.579836416058242,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w0_l1-20261009T012019-5ec02f3a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4300bd4bd7a39dbcee5fa6251d690016a6596e2429043e544e5a9663fc8d4f31",
+      "elapsed_seconds": 31.64530105376616,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w0_l2-20261009T012051-328d88dc",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "81fe8842f9cd57e998a0113d5701bbd70a64ce13d48ce287786942142377b97f",
+      "elapsed_seconds": 36.2723541543819,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w0_l3-20261009T012123-f9af4ccb",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "baec41b141d13c4e4c436d125ee88283c3c4e70a78f04485df54006fb7784faf",
+      "elapsed_seconds": 31.610817019827664,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w1_l0-20261009T012159-7364bdc7",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "400bfdb8af41ff6acbd19cca6b3add5b20f4ec56f0261fbe80fd3d6c0bfcb1e8",
+      "elapsed_seconds": 31.59443505993113,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w1_l1-20261009T012231-43577317",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "b91d76eaadf540acf9c062c9f36e848dec7e752faf10ff8f6c701e192f2218d5",
+      "elapsed_seconds": 31.637003915850073,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w1_l2-20261009T012303-6b438bd9",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "96fa08aa1653d9ade2ecababbfa61d5fb4b8513a6f7ac30e1231ed519d696bc6",
+      "elapsed_seconds": 36.233064741361886,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w1_l3-20261009T012335-1d2bcf82",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "71ab6178839192e72bca23eeb9a6fee095c46dcb486f489c5265685cb0c68499",
+      "elapsed_seconds": 31.577436334919184,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w2_l0-20261009T012411-a2046329",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "84a23015dce16171c0d520193114f78de610b7241de4cd3482fd034d99f12a70",
+      "elapsed_seconds": 31.58101126132533,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w2_l1-20261009T012443-4ef28f02",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "834bbc960c3387c6833d2493ab259d1f83f4a17bc7ee3220dc53b09e49b5f14f",
+      "elapsed_seconds": 31.666550955735147,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w2_l2-20261009T012515-4fafcba1",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "917facc940e6a8366fe92a41a1452cb0d87bd6f0367ecf3c4fe81fd685f27e48",
+      "elapsed_seconds": 36.25843556271866,
+      "error_type": null,
+      "run_id": "initial_R0_b2_w2_l3-20261009T012547-b76093b2",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "70b7df0f5a16550ce2e368232d424d3170d9b6e12d2a5714e31cf928a9c0f6a5",
+      "elapsed_seconds": 31.610804257914424,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w0_l0-20261009T012623-fcd29094",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "5ad59cbca64717de9d59693556fcfd1a3bb8b160f4b014e9f53ab0dc5bffedfa",
+      "elapsed_seconds": 31.577999925240874,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w0_l1-20261009T012655-b0d63de8",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e523c7cbd1346195ada05c80fb3e9a6713601e288234ecb8e1a0058ecac3b734",
+      "elapsed_seconds": 31.67588305287063,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w0_l2-20261009T012727-02e8ec12",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "dd02ddb78c74c48d2b33eb5041c45ee530d44d6020fcaab45986cac0c08093e0",
+      "elapsed_seconds": 34.56213549897075,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w0_l3-20261009T012759-61d8d0b1",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "38363c3e7473604b43987bcbee1d2d11626f5c9f8fbe4698b6faacca1ce64370",
+      "elapsed_seconds": 31.60860379692167,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w1_l0-20261009T012834-46e2e6c3",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "56a97dbb3bd45584951c050c2f63ead0c924b8a223caa321f7d156b5970e0956",
+      "elapsed_seconds": 31.566269933246076,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w1_l1-20261009T012906-78664c5e",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4b015df65493a035a87747ef3b27a2a0713a704ca3b5204b36c2875dd2b3cd03",
+      "elapsed_seconds": 31.63016222929582,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w1_l2-20261009T012937-2c63fdcc",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "b6961a2345b74f92cc774664bfaff7c56c2d20342f216fc541b787128edd8cf8",
+      "elapsed_seconds": 34.64583772793412,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w1_l3-20261009T013009-1cdc0764",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "29b32a6101094be87257e453adf24abe3ab7f88d54a6213c5aa251ad266bb18a",
+      "elapsed_seconds": 31.602361768949777,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w2_l0-20261009T013044-87724c24",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "54d50b064114e841687cc4238264daee033fd5fac0b7784047819261dd37810c",
+      "elapsed_seconds": 31.646361471153796,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w2_l1-20261009T013116-72110f57",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "ba98a9cbd1b65d59d72aecf447c74d310e40d0ec57dbc610ecd8ef047ae2cf01",
+      "elapsed_seconds": 31.669480636250228,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w2_l2-20261009T013148-6721f723",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4eaf65861e80689bbe7d7b6f91e5712e318467e4ba8f5a242bcd9b7e7c35cc86",
+      "elapsed_seconds": 34.59433831181377,
+      "error_type": null,
+      "run_id": "initial_R0_b4_w2_l3-20261009T013220-960d7a28",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c4c2fbf1ce21e4e85c9645b7f6f629e8ebe8ccccc3a2ed2bfe5036b53dd71dc5",
+      "elapsed_seconds": 31.593918405938894,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w0_l0-20261009T013255-700c44fd",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "ca9eb505a435638c9907dafe608f5edfc64d927834ed68b23ff7e0f006ca8611",
+      "elapsed_seconds": 31.586202993057668,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w0_l1-20261009T013327-3edeb030",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "f10c6aa8f293a9b219de83546d9f2c1345b9e9b79b7ff2e0c4b700a869bc4719",
+      "elapsed_seconds": 31.656484022270888,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w0_l2-20261009T013358-24f76c79",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "db9bf5c01edf69e94b3adbd5141cc174c6d0b0b84d48a7031ac8fab5202f7d9f",
+      "elapsed_seconds": 34.197008430957794,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w0_l3-20261009T013430-6fc59371",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "be6c337b24a43f767d492c67499de68d66ffe5e7d26be86cb489530459bad8ab",
+      "elapsed_seconds": 31.599857870023698,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w1_l0-20261009T013505-4f976c68",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "1d262c25ba5e7344f435fc9b7fa80d6f38effd11a20b0c8ab405105a29d1e940",
+      "elapsed_seconds": 31.559958506841213,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w1_l1-20261009T013537-ad4248b5",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "83ff14845cd34ecad9dc6341fb3157dce7bf0983c9bc7a749f2fdb4ee37476a3",
+      "elapsed_seconds": 31.651099844370037,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w1_l2-20261009T013608-65bf92d2",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "42c2aa79276eecde13b1bfa3ca752db0f9d94c6776aa6b0ae4f24c1a80a45188",
+      "elapsed_seconds": 32.795486197806895,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w1_l3-20261009T013640-aa8fefcd",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "18a3bdddcb7c5a8492d5fc3d64e3ba83cd8e54fce23792010202dca7b9c34b7b",
+      "elapsed_seconds": 31.60597125068307,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w2_l0-20261009T013713-c0ac0f39",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "169050351f1ee74d0eeb5a89c40f7d49fd9642d4e58a8145c9db44c2da5cf385",
+      "elapsed_seconds": 31.570632126182318,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w2_l1-20261009T013745-e19986e0",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "aed105054aba5a2c682c84c1948e9296475017cbbb9a37e921d89c72efcb4de3",
+      "elapsed_seconds": 31.61463267961517,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w2_l2-20261009T013817-356e110b",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c362dfed92b1243e0d6d493fcc62a6f7f7878ca09dba168f83fa3f0bb9cb2d21",
+      "elapsed_seconds": 34.001125923823565,
+      "error_type": null,
+      "run_id": "initial_R0_b8_w2_l3-20261009T013849-e828f1e7",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "ac9eca758b8b014a0459f7e29ee5323bca2717c48ff60a5caea5deff51b3395e",
+      "elapsed_seconds": 31.658285340759903,
+      "error_type": null,
+      "run_id": "review_C0_b1_w0_l0-20261009T030152-71afd3a8",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "6fdf6ed74398f9535e9a73b69ba2fe662f73d2b2fb2dd32a38b51c02e68785a5",
+      "elapsed_seconds": 36.192981517873704,
+      "error_type": null,
+      "run_id": "review_C0_b1_w0_l1-20261009T030223-e0347de2",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "1c10f6d66255a52c30839852e3e8ec975baf8122bba1bc96ac5ccfcc094cb168",
+      "elapsed_seconds": 35.65255680400878,
+      "error_type": null,
+      "run_id": "review_C0_b1_w0_l2-20261009T030300-d9b2d981",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "491582fc744ee1ffb19c362fb60b353da34b3922f6b5ea9d027bc70fee51687a",
+      "elapsed_seconds": 35.68511607404798,
+      "error_type": null,
+      "run_id": "review_C0_b1_w0_l3-20261009T030336-94e3c9f9",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "0835701e05065d672a0c80380584595cb70fe99251ae88e9d6fa3145ff7c5a72",
+      "elapsed_seconds": 31.64519665390253,
+      "error_type": null,
+      "run_id": "review_C0_b1_w1_l0-20261009T030412-db87d624",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "5b18eccba8f11a2727fa6a3391fdeb04ddce5915a3d73a3c9ab531a69a5fb628",
+      "elapsed_seconds": 35.59428081382066,
+      "error_type": null,
+      "run_id": "review_C0_b1_w1_l1-20261009T030444-06258a61",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "58a72e32ddc946e530bdc8874c020f8d5c0a1b09beeac91c389b2cc91f26feac",
+      "elapsed_seconds": 35.664116360247135,
+      "error_type": null,
+      "run_id": "review_C0_b1_w1_l2-20261009T030520-7e50218f",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "a42ec6826d2d898b2ae0cf50b98265fcf98a4c56beb1b7d71daa8237b5ec0571",
+      "elapsed_seconds": 35.80387151334435,
+      "error_type": null,
+      "run_id": "review_C0_b1_w1_l3-20261009T030556-9c30f14a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "757c9f3aacbfb5c713a4cb7950a8e55069f96852056c4ac4b717f2e4ab172473",
+      "elapsed_seconds": 31.65764363715425,
+      "error_type": null,
+      "run_id": "review_C0_b1_w2_l0-20261009T030632-f1502850",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "12b73967452a07f80ba90526e2240033f8746341e94f738fe1689141d5bd15fa",
+      "elapsed_seconds": 35.6075421590358,
+      "error_type": null,
+      "run_id": "review_C0_b1_w2_l1-20261009T030704-56ff166a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "d3f639b1ca6afaed8c4bacb2cf406ca8a9e1282303cf73e15807d4e9414e0c53",
+      "elapsed_seconds": 35.72168444190174,
+      "error_type": null,
+      "run_id": "review_C0_b1_w2_l2-20261009T030739-e37c5730",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "54c64d0ac76b86b669c3414a0bdfdb42e650f93d6cc8a64b240a80ca13df944e",
+      "elapsed_seconds": 35.625810713041574,
+      "error_type": null,
+      "run_id": "review_C0_b1_w2_l3-20261009T030815-396990fe",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "ae3b577852f0f6c61b573eb56a2a6b71827c56733a8447a7314d7a1f8d7b8fc8",
+      "elapsed_seconds": 31.648652992211282,
+      "error_type": null,
+      "run_id": "review_C0_b2_w0_l0-20261009T030851-63e68ee0",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "24111507f669df2164d421f0db737440a3b45ae0da730d3f97292050665a9954",
+      "elapsed_seconds": 33.00428367080167,
+      "error_type": null,
+      "run_id": "review_C0_b2_w0_l1-20261009T030923-e3d09b7f",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "29582e46b1a13acb5bdae7a728e75e6504d84eb81a11e5aa5253190daae028b0",
+      "elapsed_seconds": 34.22588475886732,
+      "error_type": null,
+      "run_id": "review_C0_b2_w0_l2-20261009T030957-4e4880d5",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e4e3ae03cba6fb452e237434f0cc31a5f1c682f7103ef0c6cc8c4f5dac29c98d",
+      "elapsed_seconds": 34.29940472589806,
+      "error_type": null,
+      "run_id": "review_C0_b2_w0_l3-20261009T031031-bdc4e147",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "25fcd508e9d34ac4fb66027c0ff8e5ce1b5edf301ec23a665b84b9919207b329",
+      "elapsed_seconds": 31.670096690766513,
+      "error_type": null,
+      "run_id": "review_C0_b2_w1_l0-20261009T031106-715a3593",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "8325bde63ba81c2c7bfec35e3cc1baf454d6b8ded6d25b5e2715ac1f87778cfc",
+      "elapsed_seconds": 32.091229806188494,
+      "error_type": null,
+      "run_id": "review_C0_b2_w1_l1-20261009T031138-503bbe75",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "08cb4db64bd0cf612f55beeae123f60f28cdd6d889ec5f9ac2623a00ec55ab80",
+      "elapsed_seconds": 34.26411705696955,
+      "error_type": null,
+      "run_id": "review_C0_b2_w1_l2-20261009T031210-c205559b",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "1693d5172190bda3561cb16d4189e24fa6f26bd34ab6d57174fbdbbf74c06e51",
+      "elapsed_seconds": 34.27654070733115,
+      "error_type": null,
+      "run_id": "review_C0_b2_w1_l3-20261009T031244-6a153b71",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "b2a688e0fea9e13f9ef32182df1e8319f8b366366733b82194fb6e2aacbf3d71",
+      "elapsed_seconds": 31.641646357253194,
+      "error_type": null,
+      "run_id": "review_C0_b2_w2_l0-20261009T031319-bbd717b3",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "3c35e80dc6db45e63ed50de64ba8b5ae85650ab71094b830eaf4c0da9acdc630",
+      "elapsed_seconds": 31.700642597861588,
+      "error_type": null,
+      "run_id": "review_C0_b2_w2_l1-20261009T031351-f6e3ac2c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "0d3a4ba70ad5829348318a8752dc489bfb0902e678194eb984066d4177400dc5",
+      "elapsed_seconds": 34.27304851310328,
+      "error_type": null,
+      "run_id": "review_C0_b2_w2_l2-20261009T031423-0461056a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "d61144cb68f61c4bf196aca1bfc652ebb3259f69cec68fd50e64ff48d1de6a51",
+      "elapsed_seconds": 34.29836331307888,
+      "error_type": null,
+      "run_id": "review_C0_b2_w2_l3-20261009T031457-0c20cc04",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "f6acf3ac20b26745c27108dae5ec8ce5c2c625f6de8b8b9e860955f9dea56aee",
+      "elapsed_seconds": 31.659279210027307,
+      "error_type": null,
+      "run_id": "review_C0_b4_w0_l0-20261009T031532-5976eb96",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "fac6a3f3b82d864f6afe86363eecfd3d96ea763d49b0a6f35aba8e7218ddaeb1",
+      "elapsed_seconds": 31.707985437940806,
+      "error_type": null,
+      "run_id": "review_C0_b4_w0_l1-20261009T031604-6f1806ff",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "d830477071b54b15bbcedaaa39d96cc543139288634567ce8bbf12502d2ee83c",
+      "elapsed_seconds": 33.82738389307633,
+      "error_type": null,
+      "run_id": "review_C0_b4_w0_l2-20261009T031636-859118f7",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "0d182872875fa0fcc9fe159fa66028eede00f8393635ec7ccce431658f68a3ee",
+      "elapsed_seconds": 33.77183151803911,
+      "error_type": null,
+      "run_id": "review_C0_b4_w0_l3-20261009T031710-8baca900",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "75172b986c5ed2ad777bb33570fb2ddbd8ed1b2a18901ab3a6680f8b77ccdb4c",
+      "elapsed_seconds": 31.673087023664266,
+      "error_type": null,
+      "run_id": "review_C0_b4_w1_l0-20261009T031744-5208ab4c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "3a2c7d094105c21accab105b958e5edd73f2326d432edf3bce06c7aac598fe3f",
+      "elapsed_seconds": 31.715961827896535,
+      "error_type": null,
+      "run_id": "review_C0_b4_w1_l1-20261009T031816-63c7d465",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "a91dfb9e7656df055c8f8ac95a8dd3e357a254c5560e09b6d5d775dfced43d34",
+      "elapsed_seconds": 33.761803132947534,
+      "error_type": null,
+      "run_id": "review_C0_b4_w1_l2-20261009T031848-29b7dbb5",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "5dab29a8c67d0d3f6f0da9434e04cf018244792c924f3c30be8d98e374baeeca",
+      "elapsed_seconds": 33.76506130443886,
+      "error_type": null,
+      "run_id": "review_C0_b4_w1_l3-20261009T031922-cfa68f62",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "d4fc9db12ac45ba6dde69f32c1b3885e350cc8acd52c1259e5cc2a4c29ee2c0c",
+      "elapsed_seconds": 31.679083958268166,
+      "error_type": null,
+      "run_id": "review_C0_b4_w2_l0-20261009T031956-b561151d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c06842b6e2b1dc9bca83032952365b537990b79983c14e42196c3d0711dc1741",
+      "elapsed_seconds": 31.723385448101908,
+      "error_type": null,
+      "run_id": "review_C0_b4_w2_l1-20261009T032028-05d9b9e8",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "66c4e57b593e97b32ff177a29fefd07de8f6de2f5eff17e22dbdafeed675e3c8",
+      "elapsed_seconds": 33.75986855523661,
+      "error_type": null,
+      "run_id": "review_C0_b4_w2_l2-20261009T032100-0b1f5576",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "ee4d50197084fee04a27e8f62fd7e6c0619f60f2f98328f42515dda8ea5f8578",
+      "elapsed_seconds": 33.79183169826865,
+      "error_type": null,
+      "run_id": "review_C0_b4_w2_l3-20261009T032134-a61cde54",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "7e457e9b38932677c7a829b325e71ddf914d5471e3cd7a366b0de2e9741335d9",
+      "elapsed_seconds": 31.683662209659815,
+      "error_type": null,
+      "run_id": "review_C0_b8_w0_l0-20261009T032208-0f228b96",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "41c50399bf7af419e730982dd0dc741466f296f647f2b96a9e09b8840604a461",
+      "elapsed_seconds": 31.7210047589615,
+      "error_type": null,
+      "run_id": "review_C0_b8_w0_l1-20261009T032240-6bc5a82c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c5a6547feb6b1411a18d2f7230fe6a4c003490a3abc433abf7b1abb5e6b6e28b",
+      "elapsed_seconds": 31.75913777668029,
+      "error_type": null,
+      "run_id": "review_C0_b8_w0_l2-20261009T032312-61df0a82",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "fc1f261adac2b4a6947eb27e11edc2c0153cc2005988bfe994ffc09675c70f48",
+      "elapsed_seconds": 33.687391535844654,
+      "error_type": null,
+      "run_id": "review_C0_b8_w0_l3-20261009T032344-1777f84e",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "dda07e6d7b1263916e2de8c559284d4a1fdb7990f9e32d0e10da823bbca989a3",
+      "elapsed_seconds": 31.69407321466133,
+      "error_type": null,
+      "run_id": "review_C0_b8_w1_l0-20261009T032418-b0ba5387",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "2c5c0e16b57e2ad6742ca7add9b6f8c7f70480c73b70346dd3125caf5b5777c6",
+      "elapsed_seconds": 31.69543982297182,
+      "error_type": null,
+      "run_id": "review_C0_b8_w1_l1-20261009T032450-6bdf61c8",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "702136a1bbfbaa8effa279b4cdebc0c4251fd53bdc60a009ae8cff25ced11004",
+      "elapsed_seconds": 31.760212135035545,
+      "error_type": null,
+      "run_id": "review_C0_b8_w1_l2-20261009T032522-bdaae8a5",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "f321d31164a1c5d707cb812a9a2025ed2f43a03160641ef26c5b879916988961",
+      "elapsed_seconds": 33.77558361925185,
+      "error_type": null,
+      "run_id": "review_C0_b8_w1_l3-20261009T032554-bd33712b",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "17af07983e10f07b74f536b4a938f7704efb422f3b72885f2841e35a6fab45e9",
+      "elapsed_seconds": 31.695226532872766,
+      "error_type": null,
+      "run_id": "review_C0_b8_w2_l0-20261009T032628-a71fef2d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e1fe3a5a35c0023d647f098a7ef8d3f3b796c410a882cd39b596b52d708d6882",
+      "elapsed_seconds": 31.750665813218802,
+      "error_type": null,
+      "run_id": "review_C0_b8_w2_l1-20261009T032700-9712e537",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "445b8cf9617399a6658fe9988415a97dcf7797249b6a0b272d915220f325c3c5",
+      "elapsed_seconds": 31.779984190594405,
+      "error_type": null,
+      "run_id": "review_C0_b8_w2_l2-20261009T032732-7471d516",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "50f4b567f62d47397d1fdf783ea8d10ab16cc4560c732379f62a94cb48d67e65",
+      "elapsed_seconds": 32.763832453172654,
+      "error_type": null,
+      "run_id": "review_C0_b8_w2_l3-20261009T032804-ebbfedfa",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "b0c37104bf01bf4611efa441196dd3ffa7627bf1050310376cb4ad142377dfed",
+      "elapsed_seconds": 31.68661528918892,
+      "error_type": null,
+      "run_id": "review_D0_b8_w0_l0-20261009T032837-263aa0ea",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "19789d553d760cdb593cfed149e8920faee9b9195945e020f3576dbcb71f284e",
+      "elapsed_seconds": 31.802393487188965,
+      "error_type": null,
+      "run_id": "review_D0_b8_w0_l1-20261009T032909-a433848d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "1f9f0103e93fb2b0f81078b2d7b93c24db10eb8b9b41c0690e806e7cb96cbe18",
+      "elapsed_seconds": 35.91518772859126,
+      "error_type": null,
+      "run_id": "review_D0_b8_w0_l2-20261009T032941-c86e218f",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "05b42724b23740fd0da704fee34f226b101e60ab950204caab42f701924a8d4a",
+      "elapsed_seconds": 35.943524304777384,
+      "error_type": null,
+      "run_id": "review_D0_b8_w0_l3-20261009T033017-ae4eb31d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "79026c1df423a3fc3c9143e89f7a9f3a996b1a9feb93b8237436f1464b573733",
+      "elapsed_seconds": 31.730474037118256,
+      "error_type": null,
+      "run_id": "review_D0_b8_w1_l0-20261009T033054-afef52ac",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "db7022f225f295750e6751cfe7bb80c7498c720171a06ba7ebe804ec20126e35",
+      "elapsed_seconds": 31.812840195838362,
+      "error_type": null,
+      "run_id": "review_D0_b8_w1_l1-20261009T033126-52c5b07c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "f9e25bbbb1bee7e4f1282ededc7509a682e2f0a19310b92fa2e3c41cc7516fe8",
+      "elapsed_seconds": 35.89916651090607,
+      "error_type": null,
+      "run_id": "review_D0_b8_w1_l2-20261009T033158-834488a4",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "f814247d96b75a9ce652993e8abbeda157afcfbff90ade1d7619b42a68a7fa1a",
+      "elapsed_seconds": 35.906527902930975,
+      "error_type": null,
+      "run_id": "review_D0_b8_w1_l3-20261009T033234-97728f39",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "23fa9776ec40533d8ae33d4b9ec0e77ba7efcc7771adbc0db842fe0c57182e95",
+      "elapsed_seconds": 31.714032913092524,
+      "error_type": null,
+      "run_id": "review_D0_b8_w2_l0-20261009T033310-091b83f7",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "58450b1007256bcf2aae7a5525562ac30fa63ce7e009347f2cb3b8b3d9f834f3",
+      "elapsed_seconds": 31.770695639308542,
+      "error_type": null,
+      "run_id": "review_D0_b8_w2_l1-20261009T033342-3389e230",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4965dc0dba1348da1665fecfd6bd09067308e77e884f398e948f6fa622d6c36a",
+      "elapsed_seconds": 35.8828581427224,
+      "error_type": null,
+      "run_id": "review_D0_b8_w2_l2-20261009T033414-1b900f8b",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "ad0217b6af33494acfe7020f38cccdbdc144d955792d82ef466b7e652f2bca86",
+      "elapsed_seconds": 35.90724238799885,
+      "error_type": null,
+      "run_id": "review_D0_b8_w2_l3-20261009T033450-c9b9b9a4",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "2237f12ee003aecc72585e4ae638c7d0efa4ec8039d1a2980cd330eabc225889",
+      "elapsed_seconds": 31.70043196575716,
+      "error_type": null,
+      "run_id": "review_F0_b1_w0_l0-20261009T023514-8d6bfac0",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "09e8bb385245ab0d47b629c224d76a45b1657bf434c1bde7f4079534699dd955",
+      "elapsed_seconds": 31.73911131033674,
+      "error_type": null,
+      "run_id": "review_F0_b1_w0_l1-20261009T023546-8a09d8a5",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4d3ce9ede54fb54914e9f010f4e490348ae4a5a6de5069b8e13ceb71592bcaad",
+      "elapsed_seconds": 35.89572618203238,
+      "error_type": null,
+      "run_id": "review_F0_b1_w0_l2-20261009T023618-ac68ea7e",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "062ad2f3e98b535ffc1d34cf9c82de0fb9a7783dfb5bec99e8192b7b8117b626",
+      "elapsed_seconds": 35.9267401159741,
+      "error_type": null,
+      "run_id": "review_F0_b1_w0_l3-20261009T023654-69d4481d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "bf0c7732bb3d5ea3393d5050d1920686d1c1e6551c8446c4decb6810f370d514",
+      "elapsed_seconds": 31.715585018042475,
+      "error_type": null,
+      "run_id": "review_F0_b1_w1_l0-20261009T023730-51d787f5",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "90693d762fb0e0ab10624b5ae8fdbbe5d5a805477c47ad839a3aa4e38680aad9",
+      "elapsed_seconds": 31.76507875788957,
+      "error_type": null,
+      "run_id": "review_F0_b1_w1_l1-20261009T023802-721b8766",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "aa552259356a3b303090837afc0e281de00979d8b1b154754d37d27b8c349d0a",
+      "elapsed_seconds": 35.912202953826636,
+      "error_type": null,
+      "run_id": "review_F0_b1_w1_l2-20261009T023834-198a088c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "47b5cddf2447b4bc920f1d1748665aeb85a037586a9925cf7567a9bcc2c7b3b7",
+      "elapsed_seconds": 35.922509234864265,
+      "error_type": null,
+      "run_id": "review_F0_b1_w1_l3-20261009T023911-116cce76",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4f7aa35b7aa4744ee833efe71597624b88770722949fb66f82643c4fcbb6af87",
+      "elapsed_seconds": 31.706273081246763,
+      "error_type": null,
+      "run_id": "review_F0_b1_w2_l0-20261009T023947-e98d09ed",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e11f99c9c54d1cd9e68dff689b15a3813e9482c91197b761dbc5d15fb064e183",
+      "elapsed_seconds": 31.788993848022074,
+      "error_type": null,
+      "run_id": "review_F0_b1_w2_l1-20261009T024019-b02084b1",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "6ed6c3ddb9f198fd7446639982342d53b112a6b8adc6997cb592075ea9324f32",
+      "elapsed_seconds": 35.93334107007831,
+      "error_type": null,
+      "run_id": "review_F0_b1_w2_l2-20261009T024051-7464e98c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "6d748902563fae2308c83d0839f9976c9871169c4fd009fdeaf498af2634f259",
+      "elapsed_seconds": 35.961374608799815,
+      "error_type": null,
+      "run_id": "review_F0_b1_w2_l3-20261009T024127-037b4492",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "edd486610f4671e23a15ac65c1dcdd17ae94d827d7f7220453e07b030455d9ec",
+      "elapsed_seconds": 31.720381795894355,
+      "error_type": null,
+      "run_id": "review_F0_b2_w0_l0-20261009T024204-9eb63681",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "454f0a14bc7b94ff33f417d02c664f2c2d762c2e606e84de9e665f8b5469b00c",
+      "elapsed_seconds": 31.7854853477329,
+      "error_type": null,
+      "run_id": "review_F0_b2_w0_l1-20261009T024236-71821339",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "cf88cbd746abdd97cc5a58c55dd344d372a20e5eb9611a5a1b4bc5a112a295a5",
+      "elapsed_seconds": 34.92614800296724,
+      "error_type": null,
+      "run_id": "review_F0_b2_w0_l2-20261009T024308-d6a52023",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "77802a2bdc722f0602f61eae8790578bb8b80f9a10f7dcade452202eb239cc0a",
+      "elapsed_seconds": 34.969373650383204,
+      "error_type": null,
+      "run_id": "review_F0_b2_w0_l3-20261009T024343-3e2f18a1",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "dd8999653169b42ddff4ab70fd984910ace4f824aacec7345d32ce6c65c7ad6c",
+      "elapsed_seconds": 31.725256622303277,
+      "error_type": null,
+      "run_id": "review_F0_b2_w1_l0-20261009T024418-14c91039",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e558578c4c154a0dba1320dc12d9955bc4b3d7e1aa62803aed7de7b13a6e3705",
+      "elapsed_seconds": 31.778539631981403,
+      "error_type": null,
+      "run_id": "review_F0_b2_w1_l1-20261009T024450-98d9b973",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "76eb2ffc7f47b978eedab5884e4972fcd211872441d895e07cd41762b0ff6810",
+      "elapsed_seconds": 34.912296439986676,
+      "error_type": null,
+      "run_id": "review_F0_b2_w1_l2-20261009T024522-b4264cbb",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "56caf73ae34b1f6a80bf7709b5e27f273714274516129331f472270918ca06d2",
+      "elapsed_seconds": 34.97148881200701,
+      "error_type": null,
+      "run_id": "review_F0_b2_w1_l3-20261009T024557-4964750e",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "0f40c223ce5cf4a1b9b13f45a7225f38bbdc3c81a9a9b9dc64fd28c3b68c6f9c",
+      "elapsed_seconds": 31.714462149888277,
+      "error_type": null,
+      "run_id": "review_F0_b2_w2_l0-20261009T024633-fcc05d04",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "2e2033217034ca84c43342b171659bb1b459834fe78ea753a5d9f44a7984ab42",
+      "elapsed_seconds": 31.783741229213774,
+      "error_type": null,
+      "run_id": "review_F0_b2_w2_l1-20261009T024705-20bb56ee",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "0970aa4d8166adec9dd63db77b731e80c1ba3e30afe5702739fdc79ccedc56ef",
+      "elapsed_seconds": 34.87492385180667,
+      "error_type": null,
+      "run_id": "review_F0_b2_w2_l2-20261009T024737-8001cdcc",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "fc2fd2b954a3c15defc523e448781de67f94456f6ba00ef41302612d77a0ab03",
+      "elapsed_seconds": 34.91713524097577,
+      "error_type": null,
+      "run_id": "review_F0_b2_w2_l3-20261009T024812-032b1085",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "6704902cb2af8a7c8d527313931594b7a4cb72bdf108feb6a43eea24a6df44ce",
+      "elapsed_seconds": 31.69754101615399,
+      "error_type": null,
+      "run_id": "review_F0_b4_w0_l0-20261009T024847-32079a44",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c3717ad55d180093f86bd26667599e9f7e77eb7c12c5b24f93cd789f1ab30575",
+      "elapsed_seconds": 31.77439779601991,
+      "error_type": null,
+      "run_id": "review_F0_b4_w0_l1-20261009T024919-c08c0993",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e161f001972641036ca318ef76adb3b96a8561942e93359367e6f3cb677257c3",
+      "elapsed_seconds": 31.816000135615468,
+      "error_type": null,
+      "run_id": "review_F0_b4_w0_l2-20261009T024951-2b24fa4b",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "576f24e9ff3d3687aab01aa5449c9c56b238c345b7495078315166cbe3e5cef1",
+      "elapsed_seconds": 34.48161969007924,
+      "error_type": null,
+      "run_id": "review_F0_b4_w0_l3-20261009T025023-50cfa34d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "5aaf603d74ad4ab02a29dc39630448f8d65e4af2314fc6f85d4989baa8ae468c",
+      "elapsed_seconds": 31.723708455916494,
+      "error_type": null,
+      "run_id": "review_F0_b4_w1_l0-20261009T025058-f9986fbb",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e4e4cfb22829bda8eaa2d8c3afc01b7171208030a2a1ee2d1baa7f02f74c26d6",
+      "elapsed_seconds": 31.76583975320682,
+      "error_type": null,
+      "run_id": "review_F0_b4_w1_l1-20261009T025130-8a5f04cb",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "64942266d96698456abbe4400baa8c1178bbebf29391ae1de6c2d5ef9c65f2ec",
+      "elapsed_seconds": 31.801619664765894,
+      "error_type": null,
+      "run_id": "review_F0_b4_w1_l2-20261009T025202-ffb1748b",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "259367f111f02a17fc29ac9fdd02626962f986130260401aa820c21625636db6",
+      "elapsed_seconds": 34.4723500078544,
+      "error_type": null,
+      "run_id": "review_F0_b4_w1_l3-20261009T025234-ed6b46c4",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "f5e197908a1fee9315c0b2dbc970942bda758f744b6d84b8e62c3b2736895991",
+      "elapsed_seconds": 31.718713431153446,
+      "error_type": null,
+      "run_id": "review_F0_b4_w2_l0-20261009T025309-574f5a2d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "b6a3678c0b4a0c68e7fcef224bb3b4ea56976dff3247b4ceb23e1e0cad635315",
+      "elapsed_seconds": 31.776568548753858,
+      "error_type": null,
+      "run_id": "review_F0_b4_w2_l1-20261009T025341-d3593ca2",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "2f24ee89425cc28e87d2c8bfc06c35404d92179e04bab811ddb97b5d9345de44",
+      "elapsed_seconds": 31.84964221669361,
+      "error_type": null,
+      "run_id": "review_F0_b4_w2_l2-20261009T025413-a5c770bd",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "cb0d7bc1e97bf138db1df009fcda383466d0d6cc4c188a84aa9db2f48b020cda",
+      "elapsed_seconds": 34.501755916979164,
+      "error_type": null,
+      "run_id": "review_F0_b4_w2_l3-20261009T025445-bbf35678",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "fc39152982319708076ab9a808ba3dfbe013c8d9b5e39115882a2368e50cc1b5",
+      "elapsed_seconds": 31.72918459912762,
+      "error_type": null,
+      "run_id": "review_F0_b8_w0_l0-20261009T025520-c0272817",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c8cf570bffec6321b393a7baf7c86ae3a1bfb00805b4fdf68af1a003ac203f54",
+      "elapsed_seconds": 31.689122477080673,
+      "error_type": null,
+      "run_id": "review_F0_b8_w0_l1-20261009T025552-0dac6e09",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "5fdf5e65e40061c20c10241bb1c5663234b286e706fd2be4717d549afef38372",
+      "elapsed_seconds": 31.811096417717636,
+      "error_type": null,
+      "run_id": "review_F0_b8_w0_l2-20261009T025624-c877bdeb",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c833782a2ad94242c61e11990ab3f6e663de898bada1db769c2f100c8b324092",
+      "elapsed_seconds": 34.04409175319597,
+      "error_type": null,
+      "run_id": "review_F0_b8_w0_l3-20261009T025656-14d72616",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "cad025a9e8e2cd6f077a497b91ee0787d361c01001b7065df1ffe909172e189a",
+      "elapsed_seconds": 31.721721962094307,
+      "error_type": null,
+      "run_id": "review_F0_b8_w1_l0-20261009T025730-70ef845a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "81082590084847ccf5e5b94fd0337126ebcaf5aeda57a27389e3f16e455ced19",
+      "elapsed_seconds": 31.766993035096675,
+      "error_type": null,
+      "run_id": "review_F0_b8_w1_l1-20261009T025802-6fc20aa8",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "38b3db80554be4feb90411bcbd66b3c27d7acdf8b09dfaa319cde84bfffa6561",
+      "elapsed_seconds": 31.816073683090508,
+      "error_type": null,
+      "run_id": "review_F0_b8_w1_l2-20261009T025834-8c8e4c25",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "07874d83f78474a5858e243745704db00008510c5d9a9f1405853a284eff4b47",
+      "elapsed_seconds": 34.02091044001281,
+      "error_type": null,
+      "run_id": "review_F0_b8_w1_l3-20261009T025906-4bd2418d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "db6683162b898f8ee58408603d48887034121372343747bfc14e1edc8ee5eaac",
+      "elapsed_seconds": 31.720482749398798,
+      "error_type": null,
+      "run_id": "review_F0_b8_w2_l0-20261009T025941-90011cfd",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "12f012869c22ad87412170928c895bf34aa79c26245b20f186470de0393d573e",
+      "elapsed_seconds": 31.755956548731774,
+      "error_type": null,
+      "run_id": "review_F0_b8_w2_l1-20261009T030013-150b978c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "1d7ac95e80fba09528655e74117beeb097b25eb1c88eb3d5dd294367460190da",
+      "elapsed_seconds": 31.81595904007554,
+      "error_type": null,
+      "run_id": "review_F0_b8_w2_l2-20261009T030045-23ac0380",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "37e821aeb58dfad7d330fdda2a2582f9391ed37e3fc2cb4ebf3194b444802159",
+      "elapsed_seconds": 34.28286244533956,
+      "error_type": null,
+      "run_id": "review_F0_b8_w2_l3-20261009T030117-af691fbe",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "42dfedc2093237d93b9ecaf9ce7b38e41098ce61b3e4e969cb1006e81d851e80",
+      "elapsed_seconds": 36.30527608608827,
+      "error_type": null,
+      "run_id": "review_R0_b1_w0_l0-20261009T020649-4a238054",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "7771c30c8ef5e742df38e961a30b6a70dccb5f2d4e4d9018c9d1401eb0714fe6",
+      "elapsed_seconds": 40.19290128722787,
+      "error_type": null,
+      "run_id": "review_R0_b1_w0_l1-20261009T020726-8c9a9ccb",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "507552d06d56d72e4b290865f45b9fe44bc1b07c9f1f3a4ac1cc420978ea0649",
+      "elapsed_seconds": 40.316436550114304,
+      "error_type": null,
+      "run_id": "review_R0_b1_w0_l2-20261009T020806-c65135a8",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "8917e790cc3f77834afe122f689a140ed6d495684e5591e30c01adad9af335ee",
+      "elapsed_seconds": 40.37574651231989,
+      "error_type": null,
+      "run_id": "review_R0_b1_w0_l3-20261009T020847-f54d85b8",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "1cca21d68a2d4d6ce33ec6f4fe429caf69999ed60bd24f8dd3b3814ec04db2bb",
+      "elapsed_seconds": 36.31903709191829,
+      "error_type": null,
+      "run_id": "review_R0_b1_w1_l0-20261009T020927-35e809a8",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "859136c5f885c1496a948fffe09583aa807cf322a5d9bc1013914293fa910fbf",
+      "elapsed_seconds": 40.10677869012579,
+      "error_type": null,
+      "run_id": "review_R0_b1_w1_l1-20261009T021004-da6507c6",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "7b6f9356f2358b7f629f8aa78a987b6b5c8b7353c6c0d23ae911845534e0ec96",
+      "elapsed_seconds": 40.24683678895235,
+      "error_type": null,
+      "run_id": "review_R0_b1_w1_l2-20261009T021044-6534869d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c44066e6751f9e692f744718c5c1640fd945149594d72de09028b0090dc260bd",
+      "elapsed_seconds": 40.412678088992834,
+      "error_type": null,
+      "run_id": "review_R0_b1_w1_l3-20261009T021125-b42ec6be",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "dc2d7455e60a4339e60d442c50f4a019986375b7a9d7bc7a28579b6bae04f883",
+      "elapsed_seconds": 36.555894962046295,
+      "error_type": null,
+      "run_id": "review_R0_b1_w2_l0-20261009T021206-e4301b5f",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "226d2cc72b44c0f913c01246c616b85156299dbb9acc59342f454109b05f35f3",
+      "elapsed_seconds": 40.27686353912577,
+      "error_type": null,
+      "run_id": "review_R0_b1_w2_l1-20261009T021242-b29c308f",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "1d5468d078bc48525d919ca2895cc35ed275d46185df5eaa64424c15ac4fc263",
+      "elapsed_seconds": 40.286343802232295,
+      "error_type": null,
+      "run_id": "review_R0_b1_w2_l2-20261009T021323-49b64209",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "ff466a368e55c9799b59ffbd18c2963fcb63becfda64c43810295c5884ca1702",
+      "elapsed_seconds": 40.197152484208345,
+      "error_type": null,
+      "run_id": "review_R0_b1_w2_l3-20261009T021403-870380e1",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "264ff32e0c6adf7047ec7bf942ff511c8301ec488c592d3fc87d446041658149",
+      "elapsed_seconds": 31.66011860128492,
+      "error_type": null,
+      "run_id": "review_R0_b2_w0_l0-20261009T021444-be3a8a7d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4c587bc6e8e3b3b8cc87085d8e88149820d82d58d672c616b43b240c740e5206",
+      "elapsed_seconds": 36.24693166883662,
+      "error_type": null,
+      "run_id": "review_R0_b2_w0_l1-20261009T021516-f848f0a8",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "56effdb0c51da123486d4e7d48f2f598dfaea7a33a3a623b1b799052c2822571",
+      "elapsed_seconds": 36.37215899396688,
+      "error_type": null,
+      "run_id": "review_R0_b2_w0_l2-20261009T021552-671af641",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "463c3e6108c4d9282ab220a3be30678e32672b6ce9dcb0ef8bac54574e2233bf",
+      "elapsed_seconds": 36.181894938927144,
+      "error_type": null,
+      "run_id": "review_R0_b2_w0_l3-20261009T021629-0d8e56e0",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "6a5cbfc69cfc3e524ec3d1e8d2e90a8990ca7ff50a5c1027db5752678375a256",
+      "elapsed_seconds": 31.692059671971947,
+      "error_type": null,
+      "run_id": "review_R0_b2_w1_l0-20261009T021705-93d7b2eb",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "feabbbd1f4bd38ed3dacbfbca240584236b35adeea0bd6dd79b9ba02033a7c97",
+      "elapsed_seconds": 36.10014241235331,
+      "error_type": null,
+      "run_id": "review_R0_b2_w1_l1-20261009T021737-b1bf18f5",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "a33c449a7e1758034f2841875b9a7dd90403f3f8d5c7551c71a358661c92ff2a",
+      "elapsed_seconds": 36.21404145238921,
+      "error_type": null,
+      "run_id": "review_R0_b2_w1_l2-20261009T021814-d96b28c1",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "f136470c77879decc5dac81e1e2bd8291e2ddfd2ec01745fe7bf1446bde99208",
+      "elapsed_seconds": 36.14024490816519,
+      "error_type": null,
+      "run_id": "review_R0_b2_w1_l3-20261009T021850-a82d3b02",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "604b3f73523a675852699cf8dbbe19b94ec90c2b33fdb1004c98c63ce1c102f9",
+      "elapsed_seconds": 31.62689022999257,
+      "error_type": null,
+      "run_id": "review_R0_b2_w2_l0-20261009T021927-ee5d5679",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e87bac7333bc9e2e5753f66299c0154cecb8043a460cceee0a24c4f2c8ae9644",
+      "elapsed_seconds": 36.178176421672106,
+      "error_type": null,
+      "run_id": "review_R0_b2_w2_l1-20261009T021958-9ed92ccd",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "b109207dee30902a63def87e99fdce6af3292323cfa2e0b184bb630bed400a70",
+      "elapsed_seconds": 36.2323429309763,
+      "error_type": null,
+      "run_id": "review_R0_b2_w2_l2-20261009T022035-a559d64f",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "bd4227f3e3838b51053d4fb67086097559a753176119c15d22b93b6ef6e63653",
+      "elapsed_seconds": 36.214337413199246,
+      "error_type": null,
+      "run_id": "review_R0_b2_w2_l3-20261009T022111-3af5df3b",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "77dcc95fd90e4470cb210c1e29b500f6979148c606352bd0ca39c2707e08e512",
+      "elapsed_seconds": 31.649365963879973,
+      "error_type": null,
+      "run_id": "review_R0_b4_w0_l0-20261009T022148-c815ced2",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "e749e63304fac7a0d58df2ffc7f23162520008150472605caa9e4a2a8826b822",
+      "elapsed_seconds": 33.07435446418822,
+      "error_type": null,
+      "run_id": "review_R0_b4_w0_l1-20261009T022220-36f0361a",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "2f266c8d554a43b9e5082793ef5db0aa6a50f250bcf7dac5dac69c693c7c4ad2",
+      "elapsed_seconds": 34.486632850021124,
+      "error_type": null,
+      "run_id": "review_R0_b4_w0_l2-20261009T022253-9eb7ba92",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "d2b27af774866b1fb4dd8d153dc1b847e54fa97dd27348e12b4c81f25331e865",
+      "elapsed_seconds": 34.8380676433444,
+      "error_type": null,
+      "run_id": "review_R0_b4_w0_l3-20261009T022328-d4837523",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "7d6b3307816d893756987e91b5dd097f259fbd013f40f5aad577b0850b9ec9de",
+      "elapsed_seconds": 31.655802021268755,
+      "error_type": null,
+      "run_id": "review_R0_b4_w1_l0-20261009T022403-60ed3cd0",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "b7d75164412f3cecdf43780acc5aa80542311dcf2ef915a351fb7fc4b51244ce",
+      "elapsed_seconds": 34.497195810079575,
+      "error_type": null,
+      "run_id": "review_R0_b4_w1_l1-20261009T022435-cf78679b",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "d94e7a1f0c8871c1ae221ff32ca2e02a3eb577c54159c4216282c1d5f082ec3f",
+      "elapsed_seconds": 34.490004925988615,
+      "error_type": null,
+      "run_id": "review_R0_b4_w1_l2-20261009T022510-71612310",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "bc8a8b5d8defbab3417cbe9b0822c25f1cb18c036dd8d1287de42f4622fe0296",
+      "elapsed_seconds": 34.63201528182253,
+      "error_type": null,
+      "run_id": "review_R0_b4_w1_l3-20261009T022545-376f78ef",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "f0ad9ba624ef65a82bb530953624e07c25fc090f3077491e0fc51ba0f3117ee4",
+      "elapsed_seconds": 31.65068220999092,
+      "error_type": null,
+      "run_id": "review_R0_b4_w2_l0-20261009T022620-03a7459c",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "afba0a176794cd468d7c124cdccd4b7c86c326c87ec4ec3bf2723a2756a6b732",
+      "elapsed_seconds": 32.56946919299662,
+      "error_type": null,
+      "run_id": "review_R0_b4_w2_l1-20261009T022652-68d9955b",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "7b6d1673db9bdc85f93e182399284ec4a83595e17b589dd2340e6265059c3b7e",
+      "elapsed_seconds": 34.56486644037068,
+      "error_type": null,
+      "run_id": "review_R0_b4_w2_l2-20261009T022724-cad39349",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4a98d4fb6728f6090d0dcf292ce23efe8c3f76f39ae339d4ec090766a1de9e04",
+      "elapsed_seconds": 34.5482015167363,
+      "error_type": null,
+      "run_id": "review_R0_b4_w2_l3-20261009T022759-ee1cfb85",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "09f64e7850acdf970bad5002f807d3d3cf7b52b3a336c182bda92269dd3a7e47",
+      "elapsed_seconds": 31.673194490373135,
+      "error_type": null,
+      "run_id": "review_R0_b8_w0_l0-20261009T022834-9dfe33fc",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "04444c3190c910895870c1ed030b1ef04af144f0a06845c7a45ad5689041c1b5",
+      "elapsed_seconds": 31.73253412405029,
+      "error_type": null,
+      "run_id": "review_R0_b8_w0_l1-20261009T022906-5c35c0b7",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "c68325adf24e32609dc89a7adf054e69509a08dca210218c4ae2ac92f1ea27e7",
+      "elapsed_seconds": 34.33316980116069,
+      "error_type": null,
+      "run_id": "review_R0_b8_w0_l2-20261009T022938-3a34a25d",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "4795bcac85f1aa7875a9afc2a174573fc50a99c1c4ba72ac445470549b14f380",
+      "elapsed_seconds": 34.31089100893587,
+      "error_type": null,
+      "run_id": "review_R0_b8_w0_l3-20261009T023013-80530fa3",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "f3b69451d16c88a735c95038de3ede308d8ad6a6ad330080b8f16ecbc1d62dd5",
+      "elapsed_seconds": 31.602282440289855,
+      "error_type": null,
+      "run_id": "review_R0_b8_w1_l0-20261009T023047-d31ce66e",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "23328f9d9a7a19936c4ae134053e9c11457828b19455817a74e003a8b035be16",
+      "elapsed_seconds": 31.718482858967036,
+      "error_type": null,
+      "run_id": "review_R0_b8_w1_l1-20261009T023119-ed1d9179",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "80edf3d274d0eae447793fd70e0633419a4698f273df270f542094ce1d9433cc",
+      "elapsed_seconds": 34.53558132890612,
+      "error_type": null,
+      "run_id": "review_R0_b8_w1_l2-20261009T023151-fc4b44ef",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "770562b8c5c12fe3c5a5ac8e31c55068d80a2e7cacd90f110754b67766d3bd94",
+      "elapsed_seconds": 34.394755229353905,
+      "error_type": null,
+      "run_id": "review_R0_b8_w1_l3-20261009T023226-c39c2550",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "f427b675833bafe6f4a8710f8d344a14539de9538866c71494d1fd328e9d5b43",
+      "elapsed_seconds": 31.671341311186552,
+      "error_type": null,
+      "run_id": "review_R0_b8_w2_l0-20261009T023301-bb208b23",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "5f008b8e25eed9e74fdebe36113195670fb5170cebe37d9b919e18a97868754e",
+      "elapsed_seconds": 31.700236165896058,
+      "error_type": null,
+      "run_id": "review_R0_b8_w2_l1-20261009T023333-df7720c1",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "3980597e6cffa26b0402b9de90747550fe688975d504226a9799a9e470f83c12",
+      "elapsed_seconds": 34.30316378409043,
+      "error_type": null,
+      "run_id": "review_R0_b8_w2_l2-20261009T023405-2012ce93",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    },
+    {
+      "config_sha256": "ef2af06f1d40bc77fd5ff031600f9e23d01a4eb871af5b8e85bf0dc194a322da",
+      "elapsed_seconds": 34.330631827004254,
+      "error_type": null,
+      "run_id": "review_R0_b8_w2_l3-20261009T023439-72186995",
+      "selected_for_frozen_calibration": true,
+      "status": "completed"
+    }
+  ],
+  "compile_attempts": [
+    {
+      "elapsed_seconds": 151.940175937023,
+      "file": "compile_attempt_compile-20261009T010836-e9daaacf.json",
+      "precision": "fp32",
+      "status": "passed"
+    }
+  ],
+  "protocol_version": 2
+}

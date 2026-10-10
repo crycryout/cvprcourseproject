@@ -1,0 +1,207 @@
+{
+  "automatic_cudagraphs": false,
+  "backend": "inductor",
+  "calibration_AP_change_pp": 9.163946543822021e-07,
+  "calibration_max_original_image_side": 640,
+  "calibration_quality_buckets": [
+    {
+      "AP": 36.083574948842625,
+      "AP_change_pp": 9.163946543822021e-07,
+      "bucket": 1
+    },
+    {
+      "AP": 36.083568912276064,
+      "AP_change_pp": -5.120171906014548e-06,
+      "bucket": 2
+    },
+    {
+      "AP": 36.08357684927042,
+      "AP_change_pp": 2.8168224517344242e-06,
+      "bucket": 4
+    },
+    {
+      "AP": 36.083570474344285,
+      "AP_change_pp": -3.5581036854637205e-06,
+      "bucket": 8
+    }
+  ],
+  "calibration_raw_outputs_verified": true,
+  "compatibility_cap_seconds": 7200,
+  "elapsed_seconds": 151.940175937023,
+  "ended_utc": "2026-10-09T01:11:08.229621+00:00",
+  "fp32_corner_displacement_pixel_bound": 0.5,
+  "fp32_semantic_logit_abs_bound": 0.01,
+  "hardware": {
+    "compute_capability": [
+      9,
+      0
+    ],
+    "cuda_build": "13.0",
+    "cudnn_version": 92400,
+    "device_uuid_sha256": "d1a32d6aace58dc1ff9ac39d49c974e147e18f1a65eb3ffb0be106ac03f868b1",
+    "multiprocessors": 114,
+    "name": "NVIDIA H800 PCIe",
+    "torch": "2.14.0+cu130",
+    "total_memory_bytes": 85017493504
+  },
+  "initialization": {
+    "automatic_cudagraphs": false,
+    "capture": "none",
+    "compile_mode": "default",
+    "initialization_seconds": 15.117844140157104
+  },
+  "max_abs_logits_error": 0.0011630058288574219,
+  "mode": "default",
+  "precision": "fp32",
+  "protocol_version": 2,
+  "raw_boxes_atol": 0.0005208333333333333,
+  "raw_logits_atol": 0.01,
+  "raw_starting_tolerance_failures": [
+    {
+      "bucket": 1,
+      "initial_tolerance_error": "Tensor-likes are not close!\n\nMismatched elements: 36 / 9200 (0.4%)\nGreatest absolute difference: 0.0011630058288574219 at index (0, 86, 32) (up to 1e-05 allowed)\nGreatest relative difference: 0.006567278411239386 at index (0, 86, 31) (up to 0.0001 allowed)",
+      "valid_count": 1
+    },
+    {
+      "bucket": 1,
+      "initial_tolerance_error": "Tensor-likes are not close!\n\nMismatched elements: 36 / 9200 (0.4%)\nGreatest absolute difference: 0.0011630058288574219 at index (0, 86, 32) (up to 1e-05 allowed)\nGreatest relative difference: 0.006567278411239386 at index (0, 86, 31) (up to 0.0001 allowed)",
+      "valid_count": 1
+    },
+    {
+      "bucket": 2,
+      "initial_tolerance_error": "Tensor-likes are not close!\n\nMismatched elements: 20 / 9200 (0.2%)\nGreatest absolute difference: 0.000725865364074707 at index (0, 2, 31) (up to 1e-05 allowed)\nGreatest relative difference: 0.002846467075869441 at index (0, 2, 48) (up to 0.0001 allowed)",
+      "valid_count": 1
+    },
+    {
+      "bucket": 2,
+      "initial_tolerance_error": "Tensor-likes are not close!\n\nMismatched elements: 21 / 18400 (0.1%)\nGreatest absolute difference: 0.000725865364074707 at index (0, 2, 31) (up to 1e-05 allowed)\nGreatest relative difference: 0.002846467075869441 at index (0, 2, 48) (up to 0.0001 allowed)",
+      "valid_count": 2
+    },
+    {
+      "bucket": 4,
+      "initial_tolerance_error": "Tensor-likes are not close!\n\nMismatched elements: 38 / 9200 (0.4%)\nGreatest absolute difference: 0.0009565353393554688 at index (0, 86, 32) (up to 1e-05 allowed)\nGreatest relative difference: 0.005934022832661867 at index (0, 20, 8) (up to 0.0001 allowed)",
+      "valid_count": 1
+    },
+    {
+      "bucket": 4,
+      "initial_tolerance_error": "Tensor-likes are not close!\n\nMismatched elements: 51 / 36800 (0.1%)\nGreatest absolute difference: 0.0009565353393554688 at index (0, 86, 32) (up to 1e-05 allowed)\nGreatest relative difference: 0.005934022832661867 at index (0, 20, 8) (up to 0.0001 allowed)",
+      "valid_count": 4
+    },
+    {
+      "bucket": 8,
+      "initial_tolerance_error": "Tensor-likes are not close!\n\nMismatched elements: 29 / 9200 (0.3%)\nGreatest absolute difference: 0.0007688999176025391 at index (0, 86, 32) (up to 1e-05 allowed)\nGreatest relative difference: 0.00572955934330821 at index (0, 20, 8) (up to 0.0001 allowed)",
+      "valid_count": 1
+    },
+    {
+      "bucket": 8,
+      "initial_tolerance_error": "Tensor-likes are not close!\n\nMismatched elements: 60 / 73600 (0.1%)\nGreatest absolute difference: 0.0007688999176025391 at index (0, 86, 32) (up to 1e-05 allowed)\nGreatest relative difference: 0.009609771892428398 at index (4, 19, 32) (up to 0.0001 allowed)",
+      "valid_count": 8
+    }
+  ],
+  "run_id": "compile-20261009T010836-e9daaacf",
+  "source": {
+    "dirty_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "git_sha": "46ee2cf14e14fbc197a94cf2de2f20443563cc67",
+    "packages": {
+      "numpy": "1.26.4",
+      "pillow": "10.4.0",
+      "pycocotools": "2.0.8",
+      "torch": "2.14.0",
+      "torchvision": null,
+      "transformers": "4.46.3"
+    },
+    "source_files_sha256": {
+      "src/cvpr_project/__init__.py": "f0ae05b12972ddfb51158e213eeda09473f17a98b5883f698cd08f0870bfa56a",
+      "src/cvpr_project/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "src/cvpr_project/analysis.py": "7a052963dcd8f8c007266a678ad3f74966d49394cb7c160aded4339a6ef79aa1",
+      "src/cvpr_project/benchmark.py": "eb2395135a8afdafbd93b148e1390ccecae57c05d9c55f5f44baed4a3d83494b",
+      "src/cvpr_project/buffer_pool.py": "7c32f84d463ff6387e06dae34309af4d3a0ea15a9e66afbf5e2204354a77894f",
+      "src/cvpr_project/calibration.py": "5c19912fa2658cf7444fe0a8f4dcc16c0f538b425af1d7b55916d5f19e78928c",
+      "src/cvpr_project/cli.py": "09da8a908fdbb89836d5d9677616e95acd2bf16ef3fbc006ae175fbaa7a85bc9",
+      "src/cvpr_project/data.py": "eb301e58b74fb5303074d5481753ac61c559750732bc97298b84fc4cc8e5ce08",
+      "src/cvpr_project/executor.py": "02c13bfe974c74633a139bfd816ffeb951418e84b26356ce8c8625e9b607c8b6",
+      "src/cvpr_project/graph_pool.py": "2cf2b843b845b2a9238d9faceb4e41bfa53a89e83d704156f6cea855cf24a5c0",
+      "src/cvpr_project/hardware.py": "38e47084c33e116053400f8c80c7cabb342f99e4206d863684745f4f4e3c51df",
+      "src/cvpr_project/intervals.py": "3c9ee1a3fbd1baf18412b5d60c1e72c15b690860a094d964595c42dbafeb16ed",
+      "src/cvpr_project/matrix.py": "d9a86be7662efd490b3c6f7f2981fe0a0215f779bb8ed6b91644ab12f237565d",
+      "src/cvpr_project/metrics.py": "a4b775547bc1f5dbc4776edae1ed04990e4be82c32a888a15ec529a20829559e",
+      "src/cvpr_project/model.py": "594eef251e32a7f821e1d7c2674b07007a9b9a8d97a912c5449bb47226c2e740",
+      "src/cvpr_project/profile.py": "217b186ff47663d94f0e57a5ef6d7d28cd8af70ea7f311ceb8678f7fa06780cd",
+      "src/cvpr_project/quality.py": "28d23c14d3ca2b8ebfa8a4ae73374b083c4904c7d65015a06529a7c894d0e371",
+      "src/cvpr_project/report.py": "bc92b9b27522ba1bad44a5afb710e2d460f666f053d8e36de9e096141a619f54",
+      "src/cvpr_project/runs.py": "289a615de705f51645914831f43546fe021e66071e123ea2ce0c24ef9e2ef1a2",
+      "src/cvpr_project/scheduler.py": "0e0133d8fb5eeca37a26107f7c7450864205b21e86b80df8f9ca9dd09eea1951",
+      "src/cvpr_project/serve.py": "218cdb046ce72e25c6102c3dc9494ea8f4a8db0f92720d5aa40cd391a463458e",
+      "src/cvpr_project/trace.py": "3d4cacf916579c6cf86fded5f8a0128a18cec3e2f94195c831cb3ccc85e60e2f"
+    }
+  },
+  "started_utc": "2026-10-09T01:08:36.289578+00:00",
+  "status": "passed",
+  "stress": {
+    "allocated_growth_after_initial_100_requests_bytes": 0,
+    "allocated_memory_after": 735122432,
+    "allocated_memory_before": 735122432,
+    "atol": 0.01,
+    "boxes_atol": 0.0005208333333333333,
+    "delayed_cpu_consumption": true,
+    "every_bucket": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "max_abs_boxes_error": 0.00035113096237182617,
+    "max_abs_logits_error": 0.0032308101654052734,
+    "memory_samples": [
+      {
+        "allocated_bytes": 735122432,
+        "requests": 101
+      },
+      {
+        "allocated_bytes": 735122432,
+        "requests": 202
+      },
+      {
+        "allocated_bytes": 735122432,
+        "requests": 302
+      },
+      {
+        "allocated_bytes": 735122432,
+        "requests": 400
+      },
+      {
+        "allocated_bytes": 735122432,
+        "requests": 503
+      },
+      {
+        "allocated_bytes": 735122432,
+        "requests": 603
+      },
+      {
+        "allocated_bytes": 735122432,
+        "requests": 700
+      },
+      {
+        "allocated_bytes": 735122432,
+        "requests": 802
+      },
+      {
+        "allocated_bytes": 735122432,
+        "requests": 900
+      },
+      {
+        "allocated_bytes": 735122432,
+        "requests": 1000
+      }
+    ],
+    "memory_stable_after_warmup": true,
+    "partial_batches": true,
+    "protocol_version": 2,
+    "requests_compared": 1000,
+    "rtol": 0,
+    "same_precision": "fp32",
+    "separate_slot_reverse_boxes_verified": true,
+    "separate_slot_reverse_order": true,
+    "status": "passed"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "examples": [
+    {
+      "author": "Not supplied by COCO metadata; original photo page retained for attribution",
+      "coco_license_id": 1,
+      "coco_url": "http://images.cocodataset.org/val2017/000000350679.jpg",
+      "evaluation_threshold": 0,
+      "image_id": 350679,
+      "license": {
+        "id": 1,
+        "name": "Attribution-NonCommercial-ShareAlike License",
+        "url": "http://creativecommons.org/licenses/by-nc-sa/2.0/"
+      },
+      "modification": "Overlaid pretrained DETR category, confidence and bounding boxes",
+      "source": "http://farm9.staticflickr.com/8330/8106346966_da0b03aed0_z.jpg",
+      "source_photo_page": "https://www.flickr.com/photo.gne?id=8106346966",
+      "visualization_threshold": 0.7
+    },
+    {
+      "author": "Not supplied by COCO metadata; original photo page retained for attribution",
+      "coco_license_id": 2,
+      "coco_url": "http://images.cocodataset.org/val2017/000000328430.jpg",
+      "evaluation_threshold": 0,
+      "image_id": 328430,
+      "license": {
+        "id": 2,
+        "name": "Attribution-NonCommercial License",
+        "url": "http://creativecommons.org/licenses/by-nc/2.0/"
+      },
+      "modification": "Overlaid pretrained DETR category, confidence and bounding boxes",
+      "source": "http://farm3.staticflickr.com/2412/3588308808_4642ce68eb_z.jpg",
+      "source_photo_page": "https://www.flickr.com/photo.gne?id=3588308808",
+      "visualization_threshold": 0.7
+    },
+    {
+      "author": "Not supplied by COCO metadata; original photo page retained for attribution",
+      "coco_license_id": 1,
+      "coco_url": "http://images.cocodataset.org/val2017/000000062353.jpg",
+      "evaluation_threshold": 0,
+      "image_id": 62353,
+      "license": {
+        "id": 1,
+        "name": "Attribution-NonCommercial-ShareAlike License",
+        "url": "http://creativecommons.org/licenses/by-nc-sa/2.0/"
+      },
+      "modification": "Overlaid pretrained DETR category, confidence and bounding boxes",
+      "source": "http://farm5.staticflickr.com/4072/4661821477_88c710afdd_z.jpg",
+      "source_photo_page": "https://www.flickr.com/photo.gne?id=4661821477",
+      "visualization_threshold": 0.7
+    }
+  ],
+  "protocol_version": 2
+}
