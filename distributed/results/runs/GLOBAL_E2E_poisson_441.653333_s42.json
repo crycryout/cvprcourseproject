@@ -1,0 +1,45 @@
+{
+  "arrival_mode": "independent_process_nonblocking_atomic_pipe",
+  "arrival_type": "poisson",
+  "completed": 3546,
+  "completed_batches": 3546,
+  "completion_ratio": 0.2668171557562077,
+  "elapsed_s": 39.345472758999676,
+  "freeze_sha256": "9b55b5e12c731b20682cc2d80fdbe66d35d3052dccbd2e90517d15c5809c42c0",
+  "generator_lag_p99_ms": 0.1168837325610639,
+  "goodput_rps": 0.0,
+  "image_subset_sha256": "c55f2144cd383bd0a1be03b019f1909bdca36303eefb1fceb36d4bda6d1dff3c",
+  "ingress_pickup_lag_p99_ms": 1.4703431019734126,
+  "jpeg_bytes_sent": 572216568,
+  "latency_p50_ms": 4292.399065736392,
+  "latency_p95_ms": 4579.896859901285,
+  "latency_p99_ms": 4625.423491987143,
+  "loadgen_lag_limit_ms": 5.353510260611074,
+  "mean_batch_occupancy": 1.0,
+  "measurement_s": 30,
+  "offered": 13290,
+  "offered_rate": 441.65333333333336,
+  "on_time": 0,
+  "policy": "GLOBAL_E2E",
+  "protocol_version": 3,
+  "request_events_sha256": "a8f5d53313e2d75c0eb44491a6cb0b3621caa2efa4677e99f4a50a5ca6e83627",
+  "routed_counts": [
+    1757,
+    2888
+  ],
+  "seed": 42,
+  "slo_success": 0.0,
+  "status": "completed",
+  "status_counts": {
+    "completed": 3546,
+    "rejected": 9744
+  },
+  "steady_window_completions_rps": 118.2,
+  "trace_sha256": "17026f3c134b2ae0bb036ce5820f907176deeb55f850ec7d60d5193783df4a15",
+  "valid_loadgen": true,
+  "warmup_s": 5,
+  "worker_completed": {
+    "0": 1337,
+    "1": 2209
+  }
+}

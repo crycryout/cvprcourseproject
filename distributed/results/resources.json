@@ -1,0 +1,65 @@
+{
+  "extension_cap_gpu_hours": 16,
+  "historical_cvpr_gpu_hours": 12.47309,
+  "leases": [
+    {
+      "aggregate_gpu_hours": 0.0031162283155653212,
+      "lease_id": "20261113T070046Z",
+      "started_unix_s": 1794553246.3091865,
+      "stop_reason": "project process exited",
+      "stopped_unix_s": 1794553251.9215436
+    },
+    {
+      "aggregate_gpu_hours": 0.1335918617910809,
+      "lease_id": "20261113T070147Z",
+      "started_unix_s": 1794553307.701732,
+      "stop_reason": "requested project cleanup",
+      "stopped_unix_s": 1794553548.1703427
+    },
+    {
+      "aggregate_gpu_hours": 0.7664431714349322,
+      "lease_id": "20261113T070548Z",
+      "started_unix_s": 1794553548.7608376,
+      "stop_reason": "requested project cleanup",
+      "stopped_unix_s": 1794554928.3616564
+    },
+    {
+      "aggregate_gpu_hours": 0.0009383432070414225,
+      "lease_id": "20261113T072849Z",
+      "started_unix_s": 1794554929.0833836,
+      "stop_reason": "GPU isolation monitor failed: KeyError",
+      "stopped_unix_s": 1794554930.775647
+    },
+    {
+      "aggregate_gpu_hours": 0.0005624890327453613,
+      "lease_id": "20261113T073105Z",
+      "started_unix_s": 1794555065.4064794,
+      "stop_reason": "startup failure",
+      "stopped_unix_s": 1794555066.4221904
+    },
+    {
+      "aggregate_gpu_hours": 1.8421390110254288,
+      "lease_id": "20261113T073329Z",
+      "started_unix_s": 1794555209.9516158,
+      "stop_reason": "requested project cleanup",
+      "stopped_unix_s": 1794558525.8051243
+    },
+    {
+      "aggregate_gpu_hours": 2.601443018449677,
+      "lease_id": "20261113T084744Z",
+      "started_unix_s": 1794559664.168,
+      "stop_reason": "requested project cleanup",
+      "stopped_unix_s": 1794564346.768512
+    },
+    {
+      "aggregate_gpu_hours": 1.7384143996900983,
+      "lease_id": "20261113T101207Z",
+      "started_unix_s": 1794564727.1507323,
+      "stop_reason": "requested project cleanup",
+      "stopped_unix_s": 1794567856.2999415
+    }
+  ],
+  "new_aggregate_gpu_hours": 7.08664852294657,
+  "protocol_version": 3,
+  "scope": "Both worker lifetimes including idle time, capture, failed attempts and shutdown"
+}

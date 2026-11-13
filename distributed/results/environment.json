@@ -1,0 +1,37 @@
+{
+  "H800_worker": {
+    "cpu": {
+      "cpu cores": "24",
+      "model name": "Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz",
+      "siblings": "48"
+    },
+    "kernel": "5.15.0-131-generic",
+    "logical_cpus": 96,
+    "machine": "x86_64",
+    "memory": {
+      "MemTotal": "263538276 kB"
+    },
+    "nvidia_driver_versions": [
+      "580.178.04"
+    ],
+    "python": "3.10.12"
+  },
+  "RTX5090_worker": {
+    "cpu": {
+      "cpu cores": "20",
+      "model name": "Intel(R) Core(TM) Ultra 7 265K",
+      "siblings": "20"
+    },
+    "kernel": "7.0.0-42-generic",
+    "logical_cpus": 20,
+    "machine": "x86_64",
+    "memory": {
+      "MemTotal": "65273220 kB"
+    },
+    "nvidia_driver_versions": [
+      "595.58.03"
+    ],
+    "python": "3.10.21"
+  },
+  "protocol_version": 3
+}

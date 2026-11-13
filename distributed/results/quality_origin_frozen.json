@@ -1,0 +1,293 @@
+{
+  "arrival_types": [
+    "poisson",
+    "burst"
+  ],
+  "buckets": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "calibration_subset_sha256": "544a50ae9dcb7e8d760c6362f55a33a0d21365e3fe1929c31b5bb9731e7865d0",
+  "created_unix_s": 1794556803.942674,
+  "deadlines_s": [
+    0.0895568658976117,
+    0.1791137317952234,
+    0.3582274635904468
+  ],
+  "drain_s": 30,
+  "final_recheck_node_reference_rps": [
+    149.73333333333332,
+    193.73333333333332
+  ],
+  "freeze_sha256": "7aa056c109b2b94b8cdd818221d28b6f5fbadbda9a16871ba23a2afbcc1adc50",
+  "global_wait_ms": 5,
+  "lambda_ref_rps": 343.46666666666664,
+  "lambda_ref_scope": "WRR saturated steady-window completions before once-only final-rate local recheck",
+  "local_settings": [
+    {
+      "max_batch": 2,
+      "wait_ms": 0
+    },
+    {
+      "max_batch": 8,
+      "wait_ms": 2
+    }
+  ],
+  "max_outstanding_batches": 2,
+  "max_pending": 512,
+  "measurement_s": 30,
+  "model_revision": "70120ba84d68ca1211e007c4fb61d0cd5424be54",
+  "policies": [
+    "RR",
+    "WRR",
+    "SECT",
+    "GLOBAL_GPU",
+    "GLOBAL_E2E"
+  ],
+  "profiles": [
+    {
+      "e2e_s": {
+        "1": 0.04477843294880585,
+        "2": 0.05756238135509193,
+        "4": 0.08815896014566534,
+        "8": 0.13876883330303824
+      },
+      "gpu_s": {
+        "1": 0.008574455642700195,
+        "2": 0.01325763874053955,
+        "4": 0.023035765075683595,
+        "8": 0.0431921953201294
+      }
+    },
+    {
+      "e2e_s": {
+        "1": 0.03040554374674684,
+        "2": 0.03941954280380742,
+        "4": 0.06184904314795858,
+        "8": 0.09510112259522419
+      },
+      "gpu_s": {
+        "1": 0.007812038302421569,
+        "2": 0.010239060831069947,
+        "4": 0.017554083919525145,
+        "8": 0.03031030502319336
+      }
+    }
+  ],
+  "protocol_version": 3,
+  "rate_multipliers": [
+    0.2,
+    0.5,
+    0.85,
+    1.3
+  ],
+  "rates": [
+    68.69333333333333,
+    171.73333333333332,
+    291.94666666666666,
+    446.50666666666666
+  ],
+  "seeds": [
+    17,
+    42,
+    2026
+  ],
+  "source_sha256": {
+    "src/batchserve/__init__.py": "7492ac5338bb8e0b3fba65829f672e060229ea3a28fb84fcccc66c169e1c2b13",
+    "src/batchserve/benchmark.py": "219820b9b666dab628b010fc24911fb6f57c607e3486986fda01bdb80b4f9f09",
+    "src/batchserve/common.py": "b20d597a7ffd267238e54defabd6f2cb561a33a99dc95dc0cf07559e53f9fb11",
+    "src/batchserve/detector.py": "e1789980bf1f994af670bbceb21ab60885033079aa080e746f76ddbbf10623da",
+    "src/batchserve/experiments.py": "bc70065c3b9e7d6dc4d42e28d2d164da0bfadfedcb734cbd5dcf173fa9fd8656",
+    "src/batchserve/policy.py": "0a6a2051f96defcc32b00538482e5297018930bbca87784d9c75d5bd941dd370",
+    "src/batchserve/worker.py": "ade6bbc1b625ac234464690abac3a4afc0dedb25be9b8938cd7611ac37dbfd19",
+    "src/cvpr_project/__init__.py": "f0ae05b12972ddfb51158e213eeda09473f17a98b5883f698cd08f0870bfa56a",
+    "src/cvpr_project/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "src/cvpr_project/analysis.py": "fce8f33acbd9ce144694b8a4a0fff3933f10da3193007352c6a632a2fe10a791",
+    "src/cvpr_project/benchmark.py": "eb2395135a8afdafbd93b148e1390ccecae57c05d9c55f5f44baed4a3d83494b",
+    "src/cvpr_project/buffer_pool.py": "7c32f84d463ff6387e06dae34309af4d3a0ea15a9e66afbf5e2204354a77894f",
+    "src/cvpr_project/calibration.py": "5c19912fa2658cf7444fe0a8f4dcc16c0f538b425af1d7b55916d5f19e78928c",
+    "src/cvpr_project/cli.py": "09da8a908fdbb89836d5d9677616e95acd2bf16ef3fbc006ae175fbaa7a85bc9",
+    "src/cvpr_project/data.py": "eb301e58b74fb5303074d5481753ac61c559750732bc97298b84fc4cc8e5ce08",
+    "src/cvpr_project/executor.py": "02c13bfe974c74633a139bfd816ffeb951418e84b26356ce8c8625e9b607c8b6",
+    "src/cvpr_project/graph_pool.py": "2cf2b843b845b2a9238d9faceb4e41bfa53a89e83d704156f6cea855cf24a5c0",
+    "src/cvpr_project/hardware.py": "38e47084c33e116053400f8c80c7cabb342f99e4206d863684745f4f4e3c51df",
+    "src/cvpr_project/intervals.py": "3c9ee1a3fbd1baf18412b5d60c1e72c15b690860a094d964595c42dbafeb16ed",
+    "src/cvpr_project/matrix.py": "d9a86be7662efd490b3c6f7f2981fe0a0215f779bb8ed6b91644ab12f237565d",
+    "src/cvpr_project/metrics.py": "a4b775547bc1f5dbc4776edae1ed04990e4be82c32a888a15ec529a20829559e",
+    "src/cvpr_project/model.py": "594eef251e32a7f821e1d7c2674b07007a9b9a8d97a912c5449bb47226c2e740",
+    "src/cvpr_project/profile.py": "217b186ff47663d94f0e57a5ef6d7d28cd8af70ea7f311ceb8678f7fa06780cd",
+    "src/cvpr_project/quality.py": "28d23c14d3ca2b8ebfa8a4ae73374b083c4904c7d65015a06529a7c894d0e371",
+    "src/cvpr_project/report.py": "ac55c95beb1d9d110bee9ea6dd2d2b722bef6354dd4f36d7ffcaa74cc7322598",
+    "src/cvpr_project/runs.py": "289a615de705f51645914831f43546fe021e66071e123ea2ce0c24ef9e2ef1a2",
+    "src/cvpr_project/scheduler.py": "0e0133d8fb5eeca37a26107f7c7450864205b21e86b80df8f9ca9dd09eea1951",
+    "src/cvpr_project/serve.py": "218cdb046ce72e25c6102c3dc9494ea8f4a8db0f92720d5aa40cd391a463458e",
+    "src/cvpr_project/trace.py": "3d4cacf916579c6cf86fded5f8a0128a18cec3e2f94195c831cb3ccc85e60e2f"
+  },
+  "split_sha256": "3ede0df1a6eb2bfc8a49c99084f2fdcac1fcb6b9fa3685176f635ba36502b9a2",
+  "transport": "persistent TCP; remote via authenticated SSH forward",
+  "warmup_s": 5,
+  "workers": [
+    {
+      "backend": "graph",
+      "buckets": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "cpu_workers": 8,
+      "hardware": {
+        "compute_capability": [
+          9,
+          0
+        ],
+        "cuda_build": "13.0",
+        "cudnn_version": 92400,
+        "device_uuid_sha256": "d1a32d6aace58dc1ff9ac39d49c974e147e18f1a65eb3ffb0be106ac03f868b1",
+        "multiprocessors": 114,
+        "name": "NVIDIA H800 PCIe",
+        "torch": "2.14.0+cu130",
+        "total_memory_bytes": 85017493504
+      },
+      "initialization_seconds": 2.1103379050036892,
+      "max_batch": 2,
+      "memory": {
+        "capture": {
+          "capture": "full_DETR_forward_with_pixel_mask",
+          "initialization_seconds": 1.2365706379932817,
+          "private_graph_pools": true,
+          "protocol_version": 2,
+          "slots": 8
+        },
+        "compute_streams": 1,
+        "gpu_allocated_bytes": 736277504,
+        "gpu_peak_allocated_bytes": 1679997952,
+        "gpu_reserved_bytes": 6379536384,
+        "pinned_host_bytes": 246912000,
+        "slots_per_bucket": 2
+      },
+      "mode": "global",
+      "outstanding": 0,
+      "protocol_version": 3,
+      "source_sha256": {
+        "src/batchserve/__init__.py": "7492ac5338bb8e0b3fba65829f672e060229ea3a28fb84fcccc66c169e1c2b13",
+        "src/batchserve/benchmark.py": "219820b9b666dab628b010fc24911fb6f57c607e3486986fda01bdb80b4f9f09",
+        "src/batchserve/common.py": "b20d597a7ffd267238e54defabd6f2cb561a33a99dc95dc0cf07559e53f9fb11",
+        "src/batchserve/detector.py": "e1789980bf1f994af670bbceb21ab60885033079aa080e746f76ddbbf10623da",
+        "src/batchserve/experiments.py": "bc70065c3b9e7d6dc4d42e28d2d164da0bfadfedcb734cbd5dcf173fa9fd8656",
+        "src/batchserve/policy.py": "0a6a2051f96defcc32b00538482e5297018930bbca87784d9c75d5bd941dd370",
+        "src/batchserve/worker.py": "ade6bbc1b625ac234464690abac3a4afc0dedb25be9b8938cd7611ac37dbfd19",
+        "src/cvpr_project/__init__.py": "f0ae05b12972ddfb51158e213eeda09473f17a98b5883f698cd08f0870bfa56a",
+        "src/cvpr_project/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+        "src/cvpr_project/analysis.py": "fce8f33acbd9ce144694b8a4a0fff3933f10da3193007352c6a632a2fe10a791",
+        "src/cvpr_project/benchmark.py": "eb2395135a8afdafbd93b148e1390ccecae57c05d9c55f5f44baed4a3d83494b",
+        "src/cvpr_project/buffer_pool.py": "7c32f84d463ff6387e06dae34309af4d3a0ea15a9e66afbf5e2204354a77894f",
+        "src/cvpr_project/calibration.py": "5c19912fa2658cf7444fe0a8f4dcc16c0f538b425af1d7b55916d5f19e78928c",
+        "src/cvpr_project/cli.py": "09da8a908fdbb89836d5d9677616e95acd2bf16ef3fbc006ae175fbaa7a85bc9",
+        "src/cvpr_project/data.py": "eb301e58b74fb5303074d5481753ac61c559750732bc97298b84fc4cc8e5ce08",
+        "src/cvpr_project/executor.py": "02c13bfe974c74633a139bfd816ffeb951418e84b26356ce8c8625e9b607c8b6",
+        "src/cvpr_project/graph_pool.py": "2cf2b843b845b2a9238d9faceb4e41bfa53a89e83d704156f6cea855cf24a5c0",
+        "src/cvpr_project/hardware.py": "38e47084c33e116053400f8c80c7cabb342f99e4206d863684745f4f4e3c51df",
+        "src/cvpr_project/intervals.py": "3c9ee1a3fbd1baf18412b5d60c1e72c15b690860a094d964595c42dbafeb16ed",
+        "src/cvpr_project/matrix.py": "d9a86be7662efd490b3c6f7f2981fe0a0215f779bb8ed6b91644ab12f237565d",
+        "src/cvpr_project/metrics.py": "a4b775547bc1f5dbc4776edae1ed04990e4be82c32a888a15ec529a20829559e",
+        "src/cvpr_project/model.py": "594eef251e32a7f821e1d7c2674b07007a9b9a8d97a912c5449bb47226c2e740",
+        "src/cvpr_project/profile.py": "217b186ff47663d94f0e57a5ef6d7d28cd8af70ea7f311ceb8678f7fa06780cd",
+        "src/cvpr_project/quality.py": "28d23c14d3ca2b8ebfa8a4ae73374b083c4904c7d65015a06529a7c894d0e371",
+        "src/cvpr_project/report.py": "ac55c95beb1d9d110bee9ea6dd2d2b722bef6354dd4f36d7ffcaa74cc7322598",
+        "src/cvpr_project/runs.py": "289a615de705f51645914831f43546fe021e66071e123ea2ce0c24ef9e2ef1a2",
+        "src/cvpr_project/scheduler.py": "0e0133d8fb5eeca37a26107f7c7450864205b21e86b80df8f9ca9dd09eea1951",
+        "src/cvpr_project/serve.py": "218cdb046ce72e25c6102c3dc9494ea8f4a8db0f92720d5aa40cd391a463458e",
+        "src/cvpr_project/trace.py": "3d4cacf916579c6cf86fded5f8a0128a18cec3e2f94195c831cb3ccc85e60e2f"
+      },
+      "wait_ms": 0.0,
+      "weights_sha256": {
+        "config.json": "ea65a2708a8fb81c71fffb93c8f68e43b7f8f8ee7b931597e3f1a94fdf683d3b",
+        "preprocessor_config.json": "6842c9a3895e41cfd135d0c2f925dd46a1224aeb6e943b040cf597f394a60791",
+        "pytorch_model.bin": "883e4b0a898b87cc8ce28b33e04f86413984f67f7a44e96de5d05473bb0931b4"
+      }
+    },
+    {
+      "backend": "graph",
+      "buckets": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "cpu_workers": 8,
+      "hardware": {
+        "compute_capability": [
+          12,
+          0
+        ],
+        "cuda_build": "13.0",
+        "cudnn_version": 92400,
+        "device_uuid_sha256": "42b7e7f4ca8ebd51fd6497e8c38b46941f3085d1c9fea3202ee1b371f83d9d4f",
+        "multiprocessors": 170,
+        "name": "NVIDIA GeForce RTX 5090",
+        "torch": "2.14.0+cu130",
+        "total_memory_bytes": 33661911040
+      },
+      "initialization_seconds": 1.2956612670095637,
+      "max_batch": 8,
+      "memory": {
+        "capture": {
+          "capture": "full_DETR_forward_with_pixel_mask",
+          "initialization_seconds": 0.763832050957717,
+          "private_graph_pools": true,
+          "protocol_version": 2,
+          "slots": 8
+        },
+        "compute_streams": 1,
+        "gpu_allocated_bytes": 736277504,
+        "gpu_peak_allocated_bytes": 1679997952,
+        "gpu_reserved_bytes": 6949961728,
+        "pinned_host_bytes": 246912000,
+        "slots_per_bucket": 2
+      },
+      "mode": "global",
+      "outstanding": 0,
+      "protocol_version": 3,
+      "source_sha256": {
+        "src/batchserve/__init__.py": "7492ac5338bb8e0b3fba65829f672e060229ea3a28fb84fcccc66c169e1c2b13",
+        "src/batchserve/benchmark.py": "219820b9b666dab628b010fc24911fb6f57c607e3486986fda01bdb80b4f9f09",
+        "src/batchserve/common.py": "b20d597a7ffd267238e54defabd6f2cb561a33a99dc95dc0cf07559e53f9fb11",
+        "src/batchserve/detector.py": "e1789980bf1f994af670bbceb21ab60885033079aa080e746f76ddbbf10623da",
+        "src/batchserve/experiments.py": "bc70065c3b9e7d6dc4d42e28d2d164da0bfadfedcb734cbd5dcf173fa9fd8656",
+        "src/batchserve/policy.py": "0a6a2051f96defcc32b00538482e5297018930bbca87784d9c75d5bd941dd370",
+        "src/batchserve/worker.py": "ade6bbc1b625ac234464690abac3a4afc0dedb25be9b8938cd7611ac37dbfd19",
+        "src/cvpr_project/__init__.py": "f0ae05b12972ddfb51158e213eeda09473f17a98b5883f698cd08f0870bfa56a",
+        "src/cvpr_project/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+        "src/cvpr_project/analysis.py": "fce8f33acbd9ce144694b8a4a0fff3933f10da3193007352c6a632a2fe10a791",
+        "src/cvpr_project/benchmark.py": "eb2395135a8afdafbd93b148e1390ccecae57c05d9c55f5f44baed4a3d83494b",
+        "src/cvpr_project/buffer_pool.py": "7c32f84d463ff6387e06dae34309af4d3a0ea15a9e66afbf5e2204354a77894f",
+        "src/cvpr_project/calibration.py": "5c19912fa2658cf7444fe0a8f4dcc16c0f538b425af1d7b55916d5f19e78928c",
+        "src/cvpr_project/cli.py": "09da8a908fdbb89836d5d9677616e95acd2bf16ef3fbc006ae175fbaa7a85bc9",
+        "src/cvpr_project/data.py": "eb301e58b74fb5303074d5481753ac61c559750732bc97298b84fc4cc8e5ce08",
+        "src/cvpr_project/executor.py": "02c13bfe974c74633a139bfd816ffeb951418e84b26356ce8c8625e9b607c8b6",
+        "src/cvpr_project/graph_pool.py": "2cf2b843b845b2a9238d9faceb4e41bfa53a89e83d704156f6cea855cf24a5c0",
+        "src/cvpr_project/hardware.py": "38e47084c33e116053400f8c80c7cabb342f99e4206d863684745f4f4e3c51df",
+        "src/cvpr_project/intervals.py": "3c9ee1a3fbd1baf18412b5d60c1e72c15b690860a094d964595c42dbafeb16ed",
+        "src/cvpr_project/matrix.py": "d9a86be7662efd490b3c6f7f2981fe0a0215f779bb8ed6b91644ab12f237565d",
+        "src/cvpr_project/metrics.py": "a4b775547bc1f5dbc4776edae1ed04990e4be82c32a888a15ec529a20829559e",
+        "src/cvpr_project/model.py": "594eef251e32a7f821e1d7c2674b07007a9b9a8d97a912c5449bb47226c2e740",
+        "src/cvpr_project/profile.py": "217b186ff47663d94f0e57a5ef6d7d28cd8af70ea7f311ceb8678f7fa06780cd",
+        "src/cvpr_project/quality.py": "28d23c14d3ca2b8ebfa8a4ae73374b083c4904c7d65015a06529a7c894d0e371",
+        "src/cvpr_project/report.py": "ac55c95beb1d9d110bee9ea6dd2d2b722bef6354dd4f36d7ffcaa74cc7322598",
+        "src/cvpr_project/runs.py": "289a615de705f51645914831f43546fe021e66071e123ea2ce0c24ef9e2ef1a2",
+        "src/cvpr_project/scheduler.py": "0e0133d8fb5eeca37a26107f7c7450864205b21e86b80df8f9ca9dd09eea1951",
+        "src/cvpr_project/serve.py": "218cdb046ce72e25c6102c3dc9494ea8f4a8db0f92720d5aa40cd391a463458e",
+        "src/cvpr_project/trace.py": "3d4cacf916579c6cf86fded5f8a0128a18cec3e2f94195c831cb3ccc85e60e2f"
+      },
+      "wait_ms": 2.0,
+      "weights_sha256": {
+        "config.json": "ea65a2708a8fb81c71fffb93c8f68e43b7f8f8ee7b931597e3f1a94fdf683d3b",
+        "preprocessor_config.json": "6842c9a3895e41cfd135d0c2f925dd46a1224aeb6e943b040cf597f394a60791",
+        "pytorch_model.bin": "883e4b0a898b87cc8ce28b33e04f86413984f67f7a44e96de5d05473bb0931b4"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "GLOBAL_E2E_change_percent": -88.44686917560512,
+  "controls": 48,
+  "cross_worker_AP_spread_pp": 0.0006044663854112287,
+  "maximum_abs_AP_delta_pp": 0.00011577920286498511,
+  "mean_goodput_rps": {
+    "GLOBAL_E2E": 13.0,
+    "GLOBAL_GPU": 31.337500000000002,
+    "RR": 88.06527777777778,
+    "SECT": 84.21111111111111,
+    "WRR": 112.52361111111111
+  },
+  "strongest_routing_baseline": "WRR",
+  "two_host_runs": 120
+}

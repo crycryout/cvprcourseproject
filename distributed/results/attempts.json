@@ -1,0 +1,88 @@
+{
+  "attempts": [
+    {
+      "cause": "multiplexed SSH forward lifetime, monitor lease ownership, and already-exited process handling",
+      "fix": "dedicated foreground SSH sessions, lease-bound monitor, zombie detection, and serialized cleanup",
+      "stage": "worker launch",
+      "status": "failed_then_fixed"
+    },
+    {
+      "cause": "concurrent data-integrity preparation during initial curve sampling",
+      "fix": "preserved and rerun without auxiliary CPU I/O",
+      "stage": "initial calibration",
+      "status": "invalidated_before_evaluation"
+    },
+    {
+      "cause": "completed virtual reservations were not released unless the worker became empty",
+      "fix": "explicit reservation removal with a bounded outstanding-work regression test; full fresh calibration",
+      "stage": "calibration reservation logic",
+      "status": "invalidated_before_evaluation"
+    },
+    {
+      "cause": "synchronous result JSON decoding delayed the generator sharing its event loop; one run lag p99 6.670 ms exceeded frozen 4.478 ms",
+      "fix": "independent process with nonblocking timestamped arrival pipe; all timing cases recalibrated and rerun; unchanged-executor quality can be retained with explicit compatibility proof",
+      "old_timing_cases_not_in_final_matrix": 9,
+      "retained_valid_quality_profiles": 10,
+      "stage": "cooperative arrival generator",
+      "status": "timing_epoch_invalidated"
+    },
+    {
+      "case": "WRR_poisson_288.773333_s42_attempt1",
+      "excluded_metrics": {
+        "arrival_mode": "independent_process_nonblocking_atomic_pipe",
+        "arrival_type": "poisson",
+        "completed": 3723,
+        "completed_batches": 2451,
+        "completion_ratio": 0.42403189066059227,
+        "elapsed_s": 40.44022774499899,
+        "freeze_sha256": "9b55b5e12c731b20682cc2d80fdbe66d35d3052dccbd2e90517d15c5809c42c0",
+        "generator_lag_p99_ms": 12.893440973968818,
+        "goodput_rps": 73.8,
+        "image_subset_sha256": "c55f2144cd383bd0a1be03b019f1909bdca36303eefb1fceb36d4bda6d1dff3c",
+        "ingress_pickup_lag_p99_ms": 6.146852534584442,
+        "jpeg_bytes_sent": 603124188,
+        "latency_p50_ms": 52.86808626426609,
+        "latency_p95_ms": 12087.86152386133,
+        "latency_p99_ms": 12428.500236442653,
+        "loadgen_lag_limit_ms": 5.353510260611074,
+        "mean_batch_occupancy": 1.5201958384332925,
+        "measurement_s": 30,
+        "offered": 8780,
+        "offered_rate": 288.7733333333333,
+        "on_time": 2214,
+        "policy": "WRR",
+        "protocol_version": 3,
+        "request_events_sha256": "066bb0f41e1c9c96d9aaeb000835368e7ecaee3962fabc0c5aaa497a082bcd18",
+        "routed_counts": [
+          2073,
+          3081
+        ],
+        "seed": 42,
+        "slo_success": 0.2521640091116173,
+        "status": "completed",
+        "status_counts": {
+          "completed": 3723,
+          "rejected": 5057
+        },
+        "steady_window_completions_rps": 119.13333333333334,
+        "trace_sha256": "974d84fb770c13f52fda531182081a82b91a6840dcbe27e437a506d292399c1c",
+        "valid_loadgen": false,
+        "warmup_s": 5,
+        "worker_completed": {
+          "0": 1497,
+          "1": 2226
+        }
+      },
+      "freeze_sha256": "9b55b5e12c731b20682cc2d80fdbe66d35d3052dccbd2e90517d15c5809c42c0",
+      "generator_lag_p99_ms": 12.893440973968818,
+      "limit_ms": 5.353510260611074,
+      "raw_events_sha256": "066bb0f41e1c9c96d9aaeb000835368e7ecaee3962fabc0c5aaa497a082bcd18",
+      "reason": "producer emission p99 exceeded predeclared bound during transient high host load",
+      "stage": "independent emitter timing",
+      "status": "invalid_producer_run_preserved_and_retried"
+    }
+  ],
+  "new_held_out_inference_or_tuning_before_fixes": false,
+  "protocol_version": 3,
+  "recorded_unix_s": 1794554928.4955645
+}

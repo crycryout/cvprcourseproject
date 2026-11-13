@@ -1,0 +1,3 @@
+# Matplotlib emits spaces inside multiline SVG path data.
+results/figures/*.svg -whitespace
+results/*.pdf binary

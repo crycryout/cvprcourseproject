@@ -1,0 +1,46 @@
+{
+  "accepted_timing_freeze_sha256": "9b55b5e12c731b20682cc2d80fdbe66d35d3052dccbd2e90517d15c5809c42c0",
+  "benchmark_quality_helpers_sha256": {
+    "Images": "9904ef1c611d7129be9e001fb2660965a7057e0baf8db1b270de4c69ede24384",
+    "connect_workers": "2999e99fe422f2cebc5e88f72b2681755b8b3b7c14204c076388aa58acd58ac8"
+  },
+  "changed_files": [
+    "src/batchserve/benchmark.py",
+    "src/batchserve/arrivals.py"
+  ],
+  "measurement_freeze_ids_are_preserved": true,
+  "origin_freeze_sha256": "7aa056c109b2b94b8cdd818221d28b6f5fbadbda9a16871ba23a2afbcc1adc50",
+  "protocol_version": 3,
+  "reason": "Only the open-loop timing harness changed. Worker, detector, executor, codecs, quality evaluation and image packing remain identical.",
+  "status": "compatible_unchanged_inference",
+  "unchanged_source_files": {
+    "src/batchserve/__init__.py": "7492ac5338bb8e0b3fba65829f672e060229ea3a28fb84fcccc66c169e1c2b13",
+    "src/batchserve/common.py": "b20d597a7ffd267238e54defabd6f2cb561a33a99dc95dc0cf07559e53f9fb11",
+    "src/batchserve/detector.py": "e1789980bf1f994af670bbceb21ab60885033079aa080e746f76ddbbf10623da",
+    "src/batchserve/experiments.py": "bc70065c3b9e7d6dc4d42e28d2d164da0bfadfedcb734cbd5dcf173fa9fd8656",
+    "src/batchserve/policy.py": "0a6a2051f96defcc32b00538482e5297018930bbca87784d9c75d5bd941dd370",
+    "src/batchserve/worker.py": "ade6bbc1b625ac234464690abac3a4afc0dedb25be9b8938cd7611ac37dbfd19",
+    "src/cvpr_project/__init__.py": "f0ae05b12972ddfb51158e213eeda09473f17a98b5883f698cd08f0870bfa56a",
+    "src/cvpr_project/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "src/cvpr_project/analysis.py": "fce8f33acbd9ce144694b8a4a0fff3933f10da3193007352c6a632a2fe10a791",
+    "src/cvpr_project/benchmark.py": "eb2395135a8afdafbd93b148e1390ccecae57c05d9c55f5f44baed4a3d83494b",
+    "src/cvpr_project/buffer_pool.py": "7c32f84d463ff6387e06dae34309af4d3a0ea15a9e66afbf5e2204354a77894f",
+    "src/cvpr_project/calibration.py": "5c19912fa2658cf7444fe0a8f4dcc16c0f538b425af1d7b55916d5f19e78928c",
+    "src/cvpr_project/cli.py": "09da8a908fdbb89836d5d9677616e95acd2bf16ef3fbc006ae175fbaa7a85bc9",
+    "src/cvpr_project/data.py": "eb301e58b74fb5303074d5481753ac61c559750732bc97298b84fc4cc8e5ce08",
+    "src/cvpr_project/executor.py": "02c13bfe974c74633a139bfd816ffeb951418e84b26356ce8c8625e9b607c8b6",
+    "src/cvpr_project/graph_pool.py": "2cf2b843b845b2a9238d9faceb4e41bfa53a89e83d704156f6cea855cf24a5c0",
+    "src/cvpr_project/hardware.py": "38e47084c33e116053400f8c80c7cabb342f99e4206d863684745f4f4e3c51df",
+    "src/cvpr_project/intervals.py": "3c9ee1a3fbd1baf18412b5d60c1e72c15b690860a094d964595c42dbafeb16ed",
+    "src/cvpr_project/matrix.py": "d9a86be7662efd490b3c6f7f2981fe0a0215f779bb8ed6b91644ab12f237565d",
+    "src/cvpr_project/metrics.py": "a4b775547bc1f5dbc4776edae1ed04990e4be82c32a888a15ec529a20829559e",
+    "src/cvpr_project/model.py": "594eef251e32a7f821e1d7c2674b07007a9b9a8d97a912c5449bb47226c2e740",
+    "src/cvpr_project/profile.py": "217b186ff47663d94f0e57a5ef6d7d28cd8af70ea7f311ceb8678f7fa06780cd",
+    "src/cvpr_project/quality.py": "28d23c14d3ca2b8ebfa8a4ae73374b083c4904c7d65015a06529a7c894d0e371",
+    "src/cvpr_project/report.py": "ac55c95beb1d9d110bee9ea6dd2d2b722bef6354dd4f36d7ffcaa74cc7322598",
+    "src/cvpr_project/runs.py": "289a615de705f51645914831f43546fe021e66071e123ea2ce0c24ef9e2ef1a2",
+    "src/cvpr_project/scheduler.py": "0e0133d8fb5eeca37a26107f7c7450864205b21e86b80df8f9ca9dd09eea1951",
+    "src/cvpr_project/serve.py": "218cdb046ce72e25c6102c3dc9494ea8f4a8db0f92720d5aa40cd391a463458e",
+    "src/cvpr_project/trace.py": "3d4cacf916579c6cf86fded5f8a0128a18cec3e2f94195c831cb3ccc85e60e2f"
+  }
+}

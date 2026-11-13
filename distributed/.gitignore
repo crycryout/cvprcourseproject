@@ -1,0 +1,24 @@
+.venv/
+.venv
+.tools/
+artifacts/
+data/
+data
+checkpoints/
+checkpoints
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+*.log
+*.nsys-rep
+*.ncu-rep
+*.sqlite
+.env*
+configs/hosts.local.json
+build/
+dist/
+# The parent CVPR repository ignores directories named runs; publish only this
+# extension's sanitized per-configuration evidence when mirrored there.
+!results/runs/
+!results/runs/*.json

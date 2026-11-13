@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "allocated_bytes": 16996765696,
+      "scope": "Original CVPR checkout, shared dataset/weights/environment, and distributed mirror"
+    },
+    {
+      "allocated_bytes": 3585630208,
+      "scope": "Standalone CISC8003 checkout and private experiment artifacts; asset symlinks not followed"
+    },
+    {
+      "allocated_bytes": 6417211392,
+      "scope": "Remote worker project with isolated Python environment and pinned weights"
+    }
+  ],
+  "limit_bytes": 30000000000,
+  "measured_unix_s": 1794568092.1312249,
+  "method": "du -s -B1; allocated storage, counting shared local asset targets once",
+  "note": "Point-in-time audit after evidence export and mirror synchronization; Git metadata can grow slightly on commit.",
+  "status": "passed",
+  "total_allocated_bytes": 26999607296,
+  "total_decimal_GB": 26.999607296
+}

@@ -1,0 +1,10 @@
+{
+  "metrics": "All-offered accounting, completions, on-time, quantiles, bytes and unique batch occupancy recomputed from raw logs",
+  "protocol_version": 3,
+  "raw_data_public": false,
+  "raw_requests_audited": 1429561,
+  "request_logs_recomputed": 168,
+  "single_host_controls": 48,
+  "status": "passed",
+  "two_host_cases": 120
+}

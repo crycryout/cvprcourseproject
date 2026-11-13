@@ -1,0 +1,27 @@
+{
+  "all_project_gpu_workers_stopped": true,
+  "combined_gpu_hours": 19.55973852294657,
+  "coursework_submission": "Author reviews and submits; no automatic submission.",
+  "evidence_status": "passed",
+  "extension_cpu_tests_passed": 12,
+  "extension_evidence_audit": "passed in standalone and distributed mirror",
+  "full_4000_image_quality_evaluations": 10,
+  "historical_cvpr_gpu_hours": 12.47309,
+  "invalid_attempts_evidence": "attempts.json",
+  "new_aggregate_gpu_hours": 7.08664852294657,
+  "original_cvpr_cpu_tests_passed": 10,
+  "original_cvpr_evidence_audit": "passed: 300 serving cases and 12 full AP evaluations",
+  "presentation_pages": 12,
+  "protocol_version": 3,
+  "publication_destinations": [
+    "https://github.com/crycryout/CISC8003Project",
+    "https://github.com/crycryout/cvprcourseproject/tree/main/distributed"
+  ],
+  "quality_origin_evidence": "quality_compatibility.json",
+  "raw_request_records_independently_audited": 1429561,
+  "report_pages": 6,
+  "request_errors_in_retained_timing_cases": 0,
+  "single_host_controls": 48,
+  "storage_evidence": "storage.json",
+  "two_host_configurations": 120
+}

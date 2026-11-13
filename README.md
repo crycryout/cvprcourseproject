@@ -6,6 +6,14 @@
 
 以固定预训练DETR为视觉工作负载，在单张完整NVIDIA H800 PCIe上实现CUDA Graph bucket、固定buffer pool、CPU–GPU流水线和截止时间感知批处理。输入为真实COCO图像，输出为原图坐标检测框；请求流量是合成的开放环periodic/Poisson/burst，不是生产流量。项目不训练新模型，不声称Graph、EDF或流水线本身具有新颖性。
 
+## CISC8003 分布式扩展（协议3）
+
+[分布式项目目录](distributed/README.md)复用本项目的冻结 DETR 执行器，研究 H800 与 RTX 5090 两台物理机器上的请求路由、全局组批和端到端服务时间估计。代码与证据同时维护于 [CISC8003Project](https://github.com/crycryout/CISC8003Project)。本项目原有协议2源码、300组结果及报告独立保留。
+
+扩展的[实验协议](distributed/docs/PROTOCOL.md)、[验收状态](distributed/docs/STATUS.md)、[英文报告](distributed/results/report.pdf)和[英文汇报](distributed/results/slides.pdf)均位于 `distributed/`。在该目录中可用父项目环境执行 `PYTHONPATH=src ../.venv/bin/python scripts/verify_results.py`，核对发布的证据。
+
+扩展已完成 **120 组双节点实验、48 组单节点对照、10 组×4000 图像 AP 评估、6 页英文报告及 12 页汇报**，12 项扩展测试与证据审计通过。全局 E2E 启发式的平均按时 goodput 为 13.000 请求/秒，低于 WRR 的 112.524；负结果与实现限制完整保留，未根据评估结果重新调参。
+
 ## 已完成的交付
 
 | 内容 | 实测证据 |

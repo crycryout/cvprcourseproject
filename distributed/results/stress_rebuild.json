@@ -1,0 +1,39 @@
+{
+  "protocol_version": 3,
+  "results": [
+    {
+      "atol": 1e-05,
+      "buckets": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "concurrent_slot_batches_verified": 2,
+      "max_boxes_error": 0.0,
+      "max_logits_error": 0.0,
+      "partial_batches": true,
+      "requests": 64,
+      "rtol": 0.0001,
+      "status": "passed",
+      "worker": 0
+    },
+    {
+      "atol": 1e-05,
+      "buckets": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "concurrent_slot_batches_verified": 2,
+      "max_boxes_error": 0.0,
+      "max_logits_error": 0.0,
+      "partial_batches": true,
+      "requests": 64,
+      "rtol": 0.0001,
+      "status": "passed",
+      "worker": 1
+    }
+  ]
+}

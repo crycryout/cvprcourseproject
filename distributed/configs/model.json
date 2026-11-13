@@ -1,0 +1,12 @@
+{
+  "files_sha256": {
+    "config.json": "ea65a2708a8fb81c71fffb93c8f68e43b7f8f8ee7b931597e3f1a94fdf683d3b",
+    "preprocessor_config.json": "6842c9a3895e41cfd135d0c2f925dd46a1224aeb6e943b040cf597f394a60791",
+    "pytorch_model.bin": "883e4b0a898b87cc8ce28b33e04f86413984f67f7a44e96de5d05473bb0931b4"
+  },
+  "model_id": "facebook/detr-resnet-50",
+  "protocol_version": 2,
+  "revision": "70120ba84d68ca1211e007c4fb61d0cd5424be54",
+  "training": false,
+  "weights_frozen": true
+}
